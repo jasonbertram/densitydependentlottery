@@ -1,0 +1,356 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx} 
+\usepackage{amsmath}
+%\usepackage{a4wide}
+%\usepackage{multicol,caption}
+%\setlength{\textwidth}{16cm}
+%\setlength{\textheight}{22cm}
+
+\begin{document}\sloppy
+
+\title{A preliminary rcK derivation}
+\author{J Bertram and J Masel}
+\maketitle
+
+``...the concept of fitness is probably too complex to allow of a useful mathematical development. Since it enters fundamentally into many population genetics considerations, it is remarkable how little attention has been paid to it.'' --- Warren J. Ewens, Mathematical Population Genetics I, 2004 
+
+\section{Introduction}
+
+Evolutionary models differ greatly in their treatment of fitness. In models of genetic evolution, genotypes are typically assigned constant (or frequency-dependent) selection coefficients describing the change in their relative frequencies over time due to differences in viability. This considerably simplifies the mathematics of selection, facilitating greater genetic realism, and can be justified over sufficiently short time intervals \cite[p. 276]{ewens_2012}. However, selection can have very different effects when operating on different types of traits, and evolutionary changes in one population can lead to complicated ecological responses.
+
+By contrast models of phenotypic trait evolution represent the change in phenotypic abundances over time using absolute fitness functions which describe how those traits affect survival and reproduction in particular ecological scenarios. This approach is powerful enough to model eco-evolutionary feedbacks between co-evolving traits, but is generally problem-specific and restricted to only a few traits at a time.
+
+Far less work has been done to model fitness in more general terms than particular traits or ecological scenarios, while still capturing key distinctions between different forms of selection. Perhaps this is not surprising given that fitness is such a complex quantity, dependent on all of a phenotype's functional traits \cite{violle_2007} as well as its biotic and abiotic environment. In most cases, a detailed, trait-based, predictive model of fitness would be enormously complicated and have narrow applicability. It is therefore easy to doubt the feasibility of a simplified, general mathematical treatment of fitness \cite[p. 276]{ewens_2012}. Even MacArthur's famous r/K selection scheme is now almost exclusively known as a framework for understanding life-history traits, and judged on its failure in that role \cite{pianka_1970,stearns_1977,boyce_1984,reznick_2002}. In spite of the r/K scheme's original purpose as an extension of the existing population-genetic treatment of selection to account for population density \cite{macarthur_1962}, comparatively few attempts have been made to develop it further as a mathematical analysis of the major different forms of selection. 
+
+Nevertheless, there are strong indications there are broader principles governing the operation of selection. In many groups of organisms (including corals \cite{darling_2012}, insects \cite{southwood_1977}, fishes \cite{winemiller_1992} and plants \cite{grime_1988}), species can be partitioned into a small number of distinct trait clusters corresponding to fundamentally distinct ``primary strategies'' \cite{winemiller_2015}. The most famous example is Grime's plant trait classification scheme \cite{grime_1974,grime_1977,grime_1988}. Grime considered two broad determinants of population density: stress (persistent hardship e.g. due to resource scarcity, unfavorable temperatures or toxins) and disturbance (intermittent destruction of vegetation e.g. due to trampling, herbivory, pathogens, extreme weather or fire).  The extremes of these two factors define three primary strategies denoted by C/S/R respectively: competitors ``C'' excel in low stress, low disturbance environments; stress tolerators ``S'' excel in high stress, low disturbance environments; and ruderals ``R''  excel in low stress, high disturbance environments. Survival is not possible in high-stress, high-disturbance environments. Grime showed that measures of C, S and R across a wide range of plant species are anti-correlated, so that strong C-strategists are weak S and R strategists, and so on. Thus, plant species can be classified on a triangular C/S/R ternary plot \cite{grime_1974}. Trait classification schemes for other organisms closely parallel Grime's scheme \cite{winemiller_2015}. 
+
+Trait classification schemes show empirically that, beneath the complicated details of trait variation, even among closely-related species, fitness is predominantly determined by a few key factors such as intrinsic reproducive rate or stress-tolerance. However, while trait classification schemes are firmly grounded in trait data, they are verbal and descriptive rather than mathematical, a recognized hinderance to their broader applicability (e.g. \cite{tilman_2007}). 
+
+The aim of this paper is explore the interplay between some major dimensions of fitness in a simplified, spatially-homogeneous model of genotype growth, dispersal and competition. Building on the earlier r/K and C/S/R schemes, a central question is how fitness depends on the interaction between population density, intrinsic birth/death rates and competitive ability. 
+
+We broadly follow the spirit of MacArthur's r/K selection scheme in that our model is intended to account for fundamentally different forms of selection without getting  entangled in the intricacies of particular ecological scenarios. However, rather than building directly on MacArthur's formalism and its later extensions [cite alpha stuff] (e.g. using Lotka-Volterra equations), our model is devised primarily with Grime's C/S/R scheme in mind, and represents a quantitative formalization of how C/S/R manifests at the level of genotype evolution (as opposed to divergence between species). This choice is motivated in part by the substantial empirical support for the C/S/R scheme, and in part by the failings of the r/K low/high density dichotomy --- many growth ability traits will confer advantages at both low and high densities, in which case r- and K- selection will effectively coincide (empirically, positive correlations between measures of r and K are common, both between species and strains \cite{luckinbill_1979,kuno_1991,hendriks_2005,fitzsimmons_2010}, and as a result of experimental evolution \cite{luckinbill_1979,luckinbill_1978}). 
+
+In section
+ 
+
+\section{Model}
+
+We assume that each individual in a population requires its own territory to survive and reproduce (a site-occupancy model). All territories are identical, and the total number of territories is $K$. Time $t$ advances in discrete steps, each representing one generation. In generation $t$, the number of mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories $U(t)=K-N(t)$. 
+
+Each generation, adults produce $m_i$ new offspring (henceforth called ``propagules'') which disperse at random over the $U$ unnocupied territories. We ignore propagules that land on occupied territories --- these are assumed to have no chance of survival and are not included in $m_i$. For simplicity, we assume $m_i=b_i n_i$, where $b_i$ is a constant, genotype-specific birth rate. 
+
+The number of individuals of the $i$'th genotype landing in any particular territory is denoted $x_i$. Random dispersal implies that in the limit $K\rightarrow \infty$, with $n_i/K$ held fixed, $x_i$ is Poisson distributed with mean territorial propagule density $l_i=m_i/U$. Although $K$ is finite in our model, we assume that $K$ and the $n_i$ are large enough that $x_i$ is Poisson-distributed to a good approximation (details in Appendix A). This Poisson distribution is denoted $p_i(x_i)$. In particular, we do not consider the stochastic behavior that occurs at very low $n_i$ due to the lottery nature of territorial acquisition (this will be discussed further when we consider the behavior of mutant lineages). 
+
+When multiple propagules land on the same territory, they compete to secure the territory as they develop. This territorial contest is modeled as a weighted lottery: the probability that genotype $i$ wins a given territory by the next generation is $c_i x_i/\sum_j c_j x_j$ where $c_i$ is a constant representing relative competitive ability. 
+
+The increase in $n_i$ over one generation due to territorial acquisition, $\Delta_+ n_i$, is the sum of genotype $i$'s victories over all $U$ unoccupied territories. Since $p_1(x_1)\ldots p_G(x_G)$ is equal to the proportion of unoccupied territories with $x_1,\ldots,x_G$ of the respective propagules (again, we assume that $K$ is large enough that fluctuations in this proportion are negligible), this sum can be replaced by an expectation over the $p_i$. This gives
+\begin{equation}
+\Delta_+ n_i(t)=U(t)\sum_{x_1,\ldots,x_G} \frac{c_i x_i}{\sum_j c_j x_j} p_1(x_1)\ldots p_G(x_G). \label{eq:growthsumuncoupled}
+\end{equation}
+
+In addition to propagule birth and competition, occupied territories become unoccupied when adults die. We assume that these adult deaths occur at a constant, genotype-specific rate $d_i$. Thus, the overall change in genotype abundances is
+\begin{equation}
+\Delta n_i(t)=\Delta_+ n_i(t)-d_i n_i(t). \label{eq:delttot}
+\end{equation}
+
+The change in total population size $N$, obtained by summing Eq. \eqref{eq:delttot} over genotypes, is
+\begin{equation}
+\Delta N=U(1-e^{-L})-\sum_i d_i n_i=(K-N)(1-e^{-L})-\overline{d}N,
+\end{equation}
+where $\overline{d}=\sum_i d_i n_i/N$, which is independent of the competitive ability coefficients $c_i$. Thus, the $c_i$ represent a strictly relative aspect of fitness in the sense that they only influence $N$ indirectly by changing genotype frequencies, which may in turn change population mean birth and death rates.
+
+\section{Results}
+
+\subsection{Mean Field Approximation}
+
+Eq. \eqref{eq:delttot} gives little intuition about the dynamics of density-dependent lottery competition, since \eqref{eq:growthsumuncoupled} involves an expectation over the random dispersal distributions $p_i$, which depend on how the $n_i$ change over time. We now evaluate this expectation approximately, which allows us to develop deeper intuitions about the dynamics of density dependent lottery competition.
+
+When propagule densities are high ($l_i\gg 1$ for all genotypes), the fluctuations in the $x_i$ are negligible compared to the corresponding expectations $l_i$ (since the $x_i$ are Poisson distributed), and we can make the replacement $x_i\rightarrow l_i$ in Eq. \eqref{eq:growthsumuncoupled}. Eq. \eqref{eq:growthsumuncoupled} then reduces to the classic lottery model \cite{chesson_1981},
+\begin{equation}
+\Delta_+ n_i(t)=U(t)\frac{c_i m_i}{\sum_j c_j m_j}= b_i n_i\frac{1}{L}\frac{c_i}{\overline{c}}, \label{eq:lottery}
+\end{equation}
+where $L=\sum_j l_j=M/U$ is the overall propagule density,  $\overline{c}=\sum_j c_j m_j/M$ is the expected competitive ability for randomly selected propagules, and $M=\sum_j m_j$ is the total number of propagules. 
+
+When $l_i\ll 1$, $x_i$ cannot be replaced by $l_i$ in Eq. \eqref{eq:growthsumuncoupled}, because $x_i=1$ in the sparsely scattered territories where $i$ propagules do land, meaning that all of the contributions to $\Delta_+ n_i$ are large deviations from the mean. Eq. \eqref{eq:lottery} is clearly nonsensical in this case: genotype $i$ can win at most $m_i$ territories, yet Eq. \eqref{eq:lottery} demands a fraction $c_i m_i/\sum_j c_j m_j$ of the unoccupied territories $U$, no matter how large $U$ is. 
+
+A similar mean field approximation can be applied to Eq. \eqref{eq:growthsumuncoupled} for arbitrary propagule densities provided that the $x_i=1$ terms for the focal genotype are handled separately. This approximation relies on the the relative fluctuations in the lottery competition denominator $\sum c_j x_j$ being small, allowing the sum in Eq. \eqref{eq:growthsumuncoupled} the be evaluated under a much broader range of conditions than $l_i\gg 1$ for all genotypes. In Appendix B we show that this is generally the case, unless there large discrepancy in competitive ability ($c_i/c_j\gg 1$). This exception will be discussed below; for now we assume that no such large discrepancy is present. We obtain (Appendix B)
+\begin{equation}
+\Delta_+ n_i(t)\approx b_i n_i\left[e^{-L}+(R_i+A_i)\frac{c_i}{\overline{c}}\right]. \label{eq:master}
+\end{equation}
+where
+\begin{equation}
+R_i=\frac{\overline{c}e^{-l_i}(1-e^{-(L-l_i)})}{c_i +\frac{\overline{c}L- c_il_i}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i}},\label{eq:Dr}
+\end{equation}
+and
+\begin{equation}
+A_i=\frac{\overline{c}(1-e^{-l_i})}{c_il_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}+\sum_{j\neq i}\frac{c_jl_j}{L-l_j}\left(L\frac{1-e^{-L}}{1-(1+L)e^{-L}}-l_j\frac{1-e^{-l_j}}{1-(1+l_j)e^{-l_j}}\right)}.\label{eq:Da}
+\end{equation}
+
+Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery per-propagule success rate $c_i/\overline{c}L$ has been replaced by three separate terms. The first, $e^{-L}$, accounts for propagules which land alone on unoccupied territories; these territories are won without contest. The second term, $R_i c_i/\overline{c}$ represents competitive victories when the $i$ genotype is a rare invader in a high density population: from Eq. \eqref{eq:Dr}, $R_i\rightarrow 0$ when the $i$ genotype is abundant ($l_i\gg 1$), or other genotypes are collectively rare ($L-l_i\ll 1$). The third term, $A_ic_i/\overline{c}$, represents competitive victories when the $i$ genotype is abundant: $A_i\rightarrow 0$ if $l_i\ll 1$. The relative importance of these three terms changes with both the overall propagule density $L$ and the relative propagule frequencies. In the case that all $l_i\gg 1$ for all genotypes, only the last term $A_ic_i/\overline{c}$ remains, and $A_i\rightarrow 1/L$, recovering the classic lottery model.
+
+Fig. \ref{fig:simcomp} shows that Eq. \eqref{eq:master} (and its components) closely approximate direct simulations of random dispersal with lottery competition over a wide range of propagule densities (obtained by varying $U$). A low-frequency genotype with higher $c_i$ is attempting to invade an otherwise identical high-frequency genotype. The low-density invader term $R_i c_i/\overline{c}$ is crucially important for the low-frequency genotype (Fig. \ref{fig:simcomp}b), but is negligible for the high-frequency one (Fig. \ref{fig:simcomp}d). The high density competition term $A_i c_i/\overline{c}$ is crucial for the high-frequency genotype, and can also be important for the invader if $U$ is small enough. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{simulationcomparison.pdf}
+\caption{\label{fig:simcomp} Eq. \eqref{eq:master} is a good approximation of the density dependent lottery model. $\Delta_+ n_i/m_i$ from Eq. \eqref{eq:master} (and its separate components) are shown, along with direct simulations of random dispersal and lottery competition over one generation over a range of propagule densities (varied by changing $U$ with the $m_i$ fixed). Two genotypes are present: a low-frequency, better competitor ($m_1/M=0.1$, $c_1=1.5$), in (a) and (b); and a high-frequency, worse competitor ($m_2/M=0.9$, $c_2=1$) in (c) and (d).} 
+\end{figure}
+
+Thus, Eq. \ref{eq:master} is a density-dependent generalization of the classic lottery model. In particular, Eq. \ref{eq:master} accounts for the growth (or decline) of initially rare mutant lineages, which is essential for modeling evolution. 
+
+%with the exception of large discrepancies in competitive ability since it is extremely unlikely that a large discrepancy competitive would arise in the absence of migration. 
+
+\subsection{Invasion and coexistence}
+
+
+
+Now suppose that a mutation occurs, producing a new genotype $j$ which differs from $i$ in at least one of the traits $b_i$, $c_i$ and $d_i$. The new mutant lineage starts with one individual, and remains at low abundance for many generations. During this period, the mutant lineage abundance $n_j$ will behave stochastically, and Eq. \eqref{eq:master} does not apply. However, if $n_j$ becomes large enough, its behavior will become effectively deterministic, and governed by Eq. \eqref{eq:master}. For mutants with fitness greater than the population mean fitness, this process is known as ``establishment'', and occurs when $n_j$ is of order $1/s$, where $s$ is the mutant's fitness advantage relative to the mean \cite{desai_2007}. 
+
+Here we do not analyze the early stochastic behavior of new mutations, and restrict our attention to the earliest deterministic behavior of rare genotypes. In particular, for beneficial mutants we only consider the case where $s$ is large enough that initially we have $n_j \ll N$. 
+
+
+
+Suppose that a population with a single genotype $i$ is in equilibrium. Then $R^{(i)}_i=0$, $\overline{c}=c_i$ and $\Delta n_i = 0$, which implies
+\begin{equation}
+b_i\left(e^{-L}+A_i\right)-d_i=0.\label{eq:equil}
+\end{equation}
+Now suppose that new genotype $j$, which is initially rare, appears in the population. Then $A_j\ll 1$, $l_j\ll L$ and $\overline{c}\approx c_i$, and so initial growth of $j$ occurs if 
+\begin{equation}
+b_j \left(e^{-L^{(i)}}+R^{(i)}_j\frac{c_j}{c_i}\right)-d_j>0.\label{eq:invad}
+\end{equation}
+
+If $j$ is superior in one trait, but otherwise identical to $i$, it will eventually displace $i$. However, stable coexistence is possible between genotypes that are superior in different traits. To illustrate, suppose that $j$ is better at securing territories ($c_j>c_i$), that $i$ is better at producing propagules ($b_i>b_j$), and that $d_i=d_j$. Coexistence occurs if $j$ will invade an $i$-dominated population, but $i$ will also invade a $j$-dominated population (``mutual invasion''). It is not hard to show that this is possible, since if $b_i$ so large that $L\gg 1$ if $i$ is dominant, while $b_j$ is so small that $L\ll 1$ when $j$ is dominant, then, combining Eqs. \eqref{eq:equil} and \eqref{eq:invad}, we find that $j$ invades $i$ if
+\begin{equation}
+b_jc_jR^{(i)}_j-b_i c_i A^{(i)}_i>0, \label{eq:jinvadcoex}
+\end{equation}
+while $i$ invades $j$ if
+\begin{equation}
+b_i-b_j>0.\label{eq:iinvadcoex}
+\end{equation}
+Eq. \eqref{eq:iinvadcoex} is already satisfied by assumption, while \eqref{eq:jinvadcoex} is satisfied for large enough $c_j$. The mechanism for coexistence is that territorial contests are important in $i$-dominated populations (high $L$), ensuring that $j$ is not excluded by $i$, yet territorial contests are irrelevant in $j$-dominated populations (low $L$), ensuring that $i$ is not excluded by $j$. 
+
+Fig. \ref{fig:coex} shows an example of coexistence between $b$ and $c$ specialists. 
+
+ A similar argument applies for coexistence between high-$c$ and low-$d$ specialists. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{coex.pdf}
+\caption{\label{fig:coex} Coexistence between $b$ ($c_i=1$, $b_i=1$) and $c$ ($c_j=2$, $b_j=0.7$) specialists, where $d_i=d_j=0.3$. Frequency of the $c$-specialist predicted by Eq. \eqref{eq:master} is shown.} 
+\end{figure}
+
+
+\subsection{Environmental archetypes and Grime's triangle}
+
+We can then determine which mutational changes in the traits $b_i, c_i$ and $d_i$ will be favored under different environmental conditions. Of particular interest are Grime's ``disturbance'', ``stress'' and ``ideal'' environmental archetypes. 
+
+To proceed, we map these archetypes to different parameter regimes in our model. The ideal archetype is defined by low extrinsic mortality $d_i\ll 1$ and high birth rates, such that $b_i$ significantly exceeds $d_i$,   population density $N/K$ is high, and thus so is the overall propagule density $L\gg 1$. In this case, competition between propagules is important.
+
+The disturbance archetype is defined by unavoidably high extrinsic mortality, usually due to physical destruction of individual organisms, to the extent that the population is kept at low densities $N/K\ll 1$. This means that, even though $b_i$ may be quite high, it cannot greatly exceed $d_i$, and that  propagule densities are low $l_i\ll 1$. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$.
+
+The stress archetype is more ambiguous, and has been the subject of an extensive debate in the plant ecology literature. In Grime's view, the archetypal stressful environmental imposes such severe challenges that success depends primarily on the ability to tolerate the stressors. Population density $N/K$ is suppressed to such low levels that competition between individuals is not important. In our model, this again corresponds to $b_i$ only slightly exceeding $d_i$ and $l_i\ll 1$, similar to the disturbance archetype, except that stress now constrains $b_i$ to be small. 
+
+The alternative view is that the stress archetype should rather be interpreted as a large reduction in the maximum number of individuals that can be supported \cite{taylor_1990}. For example, in the case that the stress is induced by a scarcity of consumable resources, competition for resources would likely be intense, and the stressed population should actually be regarded as having a high population density. In our model, this would imply a large reduction in $K$ (greater per-individual territorial requirement), such that even though fewer individuals are supported, density $N/K$ is still high. 
+
+The mapping of environmental achetypes to our model parameters is summarized in the first three rows of Fig. \ref{fig:table}. Also shown is the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$ for each archetype (fourth row), which can be used infer the expected direction of evolution for the traits $b_i$, $c_i$ and $d_i$ (fifth row). 
+
+The latter is inferred as follows. As noted in the previous section, if beneficial mutants can survive the low-abundance stochastic regime, their behavior is governed deterministically by Eq. \eqref{eq:master}. If their advantage in $b$, $c$ or $d$ is large enough to overcome the lottery rarity disadvantage, they will proceed to grow deterministically (establishment). The probability of establishment increases with the mutant fitness advantage, and is of order $1/N$ for neutral mutations. Consequently, the direction of evolutionary change is determined by which trait changes confer an appreciable benefit, subject to the constraints imposed by the environmental. 
+
+For example, in Grime's version of the stress archetype, population density is low, so competition is not important, and so only mutants with greater $b$ or lower $d$ will have an appreciably greater $\Delta n_i$. Mutations in $c$ are effectively neutral, and will rarely establish. However, by definition of the stress archetype, $b$ is constrained to be small. Thus, while some rare mutations may produce small improvements in $b$, it is much more likely that mutations will arise that lower $d$, making this the expected direction of evolutionary change for Grime's stress archetype. 
+
+\begin{figure}
+\centering
+\begin{tabular}{*{5}{c}}
+  & Ideal & Disturbance & Stress (G) & Stress (K) \\ \hline
+  Parameter- & $d_i \ll 1$ & $d_i \gg 1$ & $b_i \ll 1$ & $b_i \ll 1$ \\
+  regime & $b_i>d_i$ & $b_i\approx d_i$ & $b_i\approx d_i$ & $b_i>  d_i$ \\
+  Density  & High & Low & Low & High \\
+  $\Delta_+ n_i\propto$ & $b_i c_i$ & $b_i$ & $b_i$ & $b_i c_i$ \\
+  Evolution & $\uparrow b$, $ \uparrow c$ & $\uparrow b$ & $\downarrow d$ & $\uparrow c$
+\end{tabular}
+\caption{\label{fig:table} The realization of Grime's environmental archetypes in our model, as well as the low-$K$ variant of the stress archetype. Shown are the mapping to our parameters of each archetype, the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$, as well as the corresponding expected evolutionary changes in $b_i$, $c_i$ and $d_i$.}
+\end{figure}
+
+Following Grime's original argument for a triangular scheme \cite{grime_1977}, Fig. \ref{fig:axes} represents each environmental archetype schematically as a vertex on a triangular space defined by perpendicular stress and disturbance axes. The ideal archetype lies at the origin (no stress or disturbance), while the stress and disturbance archetypes lie at the limits of survival on their respective axes. The hypotenuse connecting the stress and disturbance endpoints represents the limits of survival in the presence of a combination of stress and disturbance. The direction of evolutionary change is different at each vertex, leading to the emergence of different trait clusters or ``primary strategies''. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{axes.pdf}
+\caption{\label{fig:axes} The realization of Grime's triangle in our model. Schematic representation of the triangular space bounded by the low/high extremes of stress/disturbance. The low-$K$ interpretation of stress is also shown. The vertices of the triangles correspond to environmental archetypes. Selection favors different traits at each vertex, leading to different trait clusters.} 
+\end{figure}
+
+\section{Discussion}
+
+Grime's triangle without constraints
+
+r-K correlation, meaning of K selection
+
+Actual K selection
+
+caveats: large c discrepancy
+
+
+
+\bibliographystyle{unsrt}
+\bibliography{reference} 
+
+\section*{Appendix A: Poisson approximation}
+
+The propagule numbers $x_i$ in different territories are not independent random variables. To determine the dispersal outcomes in all unoccupied territories exactly, we would need to proceed territory-by-territory as follows. In the first territory we evaluate, $x_i$ drawn from a binomial distribution with $m_i$ trials and success probability $1/U$. In the second, $x_i$ is drawn from a binomial distribution with $m_i-x$ trials and success probability $1/(U-1)$, where $x$ is the number of propagules that landed in the first territory. And so on.
+
+For sufficiently large $K$, holding $n_i/K$ fixed, the Poisson limit theorem implies that the binomial distributions for $x_i$ at each successive stage of this procedure are all closely approximated by a Poisson distribution with mean $l_i$, where we have used the fact that large $K$ implies large $U$ except in the biologically uninteresting case that there is vanishing population turnover $d_i \sim 1/K$. 
+
+Under the Poisson approximation, the total number of genotype $i$ propagules $\sum x_i$ (summed over unoccupied territories) will deviate about its mean value $m_i$. Since the coefficient of variation of $\sum x_i$ is proportional to $1/\sqrt{m_i}$, these deviations are negligible unless $m_i$ is very small (say of order $100$ or less).
+
+\section*{Appendix B: Derivation of growth equation}
+
+We separate the right hand side of Eq. \eqref{eq:growthsumuncoupled} into three components $\Delta_+ n_i = \Delta_u n_i+\Delta_r n_i+\Delta_a n_i$ which vary in relative magnitude depending on the propagule densities $l_i$. Following the notation in the main text, the Poisson distributions for the $x_i$ (or some subset of the $x_i$) will be denoted $p$; for instance $p(x_1,\ldots,x_G)=p_1(x_1)\ldots p_G(x_G)$ and $p(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)=p_1(x_1)\ldots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\ldots p_G(x_G)$. We use $P$ as a general shorthand for the probability of particular outcomes.
+
+\subsection*{Growth without competition}
+
+The first component, $\Delta_u n_i$, accounts for territories where only one focal propagule is present $x_i=1$ and $x_j=0$ for $j\neq i$ ($u$ stands for ``uncontested''). The proportion of territories where this occurs is $l_i e^{-L}$, and so 
+\begin{equation}
+\Delta_u n_i=Ul_i e^{-L}=m_i e^{-L}.
+\end{equation}
+
+\subsection*{Competition when rare}
+
+The second component, $\Delta_r n_i$, accounts for territories where a single focal genotype propagule is present along with at least one non-focal propagule ($r$ stands for ``rare'') i.e. $x_i=1$ and $\sum_{j\neq i} x_j\geq 1$. The number of territories where this occurs is $Up_i(1)P(\sum_{j\neq i} x_j\geq 1)=b_i n_i e^{-l_i}(1-e^{-(L-l_i)})$. Thus 
+\begin{equation}
+\Delta_r n_i = m_i e^{-l_i}P\left\langle  \frac{c_i}{c_i +\sum_{j\neq i} c_j x_j } \right\rangle_{\tilde{p}},  \label{eq:deltr}
+\end{equation}
+where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagaule abundances $x_j$ \textit{after} dispersal, in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
+
+We now show that, with respect to $\tilde{p}$, the standard deviation in $\sum_{j\neq i} c_j x_j$, $\sigma(\sum_{j\neq i} c_j x_j)$, is much smaller than its mean $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$. Then $x_j$ can be replaced by its mean in the last term in Eq. \eqref{eq:deltr},
+\begin{equation}
+\left\langle\frac{c_i}{c_i +\sum_{j\neq i} c_j x_j}\right\rangle_{\tilde{p}}\approx \frac{c_i}{c_i +\sum_{j\neq i} c_j \langle x_j\rangle_{\tilde{p}}},\label{eq:meanfieldr}
+\end{equation}
+which will give us Eq. \eqref{eq:Dr}.
+
+The exact expression for $\langle x_j \rangle_{\tilde{p}}$ is somewhat complicated. Letting $k$ denote the total number of propagules in a territory, and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ denote the vector of non-focal abundances, $\tilde{p}$ can be written as
+\begin{align}
+\tilde{p}({\mathbf x_i})&=p({\mathbf x_i}|k\geq 2,x_i=1),\nonumber\\
+&=\frac{P(k\geq 2|{\mathbf x_i},x_i=1) p({\mathbf x_i}|x_i=1)}{P(k\geq 2)},\nonumber\\
+&=\frac{p({\mathbf x_i}|x_i=1)}{1-(1+L)e^{-L}},\nonumber\\
+&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} P(k) p({\mathbf x_i}|\sum_{j\neq i} x_j=k-1),\nonumber\\
+&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} \frac{P(k)\delta^{\sum_{j\neq i} x_j}_{k-1}}{P(\sum_{j\neq i} x_j=k-1)} p({\mathbf x_i}),\nonumber\\
+&=\frac{Le^{-l_i}}{1-(1+L)e^{-L}}\sum_{k=1}^{\infty} \left(\frac{L}{L-l_i}\right)^k\frac{\delta^{\sum_{j\neq i} x_j}_k}{k+1} p({\mathbf x_i}),\label{eq:raremonster}
+\end{align}
+where $\delta^{\sum_{j\neq i} x_j}_k=1$ if $\sum_{j\neq i} x_j=k$, and equals zero otherwise. Then, since 
+\begin{align}
+\sum_{\mathbf x_i}\delta^{\sum_{j\neq i} x_j}_k p({\mathbf x_i})x_j&= \frac{l_j}{L-L_j}kP(\sum_{j\neq i} x_j=k)\nonumber\\
+&=l_j P(\sum_{j\neq i} x_j=k-1),
+\end{align}
+after some algebra we obtain,
+\begin{equation}
+\langle x_j \rangle_{\tilde{p}}=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i}.\label{eq:meanxjrare}
+\end{equation}
+
+To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use the following approximation, which gives considerably simpler expressions for the means, variances and covariances of the $x_j$ compared with the exact expressions using $\tilde{p}$. Rather than evaluating the situation in each territory after dispersal as above, we let $\tilde{p}$ instead be the ${\mathbf x_i}$ dispersal probabilities in a territory where one focal propagule is assumed to be present, conditional on $\sum_{j\neq i} x_j>1$. This gives $\langle x_j \rangle_{\tilde{p}}=l_j/C$, 
+\begin{equation}
+\sigma^2(x_j)=\frac{l_j^2}{C}\left(1-\frac{1}{C}\right)+\frac{l_j}{C},\label{eq:varr}
+\end{equation}
+and 
+\begin{equation}
+\sigma(x_j,x_k)=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right),\label{eq:covr}
+\end{equation}
+where $C=1-e^{-(L-l_i)}$ (note the difference from Eq. \eqref{eq:meanxjrare} for $\langle x_j \rangle_{\tilde{p}}$). Then, since
+\begin{equation}
+\sigma^2(\sum_{j\neq i} c_j x_j)=\sum_{j\neq i}\left[c_j^2\sigma^2(x_j)+2\sum_{k>j}c_j c_k\sigma(x_j,x_k)\right],\label{eq:vartotr}
+\end{equation}
+and $1/C>1$, we have
+\begin{equation}
+\frac{\sigma(\sum_{j\neq i} c_j x_j)}{\langle\sum_{j\neq i} c_j x_j\rangle}<C^{1/2}\frac{\left(\sum_{j\neq i}c_j^2 l_j\right)^{1/2}}{\sum_{j\neq i}c_j l_j}. \label{eq:cvr}
+\end{equation}
+
+Without loss of generality, we restrict attention to the case that the total nonfocal density $L-l_i$ is of order $1$ or larger (otherwise $\Delta_r n_i$ does not contribute significantly to $\Delta_+ n_i$ because $\Delta_r n_i$ is proportional to $C=1-e^{-(L-l_i)}$).
+
+When at least some of the nonfocal propagule densities are large $l_j\gg 1$, then the RHS of Eq. \eqref{eq:cvr} is $\ll 1$, as desired. This is also the case if none of the nonfocal genotype densities are large and the $c_j$ are all of similar magnitude (their ratios are of order one); the worst case scenario occurs when $(L-l_i)\sim O(1)$, in which case the negative covariances (Eq. \eqref{eq:covr}) which were neglected in the RHS of Eq. \eqref{eq:cvr} significantly reduce the overall variance $\sigma^2(\sum_{j\neq i} c_j x_j)$.
+
+However, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large if some of the $c_j$ are much larger than the others. Specifically, if $c_j l_j\gg c_k l_k$ ($j,k\neq i$, $j\neq k$) and $l_j\ll 1$ (i.e. in the presence of a rare, extremely strong competitor), then we cannot make the replacement Eq. \eqref{eq:meanfieldr}. 
+
+Substituting Eqs. \eqref{eq:meanfieldr} and \eqref{eq:meanxjrare} into Eq. \eqref{eq:deltr}, we obtain
+\begin{equation}
+\Delta_r n_i\approx m_i R_i\frac{c_i}{\overline{c}}, \label{eq:deltrfinal}
+\end{equation}
+where $R_i$ is defined in Eq. \eqref{eq:Dr}.
+
+\subsection*{Competition when abundant}
+
+The final contribution, $\Delta_a n_i$, accounts for territories where two or more focal propagules are present ($a$ stands for ``abundant"). Similarly to Eq. \eqref{eq:deltr}, we have 
+\begin{equation}
+\Delta_a n_i=U(1-(1+l_i)e^{l_i})\left\langle \frac{c_i x_i}{\sum_j c_j x_j} \right\rangle_{\hat{p}}\label{eq:delta}
+\end{equation}
+where $\hat{p}$ is the probability distribution of both focal and nonfocal propagaule abundances \textit{after} dispersal in those territories where at least two focal propagules landed. 
+
+Again, we wish to show that the relative fluctuations in $\sum c_j x_j$ are much smaller than $1$ (with respect to $\hat{p}$), so that we have 
+\begin{equation}
+\left\langle \frac{c_i x_i}{\sum_j c_j x_j} \right\rangle_{\hat{p}}\approx  \frac{c_i \langle x_i \rangle_{\hat{p}}}{\sum_j c_j \langle x_j\rangle_{\hat{p}}}.\label{eq:meanfielda}
+\end{equation}
+Following a similar procedure as for $\Delta_r n_i$, where the vector of propagule abundances is denoted ${\mathbf x}$, we have
+\begin{align}
+\langle x_j \rangle_{\hat{p}}&=\sum_{\mathbf x} x_j p(\mathbf x|x_i\geq 2)\nonumber \\
+&=\sum_{k}P(k|x_i\geq 2)\sum_{x_i} \sum_{\mathbf x_i} x_j p(\mathbf x_i|\sum_{j\neq i} x_j=k-x_i)p(x_i|x_i\geq 2,k)\nonumber\\
+&=\sum_{k}P(k|x_i\geq 2)\sum_{x_i} \frac{l_j(k-x_i)}{L-l_j} p(x_i|x_i\geq 2,k)\nonumber\\
+&=\frac{l_j}{L-l_j}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_j\frac{1-e^{-l_j}}{1-(1+l_j)e^{-l_j}}\right) 
+\end{align}
+for $j\neq i$, and 
+\begin{equation}
+\langle x_i\rangle_{\hat{p}}=l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}.
+\end{equation}
+
+To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\tilde{p}$ is approximated by the ${\mathbf x}$ dispersal probabilities in a territory where at least two focal propagule is assumed to be present. All covariances are now zero, so that $\sigma^2(\sum c_j x_j)=\sum c_j^2 \sigma^2(x_j)$, where $\sigma^2(x_j)=l_j$ for $j\neq i$. The expression for $\sigma^2(x_i)$ is more complicated. We assume $p(x_i=0)\approx 0$ without loss of generality (since otherwise $D\gg 1$ and $\Delta n_a$ is negligible). Then
+\begin{equation}
+\sigma^2(x_i)=\frac{l_i^2}{D}\left(1-\frac{1}{D}\right)+\frac{l_i}{D},
+\end{equation}
+where $D=1-(1+l_i)e^{-l_i}$, analogous to Eq. \eqref{eq:varr}, and 
+\begin{equation}
+\frac{\sigma(\sum c_j x_j)}{\langle\sum c_j x_j\rangle} \approx\frac{\left(\sum_{j\neq i} c_j^2 l_j + c_i^2 \sigma^2(x_i)\right)^{1/2}}{\sum_{j\neq i} c_j l_j + c_i l_i/D} \label{eq:cva}.
+\end{equation}
+
+Similarly to Eq. \eqref{eq:cvr}, the RHS of \eqref{eq:cva} will not be $\ll1$ if there is a nonfocal genotype $j$ with $l_j\ll 1$ and $c_j l_j\gg c_k l_k$ for $j,k\neq i$, $j\neq k$. When this is not the case, then since $l_i$ must be of order $1$ or larger for $\Delta_a n$ to make an appreciable contribution to $\Delta_+ n_i$, the RHS of Eq. \eqref{eq:cva} is $\ll 1$ as desired. 
+
+Combining Eqs. \eqref{eq:delta} and \eqref{eq:meanfielda}, we obtain
+\begin{equation}
+\Delta_a n_i=m_i A_i \frac{c_i}{\overline{c}},
+\end{equation}
+where $A_i$ is defined in Eq. \eqref{eq:Da}.
+
+%The logistic equation for a single genotype or species is given by
+%\begin{equation}
+%\frac{dN}{dt}=r\left(1-\frac{N}{K}\right)N \label{eq:logistic}
+%\end{equation}
+%where $N$ is the total population abundance or biomass, $r$ is the growth rate at  low densities, and the ``carrying capacity" $K$ is the value of $N$ where growth ceases.
+%
+%a simple, ubiquitous model of density-dependent population growth
+%declines linearly with density,
+%
+%Eq. \eqref{eq:logistic} is often interpreted as a linear approximation of a more complicated growth equation
+%\begin{equation}
+%\frac{dN}{dt}=r(N)N,
+%\end{equation}
+%where the growth rate $r(N)$ is some unknown, possibly complicated, function of $N$. 
+
+%\subsection{Logistic growth and classic nesting sites model}
+
+%In the nesting sites model, it is assumed that propagules landing on occupied territory do not survive, while those landing on unoccupied territory immediately occupy the territory. Thus, the probability that a propagule survives is simply $(1-N/K)$, where $N=\sum_i n_i$ is the total population size. Consequently, $n_i$ increases by $1$ over the interval $[t,t+\Delta t]$ with probability $b_i n_i (1-N/K)\Delta t$. Provided that the abundances $n_i$ are large enough that demographic stochasticity is negligible (i.e. they have established), we can treat $n_i(t)$ as a continuous variable with growth given by the expectation of $b_i n_i (1-N/K)\Delta t$, and so, taking $\Delta t \rightarrow 0$ we obtain
+%\begin{equation}
+%\frac{dn_i}{dt}=b_i\left(1-\frac{N}{K}\right)n_i. \label{eq:logistic}
+%\end{equation}
+
+%\section{Territorial availability}
+%
+%In Sec. \ref{sec:c} we assumed that adults have the same territorial requirement, regardless of genotype. This can be generalized to allow genotypes to differ in their territorial requirements. Each adult from genotype $i$ now requires $t_i$ units of territory, $T$ is the total territory available to the population, and $T-\sum_i t_i$ units of territory are unoccupied. 
+%
+%Competition between propagules with different territorial requirements is potentially much more complicated than the model in Sec. \ref{sec:c}, because competition is no longer neatly partitioned into a set of identical territories.  The larger a propagule's territorial requirement, the more neighboring propagules it will interact with during its development to adulthood. 
+%
+%
+%A simple way to avoid these complications is to partition the unoccupied territory into uniform units of territory with size given by the largest territorial requirement $t^*={\rm max}_i t_i$. The uniform territory approach used in Sec.  \ref{sec:c}
+%
+%The biological intuition behind this 
+%
+%Thus $U=(T-\sum_i t_i n_i)/t^*$.
+
+
+\end{document}
