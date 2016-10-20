@@ -56,25 +56,25 @@ In addition to propagule birth and competition, occupied territories become unoc
 
 The change in total population size $N$, obtained by summing Eq. \eqref{eq:delttot} over genotypes, is
 \begin{equation}
-\Delta N=U(1-e^{-L})-\sum_i d_i n_i=(K-N)(1-e^{-L})-\overline{d}N,
+\Delta N=U(1-e^{-L})-\sum_i d_i n_i,
 \end{equation}
-where $\overline{d}=\sum_i d_i n_i/N$, which is independent of the competitive ability coefficients $c_i$. Thus, the $c_i$ represent a strictly relative aspect of fitness in the sense that they only influence $N$ indirectly by changing genotype frequencies, which may in turn change population mean birth and death rates.
+where $L=\sum_j l_j$ is the overall propagule density. $\Delta N$ is independent of the competitive ability coefficients $c_i$; thus, the $c_i$ represent a strictly relative aspect of fitness in the sense that they can only influence $N$ indirectly by changing genotype frequencies (which may change the mean birth and death rates in the population).
 
 \section{Results}
 
 \subsection{Mean Field Approximation}
 
-Eq. \eqref{eq:delttot} gives little intuition about the dynamics of density-dependent lottery competition, since \eqref{eq:growthsumuncoupled} involves an expectation over the random dispersal distributions $p_i$, which depend on how the $n_i$ change over time. We now evaluate this expectation approximately, which allows us to develop deeper intuitions about the dynamics of density dependent lottery competition.
+Eq. \eqref{eq:delttot} gives little intuition about the dynamics of density-dependent lottery competition, since \eqref{eq:growthsumuncoupled} involves an expectation over the random dispersal distributions $p_i$, which depend on how the $n_i$ change over time. We now evaluate this expectation using a ``mean field'' approximation; the intuition behind this approximation is as follows.
 
-When propagule densities are high ($l_i\gg 1$ for all genotypes), the fluctuations in the $x_i$ are negligible compared to the corresponding expectations $l_i$ (since the $x_i$ are Poisson distributed), and we can make the replacement $x_i\rightarrow l_i$ in Eq. \eqref{eq:growthsumuncoupled}. Eq. \eqref{eq:growthsumuncoupled} then reduces to the classic lottery model \cite{chesson_1981},
+When the unoccupied territories are saturated with propagules from every genotype ($l_i\gg 1$ for all genotypes), the fluctuations in the $x_i$ are small compared to their means $l_i$ (since the $x_i$ are Poisson distributed), and so the composition of propagules in a territory will only rarely be appreciably different from the mean composition $l_1,l_2,\ldots,l_G$. Consequently, we can replace $x_i$ with $l_i$ in Eq. \eqref{eq:growthsumuncoupled}. This gives the classic lottery model \cite{chesson_1981},
 \begin{equation}
 \Delta_+ n_i(t)=U(t)\frac{c_i m_i}{\sum_j c_j m_j}= b_i n_i\frac{1}{L}\frac{c_i}{\overline{c}}, \label{eq:lottery}
 \end{equation}
-where $L=\sum_j l_j=M/U$ is the overall propagule density,  $\overline{c}=\sum_j c_j m_j/M$ is the expected competitive ability for randomly selected propagules, and $M=\sum_j m_j$ is the total number of propagules. 
+where $\overline{c}=\sum_j c_j m_j/M$ is the mean propagule competitive ability for a randomly selected propagule (here $M=\sum_j m_j$ is the total number of propagules). 
 
-When $l_i\ll 1$, $x_i$ cannot be replaced by $l_i$ in Eq. \eqref{eq:growthsumuncoupled}, because $x_i=1$ in the sparsely scattered territories where $i$ propagules do land, meaning that all of the contributions to $\Delta_+ n_i$ are large deviations from the mean. Eq. \eqref{eq:lottery} is clearly nonsensical in this case: genotype $i$ can win at most $m_i$ territories, yet Eq. \eqref{eq:lottery} demands a fraction $c_i m_i/\sum_j c_j m_j$ of the unoccupied territories $U$, no matter how large $U$ is. 
+If the $l_i$ are not all large, the $x_i$ cannot simply be replaced by their means in Eq. \eqref{eq:growthsumuncoupled}. Indeed, Eq. \eqref{eq:lottery} is nonsensical if $l_i$ is sufficiently small: genotype $i$ can win at most $m_i$ territories, yet Eq. \eqref{eq:lottery} demands a fraction $c_i m_i/\sum_j c_j m_j$ of the unoccupied territories $U$, no matter how large $U$ is. The source of this pathological behavior when $l_i\ll 1$ is that $x_i=1$ in the few territories where $i$ propagules do land, and so $i$'s growth comes entirely from territories which deviate appreciably from the mean.  
 
-A similar mean field approximation can be applied to Eq. \eqref{eq:growthsumuncoupled} for arbitrary propagule densities provided that the $x_i=1$ terms for the focal genotype are handled separately. This approximation relies on the the relative fluctuations in the lottery competition denominator $\sum c_j x_j$ being small, allowing the sum in Eq. \eqref{eq:growthsumuncoupled} the be evaluated under a much broader range of conditions than $l_i\gg 1$ for all genotypes. In Appendix B we show that this is generally the case, unless there large discrepancy in competitive ability ($c_i/c_j\gg 1$). This exception will be discussed below; for now we assume that no such large discrepancy is present. We obtain (Appendix B)
+Our mean field approximation is similar to the approximation leading to Eq. \eqref{eq:lottery}, except that territories with a single propagule from the focal genotype, which are critical at low densities, are handled separately. In place of the requirement of negligible relative fluctuations in $x_i$ for each genotype, we only require that there are no large discrepancies in competitive ability (discussed further below). The details of our approximation are contained in Appendix B. We obtain
 \begin{equation}
 \Delta_+ n_i(t)\approx b_i n_i\left[e^{-L}+(R_i+A_i)\frac{c_i}{\overline{c}}\right]. \label{eq:master}
 \end{equation}
@@ -87,9 +87,12 @@ and
 A_i=\frac{\overline{c}(1-e^{-l_i})}{c_il_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}+\sum_{j\neq i}\frac{c_jl_j}{L-l_j}\left(L\frac{1-e^{-L}}{1-(1+L)e^{-L}}-l_j\frac{1-e^{-l_j}}{1-(1+l_j)e^{-l_j}}\right)}.\label{eq:Da}
 \end{equation}
 
-Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery per-propagule success rate $c_i/\overline{c}L$ has been replaced by three separate terms. The first, $e^{-L}$, accounts for propagules which land alone on unoccupied territories; these territories are won without contest. The second term, $R_i c_i/\overline{c}$ represents competitive victories when the $i$ genotype is a rare invader in a high density population: from Eq. \eqref{eq:Dr}, $R_i\rightarrow 0$ when the $i$ genotype is abundant ($l_i\gg 1$), or other genotypes are collectively rare ($L-l_i\ll 1$). The third term, $A_ic_i/\overline{c}$, represents competitive victories when the $i$ genotype is abundant: $A_i\rightarrow 0$ if $l_i\ll 1$. The relative importance of these three terms changes with both the overall propagule density $L$ and the relative propagule frequencies. In the case that all $l_i\gg 1$ for all genotypes, only the last term $A_ic_i/\overline{c}$ remains, and $A_i\rightarrow 1/L$, recovering the classic lottery model.
+Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery per-propagule success rate $c_i/\overline{c}L$ has been replaced by three separate terms. The first, $e^{-L}$, accounts for propagules which land alone on unoccupied territories; these territories are won without contest. The second term, $R_i c_i/\overline{c}$ represents competitive victories when the $i$ genotype is a rare invader in a high density population: from Eq. \eqref{eq:Dr}, $R_i\rightarrow 0$ when the $i$ genotype is abundant ($l_i\gg 1$), or other genotypes are collectively rare ($L-l_i\ll 1$). The third term, $A_ic_i/\overline{c}$, represents competitive victories when the $i$ genotype is abundant: $A_i\rightarrow 0$ if $l_i\ll 1$. The relative importance of these three terms varies with both the overall propagule density $L$ and the relative propagule frequencies $l_i/L$. If $l_i\gg 1$ for all genotypes, we recover the classic lottery model (only the $A_ic_i/\overline{c}$ term remains, and $A_i\rightarrow 1/L$).
 
-Fig. \ref{fig:simcomp} shows that Eq. \eqref{eq:master} (and its components) closely approximate direct simulations of random dispersal with lottery competition over a wide range of propagule densities (obtained by varying $U$). A low-frequency genotype with higher $c_i$ is attempting to invade an otherwise identical high-frequency genotype. The low-density invader term $R_i c_i/\overline{c}$ is crucially important for the low-frequency genotype (Fig. \ref{fig:simcomp}b), but is negligible for the high-frequency one (Fig. \ref{fig:simcomp}d). The high density competition term $A_i c_i/\overline{c}$ is crucial for the high-frequency genotype, and can also be important for the invader if $U$ is small enough. 
+Fig. \ref{fig:simcomp} shows that Eq. \eqref{eq:master} (and its components) closely approximate direct simulations of random dispersal with lottery competition over a wide range of propagule densities (obtained by varying $U$). 
+
+
+A low-frequency genotype with higher $c$ is attempting to invade an otherwise identical high-frequency genotype. The low-density invader term $R_i c_i/\overline{c}$ is crucially important for the low-frequency genotype (Fig. \ref{fig:simcomp}b), but is negligible for the high-frequency one (Fig. \ref{fig:simcomp}d). The high density competition term $A_i c_i/\overline{c}$ is crucial for the high-frequency genotype, and can also be important for the invader if $U$ is small enough. 
 
 \begin{figure}
 \centering
@@ -102,7 +105,6 @@ Thus, Eq. \ref{eq:master} is a density-dependent generalization of the classic l
 %with the exception of large discrepancies in competitive ability since it is extremely unlikely that a large discrepancy competitive would arise in the absence of migration. 
 
 \subsection{Invasion and coexistence}
-
 
 
 Now suppose that a mutation occurs, producing a new genotype $j$ which differs from $i$ in at least one of the traits $b_i$, $c_i$ and $d_i$. The new mutant lineage starts with one individual, and remains at low abundance for many generations. During this period, the mutant lineage abundance $n_j$ will behave stochastically, and Eq. \eqref{eq:master} does not apply. However, if $n_j$ becomes large enough, its behavior will become effectively deterministic, and governed by Eq. \eqref{eq:master}. For mutants with fitness greater than the population mean fitness, this process is known as ``establishment'', and occurs when $n_j$ is of order $1/s$, where $s$ is the mutant's fitness advantage relative to the mean \cite{desai_2007}. 
