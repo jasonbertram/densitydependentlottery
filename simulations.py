@@ -154,8 +154,8 @@ plot(nt[:,1],'k--')
 
 #coexistence 
 #=================================================================
-K=100000; bs=array([0.7,1.]); cs=array([2.,1.]); ds=array([.3,.3]);
-ns0=(1-ds)*array([1000,99000]);gens=1000;
+K=100000; bs=array([0.4,.2]); cs=array([1.,1.]); ds=array([.2,.1]);
+ns0=(1-ds)*array([1000,99000]);gens=100;
 
 nhistapprox=[]; Us=[]; Rs=[]; As=[]; ns=ns0
 for i in range(gens):
