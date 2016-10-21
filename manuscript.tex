@@ -54,11 +54,11 @@ In addition to propagule birth and competition, occupied territories become unoc
 \Delta n_i(t)=\Delta_+ n_i(t)-d_i n_i(t). \label{eq:delttot}
 \end{equation}
 
-The change in total population size $N$, obtained by summing Eq. \eqref{eq:delttot} over genotypes, is
+Note that the competitive ability coefficients $c_i$ represent a strictly relative aspect of fitness in the sense that they only influence population size $N$ indirectly by changing genotype frequencies, which may in turn change the population mean birth and death rates. This can be seen by summing Eq. \eqref{eq:delttot} over genotypes to get the  change in population size $N$, 
 \begin{equation}
 \Delta N=U(1-e^{-L})-\sum_i d_i n_i,
 \end{equation}
-where $L=\sum_j l_j$ is the overall propagule density. $\Delta N$ is independent of the competitive ability coefficients $c_i$; thus, the $c_i$ represent a strictly relative aspect of fitness in the sense that they can only influence $N$ indirectly by changing genotype frequencies (which may change the mean birth and death rates in the population).
+where $L=\sum_j l_j$ is the overall propagule density; $\Delta N$ is independent of the $c_i$.
 
 \section{Results}
 
@@ -131,11 +131,21 @@ If the rare genotype $j$ arises due to mutation, then it's initial low-density b
 
 \subsection{Environmental archetypes and Grime's triangle}
 
-We can now determine which mutational changes in the traits $b, c$ and $d$ will be favored under different environmental conditions. Of particular interest are Grime's ``disturbance'', ``stress'' and ``ideal'' environmental archetypes. 
+We now discuss which mutational changes in the traits $b, c$ and $d$ will be favored under different environmental conditions. Of particular interest are Grime's ``disturbance'', ``stress'' and ``ideal'' environmental archetypes. To proceed, we map these archetypes to different parameter regimes in our model. 
 
-To proceed, we map these archetypes to different parameter regimes in our model. The ideal archetype is defined by low extrinsic mortality $d_i\ll 1$ and high birth rates, such that $b_i$ significantly exceeds $d_i$, and so  population density $N/K$ is high, and $L\gg 1$. In this case, territorial contests are important.
+The disturbance archetype is characterized by unavoidably high extrinsic mortality caused by the direct physical destruction of individuals, to the extent that most territories are not used most of the time ($N/K\ll 1$).
 
-The disturbance archetype is defined by unavoidably high extrinsic mortality due to direct physical destruction of individuals, to the extent that population density is kept low $N/K\ll 1$. This means that, even though $b_i$ may be quite high, it cannot greatly exceed $d_i$, and that  propagule densities are low $l_i\ll 1$. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$.
+
+, and reproduction is a race against time 
+
+
+
+
+
+This means that, even though $b_i$ may be quite high, it cannot greatly exceed $d_i$, and that  propagule densities are low $l_i\ll 1$. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$.
+
+The ideal environmental archetype is characterized by the absence of stress and disturbance, low extrinsic mortality and high [BLAH] such that $b_i$ significantly exceeds $d_i$, and so $N/K$ is high, and $L\gg 1$. In this case, territorial contests are important.
+
 
 The stress archetype is more ambiguous, and has been the subject of an extensive debate in the plant ecology literature. In Grime's view, the archetypal stressful environmental imposes such severe challenges that success depends primarily on the ability to tolerate the stressors. Population density $N/K$ is suppressed to such low levels that competition between individuals is not important. In our model, this again corresponds to $b_i$ only slightly exceeding $d_i$ and $l_i\ll 1$, similar to the disturbance archetype, except that stress now constrains $b_i$ to be small. 
 
