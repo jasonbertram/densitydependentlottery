@@ -36,11 +36,11 @@ In section
 
 \section{Model}\label{sec:model}
 
-We assume that each individual in a population requires its own territory to survive and reproduce (a site-occupancy model). All territories are identical, and the total number of territories is $K$. Time $t$ advances in discrete steps, each representing one generation. In generation $t$, the number of mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories $U(t)=K-N(t)$. 
+We assume that each individual in a population requires its own territory to survive and reproduce (a site-occupancy model). All territories are identical, and the total number of territories is $K$. Time $t$ advances in discrete steps, each step representing one generation. In generation $t$, the number of mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories is $U(t)=K-N(t)$. 
 
-Each generation, adults produce $m_i$ new offspring (henceforth called ``propagules'') which disperse at random over the $U$ unnocupied territories. We ignore propagules that land on occupied territories --- these are assumed to have no chance of survival and are not included in $m_i$. For simplicity, we assume $m_i=b_i n_i$, where $b_i$ is a constant, genotype-specific birth rate. 
+Each generation, adults produce $m_i$ new offspring (henceforth called ``propagules'') which disperse at random over the $U$ unnocupied territories (there is no dispersal limitation). We ignore propagules that land on occupied territories --- these are assumed to have no chance of survival and are not included in $m_i$. For simplicity, we assume $m_i=b_i n_i$, where $b_i$ is a constant, genotype-specific birth rate. 
 
-The number of individuals of the $i$'th genotype landing in any particular territory is denoted $x_i$. Random dispersal implies that in the limit $K\rightarrow \infty$, with $n_i/K$ held fixed, $x_i$ is Poisson distributed with mean territorial propagule density $l_i=m_i/U$. Although $K$ is finite in our model, we assume that $K$ and the $n_i$ are large enough that $x_i$ is Poisson-distributed to a good approximation (details in Appendix A). This Poisson distribution is denoted $p_i(x_i)$. In particular, we do not consider the stochastic behavior that occurs at very low $n_i$ due to the lottery nature of territorial acquisition (this will be discussed further when we consider the behavior of mutant lineages). 
+The number of individuals of the $i$'th genotype landing in any particular territory is denoted $x_i$. Random dispersal implies that in the limit $K\rightarrow \infty$, with $n_i/K$ held fixed, $x_i$ is Poisson distributed with mean territorial propagule density $l_i=m_i/U$. Although $K$ is finite in our model, we assume that $K$ and the $n_i$ are large enough that $x_i$ is Poisson-distributed to a good approximation (details in Appendix A). This dispersal Poisson distribution is denoted $p_i(x_i)$. Note that the large $n_i$, large $K$ approximation places no restrictions on our densities $n_i/K$, but it does preclude consideration of demographic stochasticity when $n_i$ itself is very small (this will be discussed further in Section \ref{sec:invas}).
 
 When multiple propagules land on the same territory, they compete to secure the territory as they develop. This territorial contest is modeled as a weighted lottery: the probability that genotype $i$ wins a given territory by the next generation is $c_i x_i/\sum_j c_j x_j$ where $c_i$ is a constant representing relative competitive ability. 
 
@@ -49,16 +49,17 @@ The increase in $n_i$ over one generation due to territorial acquisition, $\Delt
 \Delta_+ n_i(t)=U(t)\sum_{x_1,\ldots,x_G} \frac{c_i x_i}{\sum_j c_j x_j} p_1(x_1)\ldots p_G(x_G). \label{eq:growthsumuncoupled}
 \end{equation}
 
-In addition to propagule birth and competition, occupied territories become unoccupied when adults die. We assume that these adult deaths occur at a constant, genotype-specific rate $d_i$. Thus, the overall change in genotype abundances is
+In addition to propagule birth and competition, occupied territories become unoccupied due to mortality. For the vast majority of this manuscript we assume that mortality only occurs in adults, and at a constant, genotype-specific per-capita rate $d_i$, so that the overall change in genotype abundances is
 \begin{equation}
 \Delta n_i(t)=\Delta_+ n_i(t)-d_i n_i(t). \label{eq:delttot}
 \end{equation}
+We will introduce a different mortality model when we consider the effects of disturbances (Section \ref{sec:grime}), which will also affect competing juveniles. 
 
-Note that the competitive ability coefficients $c_i$ represent a strictly relative aspect of fitness in the sense that they only influence population size $N$ indirectly by changing genotype frequencies, which may in turn change the population mean birth and death rates. This can be seen by summing Eq. \eqref{eq:delttot} over genotypes to get the  change in population size $N$, 
+Note that the competitive ability coefficients $c_i$ represent a strictly relative aspect of fitness in the sense that they only influence population size $N$ indirectly by changing genotype frequencies; that may in turn change the population mean birth and death rates. This can be seen by summing Eq. \eqref{eq:delttot} over genotypes to get the  change in population size $N$, 
 \begin{equation}
-\Delta N=U(1-e^{-L})-\sum_i d_i n_i,
+\Delta N=U(1-e^{-L})-\sum_i d_i n_i,\label{eq:deltN}
 \end{equation}
-where $L=\sum_j l_j$ is the overall propagule density; $\Delta N$ is independent of the $c_i$.
+which is independent of $c_i$ (here $L=\sum_j l_j$ is the overall propagule density).
 
 \section{Results}
 
@@ -99,7 +100,7 @@ Fig. \ref{fig:simcomp} shows that Eq. \eqref{eq:master} (and its components) clo
 
 %with the exception of large discrepancies in competitive ability since it is extremely unlikely that a large discrepancy competitive would arise in the absence of migration. 
 
-\subsection{Invasion of rare genotypes and coexistence}
+\subsection{Invasion of rare genotypes and coexistence}\label{sec:invas}
 
 To determine how $b$, $c$ and $d$ will evolve in a population where those traits are being modified by mutations, we need to know whether mutant lineages will grow (or decline) starting from low densities. In this section we discuss the behavior of rare genotypes predicted by Eq. \eqref{eq:master}. 
 
@@ -129,45 +130,35 @@ A similar argument applies for coexistence between high-$c$ and low-$d$ speciali
 If the rare genotype $j$ arises due to mutation, then it's initial low-density behavior is more complicated than the above invasion analysis suggests. The mutant lineage starts with one individual $n_j=1$, and remains at low abundance for many generations after its initial appearance. During this period, the mutant abundance $n_j$ will behave stochastically, and the deterministic equations \eqref{eq:growthsumuncoupled} and \eqref{eq:master} do not apply (Section \ref{sec:model}). However, if $n_j$ becomes large enough, its behavior will become effectively deterministic, and governed by Eq. \eqref{eq:master}. For mutants with fitness greater than the population mean fitness, this process is known as ``establishment'', and occurs when $n_j$ is of order $1/s$, where $s$ is the mutant's fitness advantage relative to the mean \cite{desai_2007}. Here we do not consider the initial stochastic behavior of novel mutants, and have restricted our attention to the earliest deterministic behavior of rare genotypes. In particular, for beneficial mutations we have only considered the case where $s$ is large enough that deterministic behavior starts when $n_j \ll N$.
 
 
-\subsection{Environmental archetypes and Grime's triangle}
+\subsection{Environmental archetypes and Grime's triangle}\label{sec:grime}
 
-We now discuss which mutational changes in the traits $b, c$ and $d$ will be favored under different environmental conditions. Of particular interest are Grime's ``disturbance'', ``stress'' and ``ideal'' environmental archetypes. To proceed, we map these archetypes to different parameter regimes in our model. 
+We now discuss which changes in the traits $b, c$ and $d$ will be most favored under different environmental conditions. Of particular interest are Grime's ``disturbance'', ``stress'' and ``ideal'' environmental archetypes. To proceed, we need to map these verbal archetypes to quantitative parameter regimes in our model. 
 
-The disturbance archetype is characterized by unavoidably high extrinsic mortality caused by the direct physical destruction of individuals, to the extent that most territories are not used most of the time ($N/K\ll 1$).
+The ideal environmental archetype is characterized by the near-absence of stress and disturbance. Consequently, $d_i\ll 1$, whereas $b_i$ can easily be of order $1$ or larger. From Eq. \eqref{eq:deltN}, the equilibrium value of $L$ only depends on the ratio of birth and death rates. For one genotype, $L/(1-e^{-L})=b_i/d_i$, and so the propagule density is high $L\approx b_i/d_i\gg 1$. Moreover, since $L=b_i N/(N-K)$ by definition, population density is also high $N/K\approx 1$. Thus, territorial contests are decisively important.
 
+The disturbance archetype is characterized by unavoidably high extrinsic mortality caused by physical destruction. Disturbances do not only affect adults as in Eq. \eqref{eq:delttot}, but also juveniles in the process of territorial contest. These juvenile deaths can be represented as a fractional reduction in the number of territories secured. To illustrate, we assume that the disturbance is equally damaging to adults and juveniles, so that only $(1-d_i)\Delta_+ n_i$ rather than $\Delta_+ n_i$ territories are secured by genotype $i$ each generation. Then, the disturbance archetype is characterized by $d_i$ being close to $1$ (almost all adults and juveniles are killed each generation), which can only be tolerated by those organisms with large enough $b_i$ to ensure population persistence. The single genotype equilibrium then gives $L\approx 2(1-d_i/[(1-d_i)b_i])$, and we have $L\ll 1$ and $N/K\ll 1$. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$.
 
-, and reproduction is a race against time 
+The stress archetype is more ambiguous, and has been the subject of an extensive debate in the plant ecology literature (the ``Grime-Tilman'' debate \cite{aerts_1999}). In Grime's view, the archetypal stressful environmental imposes such severe challenges that success depends primarily on the ability to tolerate the stressors. Population density $N/K$ is suppressed to such low levels that competition between individuals is not important. In our model, this corresponds to $b_i\ll 1$ and $b_i/d_i\approx 1$. Thus $L\ll 1$ and $N/K\ll 1$ similar to the disturbance archetype, except that stress now constrains $b_i$ to be small. 
 
+The alternative view is that the stress archetype should rather be interpreted as a large reduction in the maximum number of individuals that can be supported by the environment \cite{taylor_1990}. For example, in the case that the stress is induced by a scarcity of consumable resources, competition for resources would likely be intense, and the stressed population should actually be regarded as having a high population density. In our model, this would imply a large reduction in $K$ (greater per-individual territorial requirement). That is, $N$ under stress is much lower than  under ideal conditions, but it is not much lower than $K$ for the stressful environment. Since our model accommodates both of these alternatives, we include them both here. 
 
+The mapping of environmental achetypes to our model parameters is summarized in the first two rows of Fig. \ref{fig:table}. Also shown is the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$ for each archetype (third row), which can be used infer the expected direction of evolution for the traits $b$, $c$ and $d$ (fourth row). 
 
+The latter is obtained as follows. As noted in the previous section, if beneficial mutations can survive the low-abundance stochastic regime, their behavior is governed deterministically by Eq. \eqref{eq:master}. They will then proceed to grow deterministically (establishment). The probability of establishment increases with the mutant fitness advantage, and is therefore typically on the order of a few percent, whereas the fixation of neutral mutations is exceedingly unlikely (probability of order $1/N$). Consequently, the direction of evolutionary change is determined by which trait changes confer an appreciable benefit, subject to the constraints imposed by the environment. 
 
-
-This means that, even though $b_i$ may be quite high, it cannot greatly exceed $d_i$, and that  propagule densities are low $l_i\ll 1$. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$.
-
-The ideal environmental archetype is characterized by the absence of stress and disturbance, low extrinsic mortality and high [BLAH] such that $b_i$ significantly exceeds $d_i$, and so $N/K$ is high, and $L\gg 1$. In this case, territorial contests are important.
-
-
-The stress archetype is more ambiguous, and has been the subject of an extensive debate in the plant ecology literature. In Grime's view, the archetypal stressful environmental imposes such severe challenges that success depends primarily on the ability to tolerate the stressors. Population density $N/K$ is suppressed to such low levels that competition between individuals is not important. In our model, this again corresponds to $b_i$ only slightly exceeding $d_i$ and $l_i\ll 1$, similar to the disturbance archetype, except that stress now constrains $b_i$ to be small. 
-
-The alternative view is that the stress archetype should rather be interpreted as a large reduction in the maximum number of individuals that can be supported \cite{taylor_1990}. For example, in the case that the stress is induced by a scarcity of consumable resources, competition for resources would likely be intense, and the stressed population should actually be regarded as having a high population density. In our model, this would imply a large reduction in $K$ (greater per-individual territorial requirement), such that even though fewer individuals are supported, density $N/K$ is still high. 
-
-The mapping of environmental achetypes to our model parameters is summarized in the first three rows of Fig. \ref{fig:table}. Also shown is the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$ for each archetype (fourth row), which can be used infer the expected direction of evolution for the traits $b_i$, $c_i$ and $d_i$ (fifth row). 
-
-The latter is inferred as follows. As noted in the previous section, if beneficial mutants can survive the low-abundance stochastic regime, their behavior is governed deterministically by Eq. \eqref{eq:master}. If their advantage in $b$, $c$ or $d$ is large enough to overcome the lottery rarity disadvantage, they will proceed to grow deterministically (establishment). The probability of establishment increases with the mutant fitness advantage, and is of order $1/N$ for neutral mutations. Consequently, the direction of evolutionary change is determined by which trait changes confer an appreciable benefit, subject to the constraints imposed by the environmental. 
-
-For example, in Grime's version of the stress archetype, population density is low, so competition is not important, and so only mutants with greater $b$ or lower $d$ will have an appreciably greater $\Delta n_i$. Mutations in $c$ are effectively neutral, and will rarely establish. However, by definition of the stress archetype, $b$ is constrained to be small. Thus, while some rare mutations may produce small improvements in $b$, it is much more likely that mutations will arise that lower $d$, making this the expected direction of evolutionary change for Grime's stress archetype. 
+For example, in Grime's version of the stress archetype, population density is low, so competition is not important, and so only mutants with greater $b$ or lower $d$ will have an appreciably greater $\Delta n_i$. Mutations in $c$ are effectively neutral, and will rarely fix. However, by definition of the stress archetype, $b$ is constrained to be very small. Thus, while some rare mutations may produce small improvements in $b$, it is much more likely that mutations will arise that lower $d$, making this the expected direction of evolutionary change for Grime's stress archetype. 
 
 \begin{figure}
 \centering
 \begin{tabular}{*{5}{c}}
-  & Ideal & Disturbance & Stress (G) & Stress (K) \\ \hline
-  Parameter- & $d_i \ll 1$ & $d_i \gg 1$ & $b_i \ll 1$ & $b_i \ll 1$ \\
-  regime & $b_i>d_i$ & $b_i\approx d_i$ & $b_i\approx d_i$ & $b_i>  d_i$ \\
-  Density  & High & Low & Low & High \\
+  & Ideal & Disturbance* & Stress (G) & Stress (K) \\ \hline
+  Parameter- & $d_i \ll 1$ & $d_i \approx 1$ & $b_i \ll 1$ & $b_i \ll 1$ \\
+  regime & $b_i/d_i\gg 1$ & $b_i/d_i\gg 1$ & $b_i\approx d_i$ & $b_i>  d_i$ \\
+  Density $N/K$  & High & Low & Low & High \\
   $\Delta_+ n_i\propto$ & $b_i c_i$ & $b_i$ & $b_i$ & $b_i c_i$ \\
-  Evolution & $\uparrow b$, $ \uparrow c$ & $\uparrow b$ & $\downarrow d$ & $\uparrow c$
+  Evolution for & $\uparrow b$, $ \uparrow c$ & $\uparrow b$ & $\downarrow d$ & $\uparrow c$
 \end{tabular}
-\caption{\label{fig:table} The realization of Grime's environmental archetypes in our model, as well as the low-$K$ variant of the stress archetype. Shown are the mapping to our parameters of each archetype, the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$, as well as the corresponding expected evolutionary changes in $b_i$, $c_i$ and $d_i$.}
+\caption{\label{fig:table} The realization of Grime's environmental archetypes in our model, as well as the low-$K$ variant of the stress archetype. Shown are the mapping to our parameters of each archetype, the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$, as well as the corresponding expected evolutionary changes in $b_i$, $c_i$ and $d_i$. *Mortality affects both adults and juveniles in the disturbance archetype, with $\Delta_+ n_i$ replaced by $(1-d_i)\Delta_+ n_i$ in Eq. \eqref{eq:delttot}.}
 \end{figure}
 
 Following Grime's original argument for a triangular scheme \cite{grime_1977}, Fig. \ref{fig:axes} represents each environmental archetype schematically as a vertex on a triangular space defined by perpendicular stress and disturbance axes. The ideal archetype lies at the origin (no stress or disturbance), while the stress and disturbance archetypes lie at the limits of survival on their respective axes. The hypotenuse connecting the stress and disturbance endpoints represents the limits of survival in the presence of a combination of stress and disturbance. The direction of evolutionary change is different at each vertex, leading to the emergence of different trait clusters or ``primary strategies''. 
