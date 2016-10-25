@@ -19,7 +19,7 @@
 
 Evolutionary models differ greatly in their treatment of fitness. In models of genetic evolution, genotypes are typically assigned constant (or frequency-dependent) selection coefficients describing the change in their relative frequencies over time due to differences in viability. This considerably simplifies the mathematics of selection, facilitating greater genetic realism, and can be justified over sufficiently short time intervals \cite[p. 276]{ewens_2012}. However, selection can have very different effects when operating on different types of traits, and evolutionary changes in one population can lead to complicated ecological responses.
 
-By contrast models of phenotypic trait evolution represent the change in phenotypic abundances over time using absolute fitness functions which describe how those traits affect survival and reproduction in particular ecological scenarios. This approach is powerful enough to model eco-evolutionary feedbacks between co-evolving traits, but is generally problem-specific and restricted to only a few traits at a time.
+By contrast, models of phenotypic trait evolution represent the change in phenotypic abundances over time using absolute fitness functions which describe how those traits affect survival and reproduction in particular ecological scenarios. This approach is powerful enough to model eco-evolutionary feedbacks between co-evolving traits, but is generally problem-specific and restricted to only a few traits at a time.
 
 Far less work has been done to model fitness in more general terms than particular traits or ecological scenarios, while still capturing key distinctions between different forms of selection. Perhaps this is not surprising given that fitness is such a complex quantity, dependent on all of a phenotype's functional traits \cite{violle_2007} as well as its biotic and abiotic environment. In most cases, a detailed, trait-based, predictive model of fitness would be enormously complicated and have narrow applicability. It is therefore easy to doubt the feasibility of a simplified, general mathematical treatment of fitness \cite[p. 276]{ewens_2012}. Even MacArthur's famous r/K selection scheme is now almost exclusively known as a framework for understanding life-history traits, and judged on its failure in that role \cite{pianka_1970,stearns_1977,boyce_1984,reznick_2002}. In spite of the r/K scheme's original purpose as an extension of the existing population-genetic treatment of selection to account for population density \cite{macarthur_1962}, comparatively few attempts have been made to develop it further as a mathematical analysis of the major different forms of selection. 
 
@@ -29,7 +29,7 @@ Trait classification schemes show empirically that, beneath the complicated deta
 
 The aim of this paper is explore the interplay between some major dimensions of fitness in a simplified, spatially-homogeneous model of genotype growth, dispersal and competition. Building on the earlier r/K and C/S/R schemes, a central question is how fitness depends on the interaction between population density, intrinsic birth/death rates and competitive ability. 
 
-We broadly follow the spirit of MacArthur's r/K selection scheme in that our model is intended to account for fundamentally different forms of selection without getting  entangled in the intricacies of particular ecological scenarios. However, rather than building directly on MacArthur's formalism and its later extensions [cite alpha stuff] (e.g. using Lotka-Volterra equations), our model is devised primarily with Grime's C/S/R scheme in mind, and represents a quantitative formalization of how C/S/R manifests at the level of genotype evolution (as opposed to divergence between species). This choice is motivated in part by the substantial empirical support for the C/S/R scheme, and in part by the failings of the r/K low/high density dichotomy --- many growth ability traits will confer advantages at both low and high densities, in which case r- and K- selection will effectively coincide (empirically, positive correlations between measures of r and K are common, both between species and strains \cite{luckinbill_1979,kuno_1991,hendriks_2005,fitzsimmons_2010}, and as a result of experimental evolution \cite{luckinbill_1979,luckinbill_1978}). 
+We broadly follow the spirit of MacArthur's r/K selection scheme in that our model is intended to account for fundamentally different forms of selection without getting  entangled in the intricacies of particular ecological scenarios. However, rather than building directly on MacArthur's formalism and its later extensions \cite{joshi_2001} (e.g. using Lotka-Volterra equations), our model is devised primarily with Grime's C/S/R scheme in mind, and represents a quantitative formalization of how C/S/R manifests at the level of genotype evolution (as opposed to divergence between species). This choice is motivated in part by the substantial empirical support for the C/S/R scheme, and in part by the failings of the r/K low/high density dichotomy --- many growth ability traits will confer advantages at both low and high densities, in which case r- and K- selection will effectively coincide (more details in the Discussion). 
 
 In section
  
@@ -172,6 +172,18 @@ Following Grime's original argument for a triangular scheme \cite{grime_1977}, F
 \section{Discussion}
 
 Grime's triangle without constraints
+
+
+
+Our model differs from both Grime's C/S/R and MacArthur's $r$/$K$ schemes in the role of the propagule production rate $b$, a measure of intrinsic fecundity closely related to the growth rate at low densities $r=b-d$. In both of those schemes, the essential feature of life at high densities is competition. This is less  in the $r$/$K$ scheme, which does not explicitly  it is better to have a
+
+contributes just as much to
+
+
+
+In the Introduction, we noted that the $r$-$K$ dichotomy is not consistent with ``$K$-selection'' (i.e. selection at high densities) for growth ability traits. 
+
+Specifically, positive correlations between measures of $r$ and $K$ are common, both between species and strains \cite{luckinbill_1979,kuno_1991,hendriks_2005,fitzsimmons_2010}, and as a result of experimental evolution \cite{luckinbill_1979,luckinbill_1978}). From the perspective of our model, this correlation is not at all surprising;  
 
 r-K correlation, meaning of K selection
 
