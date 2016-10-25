@@ -89,6 +89,48 @@ D~Tilman.
   2005.
 \newblock {\em Journal of Ecology}, 95(2):231--234, 2007.
 
+\bibitem{gill_1974}
+Douglas~E Gill.
+\newblock Intrinsic rate of increase, saturation density, and competitive
+  ability. ii. the evolution of competitive ability.
+\newblock {\em American Naturalist}, pages 103--116, 1974.
+
+\bibitem{case_1974}
+Ted~J Case and Michael~E Gilpin.
+\newblock Interference competition and niche theory.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  71(8):3073--3077, 1974.
+
+\bibitem{joshi_2001}
+Amitabh Joshi, NG~Prasad, and Mallikarjun Shakarad.
+\newblock K-selection, $\alpha$-selection, effectiveness, and tolerance in
+  competition: density-dependent selection revisited.
+\newblock {\em Journal of genetics}, 80(2):63--75, 2001.
+
+\bibitem{chesson_1981}
+Peter~L Chesson and Robert~R Warner.
+\newblock Environmental variability promotes coexistence in lottery competitive
+  systems.
+\newblock {\em American Naturalist}, pages 923--943, 1981.
+
+\bibitem{desai_2007}
+Michael~M. Desai and Daniel~S. Fisher.
+\newblock Beneficial mutation–selection balance and the effect of linkage on
+  positive selection.
+\newblock {\em Genetics}, 176(3):1759--1798, 2007.
+
+\bibitem{aerts_1999}
+Rien Aerts.
+\newblock Interspecific competition in natural plant communities: mechanisms,
+  trade-offs and plant-soil feedbacks.
+\newblock {\em Journal of Experimental Botany}, 50(330):29--37, 1999.
+
+\bibitem{taylor_1990}
+Douglas~R Taylor, Lonnie~W Aarssen, and Craig Loehle.
+\newblock On the relationship between r/k selection and environmental carrying
+  capacity: a new habitat templet for plant life history strategies.
+\newblock {\em Oikos}, pages 239--250, 1990.
+
 \bibitem{luckinbill_1979}
 Leo~S Luckinbill.
 \newblock Selection and the r/k continuum in experimental populations of
@@ -118,29 +160,5 @@ Jay~M Fitzsimmons, Sijmen~E Schoustra, Jeremy~T Kerr, and Rees Kassen.
 Leo~S Luckinbill.
 \newblock r and k selection in experimental populations of escherichia coli.
 \newblock {\em Science (New York, NY)}, 202(4373):1201--1203, 1978.
-
-\bibitem{chesson_1981}
-Peter~L Chesson and Robert~R Warner.
-\newblock Environmental variability promotes coexistence in lottery competitive
-  systems.
-\newblock {\em American Naturalist}, pages 923--943, 1981.
-
-\bibitem{desai_2007}
-Michael~M. Desai and Daniel~S. Fisher.
-\newblock Beneficial mutation–selection balance and the effect of linkage on
-  positive selection.
-\newblock {\em Genetics}, 176(3):1759--1798, 2007.
-
-\bibitem{aerts_1999}
-Rien Aerts.
-\newblock Interspecific competition in natural plant communities: mechanisms,
-  trade-offs and plant-soil feedbacks.
-\newblock {\em Journal of Experimental Botany}, 50(330):29--37, 1999.
-
-\bibitem{taylor_1990}
-Douglas~R Taylor, Lonnie~W Aarssen, and Craig Loehle.
-\newblock On the relationship between r/k selection and environmental carrying
-  capacity: a new habitat templet for plant life history strategies.
-\newblock {\em Oikos}, pages 239--250, 1990.
 
 \end{thebibliography}

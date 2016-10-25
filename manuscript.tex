@@ -1,21 +1,70 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
+\usepackage[sc]{mathpazo}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage[authoryear,sectionbib,sort]{natbib}
+\linespread{1.7}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
 
 \usepackage{graphicx} 
-\usepackage{amsmath}
+%\usepackage{amsmath}
 %\usepackage{a4wide}
 %\usepackage{multicol,caption}
 %\setlength{\textwidth}{16cm}
 %\setlength{\textheight}{22cm}
 
-\begin{document}\sloppy
+\title{Density-dependent selection in evolutionary genetics: a lottery model of Grime's triangle}
+\author{Jason Bertram $^{1,\ast}$ \\ 
+Joanna Masel $^{1}$}
 
-\title{A preliminary rcK derivation}
-\author{J Bertram and J Masel}
+\date{}
+
+\begin{document}
+
 \maketitle
+
+\noindent{}1. Department of Ecology and Evolutionary Biology, University of Arizona, Tucson, AZ 85721.
+
+\noindent{}$\ast$ Corresponding author; e-mail: amnat@uchicago.edu.
+
+
+\bigskip
+
+\textit{Manuscript elements}: Figure~1, figure~2, table~1, online
+appendices~A and B (including figure~A1 and figure~A2). Figure~2 is to
+print in color.
+
+\bigskip
+
+\textit{Keywords}: Examples, model, template, guidelines.
+
+\bigskip
+
+\textit{Manuscript type}: Article. 
+% Or e-article, note, e-note, natural history miscellany,
+% e-natural history miscellany, comment, reply, symposium, or
+% countdown to 150.
+
+\bigskip
+
+\noindent{\footnotesize Prepared using the suggested \LaTeX{} 
+template for \textit{Am.\ Nat.}}
+
+\linenumbers{}
+\modulolinenumbers[3]
+
+\newpage{}
+
+\section*{Abstract}
+
+Some abstract stuff that runs over multiple lines so that I can see the quote formatting.
+
+\newpage{}
 
 ``...the concept of fitness is probably too complex to allow of a useful mathematical development. Since it enters fundamentally into many population genetics considerations, it is remarkable how little attention has been paid to it.'' --- Warren J. Ewens, Mathematical Population Genetics I, 2004 
 
-\section{Introduction}
+\section*{Introduction}
 
 Evolutionary models differ greatly in their treatment of fitness. In models of genetic evolution, genotypes are typically assigned constant (or frequency-dependent) selection coefficients describing the change in their relative frequencies over time due to differences in viability. This considerably simplifies the mathematics of selection, facilitating greater genetic realism, and can be justified over sufficiently short time intervals \cite[p. 276]{ewens_2012}. However, selection can have very different effects when operating on different types of traits, and evolutionary changes in one population can lead to complicated ecological responses.
 
@@ -29,22 +78,22 @@ Trait classification schemes show empirically that, beneath the complicated deta
 
 The aim of this paper is explore the interplay between some major dimensions of fitness in a simplified, spatially-homogeneous model of genotype growth, dispersal and competition. Building on the earlier r/K and C/S/R schemes, a central question is how fitness depends on the interaction between population density, intrinsic birth/death rates and competitive ability. 
 
-We broadly follow the spirit of MacArthur's r/K selection scheme in that our model is intended to account for fundamentally different forms of selection without getting  entangled in the intricacies of particular ecological scenarios. However, rather than building directly on MacArthur's formalism and its later extensions \cite{joshi_2001} (e.g. using Lotka-Volterra equations), our model is devised primarily with Grime's C/S/R scheme in mind, and represents a quantitative formalization of how C/S/R manifests at the level of genotype evolution (as opposed to divergence between species). This choice is motivated in part by the substantial empirical support for the C/S/R scheme, and in part by the failings of the r/K low/high density dichotomy --- many growth ability traits will confer advantages at both low and high densities, in which case r- and K- selection will effectively coincide (more details in the Discussion). 
+We broadly follow the spirit of MacArthur's r/K selection scheme in that our model is intended to account for fundamentally different forms of selection without getting  entangled in the intricacies of particular ecological scenarios. However, rather than building directly on MacArthur's formalism and its later extensions using Lotka-Volterra equations to incorporate competition (``$\alpha$-selection'') \cite{gill_1974,case_1974,joshi_2001}, our model is devised primarily with Grime's C/S/R scheme in mind, and represents a quantitative formalization of how C/S/R manifests at the level of genotype evolution (as opposed to divergence between species). This choice is motivated in part by the substantial empirical support for the C/S/R scheme, and in part by the failings of the r/K low/high density dichotomy --- many growth ability traits will confer advantages at both low and high densities, in which case r- and K- selection will effectively coincide (more details in the Discussion). 
 
 In section
  
 
 \section{Model}\label{sec:model}
 
-We assume that each individual in a population requires its own territory to survive and reproduce (a site-occupancy model). All territories are identical, and the total number of territories is $K$. Time $t$ advances in discrete steps, each step representing one generation. In generation $t$, the number of mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories is $U(t)=K-N(t)$. 
+We assume that each individual in a population requires its own territory to survive and reproduce (a site-occupancy model). All territories are identical, and the total number of territories is $K$. Time $t$ advances in discrete iterations, each representing the average time from birth to reproductive maturity. In iteration $t$, the number of reproductively mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories is $U(t)=K-N(t)$. 
 
-Each generation, adults produce $m_i$ new offspring (henceforth called ``propagules'') which disperse at random over the $U$ unnocupied territories (there is no dispersal limitation). We ignore propagules that land on occupied territories --- these are assumed to have no chance of survival and are not included in $m_i$. For simplicity, we assume $m_i=b_i n_i$, where $b_i$ is a constant, genotype-specific birth rate. 
+Each iteration, adults produce $m_i$ new offspring (henceforth called ``propagules'') which disperse at random over the $U$ unnocupied territories (no dispersal limitation). We assume adults cannot be ousted from occupied territories, so only propagules landing on occupied territories are included in $m_i$. More generally, $m_i$ does not include propagules which never even begin the development cycle. For simplicity, we assume $m_i=b_i n_i$, where $b_i$ is a constant, genotype-specific birth rate. 
 
 The number of individuals of the $i$'th genotype landing in any particular territory is denoted $x_i$. Random dispersal implies that in the limit $K\rightarrow \infty$, with $n_i/K$ held fixed, $x_i$ is Poisson distributed with mean territorial propagule density $l_i=m_i/U$. Although $K$ is finite in our model, we assume that $K$ and the $n_i$ are large enough that $x_i$ is Poisson-distributed to a good approximation (details in Appendix A). This dispersal Poisson distribution is denoted $p_i(x_i)$. Note that the large $n_i$, large $K$ approximation places no restrictions on our densities $n_i/K$, but it does preclude consideration of demographic stochasticity when $n_i$ itself is very small (this will be discussed further in Section \ref{sec:invas}).
 
-When multiple propagules land on the same territory, they compete to secure the territory as they develop. This territorial contest is modeled as a weighted lottery: the probability that genotype $i$ wins a given territory by the next generation is $c_i x_i/\sum_j c_j x_j$ where $c_i$ is a constant representing relative competitive ability. 
+When multiple propagules land on the same territory, they compete to secure the territory as they develop. This territorial contest is modeled as a weighted lottery: the probability that genotype $i$ wins a given territory by the next iteration is $c_i x_i/\sum_j c_j x_j$ where $c_i$ is a constant representing relative competitive ability. 
 
-The increase in $n_i$ over one generation due to territorial acquisition, $\Delta_+ n_i$, is the sum of genotype $i$'s victories over all $U$ unoccupied territories. Since $p_1(x_1)\ldots p_G(x_G)$ is equal to the proportion of unoccupied territories with $x_1,\ldots,x_G$ of the respective propagules (again, we assume that $K$ is large enough that fluctuations in this proportion are negligible), this sum can be replaced by an expectation over the $p_i$. This gives
+The increase in $n_i$ over one iteration due to territorial acquisition, $\Delta_+ n_i$, is the sum of genotype $i$'s victories over all $U$ unoccupied territories. Since $p_1(x_1)\ldots p_G(x_G)$ is equal to the proportion of unoccupied territories with $x_1,\ldots,x_G$ of the respective propagules (again, we assume that $K$ is large enough that fluctuations in this proportion are negligible), this sum can be replaced by an expectation over the $p_i$. This gives
 \begin{equation}
 \Delta_+ n_i(t)=U(t)\sum_{x_1,\ldots,x_G} \frac{c_i x_i}{\sum_j c_j x_j} p_1(x_1)\ldots p_G(x_G). \label{eq:growthsumuncoupled}
 \end{equation}
@@ -95,7 +144,7 @@ Fig. \ref{fig:simcomp} shows that Eq. \eqref{eq:master} (and its components) clo
 \begin{figure}
 \centering
 \includegraphics[scale=0.7]{simulationcomparison.pdf}
-\caption{\label{fig:simcomp} The change in genotype abundances in a density dependent lottery model is closely approximated by Eq. \eqref{eq:master}. $\Delta_+ n_i/m_i$ from Eq. \eqref{eq:master} (and its separate components) are shown, along with direct simulations of random dispersal and lottery competition over one generation over a range of propagule densities (varied by changing $U$ with the $m_i$ fixed). Two genotypes are present. (a) and (b) show low-frequency genotype with $c$-advantage ($m_1/M=0.1$, $c_1=1.5$), (c) and (d) show the high-frequency predominant genotype ($m_2/M=0.9$, $c_2=1$).} 
+\caption{\label{fig:simcomp} The change in genotype abundances in a density dependent lottery model is closely approximated by Eq. \eqref{eq:master}. $\Delta_+ n_i/m_i$ from Eq. \eqref{eq:master} (and its separate components) are shown, along with direct simulations of random dispersal and lottery competition over one iteration over a range of propagule densities (varied by changing $U$ with the $m_i$ fixed). Two genotypes are present. (a) and (b) show low-frequency genotype with $c$-advantage ($m_1/M=0.1$, $c_1=1.5$), (c) and (d) show the high-frequency predominant genotype ($m_2/M=0.9$, $c_2=1$).} 
 \end{figure}
 
 %with the exception of large discrepancies in competitive ability since it is extremely unlikely that a large discrepancy competitive would arise in the absence of migration. 
@@ -134,13 +183,13 @@ If the rare genotype $j$ arises due to mutation, then it's initial low-density b
 
 We now discuss which changes in the traits $b, c$ and $d$ will be most favored under different environmental conditions. Of particular interest are Grime's ``disturbance'', ``stress'' and ``ideal'' environmental archetypes. To proceed, we need to map these verbal archetypes to quantitative parameter regimes in our model. 
 
-The ideal environmental archetype is characterized by the near-absence of stress and disturbance. Consequently, $d_i\ll 1$, whereas $b_i$ can easily be of order $1$ or larger. From Eq. \eqref{eq:deltN}, the equilibrium value of $L$ only depends on the ratio of birth and death rates. For one genotype, $L/(1-e^{-L})=b_i/d_i$, and so the propagule density is high $L\approx b_i/d_i\gg 1$. Moreover, since $L=b_i N/(N-K)$ by definition, population density is also high $N/K\approx 1$. Thus, territorial contests are decisively important.
+The ideal environmental archetype is characterized by the near-absence of stress and disturbance. Consequently, $d_i\ll 1$, whereas $b_i$ is potentially much larger than $1$. From Eq. \eqref{eq:deltN}, the equilibrium value of $L$ only depends on the ratio of birth and death rates. For one genotype, $L/(1-e^{-L})=b_i/d_i$, and so the propagule density is high $L\approx b_i/d_i\gg 1$. Moreover, since $L=b_i N/(N-K)$ by definition, population density is also high $N/K\approx 1$. Thus, territorial contests are decisively important.
 
-The disturbance archetype is characterized by unavoidably high extrinsic mortality caused by physical destruction. Disturbances do not only affect adults as in Eq. \eqref{eq:delttot}, but also juveniles in the process of territorial contest. These juvenile deaths can be represented as a fractional reduction in the number of territories secured. To illustrate, we assume that the disturbance is equally damaging to adults and juveniles, so that only $(1-d_i)\Delta_+ n_i$ rather than $\Delta_+ n_i$ territories are secured by genotype $i$ each generation. Then, the disturbance archetype is characterized by $d_i$ being close to $1$ (almost all adults and juveniles are killed each generation), which can only be tolerated by those organisms with large enough $b_i$ to ensure population persistence. The single genotype equilibrium then gives $L\approx 2(1-d_i/[(1-d_i)b_i])$, and we have $L\ll 1$ and $N/K\ll 1$. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$.
+The disturbance archetype is characterized by unavoidably high extrinsic mortality caused by physical destruction. Disturbances do not only affect adults as in Eq. \eqref{eq:delttot}, but also juveniles in the process of territorial contest. These juvenile deaths can be represented as a fractional reduction in the number of territories secured. To illustrate, we assume that the disturbance is equally damaging to adults and juveniles, so that only $(1-d_i)\Delta_+ n_i$ rather than $\Delta_+ n_i$ territories are secured by genotype $i$ each iteration. Then, the disturbance archetype is characterized by $d_i$ being close to $1$ for all genotypes (almost all adults and juveniles are killed each iteration). The single genotype equilibrium then gives $L\approx 2(1-d_i/[(1-d_i)b_i])$, where $b_i$ must be exceptionally large to ensure population persistence, and we have $L\ll 1$ and $N/K\ll 1$. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$. 
 
-The stress archetype is more ambiguous, and has been the subject of an extensive debate in the plant ecology literature (the ``Grime-Tilman'' debate \cite{aerts_1999}). In Grime's view, the archetypal stressful environmental imposes such severe challenges that success depends primarily on the ability to tolerate the stressors. Population density $N/K$ is suppressed to such low levels that competition between individuals is not important. In our model, this corresponds to $b_i\ll 1$ and $b_i/d_i\approx 1$. Thus $L\ll 1$ and $N/K\ll 1$ similar to the disturbance archetype, except that stress now constrains $b_i$ to be small. 
+The stress archetype is more ambiguous, and has been the subject of an extensive debate in the plant ecology literature (the ``Grime-Tilman'' debate \cite{aerts_1999}). In Grime's view, stressful environments impose such severe challenges that surviving the stressors at all is the primary challenge. In our model, this can be expressed by $b_i\ll 1$ and $b_i/d_i\approx 1$. The propagule density $L$ (as well as $N/K$) are suppressed to such low levels that there is essentially no competition between individuals. The severity of the stress is such that mutations which appreciably improve $b_i$ are extremely rare, so $b_i$ is constrained to remain low.
 
-The alternative view is that the stress archetype should rather be interpreted as a large reduction in the maximum number of individuals that can be supported by the environment \cite{taylor_1990}. For example, in the case that the stress is induced by a scarcity of consumable resources, competition for resources would likely be intense, and the stressed population should actually be regarded as having a high population density. In our model, this would imply a large reduction in $K$ (greater per-individual territorial requirement). That is, $N$ under stress is much lower than  under ideal conditions, but it is not much lower than $K$ for the stressful environment. Since our model accommodates both of these alternatives, we include them both here. 
+The alternative view is that the stress archetype should rather be interpreted as a large reduction in the maximum number of individuals that can be supported by the environment \cite{taylor_1990}. For example, in the commonly cited case that the stress is induced by a scarcity of consumable resources, competition for resources would likely be intense, and the stressed population should actually be regarded as having a high population density. In our model, this would imply a large reduction in $K$ (greater per-individual territorial requirement). That is, $N$ under stress is much lower than  under ideal conditions, but it is not much lower than $K$ for the stressful environment. Since our model accommodates both of these alternatives, we include them both here. 
 
 The mapping of environmental achetypes to our model parameters is summarized in the first two rows of Fig. \ref{fig:table}. Also shown is the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$ for each archetype (third row), which can be used infer the expected direction of evolution for the traits $b$, $c$ and $d$ (fourth row). 
 
@@ -156,7 +205,7 @@ For example, in Grime's version of the stress archetype, population density is l
   regime & $b_i/d_i\gg 1$ & $b_i/d_i\gg 1$ & $b_i\approx d_i$ & $b_i>  d_i$ \\
   Density $N/K$  & High & Low & Low & High \\
   $\Delta_+ n_i\propto$ & $b_i c_i$ & $b_i$ & $b_i$ & $b_i c_i$ \\
-  Evolution for & $\uparrow b$, $ \uparrow c$ & $\uparrow b$ & $\downarrow d$ & $\uparrow c$
+  Evolution for & $\uparrow b$, $ \uparrow c$ & $\uparrow b$, $\downarrow d$ & $\downarrow d$ & $\uparrow c$
 \end{tabular}
 \caption{\label{fig:table} The realization of Grime's environmental archetypes in our model, as well as the low-$K$ variant of the stress archetype. Shown are the mapping to our parameters of each archetype, the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$, as well as the corresponding expected evolutionary changes in $b_i$, $c_i$ and $d_i$. *Mortality affects both adults and juveniles in the disturbance archetype, with $\Delta_+ n_i$ replaced by $(1-d_i)\Delta_+ n_i$ in Eq. \eqref{eq:delttot}.}
 \end{figure}
@@ -169,9 +218,17 @@ Following Grime's original argument for a triangular scheme \cite{grime_1977}, F
 \caption{\label{fig:axes} The realization of Grime's triangle in our model. Schematic representation of the triangular space bounded by the low/high extremes of stress/disturbance. The low-$K$ interpretation of stress is also shown. The vertices of the triangles correspond to environmental archetypes. Selection favors different traits at each vertex, leading to different trait clusters.} 
 \end{figure}
 
+How does Fig. 4 compare to Grime's C/S/R strategies? In disturbed environments, the ruderal (R) strategy is characterized by high fecundity, effective dispersal and short generation times. 
+
+We predict evolution for higher $b$, but not higher $c$ or lower $d$ (constrained to be large), amounts to focusing on fecundity. While there is no dispersal limitation in our model, propagules must be minimally effective at dispersal since our model only includes propagules which will enter territorial contests on unoccupied sites; 
+
+ Shorter generation times are thought to be a mechanism for increasing the chance that the reproductive cycle completes before disturbance-induced death
+
+The evolution of the generation time itself is beyond the scope of our model, but it could
+
 \section{Discussion}
 
-Grime's triangle without constraints
+
 
 
 
@@ -184,6 +241,8 @@ contributes just as much to
 In the Introduction, we noted that the $r$-$K$ dichotomy is not consistent with ``$K$-selection'' (i.e. selection at high densities) for growth ability traits. 
 
 Specifically, positive correlations between measures of $r$ and $K$ are common, both between species and strains \cite{luckinbill_1979,kuno_1991,hendriks_2005,fitzsimmons_2010}, and as a result of experimental evolution \cite{luckinbill_1979,luckinbill_1978}). From the perspective of our model, this correlation is not at all surprising;  
+
+
 
 r-K correlation, meaning of K selection
 
