@@ -71,7 +71,7 @@ By contrast, models of phenotypic trait evolution represent the change in phenot
 
 Far less work has been done to model fitness in more general terms than particular traits or ecological scenarios, while still capturing key distinctions between different forms of selection. Perhaps this is not surprising given that fitness is such a complex quantity, dependent on all of a phenotype's functional traits \citep{violle_2007} as well as its biotic and abiotic environment. In most cases, a detailed, trait-based, predictive model of fitness would be enormously complicated and have narrow applicability. It is therefore easy to doubt the feasibility of a simplified, general mathematical treatment of fitness \citep[p. 276]{ewens_2012}. Even MacArthur's famous r/K selection scheme is now almost exclusively known as a framework for understanding life-history traits, and judged on its failure in that role \citep{pianka_1970,stearns_1977,boyce_1984,reznick_2002}. In spite of the r/K scheme's original purpose as an extension of the existing population-genetic treatment of selection to account for population density \citep{macarthur_1962}, comparatively few attempts have been made to develop it further as a mathematical analysis of the major different forms of selection. 
 
-Nevertheless, there are strong indications there are broader principles governing the operation of selection. In many groups of organisms (including corals \citep{darling_2012}, insects \citep{southwood_1977}, fishes \citep{winemiller_1992} and plants \citep{grime_1988}), species can be partitioned into a small number of distinct trait clusters corresponding to fundamentally distinct ``primary strategies'' \citep{winemiller_2015}. The most famous example is Grime's plant trait classification scheme \citep{grime_1974,grime_1977,grime_1988}. Grime considered two broad determinants of population density: stress (persistent hardship e.g. due to resource scarcity, unfavorable temperatures or toxins) and disturbance (intermittent destruction of vegetation e.g. due to trampling, herbivory, pathogens, extreme weather or fire).  The extremes of these two factors define three primary strategies denoted by C/S/R respectively: competitors ``C'' excel in low stress, low disturbance environments; stress tolerators ``S'' excel in high stress, low disturbance environments; and ruderals ``R''  excel in low stress, high disturbance environments. Survival is not possible in high-stress, high-disturbance environments. Grime showed that measures of C, S and R across a wide range of plant species are anti-correlated, so that strong C-strategists are weak S and R strategists, and so on. Thus, plant species can be classified on a triangular C/S/R ternary plot \citep{grime_1974}. Trait classification schemes for other organisms closely parallel Grime's scheme \citep{winemiller_2015}. 
+Nevertheless, there are strong indications there are broader principles governing the operation of selection. In many groups of organisms, including corals \citep{darling_2012}, insects \citep{southwood_1977}, fishes \citep{winemiller_1992}, zooplankton \citep{allan_76} and plants \citep{grime_1988}, different species can be divided into a small number of distinct trait clusters corresponding to fundamentally distinct ``primary strategies'' \citep{winemiller_2015}. The most famous example is Grime's plant trait classification scheme \citep{grime_1974,grime_1977,grime_1988}. Grime considered two broad determinants of population density: stress (persistent hardship e.g. due to resource scarcity, unfavorable temperatures or toxins) and disturbance (intermittent destruction of vegetation e.g. due to trampling, herbivory, pathogens, extreme weather or fire).  The extremes of these two factors define three primary strategies denoted by C/S/R respectively: competitors ``C'' excel in low stress, low disturbance environments; stress tolerators ``S'' excel in high stress, low disturbance environments; and ruderals ``R''  excel in low stress, high disturbance environments. Survival is not possible in high-stress, high-disturbance environments. Grime showed that measures of C, S and R across a wide range of plant species are anti-correlated, so that strong C-strategists are weak S and R strategists, and so on. Thus, plant species can be classified on a triangular C/S/R ternary plot \citep{grime_1974}. Trait classification schemes for other organisms closely parallel Grime's scheme \citep{winemiller_2015}. 
 
 Trait classification schemes show empirically that, beneath the complicated details of trait variation, even among closely-related species, fitness is predominantly determined by a few key factors such as intrinsic reproducive rate or stress-tolerance. However, while trait classification schemes are firmly grounded in trait data, they are verbal and descriptive rather than mathematical, a recognized hinderance to their broader applicability (e.g. \citep{tilman_2007}). 
 
@@ -82,7 +82,7 @@ We broadly follow the spirit of MacArthur's r/K selection scheme in that our mod
 In section
  
 
-\section{Model}\label{sec:model}
+\section*{Model}\label{sec:model}
 
 We assume that each individual in a population requires its own territory to survive and reproduce (a site-occupancy model). All territories are identical, and the total number of territories is $K$. Time $t$ advances in discrete iterations, each representing the average time from birth to reproductive maturity. In iteration $t$, the number of reproductively mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories is $U(t)=K-N(t)$. 
 
@@ -109,9 +109,9 @@ Note that the competitive ability coefficients $c_i$ represent a strictly relati
 \end{equation}
 which is independent of $c_i$ (here $L=\sum_j l_j$ is the overall propagule density).
 
-\section{Results}
+\section*{Results}
 
-\subsection{Mean Field Approximation}
+\subsection*{Mean Field Approximation}
 
 Eq. \eqref{eq:delttot} gives little intuition about the dynamics of density-dependent lottery competition, since \eqref{eq:growthsumuncoupled} involves an expectation over the random dispersal distributions $p_i$, which depend on how the $n_i$ change over time. We now evaluate this expectation using a ``mean field'' approximation; the intuition behind this approximation is as follows.
 
@@ -148,7 +148,7 @@ Fig. \ref{fig:simcomp} shows that Eq. \eqref{eq:master} (and its components) clo
 
 %with the exception of large discrepancies in competitive ability since it is extremely unlikely that a large discrepancy competitive would arise in the absence of migration. 
 
-\subsection{Invasion of rare genotypes and coexistence}\label{sec:invas}
+\subsection*{Invasion of rare genotypes and coexistence}\label{sec:invas}
 
 To determine how $b$, $c$ and $d$ will evolve in a population where those traits are being modified by mutations, we need to know whether mutant lineages will grow (or decline) starting from low densities. In this section we discuss the behavior of rare genotypes predicted by Eq. \eqref{eq:master}. 
 
@@ -177,7 +177,7 @@ A similar argument applies for coexistence between high-$c$ and low-$d$ speciali
 
 If the rare genotype $j$ arises due to mutation, then it's initial low-density behavior is more complicated than the above invasion analysis suggests. The mutant lineage starts with one individual $n_j=1$, and remains at low abundance for many generations after its initial appearance. During this period, the mutant abundance $n_j$ will behave stochastically, and the deterministic equations \eqref{eq:growthsumuncoupled} and \eqref{eq:master} do not apply (Section \ref{sec:model}). However, if $n_j$ becomes large enough, its behavior will become effectively deterministic, and governed by Eq. \eqref{eq:master}. For mutants with fitness greater than the population mean fitness, this process is known as ``establishment'', and occurs when $n_j$ is of order $1/s$, where $s$ is the mutant's fitness advantage relative to the mean \citep{desai_2007}. Here we do not consider the initial stochastic behavior of novel mutants, and have restricted our attention to the earliest deterministic behavior of rare genotypes. In particular, for beneficial mutations we have only considered the case where $s$ is large enough that deterministic behavior starts when $n_j \ll N$.
 
-\subsection{Grime's triangle}\label{sec:grime}
+\subsection*{Grime's triangle}\label{sec:grime}
 
 We now discuss which changes in the traits $b, c$ and $d$ will be most favored under different environmental conditions. Of particular interest are Grime's ``disturbance'', ``stress'' and ``ideal'' environmental archetypes. To proceed, we need to map these verbal archetypes to quantitative parameter regimes in our model. 
 
@@ -185,22 +185,33 @@ The ideal environmental archetype is characterized by the near-absence of stress
 
 The disturbance archetype is characterized by unavoidably high extrinsic mortality caused by physical destruction. Disturbances do not only affect adults as in Eq. \eqref{eq:delttot}, but also juveniles in the process of territorial contest. These juvenile deaths can be represented as a fractional reduction in the number of territories secured. To illustrate, we assume that the disturbance is equally damaging to adults and juveniles, so that only $(1-d_i)\Delta_+ n_i$ rather than $\Delta_+ n_i$ territories are secured by genotype $i$ each iteration. Then, the disturbance archetype is characterized by $d_i$ being close to $1$ for all genotypes (almost all adults and juveniles are killed each iteration). The single genotype equilibrium then gives $L\approx 2(1-d_i/[(1-d_i)b_i])$, where $b_i$ must be exceptionally large to ensure population persistence, and we have $L\ll 1$ and $N/K\ll 1$. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$. 
 
-The stress archetype is more ambiguous, and has been the subject of an extensive debate in the plant ecology literature (the ``Grime-Tilman'' debate \citep{aerts_1999}). In Grime's view, stressful environments impose such severe challenges that surviving the stressors at all is the primary challenge. In our model, this can be expressed by $b_i\ll 1$ and $b_i/d_i\approx 1$. The propagule density $L$ (as well as $N/K$) are suppressed to such low levels that there is essentially no competition between individuals. The severity of the stress is such that mutations which appreciably improve $b_i$ are extremely rare, so $b_i$ is constrained to remain low.
+The stress archetype is more ambiguous, and has been the subject of an extensive debate in the plant ecology literature (the ``Grime-Tilman'' debate \citep{aerts_1999}). In Grime's view, stressful environments impose such severe challenges that they are only barely survivable. 
 
-The alternative view is that the stress archetype should rather be interpreted as a large reduction in the maximum number of individuals that can be supported by the environment \citep{taylor_1990}. For example, in the commonly cited case that the stress is induced by a scarcity of consumable resources, competition for resources would likely be intense, and the stressed population should actually be regarded as having a high population density. In our model, this would imply a large reduction in $K$ (greater per-individual territorial requirement). That is, $N$ under stress is much lower than  under ideal conditions, but it is not much lower than $K$ for the stressful environment. Since our model accommodates both of these alternatives, we include them both here. 
+In our model, this can be expressed by $b_i\ll 1$ and $b_i/d_i\approx 1$. The propagule density $L$ (as well as $N/K$) are suppressed to such low levels that there is essentially no competition between individuals. The severity of the stress is such that mutations which appreciably improve $b_i$ are extremely rare, so $b_i$ is constrained to remain low.
 
-The mapping of environmental achetypes to our model parameters is summarized in the first two rows of Fig. \ref{fig:table}. Also shown is the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$ for each archetype (third row), which can be used infer the expected direction of evolution for the traits $b$, $c$ and $d$ (fourth row). 
+The alternative view is that the stress archetype should rather be interpreted as a reduction in the maximum number of individuals that can be supported by the environment \citep{taylor_1990}; in our model, this means a greater per-individual territorial requirement represented by a lower $K$ for a given amount of space. The stress implies that $b$ is low
 
-The latter is obtained as follows. As noted in the previous section, if beneficial mutations can survive the low-abundance stochastic regime, their behavior is governed deterministically by Eq. \eqref{eq:master}. They will then proceed to grow deterministically (establishment). The probability of establishment increases with the mutant fitness advantage, and is therefore typically on the order of a few percent, whereas the fixation of neutral mutations is exceedingly unlikely (probability of order $1/N$). Consequently, the direction of evolutionary change is determined by which trait changes confer an appreciable benefit, subject to the constraints imposed by the environment. 
 
-For example, in Grime's version of the stress archetype, population density is low, so competition is not important, and so only mutants with greater $b$ or lower $d$ will have an appreciably greater $\Delta n_i$. Mutations in $c$ are effectively neutral, and will rarely fix. However, by definition of the stress archetype, $b$ is constrained to be very small. Thus, while some rare mutations may produce small improvements in $b$, it is much more likely that mutations will arise that lower $d$, making this the expected direction of evolutionary change for Grime's stress archetype. 
+
+For example, in the commonly cited case that the stress is induced by a scarcity of consumable resources, it is argued that competition for resources would likely be intense, and the stressed population should actually be regarded as having a high population density \citep{taylor_1990}. 
+
+That is, $N$ under stress is much lower than  under ideal conditions, but it is not much lower than $K$ for the stressful environment. Since our model accommodates both of these alternatives, we include them both here. 
+
+
+
+
+The mapping of environmental achetypes to our model parameters is summarized in the first two rows of Fig. \ref{fig:table}. Also shown is the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$ for each archetype (third row). These can be used infer the expected direction of evolution for the traits $b$, $c$ and $d$ (fourth row) as follows. 
+
+As noted in the previous section, if beneficial mutations establish (i.e survive the low-abundance stochastic regime), they will proceed to grow deterministically according to Eq. \eqref{eq:master}. The probability of establishment increases with the mutant fitness advantage, and is therefore typically on the order of one percent, whereas the fixation of neutral mutations is exceedingly unlikely (probability of order $1/N$). Consequently, the direction of evolutionary change is determined by which trait changes confer an appreciable benefit, subject to the constraints imposed by the environment. 
+
+For example, in Grime's version of the stress archetype, $L$ is low, so competition is not important, and only mutants with greater $b$ or lower $d$ will have an appreciably greater $\Delta n_i$. Mutations in $c$ are effectively neutral, and will rarely fix. However, by definition of the stress archetype, $b$ is constrained to be small. Thus, while some rare mutations may produce small improvements in $b$, it is much more likely that mutations will arise that lower $d$, making this the expected direction of evolutionary change for Grime's stress archetype. 
 
 \begin{figure}
 \centering
 \begin{tabular}{*{5}{c}}
   & Ideal & Disturbance* & Stress (G) & Stress (K) \\ \hline
-  Parameter- & $d_i \ll 1$ & $d_i \approx 1$ & $b_i \ll 1$ & $b_i \ll 1$ \\
-  regime & $b_i/d_i\gg 1$ & $b_i/d_i\gg 1$ & $b_i\approx d_i$ & $b_i>  d_i$ \\
+  Parameter- & $d \ll 1$ & $d \approx 1$ & $b \ll 1$ & $b \ll 1$ \\
+  regime & $b/d\gg 1$ & $b/d\gg 1$ & $b\approx d$ & $b>d$ \\
   Density $N/K$  & High & Low & Low & High \\
   $\Delta_+ n_i\propto$ & $b_i c_i$ & $b_i$ & $b_i$ & $b_i c_i$ \\
   Evolution for & $\uparrow b$, $ \uparrow c$ & $\uparrow b$, $\downarrow d$ & $\downarrow d$ & $\uparrow c$
@@ -216,13 +227,15 @@ Following Grime's original argument for a triangular scheme \citep{grime_1977}, 
 \caption{\label{fig:axes} The realization of Grime's triangle in our model. Schematic representation of the triangular space bounded by the low/high extremes of stress/disturbance. The low-$K$ interpretation of stress is also shown. The vertices of the triangles correspond to environmental archetypes. Selection favors different traits at each vertex, leading to different trait clusters.} 
 \end{figure}
 
-How does Fig. 4 compare to Grime's C/S/R strategies? In disturbed environments, the ruderal (R) strategy is characterized by high fecundity, effective dispersal and rapid development to reproductive maturity. We predict evolution for higher $b$ and lower $d$, but not higher $c$. Higher $b$ means higher fecundity, and while our model does not account for differences in dispersal effectiveness, $b$ cannot be increased at the cost of poorer dispersal since $b$ represents only those propagules which end up contesting unoccupied territories. To some extent, lower $d$ could mean improved individual resistance to physical destruction, but it is hard to avoid the severe forms physical destruction that characterize the disturbance archetype. A more effective method to reduce $d$ is to shorten the time to reproductive maturity; this shortens the iteration time in our model and thereby reduces the chance of death per iteration $d$. 
- 
- 
- 
+How does Fig. 4 compare to Grime's C/S/R strategies? In disturbed environments, we predict evolution for higher $b$ and lower $d$, but not higher $c$. Higher $b$ means higher fecundity, but not necessarily mass propagule production: $b$ represents only those propagules which sucessfully develop into juveniles in unoccupied territories. This is broadly consistent with the ruderal primary strategy. Plant ruderals devote a large proportion of their productivity to seed production \cite{grime_1977}, whereas the analogous ``opportunistic'' strategists in fishes have large intrinsic growth rates \citep{winemiller_1992}. In corals, a distinguishing feature of the ruderal cluster is brood spawning (rather than broadcast spawning), which corresponds to higher parental investment and lower overall propagule production, but may be important for successful propagation in low density, disturbed environments due to Allee effects \citep{darling_2012}. Lower $d$ could be achieved by improved individual resistance to physical destruction, but it is hard to reduce mortality in the face of severe disturbances. Given this constraint, shortening the time to reproductive maturity (the iteration time in our model) is an effective way of reducing the chance of death per iteration $d$. A short life cycle is probably the most consistent characteristic of ruderals \cite{grime_1977,winemiller_1992,darling_2012}.
+
+In stressful environments, we predict evolution either for lower $d$ or higher $c$ depending on how the stress interpreted. 
+
+In ideal environments, we predict evolution for higher $b$ and $c$, but not lower $d$ (which is already small). In plants and corals, the ability to secure territories $c$ is strongly associated with rapid individual growth, and rapid individual growth is a defining trait of the competitor trait cluster \cite{grime_1977,winemiller_1992,darling_2012}. 
 
 
-\section{Discussion}
+
+\section*{Discussion}
 
 
 

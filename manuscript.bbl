@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -6,6 +6,11 @@ Aerts, R. 1999.
 \newblock Interspecific competition in natural plant communities: mechanisms,
   trade-offs and plant-soil feedbacks.
 \newblock Journal of Experimental Botany 50:29--37.
+
+\bibitem[{Allan(1976)}]{allan_76}
+Allan, J.~D. 1976.
+\newblock Life history patterns in zooplankton.
+\newblock The American Naturalist 110:165--180.
 
 \bibitem[{Boyce(1984)}]{boyce_1984}
 Boyce, M.~S. 1984.
