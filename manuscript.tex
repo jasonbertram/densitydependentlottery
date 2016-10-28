@@ -177,7 +177,7 @@ A similar argument applies for coexistence between high-$c$ and low-$d$ speciali
 
 If the rare genotype $j$ arises due to mutation, then it's initial low-density behavior is more complicated than the above invasion analysis suggests. The mutant lineage starts with one individual $n_j=1$, and remains at low abundance for many generations after its initial appearance. During this period, the mutant abundance $n_j$ will behave stochastically, and the deterministic equations \eqref{eq:growthsumuncoupled} and \eqref{eq:master} do not apply (Section \ref{sec:model}). However, if $n_j$ becomes large enough, its behavior will become effectively deterministic, and governed by Eq. \eqref{eq:master}. For mutants with fitness greater than the population mean fitness, this process is known as ``establishment'', and occurs when $n_j$ is of order $1/s$, where $s$ is the mutant's fitness advantage relative to the mean \citep{desai_2007}. Here we do not consider the initial stochastic behavior of novel mutants, and have restricted our attention to the earliest deterministic behavior of rare genotypes. In particular, for beneficial mutations we have only considered the case where $s$ is large enough that deterministic behavior starts when $n_j \ll N$.
 
-\subsection*{Grime's triangle}\label{sec:grime}
+\subsection*{Primary strategies and Grime's triangle}
 
 We now discuss which changes in the traits $b, c$ and $d$ will be most favored under different environmental conditions. Of particular interest are Grime's ``disturbance'', ``stress'' and ``ideal'' environmental archetypes. To proceed, we need to map these verbal archetypes to quantitative parameter regimes in our model. 
 
@@ -222,17 +222,13 @@ In disturbed environments, we predict evolution for higher $b$ and lower $d$, bu
 
 In stressful environments, we predict evolution for lower $d$, and also  for higher $c$ in the low-$K$ interpretation of the stress archetype. Lowering $d$ is obviously essential when $b\ll 1$, and stress tolerant plants and corals have long life spans, allowing for long intervals between successful recruitments (and episodic broadcast spawning in corals). For fishes, the ``equilibrium'' strategy is the analogue of Grime's stress tolerator. This strategy is associated with resource limitation, and is also characterized by long life span, as well as high parental investment in tiny broods. This may reflect a high-$c$ strategy in the face of intense competition for severely limited resources (the low-$K$ interpretation).
 
-In ideal environments, we predict evolution for higher $b$ and $c$, but not lower $d$ (which is already small). In plants and corals, the ability to secure territories $c$ is strongly associated with rapid individual growth, and rapid individual growth is a defining feature of the competitor trait cluster \cite{grime_1977,darling_2012}. Evolution for higher $b$ (which is closely related to the intrinsic low-density growth rate $r=b-d$ ) is not usually thought to be the expected outcome in high-density competitive environments. We will discuss this further below in the context of MacArthur's $r$/$K$ scheme. For now we simply note that the analogue of Grime's ideal environment for fishes occurs when resources limitations are not severe and the environment varies predictably over large temporal and spatial scales \cite{winemiller_1992,winemiller_2015}. The associated ``periodic'' strategy is characterized by enormous brood sizes, suggesting a strategy of ensuring that more propagules actually end up contesting areas favorable for development (higher $b$). 
-
-Indeed, the classic lottery model was originally applied to territorial reef fishes, and consequently the $l_i\gg 1$ assumption was 
-
-
-
+In ideal environments, we predict evolution for higher $b$ and $c$, but not lower $d$. In plants and corals, the ability to secure territories $c$ is strongly associated with rapid individual growth; not surprisingly, rapid individual growth is a defining feature of the competitor trait cluster \cite{grime_1977,darling_2012}. The analogue of Grime's ideal environment for fishes occurs when resources limitations are not severe and the environment varies predictably over large temporal and spatial scales \cite{winemiller_1992,winemiller_2015}. The associated ``periodic'' strategy is characterized by enormous brood sizes, suggesting a strategy of ensuring that more propagules actually end up contesting areas favorable for development (higher $b$). Evolution for higher $b$ (which is closely related to the intrinsic low-density growth rate $r=b-d$) will be discussed further in the Discussion in the context of MacArthur's $r$/$K$ scheme.  
 
 \section*{Discussion}
 
 
 
+Indeed, the classic lottery model was originally applied to territorial reef fishes, and consequently the $l_i\gg 1$ assumption was 
 
 
 Our model differs from both Grime's C/S/R and MacArthur's $r$/$K$ schemes in the role of the propagule production rate $b$, a measure of intrinsic fecundity closely related to the growth rate at low densities $r=b-d$. In both of those schemes, the essential feature of life at high densities is competition. This is less  in the $r$/$K$ scheme, which does not explicitly  it is better to have a
@@ -365,7 +361,7 @@ for $j\neq i$, and
 \langle x_i\rangle_{\hat{p}}=l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}.
 \end{equation}
 
-To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\tilde{p}$ is approximated by the ${\mathbf x}$ dispersal probabilities in a territory where at least two focal propagule is assumed to be present. All covariances are now zero, so that $\sigma^2(\sum c_j x_j)=\sum c_j^2 \sigma^2(x_j)$, where $\sigma^2(x_j)=l_j$ for $j\neq i$. The expression for $\sigma^2(x_i)$ is more complicated. We assume $p(x_i=0)\approx 0$ without loss of generality (since otherwise $D\gg 1$ and $\Delta n_a$ is negligible). Then
+To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\hat{p}$ is approximated by the ${\mathbf x}$ dispersal probabilities in a territory where at least two focal propagule is assumed to be present. All covariances are now zero, so that $\sigma^2(\sum c_j x_j)=\sum c_j^2 \sigma^2(x_j)$, where $\sigma^2(x_j)=l_j$ for $j\neq i$. The expression for $\sigma^2(x_i)$ is more complicated. We assume $p(x_i=0)\approx 0$ without loss of generality (since otherwise $D\gg 1$ and $\Delta n_a$ is negligible). Then
 \begin{equation}
 \sigma^2(x_i)=\frac{l_i^2}{D}\left(1-\frac{1}{D}\right)+\frac{l_i}{D},
 \end{equation}
