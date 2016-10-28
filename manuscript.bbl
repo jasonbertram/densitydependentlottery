@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -92,6 +92,12 @@ Joshi, A., N.~Prasad, and M.~Shakarad. 2001.
 \newblock K-selection, $\alpha$-selection, effectiveness, and tolerance in
   competition: density-dependent selection revisited.
 \newblock Journal of genetics 80:63--75.
+
+\bibitem[{Knowlton(2001)}]{knowlton_2001}
+Knowlton, N. 2001.
+\newblock The future of coral reefs.
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 98:5419--5425.
 
 \bibitem[{Kuno(1991)}]{kuno_1991}
 Kuno, E. 1991.
