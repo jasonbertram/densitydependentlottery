@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -161,6 +161,11 @@ Violle, C., M.-L. Navas, D.~Vile, E.~Kazakou, C.~Fortunel, I.~Hummel, and
   E.~Garnier. 2007.
 \newblock Let the concept of trait be functional!
 \newblock Oikos 116:882--892.
+
+\bibitem[{Westoby(1998)}]{westoby_1998}
+Westoby, M. 1998.
+\newblock A leaf-height-seed (lhs) plant ecology strategy scheme.
+\newblock Plant and soil 199:213--227.
 
 \bibitem[{Winemiller et~al.(2015)Winemiller, Fitzgerald, Bower, and
   Pianka}]{winemiller_2015}
