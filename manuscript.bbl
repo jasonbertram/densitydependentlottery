@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{31}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -101,8 +101,8 @@ Knowlton, N. 2001.
 
 \bibitem[{Kuno(1991)}]{kuno_1991}
 Kuno, E. 1991.
-\newblock Some strange properties of the logistic equation defined withr andk:
-  Inherent defects or artifacts?
+\newblock {Some strange properties of the logistic equation defined with r and
+  K: Inherent defects or artifacts?}
 \newblock Researches on population ecology 33:33--39.
 
 \bibitem[{Luckinbill(1978)}]{luckinbill_1978}
@@ -149,8 +149,13 @@ Taylor, D.~R., L.~W. Aarssen, and C.~Loehle. 1990.
   capacity: a new habitat templet for plant life history strategies.
 \newblock Oikos pages 239--250.
 
+\bibitem[{Tilman(1982)}]{tilman_1982}
+Tilman, D. 1982.
+\newblock Resource competition and community structure.
+\newblock 17. Princeton university press.
+
 \bibitem[{Tilman(2007)}]{tilman_2007}
-Tilman, D. 2007.
+---{}---{}---. 2007.
 \newblock Resource competition and plant traits: a response to craine et al.
   2005.
 \newblock Journal of Ecology 95:231--234.
