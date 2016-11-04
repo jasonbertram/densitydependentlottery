@@ -271,7 +271,7 @@ The second component, $\Delta_r n_i$, accounts for territories where a single fo
 \end{equation}
 where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagule abundances $x_j$ \textit{after} dispersal, in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
 
-We now show that, with respect to $\tilde{p}$, the standard deviation $\sigma_{\tilde{p}}(\sum_{j\neq i} c_j x_j)$, is much smaller than its mean $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$. Then $x_j$ can be replaced by its mean in the last term in Eq.~\eqref{eq:deltr},
+We will show that, with respect to $\tilde{p}$, the standard deviation $\sigma_{\tilde{p}}(\sum_{j\neq i} c_j x_j)$, is much smaller than its mean $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$. Then $x_j$ can be replaced by its mean in the last term in Eq.~\eqref{eq:deltr},
 \begin{equation}
 \left\langle\frac{c_i}{c_i +\sum_{j\neq i} c_j x_j}\right\rangle_{\tilde{p}}\approx \frac{c_i}{c_i +\sum_{j\neq i} c_j \langle x_j\rangle_{\tilde{p}}}.\label{eq:meanfieldr}
 \end{equation}
@@ -280,23 +280,23 @@ The exact expression for $\langle x_j \rangle_{\tilde{p}}$ is somewhat complicat
 \begin{align}
 \tilde{p}({\mathbf x_i})&=p({\mathbf x_i}|X\geq 2,x_i=1)\nonumber\\
 &=\frac{P({\mathbf x_i},X\geq 2|x_i=1)}{P(X\geq 2)}\nonumber\\
-&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} P(k) p({\mathbf x_i}|X_i=k-1),
+&=\frac{1}{1-(1+L)e^{-L}}\sum_{X=2}^{\infty} P(k) p({\mathbf x_i}|X_i=X-1),
 \end{align}
 and so
 \begin{align}
 \langle x_j \rangle_{\tilde{p}}&=\sum_{\mathbf x_i} \tilde{p}({\mathbf x_i})x_j,\nonumber\\
-&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} P(k) \sum_{\mathbf x_i} p({\mathbf x_i}|X_i=k-1)x_j.
+&=\frac{1}{1-(1+L)e^{-L}}\sum_{X=2}^{\infty} P(X) \sum_{\mathbf x_i} p({\mathbf x_i}|X_i=X-1)x_j.
 \label{eq:raremonster1}
 \end{align}
-The inner sum over ${\mathbf x_i}$ is the mean number of $j$ propagules that will be found in a territory which received $k-1$ nonfocal propagules, which is equal to $\frac{l_j}{L-l_j}(k-1)$. Thus, 
+The inner sum over ${\mathbf x_i}$ is the mean number of $j$ propagules that will be found in a territory which received $X-1$ nonfocal propagules, which is equal to $\frac{l_j}{L-l_j}(X-1)$. Thus, 
 \begin{align}
-\langle x_j \rangle_{\tilde{p}}&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=2}^{\infty} P(k) (k-1),\nonumber\\
+\langle x_j \rangle_{\tilde{p}}&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=2}^{\infty} P(X) (X-1),\nonumber\\
 &=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i},
 \label{eq:meanxjrare}
 \end{align}
-where the last line follows from $\sum_{k=2}^{\infty} P(k)(k-1)=\sum_{k=1}^{\infty} P(k)(k-1)=\sum_{k=1}^{\infty} P(k)k-\sum_{k=1}^{\infty}P(k)$.
+where the last line follows from $\sum_{X=2}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)X-\sum_{X=1}^{\infty}P(X)$.
 
-For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated. We instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ Poisson dispersal probabilities conditional on $X_i>1$. This gives $\langle x_j \rangle_{\tilde{q}}=l_j/C$, 
+For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated. We instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ Poisson dispersal probabilities conditional on $X_i>1$, independently of the outcome of $x_i$. This gives $\langle x_j \rangle_{\tilde{q}}=l_j/C$, 
 \begin{equation}
 \sigma_{\tilde{q}}^2(x_j)=\frac{l_j^2}{C}\left(1-\frac{1}{C}\right)+\frac{l_j}{C},\label{eq:varr}
 \end{equation}
@@ -304,22 +304,22 @@ and
 \begin{equation}
 \sigma_{\tilde{q}}(x_j,x_k)=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right),\label{eq:covr}
 \end{equation}
-where $C=1-e^{-(L-l_i)}$. Comparing $\langle x_j \rangle_{\tilde{q}}=l_j/C$ and Eq.~\eqref{eq:meanxjrare}, $\tilde{q}$ leads to considerably simpler expressions for the mean of $x_j$ (similarly for variances and covariances of the $x_j$, which we did not have the courage to calculate with $\tilde{p}$). However, $\tilde{q}$ does not correctly describe the situation after dispersal in territories which received one focal genotype: assuming that one propagule is already present biases total number of propagules by one. For example, if the focal genotype is rare and the propagule density is high ($l_j \approx L\gg 1$), Eq. \eqref{eq:meanxjrare} correctly gives $\langle x_j \rangle_{\tilde{p}}\approx L-1$, whereas $\langle x_j \rangle_{\tilde{q}}\approx L$. As a result, $\tilde{q}$ leads to pathological behavior for rare invaders (they have a rarity disadvantage), but its moments are quantitatively similar enough to $\tilde{p}$'s that it is sufficient for analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$.
+where $C=1-e^{-(L-l_i)}$. The distribution $\tilde{q}$ only approximates the situation after dispersal, since knowing that one focal genotype is among the propagules present restricts the possible outcomes for the $x_j$, so that the $x_j$ cannot strictly be treated as independent of $x_i$. This seemingly minor distinction has meaningful consequences. To illustrate, suppose that the focal genotype is rare and the propagule density is high ($l_j \approx L\gg 1$). Then Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $L-1$ nonfocal propagules $\langle x_j \rangle_{\tilde{p}}\approx L-1$, whereas $\tilde{q}$ predicts one extra $\langle x_j \rangle_{\tilde{q}}\approx L$. As a result, $\tilde{q}$ gives pathological behavior for rare invaders (they have a rarity disadvantage), but its moments are quantitatively similar enough to those of $\tilde{p}$ that it is sufficient for analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$.
 
 Decomposing the variance in $\sum_{j\neq i} c_j x_j$,
 \begin{equation}
 \sigma_{\tilde{q}}^2(\sum_{j\neq i} c_j x_j)=\sum_{j\neq i}\left[c_j^2\sigma_{\tilde{q}}^2(x_j)+2\sum_{k>j}c_j c_k\sigma_{\tilde{q}}(x_j,x_k)\right],\label{eq:vartotr}
 \end{equation}
-and using the fact that $1/C>1$ which implies that the first term in Eq. \eqref{eq:varr} and $\sigma_{\tilde{q}}(x_j,x_k)$ are negative, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ satisfy
+and using the fact that $\sigma_{\tilde{q}}(x_j,x_k)$ and the first term in Eq. \eqref{eq:varr} are negative because $C<1$, we obtain an upper bound on the the relative fluctuations in $\sum_{j\neq i} c_j x_j$, 
 \begin{equation}
 \frac{\sigma(\sum_{j\neq i} c_j x_j)}{\langle\sum_{j\neq i} c_j x_j\rangle}<C^{1/2}\frac{\left(\sum_{j\neq i}c_j^2 l_j\right)^{1/2}}{\sum_{j\neq i}c_j l_j}. \label{eq:cvr}
 \end{equation}
 
 Without loss of generality, we restrict attention to the case that the total nonfocal density $L-l_i$ is of order $1$ or larger (otherwise $\Delta_r n_i$ does not contribute significantly to $\Delta_+ n_i$ because $\Delta_r n_i$ is proportional to $C=1-e^{-(L-l_i)}$).
 
-When at least some of the nonfocal propagule densities are large $l_j\gg 1$, then the RHS of Eq.~\eqref{eq:cvr} is $\ll 1$, as desired. This is also the case if none of the nonfocal genotype densities are large and the $c_j$ are all of similar magnitude (their ratios are of order one); the worst case scenario occurs when $(L-l_i)\sim O(1)$, in which case the negative covariances (Eq.~\eqref{eq:covr}) which were neglected in the RHS of Eq.~\eqref{eq:cvr} significantly reduce the overall variance $\sigma_{\tilde{q}}^2(\sum_{j\neq i} c_j x_j)$.
+Then, when at least some of the nonfocal propagule densities are large $l_j\gg 1$, the RHS of Eq.~\eqref{eq:cvr} is $\ll 1$, as desired. This is also the case if none of the nonfocal genotype densities are large and the $c_j$ are all of similar magnitude (their ratios are of order one); the worst case scenario occurs when $L-l_i\sim O(1)$, in which case the negative covariances (Eq.~\eqref{eq:covr}) which were neglected in the RHS of Eq.~\eqref{eq:cvr} significantly reduce the overall variance $\sigma_{\tilde{q}}^2(\sum_{j\neq i} c_j x_j)$.
 
-However, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large if some of the $c_j$ are much larger than the others. Specifically, if $c_j l_j\gg c_k l_k$ ($j,k\neq i$; $j\neq k$) and $l_j\ll 1$ (i.e. in the presence of a rare, extremely strong competitor), then we cannot make the replacement Eq.~\eqref{eq:meanfieldr}. 
+However, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large if some of the $c_j$ are much larger than the others. Specifically, in the presence of a rare, extremely strong competitor ($c_j l_j\gg c_{j'} l_{j'}$ for all other nonfocal genotypes $j'$, and $l_j\ll 1$), then the RHS of Eq. \eqref{eq:cvr} can be large and we cannot make the replacement Eq.~\eqref{eq:meanfieldr}. 
 
 Substituting Eqs. \eqref{eq:meanfieldr} and \eqref{eq:meanxjrare} into Eq.~\eqref{eq:deltr}, we obtain
 \begin{equation}
@@ -342,13 +342,13 @@ Again, we show that the relative fluctuations in $\sum c_j x_j$ are much smaller
 Following a similar procedure as for $\Delta_r n_i$, where the vector of propagule abundances is denoted ${\mathbf x}$, we have for nonfocal genotypes $j\neq i$
 \begin{align}
 \langle x_j \rangle_{\hat{p}}&=\sum_{\mathbf x} x_j p(\mathbf x|x_i\geq 2)\nonumber \\
-&=\sum_{k}P(k|x_i\geq 2)\sum_{\mathbf x} x_j p({\mathbf x}|x_i\geq 2,k)\nonumber\\
-&=\sum_{k}P(k|x_i\geq 2)\sum_{x_i} p(x_i|x_i\geq 2,k) \sum_{\mathbf x_i} x_j p(\mathbf x_i|X_i=k-x_i)\nonumber\\
-&=\sum_{k}P(k|x_i\geq 2)\sum_{x_i}p(x_i|x_i\geq 2,k) \frac{l_j(k-x_i)}{L-l_j} \nonumber\\
-&=\frac{l_j}{L-l_j}\left[\sum_{k}P(k|x_i\geq 2)k - \sum_{x_i}p(x_i|x_i\geq 2) x_i \right]\nonumber\\
+&=\sum_{X}P(X|x_i\geq 2)\sum_{\mathbf x} x_j p({\mathbf x}|x_i\geq 2,X)\nonumber\\
+&=\sum_{X}P(X|x_i\geq 2)\sum_{x_i} p(x_i|x_i\geq 2,X) \sum_{\mathbf x_i} x_j p(\mathbf x_i|X_i=X-x_i)\nonumber\\
+&=\sum_{X}P(X|x_i\geq 2)\sum_{x_i}p(x_i|x_i\geq 2,X) \frac{l_j(X-x_i)}{L-l_j} \nonumber\\
+&=\frac{l_j}{L-l_j}\left[\sum_{X}P(X|x_i\geq 2)X - \sum_{x_i}p(x_i|x_i\geq 2) x_i \right]\nonumber\\
 &=\frac{l_j}{L-l_j}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right) 
 \end{align}
-The mean focal genotype abundance is simpler, 
+The mean focal genotype abundance is, 
 \begin{align}
 \langle x_i \rangle_{\hat{p}}&=\sum_{\mathbf x} x_i p(\mathbf x|x_i\geq 2)\nonumber \\
 &=\sum_{x_i} x_i p(x_i|x_i\geq 2) \nonumber\\
@@ -356,16 +356,16 @@ The mean focal genotype abundance is simpler,
 &=l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}.
 \end{align}
 
-To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\hat{p}$ is approximated by the ${\mathbf x}$ dispersal probabilities in a territory where at least two focal propagules are assumed to be present. All covariances are now zero, so that $\sigma^2(\sum c_j x_j)=\sum c_j^2 \sigma^2(x_j)$, where $\sigma^2(x_j)=l_j$ for $j\neq i$. The expression for $\sigma^2(x_i)$ is more complicated. We assume $p(x_i=0)\approx 0$ without loss of generality (since otherwise $D\gg 1$ and $\Delta n_a$ is negligible). Then
+To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\hat{p}$ is approximated by $\hat{q}$, defined as the ${\mathbf x}$ dispersal probabilities in a territory conditional on $x_i>2$ (that is, treating the $x_j$ as independent of $x_i$). All covariances between nonfocal genotypes are now zero, so that $\sigma^2(\sum c_j x_j)=\sum c_j^2 \sigma^2(x_j)$, where $\sigma^2(x_j)=l_j$ for $j\neq i$. The expression for $\sigma^2(x_i)$ is more complicated, but in the relevant regime where $p(x_i=0)\approx 0$ (since otherwise $D\gg 1$ and $\Delta n_a$ is negligible), then
 \begin{equation}
-\sigma^2(x_i)=\frac{l_i^2}{D}\left(1-\frac{1}{D}\right)+\frac{l_i}{D},
+\sigma_{\hat{q}}^2(x_i)\approx\frac{l_i^2}{D}\left(1-\frac{1}{D}\right)+\frac{l_i}{D},
 \end{equation}
-where $D=1-(1+l_i)e^{-l_i}$, analogous to Eq.~\eqref{eq:varr}, and 
+where $D= 1-(1+l_i)e^{-l_i}$, analogous to Eq.~\eqref{eq:varr}, and 
 \begin{equation}
-\frac{\sigma(\sum c_j x_j)}{\langle\sum c_j x_j\rangle} \approx\frac{\left(\sum_{j\neq i} c_j^2 l_j + c_i^2 \sigma^2(x_i)\right)^{1/2}}{\sum_{j\neq i} c_j l_j + c_i l_i/D} \label{eq:cva}.
+\frac{\sigma_{\hat{q}}(\sum c_j x_j)}{\langle\sum c_j x_j\rangle} \approx\frac{\left(\sum_{j\neq i} c_j^2 l_j + c_i^2 \sigma_{\hat{q}}^2(x_i)\right)^{1/2}}{\sum_{j\neq i} c_j l_j + c_i l_i/D} \label{eq:cva}.
 \end{equation}
 
-Similarly to Eq.~\eqref{eq:cvr}, the RHS of \eqref{eq:cva} will not be $\ll1$ if there is a nonfocal genotype $j$ with $l_j\ll 1$ and $c_j l_j\gg c_k l_k$ for $j,k\neq i$, $j\neq k$. When this is not the case, then since $l_i$ must be of order $1$ or larger for $\Delta_a n$ to make an appreciable contribution to $\Delta_+ n_i$, the RHS of Eq.~\eqref{eq:cva} is $\ll 1$ as desired. 
+Similarly to Eq.~\eqref{eq:cvr}, the RHS of \eqref{eq:cva} will not be $\ll 1$ in the presence of a rare, extremely strong competitor. When this is not the case, then since $l_i$ must be of order $1$ or larger for $\Delta_a n$ to make an appreciable contribution to $\Delta_+ n_i$, the RHS of Eq.~\eqref{eq:cva} is $\ll 1$ as desired. 
 
 Combining Eqs. \eqref{eq:delta} and \eqref{eq:meanfielda}, we obtain
 \begin{equation}
