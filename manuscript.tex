@@ -277,36 +277,27 @@ We now show that, with respect to $\tilde{p}$, the standard deviation $\sigma_{\
 \left\langle\frac{c_i}{c_i +\sum_{j\neq i} c_j x_j}\right\rangle_{\tilde{p}}\approx \frac{c_i}{c_i +\sum_{j\neq i} c_j \langle x_j\rangle_{\tilde{p}}}.\label{eq:meanfieldr}
 \end{equation}
 
-The exact expression for $\langle x_j \rangle_{\tilde{p}}$ is somewhat complicated. Let $k$ denote the total number of propagules in a territory, and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ denote the vector of non-focal abundances, so that $p({\mathbf x_i})=p_1(x_1)\ldots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\ldots p_G(x_G)$. Then, applying Bayes' theorem, $\tilde{p}$ can be written as
+The exact expression for $\langle x_j \rangle_{\tilde{p}}$ is somewhat complicated. Let $X$ denote the total number of propagules in a territory,  ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ denote the vector of non-focal abundances, so that $p({\mathbf x_i})=p_1(x_1)\ldots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\ldots p_G(x_G)$, and let $X_i=X-x_i$ denote the total number of nonfocal propagules. Then, $\tilde{p}$ can be written as
 \begin{align}
-\tilde{p}({\mathbf x_i})&=p({\mathbf x_i}|k\geq 2,x_i=1),\nonumber\\
-&=\frac{P({\mathbf x_i},k\geq 2|x_i=1)}{P(k\geq 2)},\nonumber\\
-&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} P(k) p({\mathbf x_i}|\sum_{j\neq i} x_j=k-1),\nonumber\\
-&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} \frac{P(k)\delta^{\sum_{j\neq i} x_j}_{k-1}}{P(\sum_{j\neq i} x_j=k-1)} p({\mathbf x_i}),
+\tilde{p}({\mathbf x_i})&=p({\mathbf x_i}|X\geq 2,x_i=1)\nonumber\\
+&=\frac{P({\mathbf x_i},X\geq 2|x_i=1)}{P(X\geq 2)}\nonumber\\
+&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} P(k) p({\mathbf x_i}|X_i=k-1),
+\end{align}
+and so
+\begin{align}
+\langle x_j \rangle_{\tilde{p}}&=\sum_{\mathbf x_i} \tilde{p}({\mathbf x_i})x_j,\nonumber\\
+&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} P(k) \sum_{\mathbf x_i} p({\mathbf x_i}|X_i=k-1)x_j.
 \label{eq:raremonster1}
 \end{align}
-where $P(k)=L^k e^{-L}/k!$, $P(\sum_{j\neq i} x_j=k-1)=(L-l_i)^{k-1} e^{-(L-l_i)}/(k-1)!$ and $\delta^{\sum_{j\neq i} x_j}_k=1$ if $\sum_{j\neq i} x_j=k$, and equals zero otherwise. This implies $P(k)/P(\sum_{j\neq i} x_j=k-1)=\frac{Le^{-l_i}}{k}\left(\frac{L}{L-l_i}\right)^{k-1}$, and so, changing the summation index to start from one, we obtain
-\begin{equation}
-\tilde{p}({\mathbf x_i})=\frac{Le^{-l_i}}{1-(1+L)e^{-L}}\sum_{k=1}^{\infty} \left(\frac{L}{L-l_i}\right)^k\frac{\delta^{\sum_{j\neq i} x_j}_k}{k+1} p({\mathbf x_i}).
-\label{eq:raremonster2}
-\end{equation}
-
-To evaluate $\langle x_j \rangle_{\tilde{p}}=\sum_{\mathbf x_i} \tilde{p}({\mathbf x_i})x_j$, we first evaluate the sum $\sum_{\mathbf x_i}\delta^{\sum_{j\neq i} x_j}_k p({\mathbf x_i})x_j$, since the only term in Eq. \eqref{eq:raremonster2} which depends on ${\mathbf x_i}$ is $\delta^{\sum_{j\neq i} x_j}_k p({\mathbf x_i})$. By inspection, this sum is equal to the mean number of $j$ propagules in a territory which received $k$ nonfocal propagules, times the probability that a territory receives $k$ nonfocal propagules. Given that $k$ nonfocal propagules are present, on average genotype $j$ will make up $\frac{l_j}{L-l_j}k$ of them, and so
+The inner sum over ${\mathbf x_i}$ is the mean number of $j$ propagules that will be found in a territory which received $k-1$ nonfocal propagules, which is equal to $\frac{l_j}{L-l_j}(k-1)$. Thus, 
 \begin{align}
-\sum_{\mathbf x_i}\delta^{\sum_{j\neq i} x_j}_k p({\mathbf x_i})x_j&= \frac{l_j}{L-l_j}k \frac{(L-l_i)^{k} e^{-(L-l_i)}}{k!}\nonumber\\
-&=l_j \frac{(L-l_i)^{k-1} e^{-(L-l_i)}}{(k-1)!}.
-\end{align}
-The final step is to evaluate the sum over $k$, 
-\begin{align}
-\langle x_j \rangle_{\tilde{p}}&=\frac{l_j Le^{-l_i}}{1-(1+L)e^{-L}}\sum_{k=1}^{\infty} \left(\frac{L}{L-l_i}\right)^k\frac{(L-l_i)^{k-1} e^{-(L-l_i)}}{(k+1)(k-1)!}.\nonumber\\
-&=\frac{l_j Le^{-l_i}}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=1}^{\infty} \frac{L^k e^{-(L-l_i)}}{(k+1)!}k.\nonumber\\
-&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=1}^{\infty} \frac{L^{k+1} e^{-L}}{(k+1)!}k.\nonumber\\
+\langle x_j \rangle_{\tilde{p}}&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=2}^{\infty} P(k) (k-1),\nonumber\\
 &=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i},
 \label{eq:meanxjrare}
 \end{align}
-where the last line follows from the fact that $\sum_{k=1}^{\infty} \frac{L^{k+1} e^{-L}}{(k+1)!}k=\sum_{k=1}^{\infty} \frac{L^{k} e^{-L}}{k!}(k-1)=L-(1-e^{-L})$.
+where the last line follows from the fact that $\sum_{k=2}^{\infty} P(k)(k-1)=\sum_{k=1}^{\infty} P(k)(k-1)=\sum_{k=1}^{\infty} P(k)k-\sum_{k=1}^{\infty}P(k)=L-(1-e^{-L})$.
 
-For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated. We instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ dispersal probabilities, conditional on $\sum_{j\neq i} x_j>1$, in a territory where one focal propagule is assumed to already be present. This gives $\langle x_j \rangle_{\tilde{q}}=l_j/C$, 
+For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated, and so we instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ dispersal probabilities, conditional on $X_i>1$, in a territory where one focal propagule is assumed to already be present. This gives $\langle x_j \rangle_{\tilde{q}}=l_j/C$, 
 \begin{equation}
 \sigma_{\tilde{q}}^2(x_j)=\frac{l_j^2}{C}\left(1-\frac{1}{C}\right)+\frac{l_j}{C},\label{eq:varr}
 \end{equation}
