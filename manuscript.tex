@@ -255,7 +255,7 @@ Under the Poisson approximation, the total number of genotype $i$ propagules $\s
 
 \section*{Appendix B: Derivation of growth equation}
 
-We separate the right hand side of Eq.~\eqref{eq:growthsumuncoupled} into three components $\Delta_+ n_i = \Delta_u n_i+\Delta_r n_i+\Delta_a n_i$ which vary in relative magnitude depending on the propagule densities $l_i$. Following the notation in the main text, the Poisson distributions for the $x_i$ (or some subset of the $x_i$) will be denoted $p$; for instance $p(x_1,\ldots,x_G)=p_1(x_1)\ldots p_G(x_G)$ and $p(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)=p_1(x_1)\ldots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\ldots p_G(x_G)$. We use $P$ as a general shorthand for the probability of particular outcomes.
+We separate the right hand side of Eq.~\eqref{eq:growthsumuncoupled} into three components $\Delta_+ n_i = \Delta_u n_i+\Delta_r n_i+\Delta_a n_i$ which vary in relative magnitude depending on the propagule densities $l_i$. Following the notation in the main text, the Poisson distributions for the $x_i$ (or some subset of the $x_i$) will be denoted $p$, and we use $P$ as a general shorthand for the probability of particular outcomes.
 
 \subsection*{Growth without competition}
 
@@ -268,57 +268,68 @@ The first component, $\Delta_u n_i$, accounts for territories where only one foc
 
 The second component, $\Delta_r n_i$, accounts for territories where a single focal genotype propagule is present along with at least one non-focal propagule ($r$ stands for ``rare'') i.e. $x_i=1$ and $\sum_{j\neq i} x_j\geq 1$. The number of territories where this occurs is $Up_i(1)P(\sum_{j\neq i} x_j\geq 1)=b_i n_i e^{-l_i}(1-e^{-(L-l_i)})$. Thus 
 \begin{equation}
-\Delta_r n_i = m_i e^{-l_i}P\left\langle  \frac{c_i}{c_i +\sum_{j\neq i} c_j x_j } \right\rangle_{\tilde{p}},  \label{eq:deltr}
+\Delta_r n_i = m_i e^{-l_i}(1-e^{-(L-l_i)})\left\langle  \frac{c_i}{c_i +\sum_{j\neq i} c_j x_j } \right\rangle_{\tilde{p}},  \label{eq:deltr}
 \end{equation}
-where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagaule abundances $x_j$ \textit{after} dispersal, in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
+where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagule abundances $x_j$ \textit{after} dispersal, in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
 
-We now show that, with respect to $\tilde{p}$, the standard deviation in $\sum_{j\neq i} c_j x_j$, $\sigma(\sum_{j\neq i} c_j x_j)$, is much smaller than its mean $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$. Then $x_j$ can be replaced by its mean in the last term in Eq.~\eqref{eq:deltr},
+We now show that, with respect to $\tilde{p}$, the standard deviation $\sigma_{\tilde{p}}(\sum_{j\neq i} c_j x_j)$, is much smaller than its mean $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$. Then $x_j$ can be replaced by its mean in the last term in Eq.~\eqref{eq:deltr},
 \begin{equation}
-\left\langle\frac{c_i}{c_i +\sum_{j\neq i} c_j x_j}\right\rangle_{\tilde{p}}\approx \frac{c_i}{c_i +\sum_{j\neq i} c_j \langle x_j\rangle_{\tilde{p}}},\label{eq:meanfieldr}
+\left\langle\frac{c_i}{c_i +\sum_{j\neq i} c_j x_j}\right\rangle_{\tilde{p}}\approx \frac{c_i}{c_i +\sum_{j\neq i} c_j \langle x_j\rangle_{\tilde{p}}}.\label{eq:meanfieldr}
 \end{equation}
-which will give us Eq.~\eqref{eq:Dr}.
 
-The exact expression for $\langle x_j \rangle_{\tilde{p}}$ is somewhat complicated. Letting $k$ denote the total number of propagules in a territory, and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ denote the vector of non-focal abundances, $\tilde{p}$ can be written as
+The exact expression for $\langle x_j \rangle_{\tilde{p}}$ is somewhat complicated. Let $k$ denote the total number of propagules in a territory, and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ denote the vector of non-focal abundances, so that $p({\mathbf x_i})=p_1(x_1)\ldots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\ldots p_G(x_G)$. Then, applying Bayes' theorem, $\tilde{p}$ can be written as
 \begin{align}
 \tilde{p}({\mathbf x_i})&=p({\mathbf x_i}|k\geq 2,x_i=1),\nonumber\\
-&=\frac{P(k\geq 2|{\mathbf x_i},x_i=1) p({\mathbf x_i}|x_i=1)}{P(k\geq 2)},\nonumber\\
-&=\frac{p({\mathbf x_i}|x_i=1)}{1-(1+L)e^{-L}},\nonumber\\
+&=\frac{P({\mathbf x_i},k\geq 2|x_i=1)}{P(k\geq 2)},\nonumber\\
 &=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} P(k) p({\mathbf x_i}|\sum_{j\neq i} x_j=k-1),\nonumber\\
-&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} \frac{P(k)\delta^{\sum_{j\neq i} x_j}_{k-1}}{P(\sum_{j\neq i} x_j=k-1)} p({\mathbf x_i}),\nonumber\\
-&=\frac{Le^{-l_i}}{1-(1+L)e^{-L}}\sum_{k=1}^{\infty} \left(\frac{L}{L-l_i}\right)^k\frac{\delta^{\sum_{j\neq i} x_j}_k}{k+1} p({\mathbf x_i}),\label{eq:raremonster}
+&=\frac{1}{1-(1+L)e^{-L}}\sum_{k=2}^{\infty} \frac{P(k)\delta^{\sum_{j\neq i} x_j}_{k-1}}{P(\sum_{j\neq i} x_j=k-1)} p({\mathbf x_i}),
+\label{eq:raremonster1}
 \end{align}
-where $\delta^{\sum_{j\neq i} x_j}_k=1$ if $\sum_{j\neq i} x_j=k$, and equals zero otherwise. Then, since 
-\begin{align}
-\sum_{\mathbf x_i}\delta^{\sum_{j\neq i} x_j}_k p({\mathbf x_i})x_j&= \frac{l_j}{L-L_j}kP(\sum_{j\neq i} x_j=k)\nonumber\\
-&=l_j P(\sum_{j\neq i} x_j=k-1),
-\end{align}
-after some algebra we obtain,
+where $P(k)=L^k e^{-L}/k!$, $P(\sum_{j\neq i} x_j=k-1)=(L-l_i)^{k-1} e^{-(L-l_i)}/(k-1)!$ and $\delta^{\sum_{j\neq i} x_j}_k=1$ if $\sum_{j\neq i} x_j=k$, and equals zero otherwise. This implies $P(k)/P(\sum_{j\neq i} x_j=k-1)=\frac{Le^{-l_i}}{k}\left(\frac{L}{L-l_i}\right)^{k-1}$, and so, changing the summation index to start from one, we obtain
 \begin{equation}
-\langle x_j \rangle_{\tilde{p}}=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i}.\label{eq:meanxjrare}
+\tilde{p}({\mathbf x_i})=\frac{Le^{-l_i}}{1-(1+L)e^{-L}}\sum_{k=1}^{\infty} \left(\frac{L}{L-l_i}\right)^k\frac{\delta^{\sum_{j\neq i} x_j}_k}{k+1} p({\mathbf x_i}).
+\label{eq:raremonster2}
 \end{equation}
 
-To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use the following approximation, which gives considerably simpler expressions for the means, variances and covariances of the $x_j$ compared with the exact expressions using $\tilde{p}$. Rather than evaluating the situation in each territory after dispersal as above, we let $\tilde{p}$ instead be the ${\mathbf x_i}$ dispersal probabilities in a territory where one focal propagule is assumed to be present, conditional on $\sum_{j\neq i} x_j>1$. This gives $\langle x_j \rangle_{\tilde{p}}=l_j/C$, 
+To evaluate $\langle x_j \rangle_{\tilde{p}}=\sum_{\mathbf x_i} \tilde{p}({\mathbf x_i})x_j$, we first evaluate the sum $\sum_{\mathbf x_i}\delta^{\sum_{j\neq i} x_j}_k p({\mathbf x_i})x_j$, since the only term in Eq. \eqref{eq:raremonster2} which depends on ${\mathbf x_i}$ is $\delta^{\sum_{j\neq i} x_j}_k p({\mathbf x_i})$. By inspection, this sum is equal to the mean number of $j$ propagules in a territory which received $k$ nonfocal propagules, times the probability that a territory receives $k$ nonfocal propagules. Given that $k$ nonfocal propagules are present, on average genotype $j$ will make up $\frac{l_j}{L-l_j}k$ of them, and so
+\begin{align}
+\sum_{\mathbf x_i}\delta^{\sum_{j\neq i} x_j}_k p({\mathbf x_i})x_j&= \frac{l_j}{L-l_j}k \frac{(L-l_i)^{k} e^{-(L-l_i)}}{k!}\nonumber\\
+&=l_j \frac{(L-l_i)^{k-1} e^{-(L-l_i)}}{(k-1)!}.
+\end{align}
+The final step is to evaluate the sum over $k$, 
+\begin{align}
+\langle x_j \rangle_{\tilde{p}}&=\frac{l_j Le^{-l_i}}{1-(1+L)e^{-L}}\sum_{k=1}^{\infty} \left(\frac{L}{L-l_i}\right)^k\frac{(L-l_i)^{k-1} e^{-(L-l_i)}}{(k+1)(k-1)!}.\nonumber\\
+&=\frac{l_j Le^{-l_i}}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=1}^{\infty} \frac{L^k e^{-(L-l_i)}}{(k+1)!}k.\nonumber\\
+&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=1}^{\infty} \frac{L^{k+1} e^{-L}}{(k+1)!}k.\nonumber\\
+&=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i},
+\label{eq:meanxjrare}
+\end{align}
+where the last line follows from the fact that $\sum_{k=1}^{\infty} \frac{L^{k+1} e^{-L}}{(k+1)!}k=\sum_{k=1}^{\infty} \frac{L^{k} e^{-L}}{k!}(k-1)=L-(1-e^{-L})$.
+
+For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated. We instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ dispersal probabilities, conditional on $\sum_{j\neq i} x_j>1$, in a territory where one focal propagule is assumed to already be present. This gives $\langle x_j \rangle_{\tilde{q}}=l_j/C$, 
 \begin{equation}
-\sigma^2(x_j)=\frac{l_j^2}{C}\left(1-\frac{1}{C}\right)+\frac{l_j}{C},\label{eq:varr}
+\sigma_{\tilde{q}}^2(x_j)=\frac{l_j^2}{C}\left(1-\frac{1}{C}\right)+\frac{l_j}{C},\label{eq:varr}
 \end{equation}
 and 
 \begin{equation}
-\sigma(x_j,x_k)=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right),\label{eq:covr}
+\sigma_{\tilde{q}}(x_j,x_k)=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right),\label{eq:covr}
 \end{equation}
-where $C=1-e^{-(L-l_i)}$ (note the difference from Eq.~\eqref{eq:meanxjrare} for $\langle x_j \rangle_{\tilde{p}}$). Then, since
+where $C=1-e^{-(L-l_i)}$. Comparing $\langle x_j \rangle_{\tilde{q}}=l_j/C$ and Eq.~\eqref{eq:meanxjrare}, the subtle difference in how we defined $\tilde{q}$ leads to considerably simpler expressions for the mean of $x_j$ (similarly for variances and covariances of the $x_j$, which we did not have the courage to calculate with $\tilde{p}$). To be sure, $\tilde{q}$ is incorrect: assuming that one propagule is already present biases total number of propagules by one. For example, if the focal genotype is rare and the propagule density is high ($l_j \approx L\gg 1$), Eq. \eqref{eq:meanxjrare} correctly gives $\langle x_j \rangle_{\tilde{p}}\approx L-1$, whereas $\langle x_j \rangle_{\tilde{q}}\approx L$. As a result, $\tilde{q}$ leads to pathological behavior for rare invaders (they have a rarity disadvantage), but its moments are quantitatively similar enough to $\tilde{p}$'s that it is sufficient for analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$.
+
+Decomposing the variance in $\sum_{j\neq i} c_j x_j$,
 \begin{equation}
-\sigma^2(\sum_{j\neq i} c_j x_j)=\sum_{j\neq i}\left[c_j^2\sigma^2(x_j)+2\sum_{k>j}c_j c_k\sigma(x_j,x_k)\right],\label{eq:vartotr}
+\sigma_{\tilde{q}}^2(\sum_{j\neq i} c_j x_j)=\sum_{j\neq i}\left[c_j^2\sigma_{\tilde{q}}^2(x_j)+2\sum_{k>j}c_j c_k\sigma_{\tilde{q}}(x_j,x_k)\right],\label{eq:vartotr}
 \end{equation}
-and $1/C>1$, we have
+and using the fact that $1/C>1$ which implies that the first term in Eq. \eqref{eq:varr} and $\sigma_{\tilde{q}}(x_j,x_k)$ are negative, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ satisfy
 \begin{equation}
 \frac{\sigma(\sum_{j\neq i} c_j x_j)}{\langle\sum_{j\neq i} c_j x_j\rangle}<C^{1/2}\frac{\left(\sum_{j\neq i}c_j^2 l_j\right)^{1/2}}{\sum_{j\neq i}c_j l_j}. \label{eq:cvr}
 \end{equation}
 
 Without loss of generality, we restrict attention to the case that the total nonfocal density $L-l_i$ is of order $1$ or larger (otherwise $\Delta_r n_i$ does not contribute significantly to $\Delta_+ n_i$ because $\Delta_r n_i$ is proportional to $C=1-e^{-(L-l_i)}$).
 
-When at least some of the nonfocal propagule densities are large $l_j\gg 1$, then the RHS of Eq.~\eqref{eq:cvr} is $\ll 1$, as desired. This is also the case if none of the nonfocal genotype densities are large and the $c_j$ are all of similar magnitude (their ratios are of order one); the worst case scenario occurs when $(L-l_i)\sim O(1)$, in which case the negative covariances (Eq.~\eqref{eq:covr}) which were neglected in the RHS of Eq.~\eqref{eq:cvr} significantly reduce the overall variance $\sigma^2(\sum_{j\neq i} c_j x_j)$.
+When at least some of the nonfocal propagule densities are large $l_j\gg 1$, then the RHS of Eq.~\eqref{eq:cvr} is $\ll 1$, as desired. This is also the case if none of the nonfocal genotype densities are large and the $c_j$ are all of similar magnitude (their ratios are of order one); the worst case scenario occurs when $(L-l_i)\sim O(1)$, in which case the negative covariances (Eq.~\eqref{eq:covr}) which were neglected in the RHS of Eq.~\eqref{eq:cvr} significantly reduce the overall variance $\sigma_{\tilde{q}}^2(\sum_{j\neq i} c_j x_j)$.
 
-However, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large if some of the $c_j$ are much larger than the others. Specifically, if $c_j l_j\gg c_k l_k$ ($j,k\neq i$, $j\neq k$) and $l_j\ll 1$ (i.e. in the presence of a rare, extremely strong competitor), then we cannot make the replacement Eq.~\eqref{eq:meanfieldr}. 
+However, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large if some of the $c_j$ are much larger than the others. Specifically, if $c_j l_j\gg c_k l_k$ ($j,k\neq i$; $j\neq k$) and $l_j\ll 1$ (i.e. in the presence of a rare, extremely strong competitor), then we cannot make the replacement Eq.~\eqref{eq:meanfieldr}. 
 
 Substituting Eqs. \eqref{eq:meanfieldr} and \eqref{eq:meanxjrare} into Eq.~\eqref{eq:deltr}, we obtain
 \begin{equation}
@@ -334,13 +345,14 @@ The final contribution, $\Delta_a n_i$, accounts for territories where two or mo
 \end{equation}
 where $\hat{p}$ is the probability distribution of both focal and nonfocal propagaule abundances \textit{after} dispersal in those territories where at least two focal propagules landed. 
 
-Again, we wish to show that the relative fluctuations in $\sum c_j x_j$ are much smaller than $1$ (with respect to $\hat{p}$), so that we have 
+Again, we show that the relative fluctuations in $\sum c_j x_j$ are much smaller than $1$ (with respect to $\hat{p}$), so that we have 
 \begin{equation}
 \left\langle \frac{c_i x_i}{\sum_j c_j x_j} \right\rangle_{\hat{p}}\approx  \frac{c_i \langle x_i \rangle_{\hat{p}}}{\sum_j c_j \langle x_j\rangle_{\hat{p}}}.\label{eq:meanfielda}
 \end{equation}
 Following a similar procedure as for $\Delta_r n_i$, where the vector of propagule abundances is denoted ${\mathbf x}$, we have
 \begin{align}
 \langle x_j \rangle_{\hat{p}}&=\sum_{\mathbf x} x_j p(\mathbf x|x_i\geq 2)\nonumber \\
+&=\sum_{k}P(k|x_i\geq 2)\sum_{\mathbf x} x_j p({\mathbf x}|x_i\geq 2,k)\nonumber\\
 &=\sum_{k}P(k|x_i\geq 2)\sum_{x_i} \sum_{\mathbf x_i} x_j p(\mathbf x_i|\sum_{j\neq i} x_j=k-x_i)p(x_i|x_i\geq 2,k)\nonumber\\
 &=\sum_{k}P(k|x_i\geq 2)\sum_{x_i} \frac{l_j(k-x_i)}{L-l_j} p(x_i|x_i\geq 2,k)\nonumber\\
 &=\frac{l_j}{L-l_j}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_j\frac{1-e^{-l_j}}{1-(1+l_j)e^{-l_j}}\right) 
