@@ -81,7 +81,6 @@ We broadly follow the spirit of MacArthur's $r$/$K$ selection scheme in that our
 
 In section ``Model'' we introduce the basic assumptions of our generalized lottery model. Analytical expressions for the change in genotype abundances over time are introduced in section ``Mean field approximation'', with mathematical details relegated to the Appendices. The following two sections discuss the behaviour of rare mutants and our treatment of Grime's triangle. 
  
-
 \section*{Model}\label{sec:model}
 
 We assume that each individual in a population requires its own territory to survive and reproduce (a site-occupancy model). All territories are identical, and the total number of territories is $T$. Time $t$ advances in discrete iterations, each representing the average time from birth to reproductive maturity. In iteration $t$, the number of reproductively mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories is $U(t)=T-N(t)$. 
@@ -133,7 +132,7 @@ R_i=\frac{\overline{c}e^{-l_i}(1-e^{-(L-l_i)})}{c_i +\frac{L-1+e^{-L}}{1-(1+L)e^
 \end{equation}
 and
 \begin{equation}
-A_i=\frac{\overline{c}(1-e^{-l_i})}{c_il_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}+\sum_{j\neq i}\frac{c_jl_j}{L-l_j}\left(L\frac{1-e^{-L}}{1-(1+L)e^{-L}}-l_j\frac{1-e^{-l_j}}{1-(1+l_j)e^{-l_j}}\right)}.\label{eq:Da}
+A_i=\frac{\overline{c}(1-e^{-l_i})}{c_il_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}+\left(L\frac{1-e^{-L}}{1-(1+L)e^{-L}}-l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right)\sum_{j\neq i}\frac{c_jl_j}{L-l_j}}.\label{eq:Da}
 \end{equation}
 
 Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery per-propagule success rate $c_i/\overline{c}L$ has been replaced by three separate terms. The first, $e^{-L}$, accounts for propagules which land alone on unoccupied territories; these territories are won without contest. The second term, $R_i c_i/\overline{c}$ represents competitive victories when the $i$ genotype is a rare invader in a high density population: from Eq. \eqref{eq:Dr}, $R_i\rightarrow 0$ when the $i$ genotype is abundant ($l_i\gg 1$), or other genotypes are collectively rare ($L-l_i\ll 1$). The third term, $A_ic_i/\overline{c}$, represents competitive victories when the $i$ genotype is abundant: $A_i\rightarrow 0$ if $l_i\ll 1$. The relative importance of these three terms varies with both the overall propagule density $L$ and the relative propagule frequencies $l_i/L$. If $l_i\gg 1$ for all genotypes, we recover the classic lottery model (only the $A_ic_i/\overline{c}$ term remains, and $A_i\rightarrow 1/L$). Thus, Eq. \eqref{eq:master} generalizes the classic lottery model to account for arbitrary propagule densities for each genotype. 
@@ -295,9 +294,9 @@ The inner sum over ${\mathbf x_i}$ is the mean number of $j$ propagules that wil
 &=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i},
 \label{eq:meanxjrare}
 \end{align}
-where the last line follows from the fact that $\sum_{k=2}^{\infty} P(k)(k-1)=\sum_{k=1}^{\infty} P(k)(k-1)=\sum_{k=1}^{\infty} P(k)k-\sum_{k=1}^{\infty}P(k)=L-(1-e^{-L})$.
+where the last line follows from $\sum_{k=2}^{\infty} P(k)(k-1)=\sum_{k=1}^{\infty} P(k)(k-1)=\sum_{k=1}^{\infty} P(k)k-\sum_{k=1}^{\infty}P(k)$.
 
-For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated, and so we instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ dispersal probabilities, conditional on $X_i>1$, in a territory where one focal propagule is assumed to already be present. This gives $\langle x_j \rangle_{\tilde{q}}=l_j/C$, 
+For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated. We instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ Poisson dispersal probabilities conditional on $X_i>1$. This gives $\langle x_j \rangle_{\tilde{q}}=l_j/C$, 
 \begin{equation}
 \sigma_{\tilde{q}}^2(x_j)=\frac{l_j^2}{C}\left(1-\frac{1}{C}\right)+\frac{l_j}{C},\label{eq:varr}
 \end{equation}
@@ -305,7 +304,7 @@ and
 \begin{equation}
 \sigma_{\tilde{q}}(x_j,x_k)=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right),\label{eq:covr}
 \end{equation}
-where $C=1-e^{-(L-l_i)}$. Comparing $\langle x_j \rangle_{\tilde{q}}=l_j/C$ and Eq.~\eqref{eq:meanxjrare}, the subtle difference in how we defined $\tilde{q}$ leads to considerably simpler expressions for the mean of $x_j$ (similarly for variances and covariances of the $x_j$, which we did not have the courage to calculate with $\tilde{p}$). To be sure, $\tilde{q}$ is incorrect: assuming that one propagule is already present biases total number of propagules by one. For example, if the focal genotype is rare and the propagule density is high ($l_j \approx L\gg 1$), Eq. \eqref{eq:meanxjrare} correctly gives $\langle x_j \rangle_{\tilde{p}}\approx L-1$, whereas $\langle x_j \rangle_{\tilde{q}}\approx L$. As a result, $\tilde{q}$ leads to pathological behavior for rare invaders (they have a rarity disadvantage), but its moments are quantitatively similar enough to $\tilde{p}$'s that it is sufficient for analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$.
+where $C=1-e^{-(L-l_i)}$. Comparing $\langle x_j \rangle_{\tilde{q}}=l_j/C$ and Eq.~\eqref{eq:meanxjrare}, $\tilde{q}$ leads to considerably simpler expressions for the mean of $x_j$ (similarly for variances and covariances of the $x_j$, which we did not have the courage to calculate with $\tilde{p}$). However, $\tilde{q}$ does not correctly describe the situation after dispersal in territories which received one focal genotype: assuming that one propagule is already present biases total number of propagules by one. For example, if the focal genotype is rare and the propagule density is high ($l_j \approx L\gg 1$), Eq. \eqref{eq:meanxjrare} correctly gives $\langle x_j \rangle_{\tilde{p}}\approx L-1$, whereas $\langle x_j \rangle_{\tilde{q}}\approx L$. As a result, $\tilde{q}$ leads to pathological behavior for rare invaders (they have a rarity disadvantage), but its moments are quantitatively similar enough to $\tilde{p}$'s that it is sufficient for analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$.
 
 Decomposing the variance in $\sum_{j\neq i} c_j x_j$,
 \begin{equation}
@@ -336,24 +335,28 @@ The final contribution, $\Delta_a n_i$, accounts for territories where two or mo
 \end{equation}
 where $\hat{p}$ is the probability distribution of both focal and nonfocal propagaule abundances \textit{after} dispersal in those territories where at least two focal propagules landed. 
 
-Again, we show that the relative fluctuations in $\sum c_j x_j$ are much smaller than $1$ (with respect to $\hat{p}$), so that we have 
+Again, we show that the relative fluctuations in $\sum c_j x_j$ are much smaller than $1$ (with respect to $\hat{p}$), so that,
 \begin{equation}
 \left\langle \frac{c_i x_i}{\sum_j c_j x_j} \right\rangle_{\hat{p}}\approx  \frac{c_i \langle x_i \rangle_{\hat{p}}}{\sum_j c_j \langle x_j\rangle_{\hat{p}}}.\label{eq:meanfielda}
 \end{equation}
-Following a similar procedure as for $\Delta_r n_i$, where the vector of propagule abundances is denoted ${\mathbf x}$, we have
+Following a similar procedure as for $\Delta_r n_i$, where the vector of propagule abundances is denoted ${\mathbf x}$, we have for nonfocal genotypes $j\neq i$
 \begin{align}
 \langle x_j \rangle_{\hat{p}}&=\sum_{\mathbf x} x_j p(\mathbf x|x_i\geq 2)\nonumber \\
 &=\sum_{k}P(k|x_i\geq 2)\sum_{\mathbf x} x_j p({\mathbf x}|x_i\geq 2,k)\nonumber\\
-&=\sum_{k}P(k|x_i\geq 2)\sum_{x_i} \sum_{\mathbf x_i} x_j p(\mathbf x_i|\sum_{j\neq i} x_j=k-x_i)p(x_i|x_i\geq 2,k)\nonumber\\
-&=\sum_{k}P(k|x_i\geq 2)\sum_{x_i} \frac{l_j(k-x_i)}{L-l_j} p(x_i|x_i\geq 2,k)\nonumber\\
-&=\frac{l_j}{L-l_j}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_j\frac{1-e^{-l_j}}{1-(1+l_j)e^{-l_j}}\right) 
+&=\sum_{k}P(k|x_i\geq 2)\sum_{x_i} p(x_i|x_i\geq 2,k) \sum_{\mathbf x_i} x_j p(\mathbf x_i|X_i=k-x_i)\nonumber\\
+&=\sum_{k}P(k|x_i\geq 2)\sum_{x_i}p(x_i|x_i\geq 2,k) \frac{l_j(k-x_i)}{L-l_j} \nonumber\\
+&=\frac{l_j}{L-l_j}\left[\sum_{k}P(k|x_i\geq 2)k - \sum_{x_i}p(x_i|x_i\geq 2) x_i \right]\nonumber\\
+&=\frac{l_j}{L-l_j}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right) 
 \end{align}
-for $j\neq i$, and 
-\begin{equation}
-\langle x_i\rangle_{\hat{p}}=l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}.
-\end{equation}
+The mean focal genotype abundance is simpler, 
+\begin{align}
+\langle x_i \rangle_{\hat{p}}&=\sum_{\mathbf x} x_i p(\mathbf x|x_i\geq 2)\nonumber \\
+&=\sum_{x_i} x_i p(x_i|x_i\geq 2) \nonumber\\
+&=\frac{1}{1-(1+l_i)e^{-l_i}}\sum_{x_i\geq 2} p(x_i)x_i\nonumber\\
+&=l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}.
+\end{align}
 
-To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\hat{p}$ is approximated by the ${\mathbf x}$ dispersal probabilities in a territory where at least two focal propagule is assumed to be present. All covariances are now zero, so that $\sigma^2(\sum c_j x_j)=\sum c_j^2 \sigma^2(x_j)$, where $\sigma^2(x_j)=l_j$ for $j\neq i$. The expression for $\sigma^2(x_i)$ is more complicated. We assume $p(x_i=0)\approx 0$ without loss of generality (since otherwise $D\gg 1$ and $\Delta n_a$ is negligible). Then
+To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\hat{p}$ is approximated by the ${\mathbf x}$ dispersal probabilities in a territory where at least two focal propagules are assumed to be present. All covariances are now zero, so that $\sigma^2(\sum c_j x_j)=\sum c_j^2 \sigma^2(x_j)$, where $\sigma^2(x_j)=l_j$ for $j\neq i$. The expression for $\sigma^2(x_i)$ is more complicated. We assume $p(x_i=0)\approx 0$ without loss of generality (since otherwise $D\gg 1$ and $\Delta n_a$ is negligible). Then
 \begin{equation}
 \sigma^2(x_i)=\frac{l_i^2}{D}\left(1-\frac{1}{D}\right)+\frac{l_i}{D},
 \end{equation}
