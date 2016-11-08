@@ -25,7 +25,7 @@ Joanna Masel $^{1}$}
 
 \noindent{}1. Department of Ecology and Evolutionary Biology, University of Arizona, Tucson, AZ 85721.
 
-\noindent{}$\ast$ Corresponding author; e-mail: amnat@uchicago.edu.
+\noindent{}$\ast$ Corresponding author; e-mail: jbertram@email.arizona.edu.
 
 
 \bigskip
@@ -284,27 +284,32 @@ We first calculate $\langle x_j \rangle_{\tilde{p}}$. Let $X=\sum_j x_j$ denote 
 \end{align}
 and so
 \begin{align}
-\langle x_j \rangle_{\tilde{p}}&=\sum_{\mathbf x_i} \tilde{p}({\mathbf x_i})x_j,\nonumber\\
+\langle x_j \rangle_{\tilde{p}}&=\sum_{\mathbf x_i} \tilde{p}({\mathbf x_i})x_j\nonumber\\
 &=\frac{1}{1-(1+L)e^{-L}}\sum_{X=2}^{\infty} P(X) \sum_{\mathbf x_i} p({\mathbf x_i}|X_i=X-1)x_j.
 \label{eq:raremonster1}
 \end{align}
 The inner sum over ${\mathbf x_i}$ is the mean number of propagules of a given nonfocal type $j$ that will be found in a territory which received $X-1$ nonfocal propagules in total, which is equal to $\frac{l_j}{L-l_i}(X-1)$. Thus, 
 \begin{align}
-\langle x_j \rangle_{\tilde{p}}&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=2}^{\infty} P(X) (X-1),\nonumber\\
+\langle x_j \rangle_{\tilde{p}}&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{k=2}^{\infty} P(X) (X-1)\nonumber\\
 &=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i},
 \label{eq:meanxjrare}
 \end{align}
 where the last line follows from $\sum_{X=2}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)X-\sum_{X=1}^{\infty}P(X)$.
 
-For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated. We instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ Poisson dispersal probabilities conditional on $X_i>1$, independently of the outcome of $x_i$. This gives $\langle x_j \rangle_{\tilde{q}}=l_j/C$, 
-\begin{equation}
-\sigma_{\tilde{q}}^2(x_j)=\frac{l_j^2}{C}\left(1-\frac{1}{C}\right)+\frac{l_j}{C},\label{eq:varr}
-\end{equation}
+For analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$, Eq. \eqref{eq:meanxjrare} is unnecessarily complicated. We instead use the following approximation. Rather than evaluating the situation in each territory after dispersal as above, we replace $\tilde{p}$ by $\tilde{q}$, defined as the ${\mathbf x_i}$ Poisson dispersal probabilities conditional on $X_i\geq1$, independently of the outcome of $x_i$. This gives $\langle x_j \rangle_{\tilde{q}}=\langle x_j \rangle_p/C=l_j/C$, 
+\begin{align}
+\sigma_{\tilde{q}}^2(x_j)&=\langle x_j^2 \rangle_{\tilde{q}}-\langle x_j \rangle_{\tilde{q}}^2\nonumber\\
+&=\frac{1}{C}\langle x_j^2 \rangle_p-\frac{l_j^2}{C^2}\nonumber \\
+&=\frac{1}{C}(l_j^2 + l_j)-\frac{l_j^2}{C^2}\nonumber \\
+&=\frac{l_j^2}{C}\left(1-\frac{1}{C}\right)+\frac{l_j}{C},\label{eq:varr}
+\end{align}
 and 
-\begin{equation}
-\sigma_{\tilde{q}}(x_j,x_k)=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right),\label{eq:covr}
-\end{equation}
-where $C=1-e^{-(L-l_i)}$. The distribution $\tilde{q}$ only approximates the situation after dispersal, since knowing that one focal genotype is among the propagules present restricts the possible outcomes for the $x_j$, so that the $x_j$ cannot strictly be treated as independent of $x_i$. This seemingly minor distinction has meaningful consequences. To illustrate, suppose that the focal genotype is rare and the propagule density is high ($l_j \approx L\gg 1$). Then Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $L-1$ nonfocal propagules $\langle x_j \rangle_{\tilde{p}}\approx L-1$, with the focal propagule correctly excluded, whereas $\tilde{q}$ predicts one extra $\langle x_j \rangle_{\tilde{q}}\approx L$. As a result, $\tilde{q}$ gives pathological behavior for rare invaders (they have a rarity disadvantage), but its moments are quantitatively similar enough to those of $\tilde{p}$ that it is sufficient for analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$.
+\begin{align}
+\sigma_{\tilde{q}}(x_j,x_k)&=\langle x_j x_k \rangle_{\tilde{q}}-\langle x_j \rangle_{\tilde{q}}\langle x_k \rangle_{\tilde{q}}\nonumber\\
+&=\frac{1}{C}\langle x_j x_k \rangle_p-\frac{l_jl_k}{C^2}\nonumber\\
+&=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right),\label{eq:covr}
+\end{align}
+where $C=1-e^{-(L-l_i)}$ and $j\neq k$. The distribution $\tilde{q}$ only approximates the situation after dispersal, since knowing that one focal genotype is among the propagules present restricts the possible outcomes for the $x_j$, so that the $x_j$ cannot strictly be treated as independent of $x_i$. This seemingly minor distinction has meaningful consequences. To illustrate, suppose that the focal genotype is rare and the propagule density is high ($l_j \approx L\gg 1$). Then Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $L-1$ nonfocal propagules $\langle x_j \rangle_{\tilde{p}}\approx L-1$, with the focal propagule correctly excluded, whereas $\tilde{q}$ predicts one extra $\langle x_j \rangle_{\tilde{q}}\approx L$. As a result, $\tilde{q}$ gives pathological behavior for rare invaders (they have a rarity disadvantage), but its moments are quantitatively similar enough to those of $\tilde{p}$ that it is sufficient for analyzing the relative fluctuations in $\sum_{j\neq i} c_j x_j$.
 
 Decomposing the variance in $\sum_{j\neq i} c_j x_j$,
 \begin{equation}
