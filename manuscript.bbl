@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{33}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -126,6 +126,11 @@ Pianka, E.~R. 1970.
 \newblock On r- and {K-Selection}.
 \newblock The American Naturalist 104:592--597.
 
+\bibitem[{Rankin et~al.(2011)Rankin, Dieckmann, and Kokko}]{rankin_2011}
+Rankin, D.~J., U.~Dieckmann, and H.~Kokko. 2011.
+\newblock Sexual conflict and the tragedy of the commons.
+\newblock The American Naturalist 177:780--791.
+
 \bibitem[{Reznick et~al.(2002)Reznick, Bryant, and Bashey}]{reznick_2002}
 Reznick, D., M.~J. Bryant, and F.~Bashey. 2002.
 \newblock r- and k-selection revisited: The role of population regulation in
@@ -159,6 +164,12 @@ Tilman, D. 1982.
 \newblock Resource competition and plant traits: a response to craine et al.
   2005.
 \newblock Journal of Ecology 95:231--234.
+
+\bibitem[{van Doorn and Weissing(2006)}]{vandoorn_2006}
+van Doorn, G.~S., and F.~J. Weissing. 2006.
+\newblock Sexual conflict and the evolution of female preferences for
+  indicators of male quality.
+\newblock The American Naturalist 168:742--757.
 
 \bibitem[{Violle et~al.(2007)Violle, Navas, Vile, Kazakou, Fortunel, Hummel,
   and Garnier}]{violle_2007}
