@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -37,11 +37,22 @@ Darling, E.~S., L.~Alvarez-Filip, T.~A. Oliver, T.~R. McClanahan, and I.~M.
   traits.
 \newblock Ecology Letters 15:1378--1386.
 
+\bibitem[{Davis et~al.(1998)Davis, Wrage, and Reich}]{davis_1998}
+Davis, M.~A., K.~J. Wrage, and P.~B. Reich. 1998.
+\newblock Competition between tree seedlings and herbaceous vegetation: support
+  for a theory of resource supply and demand.
+\newblock Journal of Ecology 86:652--661.
+
 \bibitem[{Desai and Fisher(2007)}]{desai_2007}
 Desai, M.~M., and D.~S. Fisher. 2007.
 \newblock Beneficial mutation–selection balance and the effect of linkage on
   positive selection.
 \newblock Genetics 176:1759--1798.
+
+\bibitem[{Diekmann et~al.(2004)}]{diekmann_2004}
+Diekmann, O., et~al. 2004.
+\newblock A beginner's guide to adaptive dynamics.
+\newblock Banach Center Publications 63:47--86.
 
 \bibitem[{Ewens(2012)}]{ewens_2012}
 Ewens, W.~J. 2012.
@@ -49,12 +60,30 @@ Ewens, W.~J. 2012.
   vol.~27.
 \newblock Springer Science \& Business Media.
 
+\bibitem[{Ferriere et~al.(2002)Ferriere, Bronstein, Rinaldi, Law, and
+  Gauduchon}]{ferriere_2002}
+Ferriere, R., J.~L. Bronstein, S.~Rinaldi, R.~Law, and M.~Gauduchon. 2002.
+\newblock Cheating and the evolutionary stability of mutualisms.
+\newblock Proceedings of the Royal Society of London B: Biological Sciences
+  269:773--780.
+
 \bibitem[{Fitzsimmons et~al.(2010)Fitzsimmons, Schoustra, Kerr, and
   Kassen}]{fitzsimmons_2010}
 Fitzsimmons, J.~M., S.~E. Schoustra, J.~T. Kerr, and R.~Kassen. 2010.
 \newblock Population consequences of mutational events: effects of antibiotic
   resistance on the r/k trade-off.
 \newblock Evolutionary Ecology 24:227--236.
+
+\bibitem[{Geritz et~al.(1997)Geritz, Metz, Kisdi, and
+  Mesz{\'e}na}]{geritz_1997}
+Geritz, S.~A., J.~A. Metz, {\'E}.~Kisdi, and G.~Mesz{\'e}na. 1997.
+\newblock Dynamics of adaptation and evolutionary branching.
+\newblock Physical Review Letters 78:2024.
+
+\bibitem[{Gerrish and Lenski(1998)}]{gerrish_1998}
+Gerrish, P.~J., and R.~E. Lenski. 1998.
+\newblock The fate of competing beneficial mutations in an asexual population.
+\newblock Genetica 102:127--144.
 
 \bibitem[{Gill(1974)}]{gill_1974}
 Gill, D.~E. 1974.
@@ -99,6 +128,12 @@ Knowlton, N. 2001.
 \newblock Proceedings of the National Academy of Sciences of the United States
   of America 98:5419--5425.
 
+\bibitem[{Kokko and López-Sepulcre(2007)}]{kokko_2007}
+Kokko, H., and A.~López-Sepulcre. 2007.
+\newblock The ecogenetic link between demography and evolution: can we bridge
+  the gap between theory and data?
+\newblock Ecology Letters 10:773--782.
+
 \bibitem[{Kuno(1991)}]{kuno_1991}
 Kuno, E. 1991.
 \newblock {Some strange properties of the logistic equation defined with r and
@@ -121,21 +156,28 @@ MacArthur, R.~H. 1962.
 \newblock Some generalized theorems of natural selection.
 \newblock Proceedings of the National Academy of Sciences 48:1893--1897.
 
+\bibitem[{Pelletier et~al.(2009)Pelletier, Garant, and Hendry}]{pelletier_2009}
+Pelletier, F., D.~Garant, and A.~Hendry. 2009.
+\newblock Eco-evolutionary dynamics.
+\newblock Philosophical Transactions of the Royal Society B: Biological
+  Sciences 364:1483--1489.
+
 \bibitem[{Pianka(1970)}]{pianka_1970}
 Pianka, E.~R. 1970.
 \newblock On r- and {K-Selection}.
 \newblock The American Naturalist 104:592--597.
-
-\bibitem[{Rankin et~al.(2011)Rankin, Dieckmann, and Kokko}]{rankin_2011}
-Rankin, D.~J., U.~Dieckmann, and H.~Kokko. 2011.
-\newblock Sexual conflict and the tragedy of the commons.
-\newblock The American Naturalist 177:780--791.
 
 \bibitem[{Reznick et~al.(2002)Reznick, Bryant, and Bashey}]{reznick_2002}
 Reznick, D., M.~J. Bryant, and F.~Bashey. 2002.
 \newblock r- and k-selection revisited: The role of population regulation in
   life-history evolution.
 \newblock Ecology 83:1509--1520.
+
+\bibitem[{Schoener(2011)}]{schoener_2011}
+Schoener, T.~W. 2011.
+\newblock The newest synthesis: Understanding the interplay of evolutionary and
+  ecological dynamics.
+\newblock Science 331:426--429.
 
 \bibitem[{Southwood(1977)}]{southwood_1977}
 Southwood, T. R.~E. 1977.
@@ -164,12 +206,6 @@ Tilman, D. 1982.
 \newblock Resource competition and plant traits: a response to craine et al.
   2005.
 \newblock Journal of Ecology 95:231--234.
-
-\bibitem[{van Doorn and Weissing(2006)}]{vandoorn_2006}
-van Doorn, G.~S., and F.~J. Weissing. 2006.
-\newblock Sexual conflict and the evolution of female preferences for
-  indicators of male quality.
-\newblock The American Naturalist 168:742--757.
 
 \bibitem[{Violle et~al.(2007)Violle, Navas, Vile, Kazakou, Fortunel, Hummel,
   and Garnier}]{violle_2007}
