@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -155,6 +155,11 @@ Luckinbill, L.~S. 1978.
 MacArthur, R.~H. 1962.
 \newblock Some generalized theorems of natural selection.
 \newblock Proceedings of the National Academy of Sciences 48:1893--1897.
+
+\bibitem[{MacArthur and Wilson(1967)}]{macarthur_1967}
+MacArthur, R.~H., and E.~O. Wilson. 1967.
+\newblock Theory of Island Biogeography.
+\newblock Princeton University Press.
 
 \bibitem[{Pelletier et~al.(2009)Pelletier, Garant, and Hendry}]{pelletier_2009}
 Pelletier, F., D.~Garant, and A.~Hendry. 2009.
