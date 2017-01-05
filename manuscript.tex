@@ -80,32 +80,11 @@ The aim of this paper is explore the interplay between some major dimensions of 
 
 We broadly follow the spirit of MacArthur's $r$/$K$ selection scheme in that our model is intended to account for fundamentally different forms of selection without getting  entangled in the intricacies of particular ecological scenarios. However, rather than building directly on MacArthur's formalism and its later extensions using Lotka-Volterra equations to incorporate competition (``$\alpha$-selection'') \citep{gill_1974,case_1974,joshi_2001}, our model is devised more with Grime's C/S/R scheme in mind, and represents a quantitative formalization of how C/S/R manifests at the level of within-population genotype evolution (as opposed to phenotypic divergence between species). This choice is motivated in part by the substantial empirical support for C/S/R-like schemes, and in part by the failings of the $r$/$K$ low/high density dichotomy --- many growth ability traits will confer advantages at both low and high densities (more details in the Discussion). 
 
-As we will see, a generalized version of the classic lottery model of \cite{chesson_1981} is well suited for this purpose. In the classic lottery model, mature individuals (henceforth ``adults'') each require their own territory, whereas newborn individuals (henceforth ``propagules'') disperse to, and subsequently compete for, the territories made available by the death of adults each generation. Territorial contest among propagules leaves a single victorious adult per territory, with the victor chosen at random from the propagules present (akin to a lottery) with probabilities weighted by a coefficient for each type representing competitive ability. This lottery competition is much simpler than having coefficients for the pairwise effects of types on each other (e.g. the $\alpha$ coefficients in the generalized Lotka-Volterra equations), or than modeling resource consumption explicitly \citep{tilman_1982}. 
+As we will see, a generalized version of the classic lottery model of \cite{chesson_1981} is well suited for our purposes. In the classic lottery model, mature individuals (henceforth ``adults'') each require their own territory, whereas newborn individuals (henceforth ``propagules'') disperse to, and subsequently compete for, the territories made available by the death of adults. Territorial contest among propagules leaves a single victorious adult per territory, with the victor chosen at random from the propagules present (akin to a lottery), with probabilities weighted by a coefficient for each type representing competitive ability. This representation of competition is much simpler than having coefficients for the pairwise effects of types on each other (e.g. the $\alpha$ coefficients in the generalized Lotka-Volterra equations), or than modeling resource consumption explicitly \citep{tilman_1982}. The classic lottery model also has similarities with the Wright-Fisher model in population-genetics (section BLAH). 
 
-In addition, the population-genetic Wright-Fisher model (each generation is a sample of constant size, with replacement, from the previous one) can be thought of as a special case of the classic lottery model. 
+However, the classic lottery model breaks down at low densitites, specifically if there are only  a few propagules dispersing to each territory (section ``Mean field approximation''). This was not a limitation in its original application to reef fishes, where a huge number of larvae from each species compete to secure territories each generation \cite{chesson_1981}, but is a critical limitation here. We analytically extend the classic lottery model to correctly account for low density behavior. 
 
-
-The classic lottery model assumed that the number of propagules and available territories is essentially infinitely large, where each available territory is swamped with competing propagules every generation (its original application was to reef fishes, where a huge number of larvae from each species compete to secure territories each generation; \citealt{chesson_1981}). 
-
-
-As a result, type abundances change deterministically (in a constant environment). Nevertheless,  
-
-which models gen can be interpreted as a type of lottery model
-
-Adults can persist over multiple generations, and so the classic lottery model allows for overlapping generations; 
-
-this is essential for the coexistence mechanisms that 
-
-propagule dispersal and competition is resolved over one generation.
-
-This is a feature 
-  
-
- breaks down at low absolute abundances at the scale of territorial contests (section ``Mean field approximation''), 
- 
-  
-
-Here we analytically extend the classic lottery model to correctly account for low density behavior. 
+%(each generation is a sample of constant size, with replacement, from the previous one)
 
 In the section ``Model'', we introduce the basic assumptions of our generalized lottery model. Analytical expressions for the change in genotype abundances over time are introduced in section ``Mean field approximation'', with mathematical details relegated to the Appendices. The following two sections discuss the behavior of rare mutants and our treatment of Grime's triangle. 
  
