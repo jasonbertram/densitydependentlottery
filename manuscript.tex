@@ -82,7 +82,7 @@ We broadly follow the spirit of MacArthur's $r$/$K$ selection scheme in that our
 
 As we will see, a generalized version of the classic lottery model of \cite{chesson_1981} is well suited for our purposes. In the classic lottery model, mature individuals (``adults'') each require their own territory, whereas newborn individuals (``propagules'') disperse to, and subsequently compete for, the territories made available by the death of adults. Territorial contest among propagules leaves a single victorious adult per territory, with the victor chosen at random from the propagules present (akin to a lottery), with probabilities weighted by a coefficient for each type representing competitive ability. This representation of competition is much simpler than having coefficients for the pairwise effects of types on each other (e.g. the $\alpha$ coefficients in the generalized Lotka-Volterra equations), or than modeling resource consumption explicitly \citep{tilman_1982}. The classic lottery model also has similarities with the Wright-Fisher model in population-genetics (section BLAH). 
 
-However, the classic lottery model breaks down at low densitites (that is, if there are only a few propagules dispersing to each territory; section ``Mean field approximation''). This was not a limitation in the lottery model's original application to reef fishes, where a huge number of larvae from each species compete to secure territories each generation \citep{chesson_1981}, but is a critical limitation for studying density-dependent selection. We analytically extend the classic lottery model to correctly account for low density behavior. 
+However, the classic lottery model breaks down at low densities (that is, if there are only a few propagules dispersing to each territory; section ``Mean field approximation''). This was not a limitation in the lottery model's original application to reef fishes, where a huge number of larvae from each species compete to secure territories each generation \citep{chesson_1981}, but is a critical limitation for studying density-dependent selection. We analytically extend the classic lottery model to correctly account for low density behavior. 
 
 %(each generation is a sample of constant size, with replacement, from the previous one)
 
@@ -104,20 +104,17 @@ The number of individuals of the $i$'th genotype landing in any particular terri
 
 When multiple propagules land on the same territory, they compete to secure the territory as they develop. This territorial contest is modeled as a weighted lottery: the probability that genotype $i$ wins a territory by the next iteration, assuming that at least one of its propagules is present, is $c_i x_i/\sum_j c_j x_j$, where $c_i$ is a constant representing relative competitive ability (Fig. \ref{fig:lottery}). 
 
-In the classic lottery model \citep{chesson_1981}, unoccupied territories are assumed to be saturated with propagules from every genotype i.e. the mean propagule density $l_i=m_i/U$ is much larger than one for all genotypes. From the law of large numbers, the composition of propagules in each territory will then not deviate appreciably from the mean composition $l_1,l_2,\ldots,l_G$ ($G$ is the number of genotypes present), and so the probability that genotype $i$ wins any particular unoccupied territory is approximately $c_i l_i/\sum_j c_j l_j$. Thus, genotype $i$ is expected to win $c_i l_i/\sum_j c_j l_j$ of the $U$ available territories, and deviations from this expected outcome are small (since $T$ is large by assumption). Consequently, the increase in $n_i$ due to territorial acquisition in the classic lottery model is given by
+In the classic lottery model \citep{chesson_1981}, unoccupied territories are assumed to be saturated with propagules from every genotype i.e. $l_i\gg 1$ where $l_i=m_i/U$ is the mean propagule density. From the law of large numbers, the composition of propagules in each territory will then not deviate appreciably from the mean composition $l_1,l_2,\ldots,l_G$ ($G$ is the number of genotypes present), and so the probability that genotype $i$ wins any particular unoccupied territory is approximately $c_i l_i/\sum_j c_j l_j$. Thus, genotype $i$ is expected to win $c_i l_i/\sum_j c_j l_j$ of the $U$ available territories, and deviations from this expected outcome are small (since $T$ is large by assumption). Consequently, the increase in $n_i$ due to territorial acquisition in the classic lottery model is given by
 \begin{equation}
 \Delta_+ n_i(t)=\frac{c_i l_i}{\sum_j c_j l_j}U(t)=b_i n_i\frac{1}{L}\frac{c_i}{\overline{c}}, \label{eq:lottery}
 \end{equation}
 where $\overline{c}=\sum_j c_j m_j/M$ is the mean propagule competitive ability for a randomly selected propagule, $L=M/U$ is the total propagule density and $M=\sum_j m_j$ is the total number of propagules.
 
-In our extension of the classic lottery model, we do not restrict ourselves to high propagule densities, and the propagule composition in different territories will deviate appreciably from $l_1,l_2,\ldots,l_G$. We expect that a fraction $p_1(x_1)\ldots p_G(x_G)$ of the $U$ unoccupied territories will have the propagule composition $x_1,\ldots,x_G$. Genotype $i$ is expected to win win $c_i x_i/\sum_j c_j x_j$ of these $p_1(x_1)\ldots p_G(x_G) U(t)$ territories.
-
-
-Since $T$ and the $n_i$ are large enough that we can ignore fluctuations in this partitioning of the unoccupied territories as well as the number of victories, which implies
+In our extension of the classic lottery model, we do not restrict ourselves to high propagule densities, and deviations from the mean propagule composition $l_1,l_2,\ldots,l_G$ will be important. Since dispersal is Poisson, we expect that a fraction $p_1(x_1)\ldots p_G(x_G)$ of the $U$ unoccupied territories will have the propagule composition $x_1,\ldots,x_G$. Genotype $i$ is expected to win $c_i x_i/\sum_j c_j x_j$ of these. Ignoring fluctuations about these two expectations (because $T$ is large), genotype $i$'s territorial acquisition is given by
 \begin{equation}
 \Delta_+ n_i(t)=U(t)\sum_{x_1,\ldots,x_G} \frac{c_i x_i}{\sum_j c_j x_j} p_1(x_1)\ldots p_G(x_G), \label{eq:growthsumuncoupled}
 \end{equation}
-where the sum only includes territories with at least one propagule present. 
+in our extended lottery model, where the sum only includes territories with at least one propagule present. 
 
 In addition to propagule birth and competition, occupied territories become unoccupied due to mortality. For the majority of this manuscript we assume that mortality only occurs in adults (setting aside the deaths implicit in territorial contest), and at a constant, genotype-specific per-capita rate $d_i$, so that the overall change in genotype abundances is
 \begin{equation}
@@ -125,11 +122,11 @@ In addition to propagule birth and competition, occupied territories become unoc
 \end{equation}
 This is reasonable approximation in the absence of disturbances; when we come to consider the effects of disturbances (Section ``Primary strategies and Grime's triangle''), we will incorporate disturbance-induced mortality in competing juveniles (Fig.~\ref{fig:lottery}). 
 
-Note that the competitive ability coefficients $c_i$ represent a strictly relative aspect of fitness in the sense that they only influence population size $N$ indirectly by changing genotype frequencies; that may in turn change the population mean birth and death rates. This can be seen by summing Eq. \eqref{eq:delttot} over genotypes to get the  change in population size $N$, 
+Note that the competitive ability coefficients $c_i$ represent a strictly relative aspect of fitness in the sense that they only influence population size $N$ indirectly by changing genotype frequencies. This can be seen by summing Eq. \eqref{eq:delttot} over genotypes to get the  change in population size $N$, 
 \begin{equation}
 \Delta N=U(1-e^{-L})-\sum_i d_i n_i,\label{eq:deltN}
 \end{equation}
-which is independent of $c_i$ (here $L=\sum_j l_j$ is the overall propagule density).
+which is independent of $c_i$ (here $L=\sum_j l_j$ is the overall propagule density). Unlike the classic lottery model, not all $U$ unoccupied territories are claimed each iteration; a fraction $e^{-L}$ remain unoccupied.
 
 \section*{Results}
 
