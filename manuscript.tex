@@ -90,7 +90,7 @@ In the section ``Model'', we introduce the basic assumptions of our generalized 
  
 \section*{Model}\label{sec:model}
 
-We assume that each individual in a population requires its own territory to survive and reproduce (a site-occupancy model; Fig.~\ref{fig:lottery}). All territories are identical, and the total number of territories is $T$. Time $t$ advances in discrete iterations, each representing the average time from birth to reproductive maturity. In iteration $t$, the number of reproductively mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories is $U(t)=T-N(t)$. 
+We assume that the individuals in a population each require their own territory to survive and reproduce (a site-occupancy model; Fig.~\ref{fig:lottery}). All territories are identical, and the total number of territories is $T$. Time $t$ advances in discrete iterations, each representing the average time from birth to reproductive maturity. In iteration $t$, the number of reproductively mature individuals (henceforth called ``adults'') of the $i$'th genotype is $n_i(t)$, the total number of adults is $N(t)=\sum_i n_i(t)$, and the number of unoccupied territories is $U(t)=T-N(t)$. 
 
 \begin{figure}
 \centering
@@ -136,14 +136,18 @@ which is independent of $c_i$ (here $L=\sum_j l_j$ is the overall propagule dens
 %The expected Eq. \eqref{eq:lottery}
 %Thus, the numbers of territorial victories $\Delta_+ n_1,\Delta_+ n_2,\ldots$ follow a multinomial distribution with $U$ trials and event probabilities $\frac{c_1 l_1}{\sum_j c_j l_j},\frac{c_2 l_2}{\sum_j c_j l_j},\ldots$.
 
-%Consequently, we can replace $x_i$ with $l_i$ in Eq. \eqref{eq:growthsumuncoupled}.
+
+Eq. \eqref{eq:growthsumuncoupled} gives little intuition about the dynamics of density-dependent lottery competition, since it involves an expectation over the dispersal distributions $p_i$, which depend on how the $n_i$ change over time. We now evaluate this expectation using a ``mean field'' approximation. 
+
+This approximation is similar to the high-$l_i$ approximation leading to Eq. \eqref{eq:lottery} in that we replace the $x_i$ with appropriate mean values. Replacing $x_i$ with $l_i$, as in the classic lottery model, is not valid for genotypes with low propagule densities $l_i\ll 1$ because $x_i=1$ in the few territories where $i$ propagules do land, and so $i$'s growth comes entirely from territories which deviate appreciably from the mean. 
 
 
-Eq. \eqref{eq:delttot} gives little intuition about the dynamics of density-dependent lottery competition, since \eqref{eq:growthsumuncoupled} involves an expectation over the random dispersal distributions $p_i$, which depend on how the $n_i$ change over time. We now evaluate this expectation using a ``mean field'' approximation; the intuition behind this approximation is as follows.
+%Eq. \eqref{eq:lottery} is nonsensical if $l_i$ is sufficiently small: genotype $i$ can win at most $m_i$ territories, yet Eq. \eqref{eq:lottery} demands a fraction $c_i m_i/\sum_j c_j m_j$ of the unoccupied territories $U$, no matter how large $U$ is. The source of this pathological behavior when 
 
-However, in general the $l_i$ are not all large, and the $x_i$ cannot simply be replaced by their means in Eq. \eqref{eq:growthsumuncoupled}. Indeed, Eq. \eqref{eq:lottery} is nonsensical if $l_i$ is sufficiently small: genotype $i$ can win at most $m_i$ territories, yet Eq. \eqref{eq:lottery} demands a fraction $c_i m_i/\sum_j c_j m_j$ of the unoccupied territories $U$, no matter how large $U$ is. The source of this pathological behavior when $l_i\ll 1$ is that $x_i=1$ in the few territories where $i$ propagules do land, and so $i$'s growth comes entirely from territories which deviate appreciably from the mean.  
+  
 
-Our mean field approximation is similar to the high-$l_i$ approximation leading to Eq. \eqref{eq:lottery} in that we replace the $x_i$ with appropriate mean values. The key distinction is that territories with a single propagule from the focal genotype, whose behavior is critical at low densities, are handled separately. In place of the requirement of $l_i\gg 1$ for all $i$, our approximation only requires that there are no large discrepancies in competitive ability (specifically, that we do not have $c_i/c_j\gg 1$ for any two genotypes; further discussion in section ``Discussion''). We obtain (details in Appendix B)
+
+The key distinction is that territories with a single propagule from the focal genotype, whose behavior is critical at low densities, are handled separately. In place of the requirement of $l_i\gg 1$ for all $i$, our approximation only requires that there are no large discrepancies in competitive ability (specifically, that we do not have $c_i/c_j\gg 1$ for any two genotypes; further discussion in section ``Discussion''). We obtain (details in Appendix B)
 \begin{equation}
 \Delta_+ n_i(t)\approx b_i n_i\left[e^{-L}+(R_i+A_i)\frac{c_i}{\overline{c}}\right], \label{eq:master}
 \end{equation}
