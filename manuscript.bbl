@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -140,6 +140,11 @@ Kuno, E. 1991.
   K: Inherent defects or artifacts?}
 \newblock Researches on Population Ecology 33:33--39.
 
+\bibitem[{Levins and Culver(1971)}]{levins_71}
+Levins, R., and D.~Culver. 1971.
+\newblock Regional coexistence of species and competition between rare species.
+\newblock Proceedings of the National Academy of Sciences 68:1246--1248.
+
 \bibitem[{Luckinbill(1978)}]{luckinbill_1978}
 Luckinbill, L.~S. 1978.
 \newblock r and k selection in experimental populations of escherichia coli.
@@ -177,6 +182,11 @@ Reznick, D., M.~J. Bryant, and F.~Bashey. 2002.
 \newblock r- and k-selection revisited: The role of population regulation in
   life-history evolution.
 \newblock Ecology 83:1509--1520.
+
+\bibitem[{Sale(1977)}]{sale_77}
+Sale, P.~F. 1977.
+\newblock Maintenance of high diversity in coral reef fish communities.
+\newblock The American Naturalist 111:337--359.
 
 \bibitem[{Schoener(2011)}]{schoener_2011}
 Schoener, T.~W. 2011.

@@ -55,6 +55,10 @@ def deltna(Ms,U,cs,i):
     
 def deltnp(Ms,U,cs):
     return array([deltnu(Ms,U,cs,j)+deltnr(Ms,U,cs,j)+deltna(Ms,U,cs,j) for j in range(len(Ms))])
+    
+def deltnpclassic(Ms,U,cs):
+    return array([float(U)*Ms[j]*cs[j]/sum([Ms[k]*cs[k] for k in range(len(Ms))]) for j in range(len(Ms))])
+    
 
 #Testing
 #=================================================================
@@ -68,7 +72,9 @@ Ms=map(int,array([10000,90000]))
 M=float(sum(Ms)); cs=array([1.5,1.]); G=len(Ms);
 maxl=2; Us=array([int(Ms[0]/x) for x in linspace(0.001,maxl,1000)]);
 exact=array([expCisim(Ms,U,cs) for U in Us]);
+totalclassic=array([deltnpclassic(Ms,U,cs) for U in Us]);
 
+#First genotype
 nocomp=array([deltnu(Ms,U,cs,0) for U in Us]);
 comp1=array([deltnr(Ms,U,cs,0) for U in Us]);
 comp2=array([deltna(Ms,U,cs,0) for U in Us]);
@@ -76,8 +82,9 @@ comp2=array([deltna(Ms,U,cs,0) for U in Us]);
 subplot(221)
 plot(float(Ms[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/Ms[0],'k.',markersize=1.,label="Simulation")
 plot(float(Ms[0])/Us,(nocomp+comp1+comp2)/Ms[0],'k',label=r"$\Delta_+ n_1/m_1$")
-#ylim([0,1000])
+plot(float(Ms[0])/Us,totalclassic[:,0]/Ms[0],'k--',label=r"Classic lottery")
 xlim([0,maxl])
+ylim([0,1])
 gca().xaxis.set_label_coords(0.5, -0.09)
 gca().set_xticklabels(['0','','1','','2','','3'])
 xlabel(r"$l_1$",fontsize=14)
@@ -103,6 +110,7 @@ gca().set_yticklabels([])
 gca().annotate(r'$(b)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 legend(loc='upper center',prop={'size':10})
 
+#Second genotype
 nocomp=array([deltnu(Ms,U,cs,1) for U in Us]);
 comp1=array([deltnr(Ms,U,cs,1) for U in Us]);
 comp2=array([deltna(Ms,U,cs,1) for U in Us]);
@@ -110,8 +118,9 @@ comp2=array([deltna(Ms,U,cs,1) for U in Us]);
 subplot(223)
 plot(float(Ms[1])/Us,(exact[:,0,1]+exact[:,1,1]+exact[:,2,1])/Ms[1],'k.',markersize=1,label="Simulation")
 plot(float(Ms[1])/Us,(nocomp+comp1+comp2)/Ms[1],'k',label=r"$\Delta_+ n_2/m_2$")
-#ylim([0,10000])
+plot(float(Ms[1])/Us,totalclassic[:,1]/Ms[1],'k--',label=r"Classic lottery")
 xlim([0,3*maxl])
+ylim([0,1])
 gca().xaxis.set_label_coords(0.5, -0.09)
 xlabel(r"$l_2$",fontsize=14)
 ylabel(r"$\Delta_+ n_2/m_2$",fontsize=14)
@@ -134,7 +143,7 @@ gca().set_yticklabels([])
 gca().annotate(r'$(d)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 legend(loc='upper center',prop={'size':10})
 
-savefig('/home/jbertram/Dropbox/rcKderivation/simulationcomparison.pdf')
+savefig('/home/jbertram/repos/densitydependentlottery/simulationcomparison.pdf')
 
 
 bs=array([0.6,1.05]);cs=array([20.,1.]);ds=array([0.5,0.5]);Ks=map(float,array([100000,100000]))
