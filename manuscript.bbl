@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{44}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -11,6 +11,12 @@ Aerts, R. 1999.
 Allan, J.~D. 1976.
 \newblock Life history patterns in zooplankton.
 \newblock The American Naturalist 110:165--180.
+
+\bibitem[{Bolker and Pacala(1999)}]{bolker_99}
+Bolker, B.~M., and S.~W. Pacala. 1999.
+\newblock Spatial moment equations for plant competition: Understanding spatial
+  strategies and the advantages of short dispersal.
+\newblock The American Naturalist 153:575--602.
 
 \bibitem[{Boyce(1984)}]{boyce_1984}
 Boyce, M.~S. 1984.
@@ -215,6 +221,11 @@ Taylor, D.~R., L.~W. Aarssen, and C.~Loehle. 1990.
 Tilman, D. 1982.
 \newblock Resource competition and community structure.
 \newblock 17. Princeton University Press.
+
+\bibitem[{Tilman(1994)}]{tilman_94}
+---{}---{}---. 1994.
+\newblock Competition and biodiversity in spatially structured habitats.
+\newblock Ecology 75:2--16.
 
 \bibitem[{Tilman(2007)}]{tilman_2007}
 ---{}---{}---. 2007.
