@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{45}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -210,6 +210,12 @@ Stearns, S.~C. 1977.
 \newblock The evolution of life history traits: A critique of the theory and a
   review of the data.
 \newblock Annual Review of Ecology and Systematics 8:145--171.
+
+\bibitem[{Svardal et~al.(2015)Svardal, Rueffler, and Hermisson}]{svardal_2015}
+Svardal, H., C.~Rueffler, and J.~Hermisson. 2015.
+\newblock A general condition for adaptive genetic polymorphism in temporally
+  and spatially heterogeneous environments.
+\newblock Theoretical Population Biology 99:76 -- 97.
 
 \bibitem[{Taylor et~al.(1990)Taylor, Aarssen, and Loehle}]{taylor_1990}
 Taylor, D.~R., L.~W. Aarssen, and C.~Loehle. 1990.
