@@ -1,4 +1,4 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{47}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -204,6 +204,11 @@ Schoener, T.~W. 2011.
 \newblock The newest synthesis: Understanding the interplay of evolutionary and
   ecological dynamics.
 \newblock Science 331:426--429.
+
+\bibitem[{Shmida and Ellner(1984)}]{shmida_84}
+Shmida, A., and S.~Ellner. 1984.
+\newblock Coexistence of plant species with similar niches.
+\newblock Vegetatio 58:29--55.
 
 \bibitem[{Southwood(1977)}]{southwood_1977}
 Southwood, T. R.~E. 1977.
