@@ -1,4 +1,4 @@
-\begin{thebibliography}{48}
+\begin{thebibliography}{50}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -68,8 +68,8 @@ Diekmann, O., et~al. 2004.
 \newblock A beginner's guide to adaptive dynamics.
 \newblock Banach Center Publications 63:47--86.
 
-\bibitem[{Ewens(2012)}]{ewens_2012}
-Ewens, W.~J. 2012.
+\bibitem[{Ewens(2004)}]{ewens_2004}
+Ewens, W.~J. 2004.
 \newblock Mathematical Population Genetics 1: Theoretical Introduction,
   vol.~27.
 \newblock Springer Science \& Business Media.
@@ -194,7 +194,14 @@ Pianka, E.~R. 1970.
 \bibitem[{Pianka(1972)}]{pianka_1972}
 ---{}---{}---. 1972.
 \newblock r and {K} selection or b and d selection?
-\newblock American Naturalist pages 581--588.
+\newblock The American Naturalist 106:581--588.
+
+\bibitem[{Ram et~al.(2016)Ram, Dellus-Gur, Bibi, Obolski, Berman, and
+  Hadany}]{ram_2016}
+Ram, Y., E.~Dellus-Gur, M.~Bibi, U.~Obolski, J.~Berman, and L.~Hadany. 2016.
+\newblock Predicting microbial relative growth in a mixed culture from growth
+  curve data.
+\newblock bioRxiv .
 
 \bibitem[{Reznick et~al.(2002)Reznick, Bryant, and Bashey}]{reznick_2002}
 Reznick, D., M.~J. Bryant, and F.~Bashey. 2002.
@@ -212,6 +219,12 @@ Schoener, T.~W. 2011.
 \newblock The newest synthesis: Understanding the interplay of evolutionary and
   ecological dynamics.
 \newblock Science 331:426--429.
+
+\bibitem[{Schrider et~al.(2016)Schrider, Shanku, and Kern}]{schrider_2016}
+Schrider, D.~R., A.~G. Shanku, and A.~D. Kern. 2016.
+\newblock Effects of linked selective sweeps on demographic inference and model
+  selection.
+\newblock Genetics 204:1207--1223.
 
 \bibitem[{Shmida and Ellner(1984)}]{shmida_84}
 Shmida, A., and S.~Ellner. 1984.
