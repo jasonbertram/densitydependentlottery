@@ -9,19 +9,19 @@ from numpy import *
 from pylab import *
 import bisect
 
-def expCisim(Ms,U,cs):
-    scatter=[[0 for x in range(len(Ms))] for y in range(U)];
-    for i in range(len(Ms)):
-        for y in xrange(Ms[i]):
+def deltnplussim(m,c,U):
+    scatter=[[0 for x in range(len(m))] for y in range(U)];
+    for i in range(len(m)):
+        for y in xrange(m[i]):
             cell=int(U*rand());
             scatter[cell][i]=scatter[cell][i]+1;
     
-    winsnocomp=zeros(len(Ms)); wins1=zeros(len(Ms)); wins2=zeros(len(Ms));
+    winsnocomp=zeros(len(m)); wins1=zeros(len(m)); wins2=zeros(len(m));
     comp=zeros(U);
     for i in range(U):
         comp[i]=sum(scatter[i])
         if comp[i]>0:            
-            lotterycmf=cumsum(array(scatter[i])*cs)
+            lotterycmf=cumsum(array(scatter[i])*c)
             victor=bisect.bisect(lotterycmf,rand()*lotterycmf[-1])
             
             if scatter[i][victor]==1 and comp[i]==1:
@@ -33,56 +33,49 @@ def expCisim(Ms,U,cs):
         
     return winsnocomp,wins1,wins2
 
-def deltnu(Ms,U,cs,i):
-    return Ms[i]*exp(-sum(Ms)/float(U))
+def R(m,c,U):
+    l=m/float(U)
+    L=sum(l)
+    cbar=sum(m*c)/sum(m); 
+    return cbar*exp(-l)*(1-exp(-(L-l)))\
+            /(c + (L-1+exp(-L))/(1-(1+L)*exp(-L))*(cbar*L-c*l)/(L-l))
 
-def deltnr(Ms,U,cs,i):
-    l=Ms[i]/float(U);notl=sum(Ms)/float(U)-l; L=float(l+notl);
-    #return Ms[i]*exp(-l)*(1-exp(-notl))*cs[i]/(sum([Ms[j]*cs[j]/(U*(1-exp(-notl))) for j in range(len(Ms)) if (j!=i)])+cs[i])
-    return Ms[i]*exp(-l)*(1-exp(-notl))*cs[i]/(sum([Ms[j]*cs[j]/(U*(1-(1+L)*exp(-L))) for j in range(len(Ms)) if (j!=i)])*(L-1+exp(-L))/notl+cs[i])
+def A(m,c,U):
+    l=m/float(U)
+    L=sum(l)
+    cbar=sum(m*c)/sum(m)
+    return (1-exp(-l))\
+            /((1-exp(-l))/(1-(1+l)*exp(-l))*c*l\
+            +(L*(1-exp(-L))/(1-(1+L)*exp(-L))-l*(1-exp(-l))/(1-(1+l)*exp(-l)))/(L-l)*(sum(c*l)-c*l))
     
-#def deltna(Ms,U,cs,i):
-#    l=Ms[i]/float(U);
-#    cbar=sum([Ms[j]*cs[j] for j in range(len(Ms))])/sum(Ms)
-#    Da=cbar*(1-exp(-l))/(cbar*sum(Ms)/float(U)+cs[i]*l**2*exp(-l)/(1-(1+l)*exp(-l)))
-#    return Ms[i]*Da*cs[i]/cbar
-
-def deltna(Ms,U,cs,i):
-    l=Ms[i]/float(U); L=sum(Ms)/float(U)
-    lfac=(1-exp(-l))/(1-(1+l)*exp(-l))
-    ljfac=(L*(1-exp(-L))/(1-(1+L)*exp(-L))-l*(1-exp(-l))/(1-(1+l)*exp(-l)))/(L-l)
-    return Ms[i]*(1-exp(-l))*cs[i]/(lfac*l*cs[i]+ljfac*sum([Ms[j]*cs[j]/float(U) for j in range(len(Ms)) if (j!=i)]))
+def deltnplus(m,c,U):
+    L=sum(m)/U
+    cbar=sum(m*c)/sum(m)
+    return m*(exp(-L)+(R(m,c,U)+A(m,c,U))*c/cbar)
     
-def deltnp(Ms,U,cs):
-    return array([deltnu(Ms,U,cs,j)+deltnr(Ms,U,cs,j)+deltna(Ms,U,cs,j) for j in range(len(Ms))])
+def deltnplusclassic(m,c,U):
+    return U*m*c/sum(m*c)
     
-def deltnpclassic(Ms,U,cs):
-    return array([float(U)*Ms[j]*cs[j]/sum([Ms[k]*cs[k] for k in range(len(Ms))]) for j in range(len(Ms))])
-    
-
-#Testing
-#=================================================================
-#Ms=[10000,100000,100000]; M=float(sum(Ms)); cs=array([1.,1.,5.]); G=len(Ms);
-#print(expCisim(Ms,210000,cs))
-#print(deltna(Ms,120000,cs,0))
 
 #Simulation comparison figure
 #================================================================
-Ms=map(int,array([10000,90000]))
-M=float(sum(Ms)); cs=array([1.5,1.]); G=len(Ms);
-maxl=2; Us=array([int(Ms[0]/x) for x in linspace(0.001,maxl,1000)]);
-exact=array([expCisim(Ms,U,cs) for U in Us]);
-totalclassic=array([deltnpclassic(Ms,U,cs) for U in Us]);
+m=array([10000,90000])
+M=float(sum(m)) 
+c=array([1.5,1.])
+cbar=sum(m*c)/sum(m)
+maxl=2; Us=array([int(m[0]/x) for x in linspace(0.001,maxl,100)]);
+exact=array([deltnplussim(m,c,U) for U in Us]);
+totalclassic=array([deltnplusclassic(m,c,U) for U in Us]);
 
 #First genotype
-nocomp=array([deltnu(Ms,U,cs,0) for U in Us]);
-comp1=array([deltnr(Ms,U,cs,0) for U in Us]);
-comp2=array([deltna(Ms,U,cs,0) for U in Us]);
+nocomp=array([exp(-M/U) for U in Us]);
+comp1=array([R(m,c,U)[0]*c[0]/cbar for U in Us]);
+comp2=array([A(m,c,U)[0]*c[0]/cbar for U in Us]);
 
 subplot(221)
-plot(float(Ms[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/Ms[0],'k.',markersize=1.,label="Simulation")
-plot(float(Ms[0])/Us,(nocomp+comp1+comp2)/Ms[0],'k',label=r"$\Delta_+ n_1/m_1$")
-plot(float(Ms[0])/Us,totalclassic[:,0]/Ms[0],'k--',label=r"Classic lottery")
+plot(float(m[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/m[0],'k.',markersize=1.,label="Simulation")
+plot(float(m[0])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_1/m_1$")
+plot(float(m[0])/Us,totalclassic[:,0]/m[0],'k--',label=r"Classic lottery")
 xlim([0,maxl])
 ylim([0,1])
 gca().xaxis.set_label_coords(0.5, -0.09)
@@ -94,13 +87,13 @@ gca().annotate(r'$(a)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 legend(loc='upper center',prop={'size':10})
 
 subplot(222)
-plot(float(Ms[0])/Us,exact[:,0,0]/Ms[0],'k.',markersize=1, label="Simulation")
-plot(float(Ms[0])/Us,exact[:,1,0]/Ms[0],'k.',markersize=1)
-plot(float(Ms[0])/Us,exact[:,2,0]/Ms[0],'k.',markersize=1)
+plot(float(m[0])/Us,exact[:,0,0]/m[0],'k.',markersize=1, label="Simulation")
+plot(float(m[0])/Us,exact[:,1,0]/m[0],'k.',markersize=1)
+plot(float(m[0])/Us,exact[:,2,0]/m[0],'k.',markersize=1)
 
-plot(float(Ms[0])/Us,nocomp/Ms[0],'k',label=r"$e^{-L}$")
-plot(float(Ms[0])/Us,comp1/Ms[0],'r',label=r"$R_1 c_1/\overline{c}$")
-plot(float(Ms[0])/Us,comp2/Ms[0],'b',label=r"$A_1 c_1/\overline{c}$")
+plot(float(m[0])/Us,nocomp,'k',label=r"$e^{-L}$")
+plot(float(m[0])/Us,comp1,'r',label=r"$R_1 c_1/\overline{c}$")
+plot(float(m[0])/Us,comp2,'b',label=r"$A_1 c_1/\overline{c}$")
 #ylim([0,1000])
 xlim([0,maxl])
 gca().xaxis.set_label_coords(0.5, -0.09)
@@ -111,14 +104,14 @@ gca().annotate(r'$(b)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 legend(loc='upper center',prop={'size':10})
 
 #Second genotype
-nocomp=array([deltnu(Ms,U,cs,1) for U in Us]);
-comp1=array([deltnr(Ms,U,cs,1) for U in Us]);
-comp2=array([deltna(Ms,U,cs,1) for U in Us]);
+nocomp=array([exp(-M/U) for U in Us]);
+comp1=array([R(m,c,U)[1]*c[1]/cbar for U in Us]);
+comp2=array([A(m,c,U)[1]*c[1]/cbar for U in Us]);
     
 subplot(223)
-plot(float(Ms[1])/Us,(exact[:,0,1]+exact[:,1,1]+exact[:,2,1])/Ms[1],'k.',markersize=1,label="Simulation")
-plot(float(Ms[1])/Us,(nocomp+comp1+comp2)/Ms[1],'k',label=r"$\Delta_+ n_2/m_2$")
-plot(float(Ms[1])/Us,totalclassic[:,1]/Ms[1],'k--',label=r"Classic lottery")
+plot(float(m[1])/Us,(exact[:,0,1]+exact[:,1,1]+exact[:,2,1])/m[1],'k.',markersize=1,label="Simulation")
+plot(float(m[1])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_2/m_2$")
+plot(float(m[1])/Us,totalclassic[:,1]/m[1],'k--',label=r"Classic lottery")
 xlim([0,3*maxl])
 ylim([0,1])
 gca().xaxis.set_label_coords(0.5, -0.09)
@@ -128,13 +121,13 @@ gca().annotate(r'$(c)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 legend(loc='upper center',prop={'size':10})
 
 subplot(224)
-plot(float(Ms[1])/Us,exact[:,0,1]/Ms[1],'k.',markersize=1,label="Simulation")
-plot(float(Ms[1])/Us,exact[:,1,1]/Ms[1],'k.',markersize=1)
-plot(float(Ms[1])/Us,exact[:,2,1]/Ms[1],'k.',markersize=1)
+plot(float(m[1])/Us,exact[:,0,1]/m[1],'k.',markersize=1,label="Simulation")
+plot(float(m[1])/Us,exact[:,1,1]/m[1],'k.',markersize=1)
+plot(float(m[1])/Us,exact[:,2,1]/m[1],'k.',markersize=1)
 
-plot(float(Ms[1])/Us,nocomp/Ms[1],'k',label=r"$e^{-L}$")
-plot(float(Ms[1])/Us,comp1/Ms[1],'r',label=r"$R_2 c_2/\overline{c}$")
-plot(float(Ms[1])/Us,comp2/Ms[1],'b',label=r"$A_2 c_2/\overline{c}$")
+plot(float(m[1])/Us,nocomp,'k',label=r"$e^{-L}$")
+plot(float(m[1])/Us,comp1,'r',label=r"$R_2 c_2/\overline{c}$")
+plot(float(m[1])/Us,comp2,'b',label=r"$A_2 c_2/\overline{c}$")
 #ylim([0,10000])
 xlim([0,3*maxl])
 gca().xaxis.set_label_coords(0.5, -0.09)
@@ -145,33 +138,40 @@ legend(loc='upper center',prop={'size':10})
 
 savefig('/home/jbertram/repos/densitydependentlottery/simulationcomparison.pdf')
 
+#Seasonal population fluctuations
+#=================================================================
 
-bs=array([0.6,1.05]);cs=array([20.,1.]);ds=array([0.5,0.5]);Ks=map(float,array([100000,100000]))
+def b(t):
+    return bparam[0]+bparam[1]*(1+sin(2*pi*t/g))
+    
+def d(t):
+    return dparam[0]+dparam[1]*(1+sin(2*pi*t/g))
 
-n0=array([20000,60000]); nt=[n0];
-for i in range(10000):
-    nt.append(nt[-1]+deltni(nt[-1],cs,Ks))
-
-nt=array(nt)
-
-print("first",bs[0]*cs[0]/ds[0])
-print("second",bs[1]*cs[1]/ds[1])
-
-plot(nt[:,0]+nt[:,1])
-plot(nt[:,0],'k')
-plot(nt[:,1],'k--')
+n=array([5000,5000])
+c=array([1.,1.])
+T=100000
+g=2.     #generations per seasonal cycle
+bparam=array([[0.1,0.1],[0.1,0.1]])
+dparam=array(array([[0.2,0.2],[0.,0.]]))
+    
+nhist=[]
+totaltime=20
+for t in range(totaltime):
+    print T-sum(n)
+    n=n+deltnplus(b(t)*n,c,T-sum(n))
+    nhist.append(list(n))
 
 #coexistence 
 #=================================================================
-K=100000; bs=array([0.4,.2]); cs=array([1.,1.]); ds=array([.2,.1]);
+K=100000; bs=array([0.4,.2]); c=array([1.,1.]); ds=array([.2,.1]);
 ns0=(1-ds)*array([1000,99000]);gens=100;
 
 nhistapprox=[]; Us=[]; Rs=[]; As=[]; ns=ns0
 for i in range(gens):
     Us.append(K-int(sum(ns)))
-    #Rs.append([deltnr(bs*ns,Us[-1],cs,0),deltnr(bs*ns,Us[-1],cs,1)])
-    #As.append([deltna(bs*ns,Us[-1],cs,0),deltna(bs*ns,Us[-1],cs,1)])
-    delt=deltnp(bs*ns,Us[-1],cs)
+    #Rs.append([deltnr(bs*ns,Us[-1],c,0),deltnr(bs*ns,Us[-1],c,1)])
+    #As.append([deltna(bs*ns,Us[-1],c,0),deltna(bs*ns,Us[-1],c,1)])
+    delt=deltnplus(bs*ns,Us[-1],c)
     ns=ns+delt-ns*ds;
     nhistapprox.append(ns)
 
@@ -186,7 +186,7 @@ plot(nhistapprox[:,1])
 #nhist=[]; Us=[]; ns=ns0; Rsexact=[];Asexact=[]
 #for i in range(gens):
 #    Us.append(K-int(sum(ns)))    
-#    temp=expCisim(map(int,bs*ns),Us[-1],cs)
+#    temp=deltnsim(map(int,bs*ns),Us[-1],c)
 #    Rsexact.append(temp[1])
 #    Asexact.append(temp[2])
 #    delt=sum(temp,0)
