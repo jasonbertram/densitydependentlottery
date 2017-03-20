@@ -49,13 +49,18 @@ def A(m,c,U):
             +(L*(1-exp(-L))/(1-(1+L)*exp(-L))-l*(1-exp(-l))/(1-(1+l)*exp(-l)))/(L-l)*(sum(c*l)-c*l))
     
 def deltnplus(m,c,U):
-    L=sum(m)/U
-    cbar=sum(m*c)/sum(m)
-    return m*(exp(-L)+(R(m,c,U)+A(m,c,U))*c/cbar)
+    if sum(m)>0:
+        L=sum(m)/U
+        cbar=sum(m*c)/sum(m)
+        return m*(exp(-L)+(R(m,c,U)+A(m,c,U))*c/cbar)
+    else:
+        return zeros(len(m))
     
 def deltnplusclassic(m,c,U):
-    return U*m*c/sum(m*c)
-    
+    if sum(m)>0:
+        return U*m*c/sum(m*c)
+    else:
+        return zeros(len(m))
 
 #Simulation comparison figure
 #================================================================
@@ -145,21 +150,37 @@ def b(t):
     return bparam[0]+bparam[1]*(1+sin(2*pi*t/g))
     
 def d(t):
-    return dparam[0]+dparam[1]*(1+sin(2*pi*t/g))
+    return dparam[0]+dparam[1]*(1+cos(2*pi*t/g))
 
-n=array([5000,5000])
+n=array([25000.,25000.])
 c=array([1.,1.])
 T=100000
-g=2.     #generations per seasonal cycle
-bparam=array([[0.1,0.1],[0.1,0.1]])
-dparam=array(array([[0.2,0.2],[0.,0.]]))
-    
-nhist=[]
-totaltime=20
+g=100.     #iterations per seasonal cycle
+bparam=array([[0.,0.],[.5,.3685]])
+dparam=array([[0.0,0.0],[0.2,0.15]])
+
+nhist=[n]
+totaltime=10000
 for t in range(totaltime):
-    print T-sum(n)
-    n=n+deltnplus(b(t)*n,c,T-sum(n))
+    U=T-sum(n)
+    n = n + deltnplus(b(t)*n*U/T,c,U)-d(t)*n
     nhist.append(list(n))
+
+figure()
+plot(nhist)
+figure()
+plot(transpose(transpose(array(nhist))/sum(nhist,1)))
+ylim([0,1])
+figure()
+plot(sum(nhist,1))
+ylim([0,T])
+
+'''
+figure()
+plot([b(t) for t in range(100)])
+figure()
+plot([d(t) for t in range(100)])
+'''
 
 #coexistence 
 #=================================================================
