@@ -153,14 +153,14 @@ def d(t):
     return dparam[0]+dparam[1]*(1+cos(2*pi*t/g))
 
 n=array([25000.,25000.])
-c=array([1.,1.])
+c=array([10.,1.])
 T=100000
-g=100.     #iterations per seasonal cycle
-bparam=array([[0.,0.],[.5,.3685]])
-dparam=array([[0.0,0.0],[0.2,0.15]])
+g=200.     #iterations per seasonal cycle
+bparam=array([[0.05,0.05],[1.,1.]])
+dparam=array([[0.0,0.0],[0.13,0.1]])
 
 nhist=[n]
-totaltime=10000
+totaltime=1000
 for t in range(totaltime):
     U=T-sum(n)
     n = n + deltnplus(b(t)*n*U/T,c,U)-d(t)*n
