@@ -147,20 +147,29 @@ savefig('/home/jbertram/repos/densitydependentlottery/simulationcomparison.pdf')
 #=================================================================
 
 def b(t):
-    return bparam[0]+bparam[1]*(1+sin(2*pi*t/g))
+    #return bparam[0]+bparam[1]*(1+sin(2*pi*t/g))
+    if t%g<g/2:
+        return bparam[0]
+    else:
+        return bparam[1]
     
 def d(t):
-    return dparam[0]+dparam[1]*(1+cos(2*pi*t/g))
+    #return dparam[0]+dparam[1]*(1+cos(2*pi*t/g))
+    if t%g<g/2:
+        return dparam[0]
+    else:
+        return dparam[1]
+
 
 n=array([25000.,25000.])
 c=array([10.,1.])
 T=100000
-g=200.     #iterations per seasonal cycle
+g=10.     #iterations per seasonal cycle
 bparam=array([[0.05,0.05],[1.,1.]])
 dparam=array([[0.0,0.0],[0.13,0.1]])
 
 nhist=[n]
-totaltime=1000
+totaltime=100
 for t in range(totaltime):
     U=T-sum(n)
     n = n + deltnplus(b(t)*n*U/T,c,U)-d(t)*n
