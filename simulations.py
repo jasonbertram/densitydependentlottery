@@ -5,24 +5,24 @@ Created on Thu Mar 24 12:01:54 2016
 @author: jbertram
 """
 
-from numpy import *
-from pylab import *
+import numpy as np
+import matplotlib.pyplot as plt
 import bisect
 
 def deltnplussim(m,c,U):
     scatter=[[0 for x in range(len(m))] for y in range(U)];
     for i in range(len(m)):
         for y in xrange(m[i]):
-            cell=int(U*rand());
+            cell=int(U*np.random.rand());
             scatter[cell][i]=scatter[cell][i]+1;
     
-    winsnocomp=zeros(len(m)); wins1=zeros(len(m)); wins2=zeros(len(m));
-    comp=zeros(U);
+    winsnocomp=np.zeros(len(m)); wins1=np.zeros(len(m)); wins2=np.zeros(len(m));
+    comp=np.zeros(U);
     for i in range(U):
         comp[i]=sum(scatter[i])
         if comp[i]>0:            
-            lotterycmf=cumsum(array(scatter[i])*c)
-            victor=bisect.bisect(lotterycmf,rand()*lotterycmf[-1])
+            lotterycmf=np.cumsum(np.array(scatter[i])*c)
+            victor=bisect.bisect(lotterycmf,np.random.rand()*lotterycmf[-1])
             
             if scatter[i][victor]==1 and comp[i]==1:
                 winsnocomp[victor]=winsnocomp[victor]+1
@@ -31,56 +31,56 @@ def deltnplussim(m,c,U):
             else: 
                 wins2[victor]=wins2[victor]+1
         
-    return winsnocomp,wins1,wins2
+    return np.array([winsnocomp,wins1,wins2])
 
 def R(m,c,U):
     l=m/float(U)
     L=sum(l)
     cbar=sum(m*c)/sum(m); 
-    return cbar*exp(-l)*(1-exp(-(L-l)))\
-            /(c + (L-1+exp(-L))/(1-(1+L)*exp(-L))*(cbar*L-c*l)/(L-l))
+    return cbar*np.exp(-l)*(1-np.exp(-(L-l)))\
+            /(c + (L-1+np.exp(-L))/(1-(1+L)*np.exp(-L))*(cbar*L-c*l)/(L-l))
 
 def A(m,c,U):
     l=m/float(U)
     L=sum(l)
     cbar=sum(m*c)/sum(m)
-    return (1-exp(-l))\
-            /((1-exp(-l))/(1-(1+l)*exp(-l))*c*l\
-            +(L*(1-exp(-L))/(1-(1+L)*exp(-L))-l*(1-exp(-l))/(1-(1+l)*exp(-l)))/(L-l)*(sum(c*l)-c*l))
+    return (1-np.exp(-l))\
+            /((1-np.exp(-l))/(1-(1+l)*np.exp(-l))*c*l\
+            +(L*(1-np.exp(-L))/(1-(1+L)*np.exp(-L))-l*(1-np.exp(-l))/(1-(1+l)*np.exp(-l)))/(L-l)*(sum(c*l)-c*l))
     
 def deltnplus(m,c,U):
     if sum(m)>0:
         L=sum(m)/U
         cbar=sum(m*c)/sum(m)
-        return m*(exp(-L)+(R(m,c,U)+A(m,c,U))*c/cbar)
+        return m*(np.exp(-L)+(R(m,c,U)+A(m,c,U))*c/cbar)
     else:
-        return zeros(len(m))
+        return np.zeros(len(m))
     
 def deltnplusclassic(m,c,U):
     if sum(m)>0:
         return U*m*c/sum(m*c)
     else:
-        return zeros(len(m))
+        return np.zeros(len(m))
 
 #Simulation comparison figure
 #================================================================
-m=array([10000,90000])
+m=np.array([10000,90000])
 M=float(sum(m)) 
-c=array([1.5,1.])
+c=np.array([1.5,1.])
 cbar=sum(m*c)/sum(m)
-maxl=2; Us=array([int(m[0]/x) for x in linspace(0.001,maxl,100)]);
-exact=array([deltnplussim(m,c,U) for U in Us]);
-totalclassic=array([deltnplusclassic(m,c,U) for U in Us]);
+maxl=2; Us=np.array([int(m[0]/x) for x in linspace(0.001,maxl,100)]);
+exact=np.array([deltnplussim(m,c,U) for U in Us]);
+totalclassic=np.array([deltnplusclassic(m,c,U) for U in Us]);
 
 #First genotype
-nocomp=array([exp(-M/U) for U in Us]);
-comp1=array([R(m,c,U)[0]*c[0]/cbar for U in Us]);
-comp2=array([A(m,c,U)[0]*c[0]/cbar for U in Us]);
+nocomp=np.array([np.exp(-M/U) for U in Us]);
+comp1=np.array([R(m,c,U)[0]*c[0]/cbar for U in Us]);
+comp2=np.array([A(m,c,U)[0]*c[0]/cbar for U in Us]);
 
 subplot(221)
-plot(float(m[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/m[0],'k.',markersize=1.,label="Simulation")
-plot(float(m[0])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_1/m_1$")
-plot(float(m[0])/Us,totalclassic[:,0]/m[0],'k--',label=r"Classic lottery")
+plt.plot(float(m[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/m[0],'k.',markersize=1.,label="Simulation")
+plt.plot(float(m[0])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_1/m_1$")
+plt.plot(float(m[0])/Us,totalclassic[:,0]/m[0],'k--',label=r"Classic lottery")
 xlim([0,maxl])
 ylim([0,1])
 gca().xaxis.set_label_coords(0.5, -0.09)
@@ -92,13 +92,13 @@ gca().annotate(r'$(a)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 legend(loc='upper center',prop={'size':10})
 
 subplot(222)
-plot(float(m[0])/Us,exact[:,0,0]/m[0],'k.',markersize=1, label="Simulation")
-plot(float(m[0])/Us,exact[:,1,0]/m[0],'k.',markersize=1)
-plot(float(m[0])/Us,exact[:,2,0]/m[0],'k.',markersize=1)
+plt.plot(float(m[0])/Us,exact[:,0,0]/m[0],'k.',markersize=1, label="Simulation")
+plt.plot(float(m[0])/Us,exact[:,1,0]/m[0],'k.',markersize=1)
+plt.plot(float(m[0])/Us,exact[:,2,0]/m[0],'k.',markersize=1)
 
-plot(float(m[0])/Us,nocomp,'k',label=r"$e^{-L}$")
-plot(float(m[0])/Us,comp1,'r',label=r"$R_1 c_1/\overline{c}$")
-plot(float(m[0])/Us,comp2,'b',label=r"$A_1 c_1/\overline{c}$")
+plt.plot(float(m[0])/Us,nocomp,'k',label=r"$e^{-L}$")
+plt.plot(float(m[0])/Us,comp1,'r',label=r"$R_1 c_1/\overline{c}$")
+plt.plot(float(m[0])/Us,comp2,'b',label=r"$A_1 c_1/\overline{c}$")
 #ylim([0,1000])
 xlim([0,maxl])
 gca().xaxis.set_label_coords(0.5, -0.09)
@@ -109,14 +109,14 @@ gca().annotate(r'$(b)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 legend(loc='upper center',prop={'size':10})
 
 #Second genotype
-nocomp=array([exp(-M/U) for U in Us]);
-comp1=array([R(m,c,U)[1]*c[1]/cbar for U in Us]);
-comp2=array([A(m,c,U)[1]*c[1]/cbar for U in Us]);
+nocomp=np.array([np.exp(-M/U) for U in Us]);
+comp1=np.array([R(m,c,U)[1]*c[1]/cbar for U in Us]);
+comp2=np.array([A(m,c,U)[1]*c[1]/cbar for U in Us]);
     
 subplot(223)
-plot(float(m[1])/Us,(exact[:,0,1]+exact[:,1,1]+exact[:,2,1])/m[1],'k.',markersize=1,label="Simulation")
-plot(float(m[1])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_2/m_2$")
-plot(float(m[1])/Us,totalclassic[:,1]/m[1],'k--',label=r"Classic lottery")
+plt.plot(float(m[1])/Us,(exact[:,0,1]+exact[:,1,1]+exact[:,2,1])/m[1],'k.',markersize=1,label="Simulation")
+plt.plot(float(m[1])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_2/m_2$")
+plt.plot(float(m[1])/Us,totalclassic[:,1]/m[1],'k--',label=r"Classic lottery")
 xlim([0,3*maxl])
 ylim([0,1])
 gca().xaxis.set_label_coords(0.5, -0.09)
@@ -126,22 +126,22 @@ gca().annotate(r'$(c)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 legend(loc='upper center',prop={'size':10})
 
 subplot(224)
-plot(float(m[1])/Us,exact[:,0,1]/m[1],'k.',markersize=1,label="Simulation")
-plot(float(m[1])/Us,exact[:,1,1]/m[1],'k.',markersize=1)
-plot(float(m[1])/Us,exact[:,2,1]/m[1],'k.',markersize=1)
+plt.plot(float(m[1])/Us,exact[:,0,1]/m[1],'k.',markersize=1,label="Simulation")
+plt.plot(float(m[1])/Us,exact[:,1,1]/m[1],'k.',markersize=1)
+plt.plot(float(m[1])/Us,exact[:,2,1]/m[1],'k.',markersize=1)
 
-plot(float(m[1])/Us,nocomp,'k',label=r"$e^{-L}$")
-plot(float(m[1])/Us,comp1,'r',label=r"$R_2 c_2/\overline{c}$")
-plot(float(m[1])/Us,comp2,'b',label=r"$A_2 c_2/\overline{c}$")
-#ylim([0,10000])
-xlim([0,3*maxl])
-gca().xaxis.set_label_coords(0.5, -0.09)
-xlabel(r"$l_2$",fontsize=14)
-gca().set_yticklabels([])
-gca().annotate(r'$(d)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
-legend(loc='upper center',prop={'size':10})
+plt.plot(float(m[1])/Us,nocomp,'k',label=r"$e^{-L}$")
+plt.plot(float(m[1])/Us,comp1,'r',label=r"$R_2 c_2/\overline{c}$")
+plt.plot(float(m[1])/Us,comp2,'b',label=r"$A_2 c_2/\overline{c}$")
+#plt.ylim([0,10000])
+plt.xlim([0,3*maxl])
+plt.gca().xaxis.set_label_coords(0.5, -0.09)
+plt.xlabel(r"$l_2$",fontsize=14)
+plt.gca().set_yticklabels([])
+plt.gca().annotate(r'$(d)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
+plt.legend(loc='upper center',prop={'size':10})
 
-savefig('/home/jbertram/repos/densitydependentlottery/simulationcomparison.pdf')
+plt.savefig('/home/jbertram/repos/densitydependentlottery/simulationcomparison.pdf')
 
 #Seasonal population fluctuations
 #=================================================================
@@ -156,45 +156,53 @@ def b(t):
 def d(t):
     #return dparam[0]+dparam[1]*(1+cos(2*pi*t/g))
     if t%g<g/2:
-        return dparam[0]
-    else:
         return dparam[1]
+    else:
+        return dparam[0]
 
 
-n=array([25000.,25000.])
-c=array([10.,1.])
+n=np.array([60000.,25000.])
+c=np.array([1.,1.])
 T=100000
-g=10.     #iterations per seasonal cycle
-bparam=array([[0.05,0.05],[1.,1.]])
-dparam=array([[0.0,0.0],[0.13,0.1]])
+g=20.     #iterations per seasonal cycle
+bparam=np.array([[0.0,0.0],[.5,.22]])
+dparam=np.array([[0.0,0.0],[0.2,0.1]])
 
-nhist=[n]
+nhist=[n];
 totaltime=100
 for t in range(totaltime):
     U=T-sum(n)
-    n = n + deltnplus(b(t)*n*U/T,c,U)-d(t)*n
+    n = n + deltnplus((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
     nhist.append(list(n))
 
-figure()
-plot(nhist)
-figure()
-plot(transpose(transpose(array(nhist))/sum(nhist,1)))
-ylim([0,1])
-figure()
-plot(sum(nhist,1))
-ylim([0,T])
+n=np.array([60000.,25000.])
+nsimhist=[n]
+totaltime=100
+for t in range(totaltime):
+    U=T-sum(n)
+    n = n + sum(deltnplussim((b(t)*n*U/T).astype(np.int),c,U.astype(np.int)))-d(t)*n
+    nsimhist.append(list(n))
+
+plt.figure()
+plt.plot(nhist)
+plt.plot(nsimhist)
+plt.figure()
+plt.plot(transpose(transpose(np.array(nhist))/sum(nhist,1)))
+plt.ylim([0,1])
+plt.figure()
+plt.plot(sum(nhist,1))
+plt.ylim([0,T])
 
 '''
-figure()
-plot([b(t) for t in range(100)])
-figure()
-plot([d(t) for t in range(100)])
+plt.figure()
+plt.plot([b(t) for t in range(100)])
+plt.plot([d(t) for t in range(100)])
 '''
 
 #coexistence 
 #=================================================================
-K=100000; bs=array([0.4,.2]); c=array([1.,1.]); ds=array([.2,.1]);
-ns0=(1-ds)*array([1000,99000]);gens=100;
+K=100000; bs=np.array([0.4,.2]); c=np.array([1.,1.]); ds=np.array([.2,.1]);
+ns0=(1-ds)*np.array([1000,99000]);gens=100;
 
 nhistapprox=[]; Us=[]; Rs=[]; As=[]; ns=ns0
 for i in range(gens):
@@ -205,13 +213,13 @@ for i in range(gens):
     ns=ns+delt-ns*ds;
     nhistapprox.append(ns)
 
-nhistapprox=array(nhistapprox)
-#Rs=array(Rs)
-#As=array(As)
+nhistapprox=np.array(nhistapprox)
+#Rs=np.array(Rs)
+#As=np.array(As)
 
-figure()
-plot(nhistapprox[:,0])
-plot(nhistapprox[:,1])
+plt.figure()
+plt.plot(nhistapprox[:,0])
+plt.plot(nhistapprox[:,1])
 
 #nhist=[]; Us=[]; ns=ns0; Rsexact=[];Asexact=[]
 #for i in range(gens):
@@ -223,27 +231,27 @@ plot(nhistapprox[:,1])
 #    ns=ns+delt-ns*ds;
 #    nhist.append(ns)
 #
-#nhist=array(nhist)
-#Rsexact=array(Rsexact)
-#Asexact=array(Asexact)
+#nhist=np.array(nhist)
+#Rsexact=np.array(Rsexact)
+#Asexact=np.array(Asexact)
 #
-#plot(nhist[:,0])
-#plot(nhist[:,1])
+#plt.plot(nhist[:,0])
+#plt.plot(nhist[:,1])
 
-#figure()
-#plot(Rs[:,0],'k')
-#plot(Rs[:,1],'b')
-#plot(As[:,0],'k--')
-#plot(As[:,1],'b--')
+#plt.figure()
+#plt.plot(Rs[:,0],'k')
+#plt.plot(Rs[:,1],'b')
+#plt.plot(As[:,0],'k--')
+#plt.plot(As[:,1],'b--')
 #
-#plot(Rsexact[:,0],'k.')
-#plot(Rsexact[:,1],'b.')
-#plot(Asexact[:,0],'kx')
-#plot(Asexact[:,1],'bx')
+#plt.plot(Rsexact[:,0],'k.')
+#plt.plot(Rsexact[:,1],'b.')
+#plt.plot(Asexact[:,0],'kx')
+#plt.plot(Asexact[:,1],'bx')
 
 
 
-figure(figsize=[4,3])
+plt.figure(figsize=[4,3])
 
 fill_between(range(gens),0,nhistapprox[:,0]/(nhistapprox[:,0]+nhistapprox[:,1]))
 ylim([0,1])
