@@ -164,7 +164,7 @@ def d(t):
 n=np.array([60000.,25000.])
 c=np.array([1.,1.])
 T=100000
-g=20.     #iterations per seasonal cycle
+g=40.     #iterations per seasonal cycle
 bparam=np.array([[0.0,0.0],[.5,.22]])
 dparam=np.array([[0.0,0.0],[0.2,0.1]])
 
@@ -185,12 +185,12 @@ for t in range(totaltime):
 
 plt.figure()
 plt.plot(nhist)
-plt.plot(nsimhist)
+#plt.plot(nsimhist)
 plt.figure()
-plt.plot(transpose(transpose(np.array(nhist))/sum(nhist,1)))
+plt.plot(np.array(nhist)[:,0]/np.sum(nhist,1))
 plt.ylim([0,1])
 plt.figure()
-plt.plot(sum(nhist,1))
+plt.plot(np.sum(nhist,1))
 plt.ylim([0,T])
 
 '''
