@@ -182,26 +182,30 @@ for t in range(totaltime):
 #    n = n + sum(deltnplussim((b(t)*n*U/T).astype(np.int),c,U.astype(np.int)))-d(t)*n
 #    nsimhist.append(list(n))
 
-plt.figure()
-plt.plot(nhist)
-#plt.plot(nclassichist)
-#plt.plot(nsimhist)
-plt.figure()
-plt.plot(np.array(nhist)[:,0]/np.sum(nhist,1))
-#plt.plot(np.array(nclassichist)[:,0]/np.sum(nclassichist,1))
-#plt.plot(np.array(nsimhist)[:,0]/np.sum(nsimhist,1))
-plt.ylim([0,1])
-plt.figure()
-plt.plot(np.sum(nsimhist,1))
-#plt.plot(np.sum(nclassichist,1))
-#plt.plot(np.sum(nsimhist,1))
-plt.ylim([0,T])
+fig=plt.subplot(311)
+fig.plot([b(t)[0] for t in range(totaltime)],'k',[b(t)[1] for t in range(totaltime)],'b',lw=2)
+fig.plot([d(t)[0] for t in range(totaltime)],'k--',[d(t)[1] for t in range(totaltime)],'b--',lw=2)
+fig.set_xticklabels([])
+fig.set_ylim([0,0.6])
+plt.ylabel(r"$b(t), d(t)$",fontsize=14)
+fig.annotate(r'$(a)$',xy=(0.01,0.9),xycoords='axes fraction',fontsize=12)
 
-'''
-plt.figure()
-plt.plot([b(t) for t in range(100)])
-plt.plot([d(t) for t in range(100)])
-'''
+fig=plt.subplot(312)
+plt.stackplot(range(totaltime+1),np.array(nhist)[:,1],np.array(nhist)[:,0],colors=['b','k'])
+fig.set_xticklabels([])
+fig.set_yticklabels(['0.0','0.2','0.4','0.6','0.8','1.0'])
+plt.ylabel(r"Abundance$/T$",fontsize=14)
+fig.annotate(r'$(b)$',xy=(0.01,0.9),xycoords='axes fraction',fontsize=12)
+
+fig=plt.subplot(313)
+plt.plot(np.array(nhist)[:,0]/np.sum(nhist,1),'k',lw=2)
+plt.ylim([0,1])
+plt.xlabel(r"$t$",fontsize=14)
+plt.ylabel("Frequency",fontsize=14)
+fig.annotate(r'$(c)$',xy=(0.01,0.9),xycoords='axes fraction',fontsize=12)
+
+plt.savefig('/home/jbertram/repos/densitydependentlottery/fluctuatingselection.pdf')
+
 
 #coexistence 
 #=================================================================
