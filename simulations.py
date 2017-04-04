@@ -164,16 +164,27 @@ def d(t):
 c=np.array([1.,1.])
 T=100000
 g=40.     #iterations per seasonal cycle
-bparam=np.array([[0.0,0.0],[.5,.22]])
+bparam=np.array([[0.0,0.0],[.5,.0423]])
 dparam=np.array([[0.0,0.0],[0.2,0.1]])
-totaltime=200
+totaltime=10000
 
+#n=np.array([60000.,25000.])
+#nhist=[n];
+#for t in range(totaltime):
+#    U=T-sum(n)
+#    n = n + deltnplus((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
+#    nhist.append(list(n))
+    
 n=np.array([60000.,25000.])
-nhist=[n];
+nhistclassic=[n];
 for t in range(totaltime):
     U=T-sum(n)
-    n = n + deltnplus((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
-    nhist.append(list(n))
+    n = n + deltnplusclassic((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
+    nhistclassic.append(list(n))
+    
+#plt.stackplot(range(totaltime+1),np.array(nhistclassic)[:,1],np.array(nhistclassic)[:,0],colors=['b','k'])
+plt.figure()
+plt.plot(np.array(nhistclassic)[:,0]/np.sum(nhistclassic,1),'k',lw=2)
     
 #n=np.array([6000.,2500.])
 #nsimhist=[n]
