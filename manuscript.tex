@@ -239,19 +239,21 @@ Sections ``'' and ``'' only depend on the behaviour of low-frequency invaders in
 
 We consider the situation where birth and death rates vary periodically with amplitude sufficent to cause large changes in population density. For example, natural \textit{Drosophila} populations expand rapidly in the warmer months when fruit is abundant, but largely die off in the colder months. Within this seasonal population density cycle, hundreds of polymorphisms also cycle in frequency, some of which may be adaptive, and potentially millions of years old \citep{bergland_14}. In this situation, selection on allele frequencies occurs on the same time scale as population demography. 
 
-In the classical population genetic treatment of fluctuating selection, environmental fluctuations do not promote coexistence. Allele frequencies are successively multiplied by relative fitness values for each environmental iteration, and so two alleles favored in different enviroments can only stably coexist if this product for  one allele exactly equals the product for the other; frequency dependent selection or heterozygote advantage are still required for coexistence [cite dempster]. This argument implicitly assumes non-overlapping generations. If generations overlap and competition is restricted to juvenile recruitment (``viability selection'' in population genetic terminology), then environmental fluctuations do promote coexistence as a result of the storage effect [cite ellner and hairston]. 
+In the classical population genetic treatment of fluctuating selection, environmental fluctuations do not promote coexistence. Allele frequencies are successively multiplied by relative fitness values for each environmental iteration, and so two alleles favored in different enviroments can only stably coexist if this product for  one allele exactly equals the product for the other. This is exceedingly unlikely unless the  conditions for coexistence in a constant environment --- frequency dependent selection or heterozygote advantage --- are met [cite dempster]. However, the classical argument implicitly assumes non-overlapping generations. If generations overlap and competition is restricted to juvenile recruitment (``viability selection'' in population genetic terminology), then environmental fluctuations via the storage effect [cite ellner and hairston]. 
 
-Figure \ref{fluctuatingselection} shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with positive mortality and no growth). Two types are present, a $b$ specialist, which is better at rapidly growing in the summer (higher $b$), and a $d$ specialist which is better at surviving the winter (lower $d$). Due to the storage effect, neither type has an advantage over a full environmental cycle, and $b$ and $d$ types can stably coexist (which is not possible without environmental fluctuations - section ``''). 
+Figure \ref{fig:fluctuatingselection} shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with mortality and no growth). Two types are present, a $b$ specialist, which is better at rapidly growing in the summer (higher $b$), and a $d$ specialist which is better at surviving the winter (lower $d$).  Neither type has an advantage over a full environmental cycle, and they stably coexist. Stable coexistence was not possible in a constant environment (section ``''), and occurs in Fig. \ref{fig:fluctuatingselection} due to the storage effect. 
 
-While
+
+
+
 
  
-Current approaches to population genetic inference treat demography and selection separately, typically fitting a demographic model to data on ostensibly neutral sites, and then inferring selection against this demographic background, despite the recurrent problem that the two are confounded \citep{schrider_2016}.
+Current approaches to population genetic inference treat demography and selection separately, typically fitting a demographic model to data on ostensibly neutral sites, and then inferring selection against this demographic background, despite the recurrent problem that the two are confounded \citep{schrider_2016}. in expanding (e.g. humans) or seasonally-cycling (e.g. . 
 
 
 
 
-in expanding (e.g. humans) or seasonally-cycling (e.g. . 
+
 
 
 
