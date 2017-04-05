@@ -235,15 +235,15 @@ In ideal environments, we predict evolution for higher $b$ and $c$, but not lowe
 
 \section*{Selection and population density under cyclical birth and death rates}
 
-We now consider periodically varying birth and death rates, as could occur due to seasonal cycles. For example, natural \textit{Drosophila} populations expand rapidly in the warmer months when fruit is abundant,  and are carried through the colder months by a much smaller number of dormant individuals. Population density undergoes seasonal cycles, and within these cycles, hundreds of polymorphisms also cycle in frequency, some of which may potentially have been doing so for millions of years \citep{bergland_14}.
+Sections ``'' and ``'' only depend on the behaviour of low-frequency invaders in Eq. \eqref{eq:master}. Here we consider an example of its full time-dendent behaviour. 
 
-Figure \ref{fluctuatingselection} shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with positive mortality and no growth). 
+We consider the situation where birth and death rates vary periodically with amplitude sufficent to cause large changes in population density. For example, natural \textit{Drosophila} populations expand rapidly in the warmer months when fruit is abundant, but largely die off in the colder months. Within this seasonal population density cycle, hundreds of polymorphisms also cycle in frequency, some of which may be adaptive, and potentially millions of years old \citep{bergland_14}. In this situation, selection on allele frequencies occurs on the same time scale as population demography. 
 
+In the classical population genetic treatment of fluctuating selection, environmental fluctuations do not promote coexistence. Allele frequencies are successively multiplied by relative fitness values for each environmental iteration, and so two alleles favored in different enviroments can only stably coexist if this product for  one allele exactly equals the product for the other; frequency dependent selection or heterozygote advantage are still required for coexistence [cite dempster]. This argument implicitly assumes non-overlapping generations. If generations overlap and competition is restricted to juvenile recruitment (``viability selection'' in population genetic terminology), then environmental fluctuations do promote coexistence as a result of the storage effect [cite ellner and hairston]. 
 
-Selection alternatively favors the $b$ specialist 
+Figure \ref{fluctuatingselection} shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with positive mortality and no growth). Two types are present, a $b$ specialist, which is better at rapidly growing in the summer (higher $b$), and a $d$ specialist which is better at surviving the winter (lower $d$). Due to the storage effect, neither type has an advantage over a full environmental cycle, and $b$ and $d$ types can stably coexist (which is not possible without environmental fluctuations - section ``''). 
 
-
-. However, due to the storage effect neither has an advantage over a full environemntal cycle, and
+While
 
  
 Current approaches to population genetic inference treat demography and selection separately, typically fitting a demographic model to data on ostensibly neutral sites, and then inferring selection against this demographic background, despite the recurrent problem that the two are confounded \citep{schrider_2016}.
@@ -255,7 +255,6 @@ in expanding (e.g. humans) or seasonally-cycling (e.g. .
 
 
 
- Eco-evolutionary models of selection may help to remedy this situation, since demography and selection are treated as inseparable, especially on shorter timescales, both simply being the outcome of patterns of births and deaths. 
  
 \begin{figure}
 \centering
