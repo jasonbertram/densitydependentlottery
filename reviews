@@ -1,0 +1,102 @@
+Dear Dr Bertram:
+
+The Editorial Board of the American Naturalist has reached a decision regarding your article, "Density-dependent selection in evolutionary genetics: a lottery model of Grime's triangle."  Your manuscript has been evaluated by two expert reviewers and by Dr. Mark Vellend, one of our Associate Editors. After reading the manuscript, the reviews, and Dr. Vellend's comments (pasted below), I regret that I find myself in agreement with the Associate Editor's recommendation that your paper be declined.
+
+Verbal theory can be unsatisfying and I was interested to read about your work adapting the lottery model to accommodate competition among genotypes as a means of formalizing Grime’s ideas relating CSR trait syndromes to specific selective environments. Along with the reviewers and Dr. Vellend, I am enthusiastic about the goals of providing a mathematical foundation to support Grimes verbal model and I found your approach potentially promising. However after reading the paper, I felt that the effort stopped short of demonstrating what new insight could be gained from the formalization you offer. Both reviewers converged on a similar conclusion that although your approach can recapitulate aspects of Grimes ideas, the inferences you draw from it are not novel or surprising and are, in any case, based primarily on verbal arguments, making the model seem superfluous. The reviewers also identified problems with the structure of some components of the model and took issue with the
+biological realism of some assumptions. There was also a sense that that the introduction of the paper makes a number of bold claims that are not fulfilled, adding to a sense of disappointment in the extent to which the work supports a significant advance. Aspects of the modeling could be defended or altered in a revision, but ultimately the paper did not make convincing argument for its utility. I agree with Dr. Vellend that your efforts here could be a promising start towards theory that can make sense of empirical data on sets of covarying traits, but it has not yet progressed to a point where it would appeal to a broad audience. Thus I also agree with his recommendation to decline the paper.
+
+As a result, I cannot accept your manuscript for publication. Because of space limitations, we can accept only 20% of submissions. We must emphasize the goals of The American Naturalist: to publish papers that are of broad interest to the readership, to pose a new and significant problem or introduce a novel subject to the readership, to develop conceptual unification, and to change the way people think about the topic of the manuscript. Unfortunately, this means that we must decline many good manuscripts that are worthy of scientific publication. Declined manuscripts are not eligible for resubmission in a revised form.
+
+Thank you for thinking of The American Naturalist as an outlet for your work.
+
+Sincerely,
+
+Alice A. Winn
+Editor
+American Naturalist  
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ASSOCIATE EDITOR'S RECOMMENDATION
+
+This paper develops a version of the widely-used lottery model for ecological community dynamics, modified to allow for small propagule numbers, with the aim of mathematically reproducing Grime’s CSR scheme for plant strategies.  I think the goal of connecting formal theory to influential qualitative heuristics is laudable, and many of the model results are intuitively appealing.  My mathematical abilities do not allow me to evaluate the details of the model, but two expert reviewers in this area have carefully reviewed the manuscript.  Unfortunately, their opinions are consistent in not feeling that the paper makes a sufficiently novel and important conceptual advance to justify publication in the American Naturalist.  For example, some of the key conclusions don’t require a complex mathematical model at all, such as invasion from rare being more likely if mutant has high fecundity, lower mortality or high competitive ability.  There was also a strong sense that the link
+between the model itself and the CSR scheme is somewhat unclear, with the verbal argument only loosely related to the model.  I found myself in agreement with these critiques.  Personally, I have always been drawn to the heuristic of Grime’s triangle, but I do think it’s overstated to start from the premise that “different species can be divided into a small number of distinct trait clusters”.  Stress tolerance, disturbance tolerance, and competitive ability do indeed appear to be important axes of trait variation among plants, but they relate in complex multivariate ways to measurable traits, with little evidence for clusters in trait space, at least as far as I know.  Efforts to use mathematical models to make sense of the empirical data like these are important, and hopefully this study might be the beginning of more pronounced advances in this direction.
+
+
+Mark Vellend
+(Associate Editor)
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Reviewer #1:
+
+This manuscript presents a model of lottery competition, modified to allow for potentially small numbers of propagules reaching each available territory; the model is then interpreted in the light of Grime's triangle, that identifies different types of strategies (competitors, stress tolerators, ruderals) corresponding to different adaptation to stress and/or disturbance.
+
+The different parts of the paper are somewhat disconnected; first, the model is presented and analyzed; then comes an invasion analysis, the conclusions of which do not really differ from what is obtained with a classical lottery model (a mutant fares better if it has a lower death rate / higher fecundity / higher competitive ability); finally, connections are made with the different types of strategies described in Grime's triangle, and illustrations are given for large but also vague clades of organisms (fishes, corals, plants). But no part appears essential to the other ones. Take for instance Figure 4 (a table). The modified lottery model allows the consideration of cases with low density; in this case competitive ability does not matter, so there is no selection for changes in competitive ability. There is not really a need for a detailed model to reach this verbal conclusion... What Figure (/table) 4 also shows is that a parameter that is constrained does not evolve
+(e.g., Ideal column, d has to be <<1, it cannot change). Again, there is no need for a complicated model to obtain this result...
+
+Considering the different parts separately:
+
+The model is a modified lottery model; in the lottery model, there is a large number of propagules competing for each territory; here, this number can be small.
+
+- The distribution of numbers of propagules of a given type are said to be given by a product of independent Poisson distributions (Appendix A, line 605). There needs to be a better justification for this claim given how the model is constructed; the Poisson limit theorem deals with binomial distribution, not a multinomial. Also, the conditions under which this is a valid approximation could be clearer (see e.g. Deheuvels & Pfeifer 1988, "Poisson approximations of multinomial distributions and point processes")
+
+On the other hand, it would not be too unrealistic to directly assume a Poisson distribution as suggested lines 608-213.
+
+- The decomposition presented in eq. (5) is useful in that it helps understand the consequences of different levels of propagule density. However, eq. (5) in the main text is presented as if the decomposition was obtained after lines of calculations, while it is assumed from the start (Appendix B). This should be clearer.
+It is not really clear what eqs (6) and (7) bring to the study, because they are not much interpreted (except to say when the terms vanish).
+
+- Details of the simulations are missing. What is the underlying model? (multinomial or Poisson?) What is the value of T? How many replicates are there?
+
+
+The invasion analysis is not a proper invasion analysis, as hinted at around line 267.
+In spite of the decomposition presented in eq. (5), the model remains rather complicated, hindering the presentation of unexpected results. There is no need for a complicated model to conclude that, all else being equal, a mutant with higher fecundity or lower death rate or higher competitive ability will invade (lines 239-246).
+
+
+Finally, as mentioned above, the discussion of different strategies of Grime's triangle can totally be done verbally. There does not seem to be any point that required the modified lottery model to be made.
+
+The empirical examples given at the end of the Results section are too vague to be relevant.
+
+Other comments
+lines 120-122 Presenting/discussing a potential feature that is actually not used may confuse the reader.
+
+Line 131: "held fixed" is confusing because n_i changes with time.
+
+Figure 2: the figure looks like there is isolation by distance (only two black trees send propagules to the bottom right-hand cell), while this does not seem to be the case in the model.
+
+Line 189 No I think it is already long enough
+
+Line 317 Where does this 1% figure come from?
+
+Line 411-412 It could be useful to expand on this.
+
+Line 456-461 Sorry, but no, this is not a model that could be described as lying on the "understudied evolution-only end of the spectrum". What is the justification for such a claim? Then the comment on adaptive dynamics (AD) being on the ecology side of the spectrum does not make much sense either; AD is a framework, not a model: you can use AD techniques to describe evolution in this modified lottery model.
+
+Figure 6 is unnecessary, many of the check-marks are very debatable.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Reviewer #2:
+
+This paper is an attempt to recover the traits associated with the CSR strategies of Grime as the result of evolution in a lottery model.
+
+The first part of the paper (pp 6-15) develops a lottery model with finite fecundity and hence Poisson-distributed number of propagules competing for a site. As it turns out later, the details of the model are not too important, but let me give a few comments anyway: The model assumes directed dispersal (line 124), which is less suitable for plants (a prime example for the Grime classification), but easier technically; line 126 claims that this does not matter. Given the broad scope the paper intends to address, the model is rather simplistic. Yet the model presents a technical challenge: the sum in equation (2) over the possible numbers of competitors is an infinite sum. In Appendix B, the authors derive the analytic approximation given in eqs (5)-(7), which can very nicely simplify and speed up the analysis of stochastic lottery models, so that the approximation could be useful for other related models as well. I have several problems with the derivation in Appendix B (see
+below), and therefore I was surprised to see a very good match with simulations in Figure 3. I have checked the approximation against my own numerics, and indeed it is very good; but this does not excuse the problems in its derivation.
+
+From page 15 onwards, the authors infer the evolution of fecundity (b), mortality (d) and competitive ability (c) in ideal/disturbed/stressful environments as in Grime's triangle. The summary table in Figure 4 is based on a verbal argument. The only link to the preceding model seems to be that in low-density environments, competitive ability is unimportant - which is immediately obvious and generalizes way beyond the concrete model. The verbal argument of this main part is weak. Essentially, it says that b and c should increase whereas d should decrease (as it is obvious), except when c is unimportant (density is low), or when d cannot decrease further (presumably this is why it is not expected to evolve in the ideal environment, although doubling a lifetime is good even if it's already long), or when b cannot increase by definition (this is how the authors define a stressful environment). We do not need any model to be able to say this much. Life-history trade-offs are
+intentionally missing from the argument. Moreover, equating disturbance to a constant high mortality is doubtful, and the definition of a stressful environment is also problematic so that the authors use actually two different definitions in Figure 4.
+
+I doubt that Grime's triangle is a good way to gain a deeper understanding of the diversity of life history strategies, and the present model does not add any significant new element to it. The Discussion relies heavily on pre-2000 references. The authors summarize related approaches in Figure 6; details of this table might be disputed, but my point here is that almost every entry goes back to the 1970's or earlier.
+
+Appendix B
+
+- lines 653-654, the authors have not shown that the neglected covariances would "significantly reduce" the variance
+- line 672, the Poisson probability of 2 or more propagules can be of order 1 when also the probability of no propagule is of order 1, therefore p(x_i=0) is not negligible
+- line 677, it does not follow from l_i being of order 1 that the rhs of (27) is much less than 1
+
+- this does not affect the approximation but wrong: line 637-, the x_j's are strictly independent of x_i. If the focal genotype is rare, then in a site that harbours a propagule of the focal genotype, there are on average L nonfocal propagules, not L-1. L is the unconditional mean propagule number, but once we have conditioned on having a focal propagule, the conditional mean number is L+1.
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
