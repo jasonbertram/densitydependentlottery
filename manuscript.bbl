@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{46}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -57,16 +57,16 @@ Davis, M.~A., K.~J. Wrage, and P.~B. Reich. 1998.
   for a theory of resource supply and demand.
 \newblock Journal of Ecology 86:652--661.
 
+\bibitem[{Dempster(1955)}]{dempster_1955}
+Dempster, E.~R. 1955.
+\newblock Maintenance of genetic heterogeneity.
+\newblock Cold Spring Harb Symp Quant Biol 20:25--31.
+
 \bibitem[{Desai and Fisher(2007)}]{desai_2007}
 Desai, M.~M., and D.~S. Fisher. 2007.
 \newblock Beneficial mutation–selection balance and the effect of linkage on
   positive selection.
 \newblock Genetics 176:1759--1798.
-
-\bibitem[{Diekmann et~al.(2004)}]{diekmann_2004}
-Diekmann, O., et~al. 2004.
-\newblock A beginner's guide to adaptive dynamics.
-\newblock Banach Center Publications 63:47--86.
 
 \bibitem[{Ewens(2004)}]{ewens_2004}
 Ewens, W.~J. 2004.
@@ -74,25 +74,12 @@ Ewens, W.~J. 2004.
   vol.~27.
 \newblock Springer Science \& Business Media.
 
-\bibitem[{Ferriere et~al.(2002)Ferriere, Bronstein, Rinaldi, Law, and
-  Gauduchon}]{ferriere_2002}
-Ferriere, R., J.~L. Bronstein, S.~Rinaldi, R.~Law, and M.~Gauduchon. 2002.
-\newblock Cheating and the evolutionary stability of mutualisms.
-\newblock Proceedings of the Royal Society of London B: Biological Sciences
-  269:773--780.
-
 \bibitem[{Fitzsimmons et~al.(2010)Fitzsimmons, Schoustra, Kerr, and
   Kassen}]{fitzsimmons_2010}
 Fitzsimmons, J.~M., S.~E. Schoustra, J.~T. Kerr, and R.~Kassen. 2010.
 \newblock Population consequences of mutational events: effects of antibiotic
   resistance on the r/k trade-off.
 \newblock Evolutionary Ecology 24:227--236.
-
-\bibitem[{Geritz et~al.(1997)Geritz, Metz, Kisdi, and
-  Mesz{\'e}na}]{geritz_1997}
-Geritz, S.~A., J.~A. Metz, {\'E}.~Kisdi, and G.~Mesz{\'e}na. 1997.
-\newblock Dynamics of adaptation and evolutionary branching.
-\newblock Physical Review Letters 78:2024.
 
 \bibitem[{Gerrish and Lenski(1998)}]{gerrish_1998}
 Gerrish, P.~J., and R.~E. Lenski. 1998.
@@ -142,12 +129,6 @@ Knowlton, N. 2001.
 \newblock Proceedings of the National Academy of Sciences of the United States
   of America 98:5419--5425.
 
-\bibitem[{Kokko and López-Sepulcre(2007)}]{kokko_2007}
-Kokko, H., and A.~López-Sepulcre. 2007.
-\newblock The ecogenetic link between demography and evolution: can we bridge
-  the gap between theory and data?
-\newblock Ecology Letters 10:773--782.
-
 \bibitem[{Kuno(1991)}]{kuno_1991}
 Kuno, E. 1991.
 \newblock {Some strange properties of the logistic equation defined with r and
@@ -180,11 +161,10 @@ MacArthur, R.~H., and E.~O. Wilson. 1967.
 \newblock Theory of Island Biogeography.
 \newblock Princeton University Press.
 
-\bibitem[{Pelletier et~al.(2009)Pelletier, Garant, and Hendry}]{pelletier_2009}
-Pelletier, F., D.~Garant, and A.~Hendry. 2009.
-\newblock Eco-evolutionary dynamics.
-\newblock Philosophical Transactions of the Royal Society B: Biological
-  Sciences 364:1483--1489.
+\bibitem[{Messer et~al.(2016)Messer, Ellner, and Hairston}]{messer_2016}
+Messer, P.~W., S.~P. Ellner, and N.~G. Hairston. 2016.
+\newblock Can population genetics adapt to rapid evolution?
+\newblock Trends in Genetics 32:408--418.
 
 \bibitem[{Pianka(1970)}]{pianka_1970}
 Pianka, E.~R. 1970.
@@ -213,12 +193,6 @@ Reznick, D., M.~J. Bryant, and F.~Bashey. 2002.
 Sale, P.~F. 1977.
 \newblock Maintenance of high diversity in coral reef fish communities.
 \newblock The American Naturalist 111:337--359.
-
-\bibitem[{Schoener(2011)}]{schoener_2011}
-Schoener, T.~W. 2011.
-\newblock The newest synthesis: Understanding the interplay of evolutionary and
-  ecological dynamics.
-\newblock Science 331:426--429.
 
 \bibitem[{Schrider et~al.(2016)Schrider, Shanku, and Kern}]{schrider_2016}
 Schrider, D.~R., A.~G. Shanku, and A.~D. Kern. 2016.
