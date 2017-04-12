@@ -235,32 +235,15 @@ In ideal environments, we predict evolution for higher $b$ and $c$, but not lowe
 
 So we have only considered the low-frequency invasion behavior of Eq. \eqref{eq:master}. Here we start exploring its full time-dependent behaviour. We consider a situation where birth and death rates vary periodically with amplitude sufficent to cause large changes in population density. This is inspired by natural \textit{Drosophila} populations, which expand rapidly in the warmer months when fruit is abundant, but largely die off in the colder months. Within this seasonal population density cycle, hundreds of polymorphisms also cycle in frequency \citep{bergland_14}. Some of these polymorphisms may be adaptive and potentially millions of years old \citep{bergland_14}. In this situation, selection on allele frequencies occurs on the same time scale as population demography, a considerably more complicated scenario than classical sweeps in demographically stable populations \citep{messer_2016}.
 
-In the classical population genetic treatment of fluctuating selection, environmental fluctuations do not promote coexistence. Allele frequencies are successively multiplied by relative fitness values for each environmental iteration, and so two alleles favored in different enviroments can only stably coexist if the product of fitnesses for one type exactly equals the product for the other \citep{dempster_1955}. Thus, stable coexistence still requires frequency dependent selection or heterozygote advantage (as is required in a constant environment). 
+The classical population genetic treatment of fluctuating selection suggests that environmental fluctuations do not promote coexistence. Allele frequencies are successively multiplied by relative fitness values for each environmental iteration, and so two alleles favored in different enviroments can only stably coexist if the product of fitnesses for one type exactly equals the product for the other \citep{dempster_1955}. Thus, stable coexistence still requires frequency dependent selection or heterozygote advantage (as is required in a constant environment). 
 
-One general mechanism which by which fluctuating selection promotes coexistence is the ``storage effect'', which occurs when some individuals are protected from selection, and is would appear as a form of frequency dependent selection in the classical analysis of \cite{dempster_1955}.
+This classical argument overlooks two general mechanisms by which fluctuating selection promotes coexistence. The first is the ``storage effect'', which introduces a form of frequency dependent selection that promotes coexistence in the presence of environmental fluctuations but not in a constant environment. The storage effect occurs when some individuals are protected from selection. This is the case in both the classic lottery model and our extension of it: a fraction $(1-d_i)n_i$ of each type's adults do not experience selection in a given iteration. Protection from selection favors rare types in fluctuating environments because abundant types cannot fully exploit environmental periods that favor them (since only some of the rare type can be displaced), whereas rare types gain the full benefits of their favorable periods (far more abundant type individuals can be displaced than the rare types could possibly displace) \citep{chesson_1981}.
 
-. In the lottery model, a certain fraction of the adult population ($(1-d_i)n_i$ of each type) does not experience selection in a given iteration. This favors rare types more than abundant ones, because abundant types 
+The second mechanism we will call the ``bounded density effect'', since it is a consequence of the inhibition of reproduction at high population densities (Dempster's (1955) argument ignores density-dependent effects). If there is growth from low to high density in each environmental cycle, then types that are abundant determine the time available for growth every cycle, with less time spent growing in cycles where they are favored, and more in cycles where they are not. This promotes coexistence even in the absence of frequency dependent selection \citep{yi_2013}. 
 
- 
- 
+Figure \ref{fig:fluctuatingselection} shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with mortality and no growth). Both the storage effect (winter survivors are protected from selection when summer starts) and the bounded density effect (expansion to high density occurs every cycle) are present. Two types are present, a $b$ specialist, which is better at rapidly growing in the summer (higher $b$), and a $d$ specialist which is better at surviving the winter (lower $d$).  Neither type has an advantage over a full environmental cycle, and they stably coexist. Stable coexistence between $b$ and $d$ specialists was not possible in a constant environment (section ``''), and is facilitated by some combination of the storage and bounded population size effects. 
 
-
-Figure \ref{fig:fluctuatingselection} shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with mortality and no growth). Two types are present, a $b$ specialist, which is better at rapidly growing in the summer (higher $b$), and a $d$ specialist which is better at surviving the winter (lower $d$).  Neither type has an advantage over a full environmental cycle, and they stably coexist. Stable coexistence was not possible in a constant environment (section ``''), and occurs in Fig. \ref{fig:fluctuatingselection} due to the storage effect. 
-
-
-
-
-
- 
 Current approaches to population genetic inference treat demography and selection separately, typically fitting a demographic model to data on ostensibly neutral sites, and then inferring selection against this demographic background, despite the recurrent problem that the two are confounded \citep{schrider_2016}. in expanding (e.g. humans) or seasonally-cycling (e.g. . 
-
-
-
-
-
-
-
-
  
 \begin{figure}
 \centering

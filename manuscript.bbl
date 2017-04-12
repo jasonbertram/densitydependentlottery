@@ -1,4 +1,4 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{47}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -268,5 +268,11 @@ Winemiller, K.~O., and K.~A. Rose. 1992.
 \newblock Patterns of life-history diversification in north american fishes:
   implications for population regulation.
 \newblock Canadian Journal of Fisheries and Aquatic Sciences 49:2196--2218.
+
+\bibitem[{Yi and Dean(2013)}]{yi_2013}
+Yi, X., and A.~M. Dean. 2013.
+\newblock Bounded population sizes, fluctuating selection and the tempo and
+  mode of coexistence.
+\newblock Proceedings of the National Academy of Sciences 110:16945--16950.
 
 \end{thebibliography}
