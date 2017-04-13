@@ -49,8 +49,8 @@ def A(m,c,U):
             +(L*(1-np.exp(-L))/(1-(1+L)*np.exp(-L))-l*(1-np.exp(-l))/(1-(1+l)*np.exp(-l)))/(L-l)*(sum(c*l)-c*l))
     
 def deltnplus(m,c,U):
-    if sum(m)>0:
-        L=sum(m)/U
+    if sum(m)>0 and U>0:
+        L=sum(m)/float(U)
         cbar=sum(m*c)/sum(m)
         return m*(np.exp(-L)+(R(m,c,U)+A(m,c,U))*c/cbar)
     else:
@@ -164,27 +164,26 @@ def d(t):
 c=np.array([1.,1.])
 T=100000
 g=40.     #iterations per seasonal cycle
-bparam=np.array([[0.0,0.0],[.5,.0423]])
+bparam=np.array([[0.0,0.0],[.5,.2]])
 dparam=np.array([[0.0,0.0],[0.2,0.1]])
-totaltime=100000
+totaltime=100
 
 n=np.array([60000.,25000.])
 nhist=[n];
 for t in range(totaltime):
     U=T-sum(n)
-    #n = n + deltnplus((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
-    n = n + deltnplus((b(t)*n).astype(np.int),c,U.astype(np.int))-d(t)*n
+    n = n + deltnplus((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
     nhist.append(list(n))
     
-n=np.array([60000.,25000.])
-nhistclassic=[n];
-for t in range(totaltime):
-    U=T-sum(n)
-    n = n + deltnplusclassic((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
-    nhistclassic.append(list(n))
-
-plt.stackplot(range(totaltime+1),np.array(nhistclassic)[:,1],np.array(nhistclassic)[:,0],colors=['b','k'])
-plt.plot(np.array(nhistclassic)[:,0]/np.sum(nhistclassic,1),'k',lw=2)
+#n=np.array([60000.,25000.])
+#nhistclassic=[n];
+#for t in range(totaltime):
+#    U=T-sum(n)
+#    n = n + deltnplusclassic((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
+#    nhistclassic.append(list(n))
+#
+#plt.stackplot(range(totaltime+1),np.array(nhistclassic)[:,1],np.array(nhistclassic)[:,0],colors=['b','k'])
+#plt.plot(np.array(nhistclassic)[:,0]/np.sum(nhistclassic,1),'k',lw=2)
     
     
 #n=np.array([6000.,2500.])
@@ -195,12 +194,28 @@ plt.plot(np.array(nhistclassic)[:,0]/np.sum(nhistclassic,1),'k',lw=2)
 #    nsimhist.append(list(n))
 
 fig=plt.subplot(311)
-fig.plot([b(t)[0] for t in range(totaltime)],'k',[b(t)[1] for t in range(totaltime)],'b',lw=2)
-fig.plot([d(t)[0] for t in range(totaltime)],'k--',[d(t)[1] for t in range(totaltime)],'b--',lw=2)
+for t in range(0,100,40):
+    fig.plot(range(t,t+20),[dparam[1][0] for _ in range(t,t+20)],'k.',lw=2)
+    fig.plot(range(t,t+20),[dparam[1][1] for _ in range(t,t+20)],'b.',lw=2)
+    
+fig.fill([20,40,40,20],[0,0,1,1],'g',alpha=0.3,edgecolor='none')
+fig.fill([60,40+40,40+40,60],[0,0,1,1],'g',alpha=0.3,edgecolor='none')
+fig.plot(range(20,40),[bparam[1][0] for _ in range(t,t+20)],'k.',lw=2)
+fig.plot(range(20,40),[bparam[1][1] for _ in range(t,t+20)],'b.',lw=2)
+fig.plot(range(60,80),[bparam[1][0] for _ in range(t,t+20)],'k.',lw=2,label=r"$b$ specialist")
+fig.plot(range(60,80),[bparam[1][1] for _ in range(t,t+20)],'b.',lw=2,label=r"$d$ specialist")
+
 fig.set_xticklabels([])
-fig.set_ylim([0,0.6])
+fig.set_xlim([0,100])
+fig.set_ylim([0,0.7])
 plt.ylabel(r"$b(t), d(t)$",fontsize=14)
 fig.annotate(r'$(a)$',xy=(0.01,0.9),xycoords='axes fraction',fontsize=12)
+fig.annotate(r'$d$',xy=(0.09,0.4),xycoords='axes fraction',fontsize=16)
+fig.annotate(r'$b$',xy=(0.29,0.4),xycoords='axes fraction',fontsize=16)
+fig.annotate(r'$d$',xy=(0.49,0.4),xycoords='axes fraction',fontsize=16)
+fig.annotate(r'$b$',xy=(0.69,0.4),xycoords='axes fraction',fontsize=16)
+fig.annotate(r'$d$',xy=(0.89,0.4),xycoords='axes fraction',fontsize=16)
+plt.legend(loc='upper center',prop={'size':10})
 
 fig=plt.subplot(312)
 plt.stackplot(range(totaltime+1),np.array(nhist)[:,1],np.array(nhist)[:,0],colors=['b','k'])
@@ -210,7 +225,7 @@ plt.ylabel(r"Abundance$/T$",fontsize=14)
 fig.annotate(r'$(b)$',xy=(0.01,0.9),xycoords='axes fraction',fontsize=12)
 
 fig=plt.subplot(313)
-plt.plot(np.array(nhist)[:,0]/np.sum(nhist,1),'k',lw=2)
+plt.stackplot(range(totaltime+1),np.array(nhist)[:,1]/np.sum(nhist,1),np.array(nhist)[:,0]/np.sum(nhist,1),colors=['b','k'])
 plt.ylim([0,1])
 plt.xlabel(r"$t$",fontsize=14)
 plt.ylabel("Frequency",fontsize=14)
