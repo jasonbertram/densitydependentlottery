@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{51}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -11,6 +11,11 @@ Aerts, R. 1999.
 Allan, J.~D. 1976.
 \newblock Life history patterns in zooplankton.
 \newblock The American Naturalist 110:165--180.
+
+\bibitem[{Arenbaev(1977)}]{arenbaev_1977}
+Arenbaev, N. 1977.
+\newblock Asymptotic behavior of the multinomial dstribution.
+\newblock Theory of Probability \& Its Applications 21:805--810.
 
 \bibitem[{Barton(1998)}]{barton_1998}
 Barton, N.~H. 1998.
