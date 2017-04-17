@@ -16,9 +16,6 @@ The different parts of the paper are somewhat disconnected; first, the model is 
 (e.g., Ideal column, d has to be <<1, it cannot change). Again, there is no need for a complicated model to obtain this result...
 
 
-
-- The decomposition presented in eq. (5) is useful in that it helps understand the consequences of different levels of propagule density. However, eq. (5) in the main text is presented as if the decomposition was obtained after lines of calculations, while it is assumed from the start (Appendix B). This should be clearer.
-
 It is not really clear what eqs (6) and (7) bring to the study, because they are not much interpreted (except to say when the terms vanish).
 
 The empirical examples given at the end of the Results section are too vague to be relevant.

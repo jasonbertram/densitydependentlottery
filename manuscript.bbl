@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{52}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -264,6 +264,12 @@ Tilman, D. 1982.
 \newblock Resource competition and plant traits: a response to craine et al.
   2005.
 \newblock Journal of Ecology 95:231--234.
+
+\bibitem[{Uecker and Hermisson(2011)}]{uecker_2011}
+Uecker, H., and J.~Hermisson. 2011.
+\newblock On the fixation process of a beneficial mutation in a variable
+  environment.
+\newblock Genetics 188:915--930.
 
 \bibitem[{Violle et~al.(2007)Violle, Navas, Vile, Kazakou, Fortunel, Hummel,
   and Garnier}]{violle_2007}
