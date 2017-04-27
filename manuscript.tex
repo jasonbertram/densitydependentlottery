@@ -159,19 +159,15 @@ Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery p
 
 Here we describe how Grime's ``disturbed'', ``stressful'' and ``ideal'' environments can be captured mathematically in our scheme. To proceed, we need to map these verbally-defined environments to quantitative parameter regimes in our model. 
 
-The ideal environment is characterized by the near-absence of stress and disturbance: $d\ll 1$, whereas $b$ is potentially much larger than $1$. 
+Ideal environments are characterized by the near-absence of stress and disturbance: $d\ll 1$, whereas $b$ could potentially be much larger than $1$. 
 
 Disturbed environments are characterized by short bursts of high extrinsic mortality $d$ caused by physical destruction. We assume that in the disturbance extreme of Grime's triangle, many such bursts (which could each be be spatially localized) will occur each iteration (i.e. over the time from birth to reproductive maturity), and so we can approximate extreme disturbance by high constant mortality rates $d_i$, which are now extended to affect juveniles as well. We assume that disturbances are equally damaging to adults and juveniles, so that only $(1-d_i)\Delta_+ n_i$ rather than $\Delta_+ n_i$ territories are secured by genotype $i$ each iteration. Heavily disturbed environments then correspond most adults and juveniles being killed every an iteration ($d_i\approx 1$). 
 
 Stressful environments are more ambiguous, and have been the subject of an extensive debate in the plant ecology literature (the ``Grime-Tilman'' debate; \citealt{aerts_1999} and references therein). Severe stress inhibits growth and reproduction, so that $b\ll 1$ \citep{grime_1974,grime_1977}. In Grime's view, this means that the rate at which propagules successfully develop to adulthood cannot appreciably exceed the mortality rate $b/d\approx 1$. In our model, this implies low propagule density and little territorial contest. 
 
-The alternative view is that stressed environments are highly competitive. In spite of inhibited growth and reproduction, population density $N/T$ is actually high since stressful environments also have lower environmental carrying capacity \citep{taylor_1990}. For example, if consumable resources are scarce, we expect intense resource competition (for empirical support, see \citealt{davis_1998}). In our model, territorial contests will then be important.
+The alternative view is that stressed environments are highly competitive. In spite of inhibited growth and reproduction, density is actually high since stressful environments also have lower environmental carrying capacity \citep{taylor_1990}. For example, if consumable resources are scarce, we expect intense resource competition (for empirical support, see \citealt{davis_1998}). In our model, territorial contests will then be important.
 
-The mapping of different environments to our model parameters is summarized in the first two rows of Fig.~\ref{fig:table}. Also shown is the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$ for each environment (fourth row; details in Appendix). These can be used to infer the expected direction of evolution for the traits $b$, $c$ and $d$ (fifth row) using a standard invasion analysis. 
-
-According to Haldane's formula, the probability that an adaptive mutant survives its initial low abundance phase and begins to grow deterministically is proportional to its expected absolute growth rate \citep{haldane_1927,uecker_2011}, with a proportionality factor typically of order one. The fixation of neutral mutations is exceedingly unlikely (probability of order $1/N$). The direction of evolutionary change is determined by the mutational trait changes which are available and also confer an appreciable fitness benefit \citep{yampolsky_2001}, where availability is subject to constraints imposed by the environment. 
-
-For example, in Grime's interpretation of stressful environments, $L$ is low, so competition is not important, and only mutants with greater $b$ or lower $d$ will have an appreciably greater $\Delta n_i$. Mutations in $c$ are effectively neutral, and will rarely fix. However, $b$ is constrained to be small. Thus, while some rare mutations may produce small improvements in $b$, it is much more likely that mutations lower $d$, making this the expected direction of evolutionary change. 
+The mapping of different environments to our model parameters is summarized in the first two rows of Fig.~\ref{fig:table}. These can be used to infer the expected direction of evolution for the traits $b$, $c$ and $d$ (fourth row; Appendix C). According to Haldane's formula, the probability that an adaptive mutant survives its initial low abundance phase and begins to grow deterministically is proportional to its expected absolute growth rate \citep{haldane_1927,uecker_2011}, with a proportionality factor typically of order one. The fixation of neutral mutations is exceedingly unlikely (probability of order $1/N$). The direction of evolutionary change is determined by the mutational trait changes which are available and also confer an appreciable fitness benefit \citep{yampolsky_2001}, where availability is subject to constraints imposed by the environment. We evaluate the  invasion fitness of mutants under Eq. \eqref{eq:master} for each environmental regime in Appendix C.
 
 \begin{figure}
 \centering
@@ -179,7 +175,7 @@ For example, in Grime's interpretation of stressful environments, $L$ is low, so
   & Ideal & Disturbance* & Stress (G) & Stress (HD) \\ \hline
   Constraints & $d \ll 1$ & $d \approx 1$ & $b \ll 1$ & $b \ll 1$ \\
   Other parameters & $b\gg d$ & $b\gg d$ & $b\approx d$ & $b>d$ \\
-  Density $N/T$  & High & Low & Low & High \\
+  Density $L$  & $\gg 1$ & $\ll 1$ & $\ll 1$ & $\gg 1$ \\
   Evolution for & $\uparrow b$, $ \uparrow c$ & $\uparrow b$, $\downarrow d$ & $\downarrow d$ & $\uparrow c, \downarrow d$
 \end{tabular}
 \caption{\label{fig:table} The realization of Grime's three environmental extremes in our model, as well as the high-density variant of the stressful environment. Shown are the mapping of each environment to our parameters, the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$, as well as the corresponding expected evolutionary changes in $b_i$, $c_i$ and $d_i$. *Mortality affects both adults and juveniles in the disturbed environment, with $\Delta_+ n_i$ replaced by $(1-d_i)\Delta_+ n_i$ in Eq. \eqref{eq:delttot}.}
@@ -419,9 +415,17 @@ Summing Eq. \eqref{eq:master} over genotypes, $N$ obeys
 \end{equation}
 where $U=\sum_i b_i n_i/L$. In equilibrium ($\Delta N=0$), Eq. \eqref{eq:deltN} implies $L/(1-e^{-L})=\sum_i b_i n_i/\sum_i d_i n_i$, and so $L$ only depends on the ratio of population mean birth rate to population mean death rate. 
 
+We consider the invasion of mutants into a population with a single type $i$ in equilibrium. The fitness of low frequency invader types $j$ is
+\begin{equation}
+\Delta n_j/n_j = b_j \left(e^{-L}+R_j\frac{c_j}{c_i}\right)-d_j \label{eq:invad}
+\end{equation}
+where $R_j\approx (1-e^{-L})/\left(\frac{c_j}{c_i}+\frac{L-1-e^{-L}}{1-(1+L)e^{-L}}\right)$.
 
-
-and so the propagule density is high $L\approx b_i/d_i\gg 1$, and every unoccupied territory will be heavily contested. The population density is also high $N/T\approx 1$ (since $L=b_iN/(N-T)=b_i/(1-T/N)$). 
+In ideal environments, $d$ is much smaller than $1$ whereas $b$ is not. Thus, $1 \ll b_i/d_i = L/(1-e^{-L}) \approx L$, and Eq. \eqref{eq:invad} becomes 
+\begin{equation}
+\Delta n_j/n_j \approx \frac{b_j c_j}{c_j + L-1}-d_j, \label{eq:invad}
+\end{equation}
+where without loss of generality we set the reference competitiveness at $c_i=1$.
 
 %From Eq. \eqref{eq:deltN}, the single genotype equilibrium is given by $L/(1-e^{-L})=d_i/[(1-d_i)b_i]$, and since $L\ll 1$ and $N/T\ll 1$ due to high mortality, we have $L\approx 2(1-d_i/[(1-d_i)b_i])$. Clearly $b_i$ must be exceptionally large to ensure population persistence. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$. 
 
