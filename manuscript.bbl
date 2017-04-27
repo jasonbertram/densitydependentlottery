@@ -1,4 +1,4 @@
-\begin{thebibliography}{52}
+\begin{thebibliography}{53}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -14,7 +14,7 @@ Allan, J.~D. 1976.
 
 \bibitem[{Arenbaev(1977)}]{arenbaev_1977}
 Arenbaev, N. 1977.
-\newblock Asymptotic behavior of the multinomial dstribution.
+\newblock Asymptotic behavior of the multinomial distribution.
 \newblock Theory of Probability \& Its Applications 21:805--810.
 
 \bibitem[{Barton(1998)}]{barton_1998}
@@ -130,6 +130,11 @@ Grime, J.~P. 1974.
   strategies --- origins, implications and tests, pages 371--393.
 \newblock Springer Netherlands, Dordrecht.
 
+\bibitem[{Haldane(1927)}]{haldane_1927}
+Haldane, J. B.~S. 1927.
+\newblock A mathematical theory of natural and artificial selection, part v:
+  selection and mutation 23:838--844.
+
 \bibitem[{Hendriks et~al.(2005)Hendriks, Maas-Diepeveen, Heugens, and van
   Straalen}]{hendriks_2005}
 Hendriks, A.~J., J.~L. Maas-Diepeveen, E.~H. Heugens, and N.~M. van Straalen.
@@ -143,12 +148,6 @@ Joshi, A., N.~Prasad, and M.~Shakarad. 2001.
 \newblock K-selection, $\alpha$-selection, effectiveness, and tolerance in
   competition: density-dependent selection revisited.
 \newblock Journal of Genetics 80:63--75.
-
-\bibitem[{Knowlton(2001)}]{knowlton_2001}
-Knowlton, N. 2001.
-\newblock The future of coral reefs.
-\newblock Proceedings of the National Academy of Sciences of the United States
-  of America 98:5419--5425.
 
 \bibitem[{Kuno(1991)}]{kuno_1991}
 Kuno, E. 1991.
@@ -294,6 +293,12 @@ Winemiller, K.~O., and K.~A. Rose. 1992.
 \newblock Patterns of life-history diversification in north american fishes:
   implications for population regulation.
 \newblock Canadian Journal of Fisheries and Aquatic Sciences 49:2196--2218.
+
+\bibitem[{Yampolsky and Stoltzfus(2001)}]{yampolsky_2001}
+Yampolsky, L.~Y., and A.~Stoltzfus. 2001.
+\newblock Bias in the introduction of variation as an orienting factor in
+  evolution.
+\newblock Evolution \& Development 3:73--83.
 
 \bibitem[{Yi and Dean(2013)}]{yi_2013}
 Yi, X., and A.~M. Dean. 2013.
