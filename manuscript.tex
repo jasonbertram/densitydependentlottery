@@ -211,11 +211,11 @@ b_j \left(e^{-L}+R_j\frac{c_j}{c_i}\right)-d_j>0,\label{eq:invad}
 \end{equation}
 where $R_j\approx (1-e^{-L})/\left(\frac{c_j}{c_i}+\frac{L-1-e^{-L}}{1-(1+L)e^{-L}}\right)$. 
 
-Stable coexistence is possible between genotypes that are superior in different traits. Suppose that $j$ is better at securing territories ($c_j>c_i$), that $i$ is better at producing propagules ($b_i>b_j$), and that $d_i=d_j$. Coexistence occurs if $j$ will invade an $i$-dominated population, but $i$ will also invade a $j$-dominated population (``mutual invasion''). If $b_i$ is so large that $L\gg 1$ when $i$ is dominant, and $b_j$ is so small that $L\ll 1$ when $j$ is dominant, then, combining Eqs. \eqref{eq:equil} and \eqref{eq:invad}, we find that $i$ invades $j$ because $b_i>b_j$, while $j$ invades $i$ provided that
+Now suppose that $j$ is better at securing territories ($c_j>c_i$), that $i$ is better at producing propagules ($b_i>b_j$), with $d_i=d_j$. Coexistence occurs if $j$ will invade an $i$-dominated population, but $i$ will also invade a $j$-dominated population (``mutual invasion''). If $b_i$ is so large that $L\gg 1$ when $i$ is dominant, and $b_j$ is so small that $L\ll 1$ when $j$ is dominant, then, combining Eqs. \eqref{eq:equil} and \eqref{eq:invad}, we find that $i$ invades $j$ because $b_i>b_j$, while $j$ invades $i$ provided that
 \begin{equation}
 b_jc_jR_j-b_i c_i A_i>0. \label{eq:jinvadcoex}
 \end{equation}
-Thus, coexistence occurs if $c_j/c_i$ is large enough. This is a version of the classic competition-colonization trade-off \citep{tilman_94,levins_71}: the competitor ($c$-specialist) leaves many territories unoccupied (low $L$) due to its poor colonization ability (low $b$), which the colonizer ($b$-specialist) can then exploit. A similar argument applies for coexistence between high-$c$ and low-$d$ specialists; a ``competition-longevity'' trade-off \citep{tilman_94}. These forms of co-existence require density dependence, and are not present in the classic lottery model. Mutual invasibility is not possible between $b$- and $d$-specialists. 
+Thus, coexistence occurs if $c_j/c_i$ is large enough. This is a version of the classic competition-colonization trade-off \citep{tilman_94,levins_71}: the competitor ($c$-specialist) leaves many territories unoccupied (low $L$) due to its poor colonization ability (low $b$), which the colonizer ($b$-specialist) can then exploit. A similar argument applies for coexistence between high-$c$ and low-$d$ specialists; a ``competition-longevity'' trade-off \citep{tilman_94}. These forms of co-existence require density dependence, and are not present in the classic lottery model. Mutual invasion is not possible between $b$- and $d$-specialists. 
 
 Now suppose that birth and death rates vary periodically with amplitude sufficent to cause large changes in population density. This example is inspired by natural \textit{Drosophila} populations, which expand rapidly in the warmer months when fruit is abundant, but largely die off in the colder months. Within this seasonal population density cycle, hundreds of polymorphisms also cycle in frequency \citep{bergland_14}. Some of these polymorphisms may be adaptive and potentially millions of years old, suggesting stable coexistence \citep{bergland_14,messer_2016}. Selection on allele frequencies thus occurs on the same time scale as population demography, a situation vastly more complicated than classical sweeps in demographically stable populations \citep{messer_2016}.
 
@@ -409,25 +409,27 @@ Fig.~\ref{fig:simcomp} shows that Eq. \eqref{eq:master} and its components close
 
 \section*{Appendix C: Direction of evolution under different environmental extremes}
 
-Summing Eq. \eqref{eq:master} over genotypes, $N$ obeys 
+In this Appendix we consider the invasion of mutants into a population with a single type $i$ in equilibrium under the different environments from section ``Primary strategies and Grime's triangle''. We first evaluate the ideal and stressful environments (the treatment of mortality is different for disturbed environments). 
+
+Summing Eq. \eqref{eq:master} over genotypes, the change in $N$ is given by  
 \begin{equation}
 \Delta N=U(1-e^{-L})-\sum_i d_i n_i,\label{eq:deltN}
 \end{equation}
-where $U=\sum_i b_i n_i/L$. In equilibrium ($\Delta N=0$), Eq. \eqref{eq:deltN} implies $L/(1-e^{-L})=\sum_i b_i n_i/\sum_i d_i n_i$, and so $L$ only depends on the ratio of population mean birth rate to population mean death rate. 
-
-We consider the invasion of mutants into a population with a single type $i$ in equilibrium. The fitness of low frequency invader types $j$ is
+where $U=\sum_i b_i n_i/L$. In equilibrium ($\Delta N=0$), this implies $L/(1-e^{-L})=b_i/d_i $. The fitness of a low frequency invader $j$ is
 \begin{equation}
-\Delta n_j/n_j = b_j \left(e^{-L}+R_j\frac{c_j}{c_i}\right)-d_j \label{eq:invad}
+\Delta n_j/n_j \approx b_j \left(e^{-L}+R_jc_j\right)-d_j \label{eq:invad}
 \end{equation}
-where $R_j\approx (1-e^{-L})/\left(\frac{c_j}{c_i}+\frac{L-1-e^{-L}}{1-(1+L)e^{-L}}\right)$.
+where $R_j\approx (1-e^{-L})/\left(c_j+\frac{L-1-e^{-L}}{1-(1+L)e^{-L}}\right)$, and we set the reference competitiveness at $c_i=1$ without loss of generality.
 
-In ideal environments, $d$ is much smaller than $1$ whereas $b$ is not. Thus, $1 \ll b_i/d_i = L/(1-e^{-L}) \approx L$, and Eq. \eqref{eq:invad} becomes 
+According our representation of Grime's stressful environment, $b\ll 1$, $d\approx b$ and thus $L\ll 1$. Then Eq. \eqref{eq:invad} becomes $\Delta n_j/n_j \approx b_j-d_j$. 
+
+According to our definition of an ideal environment, $d$ is much smaller than $1$ whereas $b$ is not. Thus, $1 \ll b_i/d_i = L/(1-e^{-L}) \approx L$, and Eq. \eqref{eq:invad} becomes 
 \begin{equation}
-\Delta n_j/n_j \approx \frac{b_j c_j}{c_j + L-1}-d_j, \label{eq:invad}
+\Delta n_j/n_j \approx \frac{b_j c_j}{c_j + L-1}-d_j, 
 \end{equation}
-where without loss of generality we set the reference competitiveness at $c_i=1$.
 
-%From Eq. \eqref{eq:deltN}, the single genotype equilibrium is given by $L/(1-e^{-L})=d_i/[(1-d_i)b_i]$, and since $L\ll 1$ and $N/T\ll 1$ due to high mortality, we have $L\approx 2(1-d_i/[(1-d_i)b_i])$. Clearly $b_i$ must be exceptionally large to ensure population persistence. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$. 
+
+From Eq. \eqref{eq:deltN}, the single genotype equilibrium is given by $L/(1-e^{-L})=d_i/[(1-d_i)b_i]$, and since $L\ll 1$ and $N/T\ll 1$ due to high mortality, we have $L\approx 2(1-d_i/[(1-d_i)b_i])$. Clearly $b_i$ must be exceptionally large to ensure population persistence. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$. 
 
 
 
