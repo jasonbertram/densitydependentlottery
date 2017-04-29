@@ -151,35 +151,41 @@ and
 \begin{equation}
 A_i=\frac{\overline{c}(1-e^{-l_i})}{\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}c_il_i+\frac{1}{L-l_i}\left(L\frac{1-e^{-L}}{1-(1+L)e^{-L}}-l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right)\sum_{j\neq i}c_jl_j}.\label{eq:Da}
 \end{equation}
-To supplement our analytical mean field derivation, we verified that Eq. \eqref{eq:master} closely approximates the exact behavior of our density-dependent lottery model using numerical simulations (Appendix B). Thus, Eq. \eqref{eq:master} describes how type abundances change over time in a lottery model where population density can itself vary with time.
+To supplement our analytical mean field derivation, we did numerical simulations of our exact our density-dependent lottery model, and verified  that Eq. \eqref{eq:master} is a good approximation (Appendix B). Thus, Eq. \eqref{eq:master} describes how type abundances change over time in a lottery model where population density can itself vary with time.
 
 Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery per-propagule success rate $c_i/\overline{c}L$ has been replaced by three separate terms. The first, $e^{-L}$, accounts for propagules which land alone on unoccupied territories; these territories are won without contest. The second, $R_i c_i/\overline{c}$ represents competitive victories when the $i$ genotype is a rare invader in a high density population: from Eq. \eqref{eq:Dr}, $R_i\rightarrow 0$ when the $i$ genotype is abundant ($l_i\gg 1$), or other genotypes are collectively rare ($L-l_i\ll 1$). The third term, $A_ic_i/\overline{c}$, represents competitive victories when the $i$ genotype is abundant: $A_i\rightarrow 0$ if $l_i\ll 1$. The relative importance of these three terms varies with both the overall propagule density $L$ and the relative propagule frequencies $m_i/M$. If $l_i\gg 1$ for all genotypes, we recover the classic lottery model (only the $A_ic_i/\overline{c}$ term remains, and $A_i\rightarrow 1/L$). 
 
 \subsection*{Primary strategies and Grime's triangle}
 
-Here we describe how Grime's ``disturbed'', ``stressful'' and ``ideal'' environments can be captured mathematically in our scheme. To proceed, we need to map these verbally-defined environments to quantitative parameter regimes in our model. 
+Here we describe how Grime's ``disturbed'', ``stressful'' and ``ideal'' environments can be captured mathematically in our scheme. To proceed, we  map these verbally-defined environments to quantitative parameter regimes in our model. 
 
-Ideal environments are characterized by the near-absence of stress and disturbance: $d\ll 1$, whereas $b$ could potentially be much larger than $1$. 
+Ideal environments are characterized by the near-absence of stress and disturbance, so that survival is easy $d\ll 1$ and growth and reproduction can be rapid $b\gg d$. The propagule density is determined by the magnitude of $b/d$, and in this case $L\gg 1$ (Appendix C).
 
-Disturbed environments are characterized by short bursts of high extrinsic mortality $d$ caused by physical destruction. We assume that in the disturbance extreme of Grime's triangle, many such bursts (which could each be be spatially localized) will occur each iteration (i.e. over the time from birth to reproductive maturity), and so we can approximate extreme disturbance by high constant mortality rates $d_i$, which are now extended to affect juveniles as well. We assume that disturbances are equally damaging to adults and juveniles, so that only $(1-d_i)\Delta_+ n_i$ rather than $\Delta_+ n_i$ territories are secured by genotype $i$ each iteration. Heavily disturbed environments then correspond most adults and juveniles being killed every an iteration ($d_i\approx 1$). 
+Disturbed environments are characterized by short bursts of high extrinsic mortality $d$ caused by physical destruction. We assume that disturbances are equally damaging to adults and juveniles, so that only $(1-d_i)\Delta_+ n_i$ rather than $\Delta_+ n_i$ territories are secured by type $i$ each iteration. In the heavily disturbed extreme of Grime's triangle, many such bursts (which could each be spatially localized) will occur each iteration (i.e. over the time required for a propagule to reach reproductive maturity), which we approximate as almost all adults and juveniles dying every iteration $d\approx 1$. Population persistence is only possible if $(1-d)b>d$, and so $b\gg 1$ (Appendix C). We assume that fulfilling this requirement presents such a challenge that $(1-d)b$ does not greatly exceed $d$, which implies $L\ll 1$. 
 
-Stressful environments are more ambiguous, and have been the subject of an extensive debate in the plant ecology literature (the ``Grime-Tilman'' debate; \citealt{aerts_1999} and references therein). Severe stress inhibits growth and reproduction, so that $b\ll 1$ \citep{grime_1974,grime_1977}. In Grime's view, this means that the rate at which propagules successfully develop to adulthood cannot appreciably exceed the mortality rate $b/d\approx 1$. In our model, this implies low propagule density and little territorial contest. 
+ 
+Stressful environments are more ambiguous, and have been the subject of an extensive debate in the plant ecology literature (the ``Grime-Tilman'' debate; \citealt{aerts_1999} and references therein). Severe stress inhibits growth and reproduction, so that $b\ll 1$. In Grime's view, this means that the rate at which propagules successfully develop to adulthood cannot appreciably exceed the mortality rate $b/d\approx 1$; coping with the environmental stress is barely possible \citep{grime_1974,grime_1977}. In our model, this implies $L\ll 1$. 
 
-The alternative view is that stressed environments are highly competitive. In spite of inhibited growth and reproduction, density is actually high since stressful environments also have lower environmental carrying capacity \citep{taylor_1990}. For example, if consumable resources are scarce, we expect intense resource competition (for empirical support, see \citealt{davis_1998}). In our model, territorial contests will then be important.
-
-The mapping of different environments to our model parameters is summarized in the first two rows of Fig.~\ref{fig:table}. These can be used to infer the expected direction of evolution for the traits $b$, $c$ and $d$ (fourth row; Appendix C). According to Haldane's formula, the probability that an adaptive mutant survives its initial low abundance phase and begins to grow deterministically is proportional to its expected absolute growth rate \citep{haldane_1927,uecker_2011}, with a proportionality factor typically of order one. The fixation of neutral mutations is exceedingly unlikely (probability of order $1/N$). The direction of evolutionary change is determined by the mutational trait changes which are available and also confer an appreciable fitness benefit \citep{yampolsky_2001}, where availability is subject to constraints imposed by the environment. We evaluate the  invasion fitness of mutants under Eq. \eqref{eq:master} for each environmental regime in Appendix C.
+The alternative view is that stressed environments are highly competitive. In spite of inhibited growth and reproduction, density is actually high relative to carrying capacity of the stressful environment \citep{taylor_1990}. For example, if consumable resources are scarce, we expect intense resource competition \citep{davis_1998}. Thus, even though $b\ll 1$, we can still have $b/d\gg 1$ and $L\ll 1$.
 
 \begin{figure}
 \centering
 \begin{tabular}{l*{4}{c}}
   & Ideal & Disturbance* & Stress (G) & Stress (HD) \\ \hline
   Constraints & $d \ll 1$ & $d \approx 1$ & $b \ll 1$ & $b \ll 1$ \\
-  Other parameters & $b\gg d$ & $b\gg d$ & $b\approx d$ & $b>d$ \\
-  Density $L$  & $\gg 1$ & $\ll 1$ & $\ll 1$ & $\gg 1$ \\
-  Evolution for & $\uparrow b$, $ \uparrow c$ & $\uparrow b$, $\downarrow d$ & $\downarrow d$ & $\uparrow c, \downarrow d$
+  Other parameters & $b/d\gg 1$ & $(1-d)b\approx d$ & $b\approx d$ & $b/d\gg 1$ \\
+  Density $L$  & $\gg 1$ & $\ll 1$ & $\ll 1$ & $\gg 1$
 \end{tabular}
-\caption{\label{fig:table} The realization of Grime's three environmental extremes in our model, as well as the high-density variant of the stressful environment. Shown are the mapping of each environment to our parameters, the approximate dependence of $\Delta_+ n_i$ on $b_i$ and $c_i$, as well as the corresponding expected evolutionary changes in $b_i$, $c_i$ and $d_i$. *Mortality affects both adults and juveniles in the disturbed environment, with $\Delta_+ n_i$ replaced by $(1-d_i)\Delta_+ n_i$ in Eq. \eqref{eq:delttot}.}
+\caption{\label{fig:table} The mathematical realization of Grime's three environmental extremes in our model, as well as the high-density variant of the stressful environment. *Mortality affects both adults and juveniles in the disturbed environment, with $\Delta_+ n_i$ replaced by $(1-d_i)\Delta_+ n_i$.}
 \end{figure}
+
+Given our mathematical representation of Grime's environmental extremes, summarized in Fig.~\ref{fig:table}, the expected direction of evolution is determined by three factors. First, the probability that an adaptive mutant survives its initial low abundance phase and begins to grow deterministically is proportional to its expected absolute growth rate \citep{haldane_1927,uecker_2011}. By comparison, neutral mutations rarely fix (probability of order $1/N$). Thus $b$, $c$ and $d$ will tend to change in the direction of greatest fitness increase. Under Eq. \eqref{eq:master}, proportional changes of the form $b_j=(1+\epsilon) b_i$ or $d_j=(1+\epsilon) d_i$ have identical fitness effects
+
+When propagule density is low $L\ll 1$, $c$ does not contribute to fitness. 
+
+Second, the fact that some mutations are more common than others can change the direction of evolution \citep{yampolsky_2001}, and in particular, very few mutations can perform difficult trait changes such as increasing $b$ under stress. These mutational constraints are different under different environments (Fig.~\ref{fig:table}). 
+
+Finally, there may be pleiotropy between $b$, $c$, and $d$, which could be due to trade-offs between them. Here we do not attempt to account for the complications posed by pleiotropy, and treat $b$, $c$ and $d$ independently. 
 
 Following Grime's original argument for a triangular scheme \citep{grime_1977}, Fig.~\ref{fig:axes} represents each environmental extreme schematically as a vertex on a triangular space defined by perpendicular stress and disturbance axes. The ideal environment lies at the origin (no stress or disturbance), while the stressful and disturbed environments lie at the limits of survival on their respective axes. The hypotenuse connecting the stress and disturbance endpoints represents the limits of survival in the presence of a combination of stress and disturbance. The direction of evolutionary change is different at each vertex, leading to the emergence of different trait clusters or ``primary strategies''. 
 
@@ -409,9 +415,9 @@ Fig.~\ref{fig:simcomp} shows that Eq. \eqref{eq:master} and its components close
 
 \section*{Appendix C: Direction of evolution under different environmental extremes}
 
-In this Appendix we consider the invasion of mutants into a population with a single type $i$ in equilibrium under the different environments from section ``Primary strategies and Grime's triangle''. We first evaluate the ideal and stressful environments (the treatment of mortality is different for disturbed environments). 
+In this Appendix we consider the invasion of mutants into a population with a single resident type $i$ in equilibrium under the different environments from section ``Primary strategies and Grime's triangle''. We first evaluate the ideal and stressful environments (the treatment of mortality is different for disturbed environments). 
 
-Summing Eq. \eqref{eq:master} over genotypes, the change in $N$ is given by  
+Summing Eq. \eqref{eq:growthsumuncoupled} over genotypes, the change in $N$ is given by  
 \begin{equation}
 \Delta N=U(1-e^{-L})-\sum_i d_i n_i,\label{eq:deltN}
 \end{equation}
@@ -421,18 +427,24 @@ where $U=\sum_i b_i n_i/L$. In equilibrium ($\Delta N=0$), this implies $L/(1-e^
 \end{equation}
 where $R_j\approx (1-e^{-L})/\left(c_j+\frac{L-1-e^{-L}}{1-(1+L)e^{-L}}\right)$, and we set the reference competitiveness at $c_i=1$ without loss of generality.
 
-According our representation of Grime's stressful environment, $b\ll 1$, $d\approx b$ and thus $L\ll 1$. Then Eq. \eqref{eq:invad} becomes $\Delta n_j/n_j \approx b_j-d_j$. 
+According our representation of Grime's stressful environment, $b\ll 1$, $d\approx b$ and thus $L\ll 1$. Then Eq. \eqref{eq:invad} becomes $\Delta n_j/n_j \approx b_j-d_j$. Mutations which improve $b$ or $d$ by the same fraction $\epsilon$ (such that $b_j = (1+ \epsilon)b_i$ or $d_j = (1- \epsilon)d_i$) will therefore yield identical fitness benefits. Stressful environments will therefore favor $d$-specialist ``tolerators'', which bring their mortality rates down enough to enable survival in the face of low $b$, only if stress makes it harder to increase $b$ than lower $d$, such that adaptive mutations of a given effect size $\epsilon$ occur more often for $d$. 
 
-According to our definition of an ideal environment, $d$ is much smaller than $1$ whereas $b$ is not. Thus, $1 \ll b_i/d_i = L/(1-e^{-L}) \approx L$, and Eq. \eqref{eq:invad} becomes 
+In Grime's ideal environment, $d$ is much smaller than $1$ whereas $b$ is not. Thus, $1 \ll b_i/d_i = L/(1-e^{-L}) \approx L$, and Eq. \eqref{eq:invad} becomes 
 \begin{equation}
-\Delta n_j/n_j \approx \frac{b_j c_j}{c_j + L-1}-d_j, 
+\Delta n_j/n_j \approx \frac{b_j c_j}{c_j + L-1}-d_j\approx \frac{b_j c_j}{L}-d_j, \label{eq:highLinvad}
 \end{equation}
+where the last approximation follows from the fact that $c_j$ will be of similar magnitude to $c_i=1$ (ignoring mutations with very large effect sizes; compare with Eq. \eqref{eq:lottery}, where the same expression comes from assuming that $L$ is effectively infinite). It is easily verified from Eq. \eqref{eq:highLinvad} that improving $b$, $c$, or $d$ by a fraction $\epsilon$ yields identical fitness benefits. This may seem counter-intuitive in that reducing an already tiny mortality rate by a fraction $\epsilon$ seems to yield marginal benefits compared to increasing a  potentially large propagule production $b$ by the same fraction. However, the relative magnitudes of $b$ and $d$ are irrelevant, because the ancestral resident type's density-regulated birth rate $b_i c_i/L$ exactly balances its mortality $d_i$ in equilibrium.
 
+Biases in the direction of evolution of $b$, $c$ or $d$ must again follow from biases in mutation availability or trade-offs/pleiotropy. The same argument applies for high-$L$ interpretation of the stress regime. 
 
-From Eq. \eqref{eq:deltN}, the single genotype equilibrium is given by $L/(1-e^{-L})=d_i/[(1-d_i)b_i]$, and since $L\ll 1$ and $N/T\ll 1$ due to high mortality, we have $L\approx 2(1-d_i/[(1-d_i)b_i])$. Clearly $b_i$ must be exceptionally large to ensure population persistence. The terms proportional to $c_i/\overline{c}$ in Eq. \eqref{eq:master} are then negligible, and $\Delta_+ n_i$ depends primarily on $b_i$. 
-
-
-
-
+To represent Grime's disturbed environment, we account for juvenile mortality due to disturbance by replacing $\Delta_+ n_i$ with $(1-d_i)\Delta_+ n_i$. For a single type $i$ in equilibrium, Eq. \eqref{eq:deltN} becomes 
+\begin{equation}
+\Delta N=(1-d_i)U(1-e^{-L})-d_i N,\label{eq:deltNdist}
+\end{equation}
+which reaches equilibrium when $L/(1-e^{-L})=(1-d_i)b_i/d_i$ (note that population persistence now requires $(1-d_i)b_i>d_i$). We represent Grime's disturbed environment by $d_i\approx 1$ and $(1-d_i)b_i\approx d_i$, so that $L\ll 1$. A mutant's invasion fitness is then given by
+\begin{equation}
+\Delta n_j/n_j = (1-d_j)b_j - d_j.
+\end{equation}
+The effects of improving $b$ and $d$ are now no longer identical. Increasing $b$ by a fraction $\epsilon$ gives $\Delta n_j/n_j = \epsilon (1-d_i)b_i$, whereas reducing $d$ by the same fraction gives $\Delta n_j/n_j = \epsilon b_i$, a much greater advantage given that $d_i\approx 1$. Thus, selection intrinsically favors reducing $d$ in disturbed environments. 
 
 \end{document}
