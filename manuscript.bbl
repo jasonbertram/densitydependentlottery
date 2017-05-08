@@ -1,4 +1,4 @@
-\begin{thebibliography}{53}
+\begin{thebibliography}{54}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Aerts(1999)}]{aerts_1999}
@@ -29,6 +29,12 @@ Bergland, A.~O., E.~L. Behrman, K.~R. O'Brien, P.~S. Schmidt, and D.~A. Petrov.
 \newblock Genomic evidence of rapid and stable adaptive oscillations over
   seasonal time scales in drosophila.
 \newblock PLOS Genetics 10:1--19.
+
+\bibitem[{Bertram et~al.(2017)Bertram, Gomez, and Masel}]{bertram_2017}
+Bertram, J., K.~Gomez, and J.~Masel. 2017.
+\newblock Predicting patterns of long-term adaptation and extinction with
+  population genetics.
+\newblock Evolution 71:204--214.
 
 \bibitem[{Bolker and Pacala(1999)}]{bolker_99}
 Bolker, B.~M., and S.~W. Pacala. 1999.
