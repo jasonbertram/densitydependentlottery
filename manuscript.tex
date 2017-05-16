@@ -11,8 +11,8 @@
 \usepackage{tabularx,setspace}
 
 \title{A lottery model of density-dependent selection in evolutionary genetics}
-%\author{Jason Bertram $^{1,\ast}$ \\ 
-%Joanna Masel $^{1}$}
+\author{Jason Bertram $^{1,\ast}$ \\ 
+Joanna Masel $^{1}$}
 
 \date{}
 
@@ -20,14 +20,14 @@
 
 \maketitle
 
-%\noindent{}1. Department of Ecology and Evolutionary Biology, University of Arizona, Tucson, AZ 85721.
+\noindent{}1. Department of Ecology and Evolutionary Biology, University of Arizona, Tucson, AZ 85721.
 
-%\noindent{}$\ast$ Corresponding author; e-mail: jbertram@email.arizona.edu.
+\noindent{}$\ast$ Corresponding author; e-mail: jbertram@email.arizona.edu.
 
 
 \bigskip
 
-\textit{Manuscript elements}: 
+%\textit{Manuscript elements}: 
 
 \bigskip
 
@@ -35,18 +35,18 @@
 
 \bigskip
 
-\textit{Manuscript type}: Article. 
+%\textit{Manuscript type}: Article. 
 % Or e-article, note, e-note, natural history miscellany,
 % e-natural history miscellany, comment, reply, symposium, or
 % countdown to 150.
 
 \bigskip
 
-\noindent{\footnotesize Prepared using the suggested \LaTeX{} 
-template for \textit{Am.\ Nat.}}
+%\noindent{\footnotesize Prepared using the suggested \LaTeX{} 
+%template for \textit{Am.\ Nat.}}
 
 \linenumbers{}
-\modulolinenumbers[3]
+\modulolinenumbers[1]
 
 \newpage{}
 
@@ -196,11 +196,11 @@ In the previous section we only considered how $b$, $c$ and $d$ should respond t
 
 In a constant environment, stable coexistence is possible in our extended lottery model. A $b$-specialist $i$ and $c$-specialist $j$ ($b_i>b_j$, $c_j>c_i$) can co-exist because then propagule density $L$ is frequency-dependent, and so is the importance of competitive ability (Appendix D). This is a version of the classic competition-colonization trade-off \citep{tilman_94,levins_71}; the competitor ($c$-specialist) leaves many territories unoccupied (low $L$) due to its poor colonization ability (low $b$), which the colonizer ($b$-specialist) can then exploit. A similar situation holds for coexistence between high-$c$ and low-$d$ specialists; a ``competition-longevity'' trade-off \citep{tilman_94}. These forms of co-existence require density dependence (being mediated by $L$), and are not present in the classic lottery model. Coexistence is not possible between $b$- and $d$-specialists in a constant environment (Appendix D). 
 
-Now suppose that birth and death rates vary periodically with amplitude sufficent to cause large changes in population density. This example is inspired by natural \textit{Drosophila} populations, which expand rapidly in the warmer months when fruit is abundant, but largely die off in the colder months. Within this seasonal population density cycle, hundreds of polymorphisms also cycle in frequency \citep{bergland_14}. Some of these polymorphisms may be adaptive and potentially millions of years old, suggesting stable coexistence \citep{bergland_14,messer_2016}. Selection on allele frequencies thus occurs on the same time scale as population demography, a situation vastly more complicated than classical sweeps in demographically stable populations \citep{messer_2016}.
+Now suppose that birth and death rates vary periodically with amplitude sufficent to cause large changes in population density. This example is inspired by natural \textit{Drosophila} populations, which expand rapidly in the warmer months when fruit is abundant, but largely die off in the colder months. Along with this seasonal population density cycle, hundreds of polymorphisms exhibit frequency cycles that are in phase with the seasons \citep{bergland_14}. Some of these polymorphisms may be adaptive and potentially millions of years old, suggesting stable coexistence \citep{bergland_14,messer_2016}. Selection on allele frequencies thus occurs on the same time scale as population demography, a situation vastly more complicated than classical sweeps in demographically stable populations \citep{messer_2016}.
 
-The classical population genetic treatment of fluctuating selection suggests that environmental fluctuations do not promote coexistence. Allele frequencies are successively multiplied by relative fitness values for each environmental iteration, and so two alleles favored in different enviroments can only stably coexist if the product of fitnesses for one type exactly equals the product for the other \citep{dempster_1955}. Thus, stable coexistence still requires frequency-dependent selection or heterozygote advantage (as is required in a constant environment). 
+The classical population genetic treatment of fluctuating selection suggests that environmental fluctuations do not promote coexistence. Allele frequencies are successively multiplied by relative fitness values for each environmental iteration, and so two alleles favored in different environments can only stably coexist if the product of fitnesses for one type exactly equals the product for the other \citep{dempster_1955}. Thus, stable coexistence still requires frequency-dependent selection or heterozygote advantage (as is required in a constant environment). 
 
-This classical argument overlooks two general effects that promote coexistence in fluctuating environments. The first is the storage effect, which occurs when part of the population is protected from selection (due to overlapping generations in the lottery model; \citealt{chesson_1981}). The second is the  bounded population size effect of \cite{yi_2013}, which occurs when each environmental cycle involves growth from low to high density, with the time spent growing each cycle dependent on the fitness of the types present. 
+This classical argument overlooks two general mechanisms that promote coexistence in fluctuating environments \citep{messer_2016}. The first is the classic version of the storage effect, which occurs when part of the population is protected from selection (due to overlapping generations in the lottery model; \citealt{chesson_1981}). The second is the bounded population size effect of \cite{yi_2013}, which occurs when each environmental cycle involves growth from low to high density, with the time spent growing each cycle dependent on the fitness of the types present. 
 
 Fig.~\ref{fig:fluctuatingselection}a-c shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with mortality and no growth). Both the storage effect (adults are sheltered from selection during the summer growth phase) and the bounded density effect (expansion to high density occurs every cycle) are operating. Two types are present, a $b$-specialist, which is better at rapidly growing in the summer (higher $b$), and a $d$-specialist which is better at surviving the winter (lower $d$). Neither type has an advantage over a full environmental cycle, and they stably coexist. This is due to a combination of the storage and bounded density effects (recall that stable coexistence between $b$ and $d$ specialists was not possible in a constant environment). 
 
@@ -234,11 +234,11 @@ While our model can be applied to species rather than genotypes (e.g. ecological
 
 In the introduction we mentioned the recurring difficulties with confounding selection and demography in population genetic inference. It seems that Eq. \eqref{eq:master} or something similar (and hopefully more analytically tractable) is unavoidable for the analysis of time-course genetic data because, fundamentally, selective births and deaths affect both abundances and frequencies, not one or the other in isolation. Moreover, some aspects of allele frequency change are intrinsically density-dependent. In the classic lottery model, which as we have seen is essentially the Wright-Fisher model with overlapping generations, $b_i$ and $c_i$ are  equivalent in the sense that the number of territorial victories only depends on the product $b_i c_i$ (see ``Model''). This is no longer the case in our extension, where $b$ and $c$ specialists can co-exist. This ``colonization-competition trade-off'' is well known in the co-existence literature \citep{tilman_94}. It and similar forms of ``spatial co-existence'' in stable environments have previously been modeled either with Levin's  qualitative representation of competition \citep{levins_71,tilman_94}, as opposed to the quantitative $c$ of lottery competition, or with a more sophisticated treatment of space (non-uniform dispersal; \citealt{shmida_84,bolker_99}). In cyclical environments, polymorphisms can be stabilized by the bounded density effect, which is  completely lost if there is an exclusive focus on allele frequencies \citep{yi_2013}. We leave the details of how our model might be applied to inference problems, including the crucial issue of its genetic drift predictions (providing a null model for neutral sites), for future work. 
 
-%\section*{Acknowledgments}
+\section*{Acknowledgments}
 
-%We thank Peter Chesson and Joachim Hermisson for many constructive comments on this manuscript. This work was financially supported by the National Science Foundation (DEB-1348262).
+We thank Peter Chesson and Joachim Hermisson for many constructive comments on this manuscript. This work was financially supported by the National Science Foundation (DEB-1348262).
 
-\bibliographystyle{amnatnat}
+\bibliographystyle{plainnat}
 \bibliography{reference} 
 
 \section*{Appendix A: Poisson approximation}
