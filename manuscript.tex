@@ -70,15 +70,33 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 
 \section*{Introduction}
 
+Density-dependent selection was one of the first topics to explicitly connect ecology and evolution \citep{travis_2013}. 
 
-In models of genetic evolution, genotypes are typically assigned constant (or occasionally frequency-dependent) selection coefficients describing the change in their relative frequencies over time. This simplified treatment of selection facilitates explicit time-dependent treatment of genotype frequencies, and can be justified over sufficiently short time intervals \citep[p. 276]{ewens_2004}. The emphasis of population genetics is to infer past selection, migration and demographic change given a sample of nucleotide sequences, or to predict how allele frequencies change over time based on their relative fitness effects together with population structure, genetic drift and linkage. The resulting picture of evolution excludes basic elements of the ecological underpinnings of selection, including density dependence, and how selection affects population size. This complicates the inference of past selection, because demographic changes can look genealogically very similar to selective frequency changes \citep{barton_1998}. 
+The stated aim of MacArthur's famous $r$/$K$ scheme was to extend the existing population-genetic treatment of selection to account for population density \citep{macarthur_1962}. Few attempts have been made to develop it further along these lines. 
+
+ For example, MacArthur's famous $r$/$K$ scheme \citep{macarthur_1962,macarthur_1967} is now almost exclusively known as a framework for understanding life-history traits, and judged on its failure in that role \citep{pianka_1970,stearns_1977,boyce_1984,reznick_2002}. 
+ 
+ 
+
+
+
+
+It is common practice in population genetics to assign constant selection coefficients to genotypes describing the change in their relative frequencies over time. 
+
+This simplified treatment of selection facilitates explicit time-dependent treatment of genotype frequencies, and can be justified over sufficiently short time intervals \citep[p. 276]{ewens_2004}. The emphasis of population genetics is to infer past selection, migration and demographic change given a sample of nucleotide sequences, or to predict how allele frequencies change over time based on their relative fitness effects together with population structure, genetic drift and linkage. The resulting picture of evolution excludes basic elements of the ecological underpinnings of selection, including density dependence, and how selection affects population size. This complicates the inference of past selection, because demographic changes can look genealogically very similar to selective frequency changes \citep{barton_1998}. 
+
+
+
+
+
+
 
 By contrast, models of phenotypic trait evolution use absolute fitness functions to describe how some traits of interest affect survival and reproduction in particular ecological scenarios \citep{metz_1992,diekmann_2004}. These fitness functions can be quite problem-specific and often only account for a few traits at a time. The emphasis here is on the conditions for invasion from low frequencies and co-existence, rather than frequency or abundance trajectories over time. For instance, adaptive dynamics uses ``invasion fitness'' to explore the consequences of eco-evolutionary feedbacks \citep{diekmann_2004}.
 
 
  
 
- For example, MacArthur's famous $r$/$K$ scheme \citep{macarthur_1962,macarthur_1967} is now almost exclusively known as a framework for understanding life-history traits, and judged on its failure in that role \citep{pianka_1970,stearns_1977,boyce_1984,reznick_2002}. However, the r/K scheme's original purpose was to extend the existing population-genetic treatment of selection to account for population density \citep{macarthur_1962}. Few attempts have been made to develop it further along these lines. 
+
 
 
 
@@ -101,14 +119,14 @@ We assume that the $n_i$ and $T$ are large enough that stochastic fluctuations i
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{lottery.pdf}
-\caption{\label{fig:lottery} Each iteration of our lottery model has three main elements. First, propagules are produced by adults and are dispersed at random over the unoccupied territories (only propagules landing on unoccupied territories are shown). Lottery competition then occurs in each unoccupied territory (competition in only one territory is illustrated): each genotype has a probability proportional to $b_i n_i c_i$ of securing the territory. Then occupied territories are freed up by adult mortality. In Eq. \eqref{eq:delttot} and most of the paper, only adults can die (red crosses), but we will also consider the case where juveniles die (blue cross; section ``Primary strategies and Grime's triangle'').}
+\caption{\label{fig:lottery} Each iteration of our model has three elements. First, propagules are produced by adults and dispersed at random (only propagules landing on unoccupied territories are shown). Lottery competition then occurs in each unoccupied territory (only illustrated in one territory). Each genotype has a probability proportional to $c_i x_i$ of securing a given territory, where $c_i$ measures competitive ability and $x_i$ is the number of propagules that disperse there. In the illustrated territory, the black genotype disperses more propagules but is a poorer competitor. Territories are then made available by adult mortality (red crosses).}
 \end{figure}
 
 Each iteration, adults produce new offspring (``propagules''), $m_i$ of which disperse to unoccupied territories. We assume that adults cannot be ousted from their territories, so that $m_i$ only includes propagules landing on unoccupied territories. Propagules disperse at random over the unoccupied territories, regardless of distance from their parents, and independently of each other. There is no interaction between propagules (e.g. avoidance of territories crowded with propagules). Loss of propagules during dispersal is subsumed into $m_i$. 
 
 In general, $m_i$ will increase with $n_i$, and will depend on population density $N$. For example, if $b_i$ is the number of successfully dispersing propagules produced per genotype $i$ adult, then the loss of propagules due to dispersal to occupied territories implies $m_i=b_i(1-N/T)n_i$, akin to Levins' competition-colonization model \citep{levins_71,tilman_94}. In section ``Cyclical birth and death rates'' we evaluate Eq. \eqref{eq:master} numerically using this functional form for $m_i$, with $b_i$ assumed to be constant. 
 
-In the sections ``Invasion of rare genotypes and coexistence'' and ``Primary strategies and Grime's triangle'', we assume the simpler form $m_i=b_i n_i$, with constant $b_i$, meaning that all propagules land on unoccupied territories (a form of directed dispersal). This simplifies the mathematics without affecting the results of those sections, which only depend on the low-frequency invasion behavior of Eq. \eqref{eq:master}. Note that due to our assumption of uniform dispersal, the parameter $b_i$ can be thought of as a measure of ``colonization ability'', which combines fecundity and dispersal ability \citep{levins_71,tilman_94,bolker_99}. 
+In ``Invasion of rare genotypes and coexistence'', we assume the simpler form $m_i=b_i n_i$, with constant $b_i$, meaning that all propagules land on unoccupied territories (a form of directed dispersal). This simplifies the mathematics without affecting the results of those sections, which only depend on the low-frequency invasion behavior of Eq. \eqref{eq:master}. Note that due to our assumption of uniform dispersal, the parameter $b_i$ can be thought of as a measure of ``colonization ability'', which combines fecundity and dispersal ability \citep{levins_71,tilman_94,bolker_99}. 
 
 The number of individuals of the $i$'th genotype landing in any particular territory is denoted $x_i$. We assume that $x_i$ follows a Poisson distribution $p_i(x_i)=l_i^{x_i} e^{-l_i}/x_i!$, where $l_i=m_i/U$ is the mean territorial propagule density. This is approximation becomes exact when the $n_i$ are large enough that drift in $n_i$ can be ignored (Appendix A).
 
@@ -130,11 +148,10 @@ We expect that a fraction $p_1(x_1)\ldots p_G(x_G)$ of the $U$ unoccupied territ
 \end{equation}
 in our extended lottery model, where the sum only includes territories with at least one propagule present. Note that unlike the classic lottery model, not all unoccupied territories are claimed each iteration, since under Poisson dispersal a fraction $e^{-L}$ remain unoccupied.
 
-For the majority of this manuscript we assume that mortality only occurs in adults (Fig 2; setting aside the juvenile deaths implicit in territorial contest), and at a constant, genotype-specific per-capita rate $0\leq d_i\leq 1$, so that the overall change in genotype abundances is
+We assume that mortality only occurs in adults (Fig.~\ref{fig:lottery}; setting aside the juvenile deaths implicit in territorial contest), and at a constant, genotype-specific per-capita rate $0\leq d_i\leq 1$, so that the overall change in genotype abundances is
 \begin{equation}
 \Delta n_i(t)=\Delta_+ n_i(t)-d_i n_i(t). \label{eq:delttot}
 \end{equation}
-This seems reasonable in the absence of disturbances; when we come to consider the effects of disturbances (Section ``Primary strategies and Grime's triangle''), we will incorporate disturbance-induced mortality in competing juveniles.   
 
 \section*{Results}
 
@@ -349,41 +366,21 @@ Fig.~\ref{fig:simcomp} shows that Eq. \eqref{eq:master} and its components close
 \caption{\label{fig:simcomp} The change in genotype abundances in a density dependent lottery model is closely approximated by Eq. \eqref{eq:master}. $\Delta_+ n_i/m_i$ from Eq. \eqref{eq:master} (and its separate components) are shown, along with direct simulations of random dispersal and lottery competition over one iteration over a range of propagule densities ($U$ is varied between $5\times 10^3$ and $10^6$ with $m_1=10^4$ and $m_2=9\times 10^4$). Two genotypes are present. (a) and (b) show the low-frequency genotype with $c$-advantage ($c_1=1.5$), (c) and (d) show the high-frequency predominant genotype ($c_2=1$). Simulation points are almost invisible in (c) and (d) due to near exact agreement with Eq. \eqref{eq:master}. Dashed lines in (a) and (c) show the breakdown of the classic lottery model.} 
 \end{figure}
 
-\section*{Appendix C: Mutant invasion under different environments}
+\section*{Appendix C: Mutant invasion and coexistence in a constant environment}
 
-In this Appendix we evaluate the invasion of novel mutants in a population with a single resident type $i$ (such that $N=n_i$), which is in equilibrium. 
+Here we evaluate the initial growth or decline of mutants in a population with a single resident type, which is in equilibrium. To determine whether coexistence is possible, we check for ``mutual invasion'', that is, we check that type $j$ will invade an $i$-dominated population, but type $i$ will also invade a $j$-dominated population. 
 
-For a single type $i$ in equilibrium ($\Delta n_i = 0$), we have $R_i=0$, $\overline{c}=c_i$, $A_i=(1-(1+L)e^{-L})/L$, and Eq. \eqref{eq:master} becomes
+Solving for equilibrium when $i$ is the resident ($\Delta n_i = 0$), we have $R_i=0$, $\overline{c}=c_i$, $A_i=(1-(1+L)e^{-L})/L$, and Eq. \eqref{eq:master} becomes
 \begin{equation}
 b_i(1-e^{-L})/L-d_i=0.\label{eq:equil}
 \end{equation}
-(Alternatively, Eq. \eqref{eq:equil} can be deduced directly from Eq. \eqref{eq:growthsumuncoupled}). This implies $L\approx b_i/d_i$ when $b_i/d_i\gg 1$ and $L\ll 1$ when $b_i/d_i\approx 1$. Now suppose that a novel mutant $j$, which is initially rare, appears in the population. Then $A_j/R_j\ll 0$, $l_j\approx 0$ and $\overline{c}\approx c_i$, and so, from Eq. \eqref{eq:master}, the mutant lineage's fitness is
+This implies $L\approx b_i/d_i$ if $b_i/d_i\gg 1$ and $L\ll 1$ if $b_i/d_i\approx 1$. 
+
+Now suppose that a novel mutant $j$, which is initially rare, appears in the population. Then $A_j/R_j\ll 0$, $l_j\approx 0$ and $\overline{c}\approx c_i$, and so, from Eq. \eqref{eq:master}, the mutant lineage's fitness is
 \begin{equation}
 \Delta n_j/n_j \approx b_j \left(e^{-L}+R_j\frac{c_j}{c_i}\right)-d_j \label{eq:invad}
 \end{equation}
-where $R_j\approx (1-e^{-L})/\left(\frac{c_j}{c_i}+\frac{L-1+e^{-L}}{1-(1+L)e^{-L}}\right)$ since $l_j\ll 1$.
-
-We now consider mutant invasion under the different environments from section ``Primary strategies and Grime's triangle''. In our representation of Grime's stressful environment, $b\ll 1$, $d\approx b$ and $L\ll 1$, and so Eq. \eqref{eq:invad} becomes $\Delta n_j/n_j \approx b_j-d_j$. Mutations which improve $b$ or $d$ by the same fraction $\epsilon$, such that $b_j = (1+ \epsilon)b_i$ or $d_j = (1- \epsilon)d_i$,  yield identical fitness benefits. 
-
-In our representation of Grime's ideal environment, $d\ll 1$, $b_i/d_i \gg 1$ and $L\gg 1$, and so Eq. \eqref{eq:invad} becomes 
-\begin{equation}
-\Delta n_j/n_j \approx \frac{b_j}{c_j/c_i + L-1}\frac{c_j}{c_i}-d_j\approx \frac{b_j}{L}\frac{c_j}{c_i}-d_j, \label{eq:highLinvad}
-\end{equation}
-where the last approximation follows from the fact that $c_j$ will be of similar magnitude to $c_i$ (ignoring mutations with very large effect sizes; incidentally, Eq. \eqref{eq:lottery} yields the same expression by assuming $L\rightarrow \infty$ even though this assumption is unrealistic for a rare mutant). Similarly to Grime's stressful environment, improving $b$, $c$, or $d$ by a fraction $\epsilon$ yields identical fitness benefits, even though they may have very different absolute magnitudes, because the ancestral resident type's density-regulated birth rate $b_i c_i/L$ exactly balances its mortality $d_i$ in equilibrium. Biases in the direction of evolution of $b$, $c$ or $d$ must again follow from biases in mutation availability or trade-offs/pleiotropy. The same argument applies for the high-$L$ interpretation of the stress regime. 
-
-To represent Grime's disturbed environment, $\Delta_+ n_i$ is replaced with $(1-d_i)\Delta_+ n_i$, and a single type reaches equilibrium when $L/(1-e^{-L})=(1-d_i)b_i/d_i$ (population persistence now requires $(1-d_i)b_i>d_i$ rather than $b_i>d_i$). We assumed $d_i\approx 1$ and $(1-d_i)b_i\approx d_i$, so that $L\ll 1$. A mutant's invasion fitness is then given by
-\begin{equation}
-\Delta n_j/n_j \approx (1-d_j)b_j - d_j.
-\end{equation}
-Another distinct feature of disturbed environments is that the bulk of mortality is environmental and unavoidable. That is, $d_i=d_{ie}+d_{ig}$, where the environmental part $d_{ie}$ does not evolve, and the genetic part $d_{ig}$ is affected proportionally by mutations $d_{jg}=(1-\epsilon) d_{ig}$.
-
-The effects of improving $b$ and $d$ are now no longer identical for given values of $d_{ie}$ and $d_{ig}$. A $b$-mutation $b_j=(1+\epsilon)b_i$ gives $\Delta n_j/n_j = \epsilon (1-d_i)b_i\approx \epsilon d_i \approx \epsilon$, whereas a $d$-mutation $d_{jg}=(1-\epsilon) d_{ig}$ gives $\Delta n_j/n_j = \epsilon d_{ig}/(1-d_i)$. Since overall mortality is high ($d_i\approx 1$), $d_{g}$ can be small compared to $d_{e}$ and yet still make a greater contribution to invasion fitness than $b$. The case where $d_{ig}$ is so small that $d_{ig}\ll 1-d_i$ (i.e. $d_{ig}$ is an order of magnitude smaller than $1-d_i$ which itself an order of magnitude smaller than $d_{ie}$) effectively represents a hard constraint that $d$ cannot evolve. We do not deny this possibility, but this brings us back to issues of mutational bias and constraint (the first two factors controlling the direction of evolution in section ``Primary strategies and Grime's triangle''), which we do not address in this manuscript. 
-
-Thus, assuming that $d$ can evolve in this sense, $d_{ig}$ is either comparable to or greater than $1-d_i$. Yet $d_{ig}$ cannot be appreciably greater than $1-d_i$ for long, because selection will then strongly favor reductions in $d_g$ over increases in $b$, thereby bringing $d_{ig}$ closer to $1-d_i$. Thus, if $b$ and $d$ are subject to long-term evolution subject to external degradation at comparable rates \citep{bertram_2017}, then we expect selection on $b$ and $d$ to be of comparable strength in disturbed environments as well.
-
-\section*{Appendix D: Coexistence in a stable environment}
-
-To determine whether coexistence is possible in a constant environment, we check for ``mutual invasion'', that is, we check that $j$ will invade an $i$-dominated population, but $i$ will also invade a $j$-dominated population. 
+where $R_j\approx (1-e^{-L})/\left(\frac{c_j}{c_i}+\frac{L-1+e^{-L}}{1-(1+L)e^{-L}}\right)$.
 
 We consider the case of coexistence between a $b$-specialist $i$ and a $c$-specialist $j$ ($b_i>b_j$, $c_j>c_i$ and $d_i=d_j$). Suppose that $b_i$ is so large that $L\gg 1$ when $i$ is dominant, and $b_j$ is so small that $L\ll 1$ when $j$ is dominant. Then, when $j$ is dominant, we have $\Delta n_i/n_i=b_i-d_i=b_i-d_j=b_i-b_j>0$. When $i$ is dominant, Eq.  \eqref{eq:highLinvad} applies, where Eq. \eqref{eq:equil} implies $d_j=d_i=b_i(1-e^{-L})/L\approx b_i/L$, and so
 \begin{equation}
