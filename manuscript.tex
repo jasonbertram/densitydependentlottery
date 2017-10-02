@@ -10,7 +10,7 @@
 \usepackage{graphicx} 
 \usepackage{tabularx,setspace}
 
-\title{A lottery model of density-dependent selection in evolutionary genetics}
+\title{A lottery model of density-dependent selection}
 %\author{Jason Bertram $^{1,\ast}$ \\ 
 %Joanna Masel $^{1}$}
 
@@ -70,41 +70,31 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 
 \section*{Introduction}
 
-Density-dependent selection was one of the first topics to explicitly connect ecology and evolution \citep{travis_2013}. 
+One of the simplest and most widely used models of selection is to assign genotypes constant selection coefficients describing how their relative proportions change over time. This model is common in population genetics, where its simplicity is useful for analyzing the detailed time course of genotypic frequencies. 
 
-The stated aim of MacArthur's famous $r$/$K$ scheme was to extend the existing population-genetic treatment of selection to account for population density \citep{macarthur_1962}. Few attempts have been made to develop it further along these lines. 
+Yet selection does not only change relative genotypic proportions. Ultimately, it involves the births and deaths of individuals, and is therefore intimately connected to changes in absolute abundance \cite{evolution_demography_stuff}. This immediately poses a challenge: any description of evolution grounded in abundances needs to specify how population density is regulated, as well as how fitness depends on density, which may differ between genotypes (density-dependent selection). As a result, the early density-dependent selection literature was among the first to explicitly grapple with the interplay between ecology and evolution \citep{travis_2013}.
 
- For example, MacArthur's famous $r$/$K$ scheme \citep{macarthur_1962,macarthur_1967} is now almost exclusively known as a framework for understanding life-history traits, and judged on its failure in that role \citep{pianka_1970,stearns_1977,boyce_1984,reznick_2002}. 
- 
- 
+Much of the work on density-dependent selection grew out of MacArthur's $r$/$K$-selection scheme \citep{macarthur_1962,macarthur_1967} in which $r$-selection favors faster growth at low density, whereas $K$-selection favors the ability to keep growing at high density. Although $r$ and $K$ are named after the common ``carrying capacity'' parameterization of the logistic model, the concepts of $r$- and $K$-selection are not restricted to that model \citep{macarthur_1967}. Nevertheless, much of the density-dependent selection literature has adopted variants of the logistic model, often in the setting of Mendelian inheritance \cite{roughgarden etc}. 
 
+with genotype-specific $K$ values parameterizing growth ability at high density. A closely related approach is to add Lotka-Volterra-type inter-genotypic competition terms with $\alpha$ competition coefficients, which adds ``$\alpha$-selection'' to the mix \citealt{gill_1974,case_1974,joshi_2001}.
 
-
-
-It is common practice in population genetics to assign constant selection coefficients to genotypes describing the change in their relative frequencies over time. 
-
-This simplified treatment of selection facilitates explicit time-dependent treatment of genotype frequencies, and can be justified over sufficiently short time intervals \citep[p. 276]{ewens_2004}. The emphasis of population genetics is to infer past selection, migration and demographic change given a sample of nucleotide sequences, or to predict how allele frequencies change over time based on their relative fitness effects together with population structure, genetic drift and linkage. The resulting picture of evolution excludes basic elements of the ecological underpinnings of selection, including density dependence, and how selection affects population size. This complicates the inference of past selection, because demographic changes can look genealogically very similar to selective frequency changes \citep{barton_1998}. 
+ variant that allows for inter-genotypic versus intra-genotypic 
 
 
 
+or  explicit resource consumption \citep{tilman_1982}, are much more complicated.
 
 
-
-
-By contrast, models of phenotypic trait evolution use absolute fitness functions to describe how some traits of interest affect survival and reproduction in particular ecological scenarios \citep{metz_1992,diekmann_2004}. These fitness functions can be quite problem-specific and often only account for a few traits at a time. The emphasis here is on the conditions for invasion from low frequencies and co-existence, rather than frequency or abundance trajectories over time. For instance, adaptive dynamics uses ``invasion fitness'' to explore the consequences of eco-evolutionary feedbacks \citep{diekmann_2004}.
-
-
- 
-
-
-
-
+$r$/$K$ scheme \citep{macarthur_1962,macarthur_1967} is now almost exclusively known as a framework for understanding life-history traits, and judged on its failure in that role \citep{pianka_1970,stearns_1977,boyce_1984,reznick_2002}. 
+  
 
 in a simplified, territorial model of growth, dispersal and competition. 
 
 We revisit the classic lottery model of \cite{chesson_1981}, which has two features that make it well suited for this role, but one critical flaw that we rectify here.
 
-The first feature is that the lottery representation of competition is  particularly concise. Mature individuals (``adults'') each require their own territory, whereas newborn individuals (``propagules'') disperse to, and subsequently compete for, territories made available by the death of adults. Territorial contest among propagules leaves a single victorious adult per territory, the victor chosen at random from the propagules present, with probabilities weighted by a coefficient for each type representing competitive ability, akin to a lottery \citep{sale_77}. By comparison, coefficients for the pairwise effects of types on each other (e.g. the $\alpha$ coefficients in the generalized Lotka-Volterra equations and the associated concept of ``$\alpha$-selection''; \citealt{gill_1974,case_1974,joshi_2001}), or  explicit resource consumption \citep{tilman_1982}, are much more complicated. The second feature is the close connection between the lottery model and one of the foundational models of population genetics, the Wright-Fisher model of genetic drift, which we discuss further below. 
+The first feature is that the lottery representation of competition is  particularly concise. Mature individuals (``adults'') each require their own territory, whereas newborn individuals (``propagules'') disperse to, and subsequently compete for, territories made available by the death of adults. Territorial contest among propagules leaves a single victorious adult per territory, the victor chosen at random from the propagules present, with probabilities weighted by a coefficient for each type representing competitive ability, akin to a lottery \citep{sale_77}.  
+
+The second feature is the close connection between the lottery model and one of the foundational models of population genetics, the Wright-Fisher model of genetic drift, which we discuss further below. 
 
 The critical flaw of the classic lottery model is that it breaks down at low densities (few propagules dispersing to each territory), precluding density-dependent behaviour. Our first task is to analytically extend the classic lottery model to correctly account for low density behavior (sections ``Model'' and ``Mean field approximation'').
 
@@ -190,7 +180,6 @@ This classical argument overlooks two general mechanisms that promote coexistenc
 Fig.~\ref{fig:fluctuatingselection}a-c shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with mortality and no growth). Both the storage effect (adults are sheltered from selection during the summer growth phase) and the bounded density effect (expansion to high density occurs every cycle) are operating. Two types are present, a $b$-specialist, which is better at rapidly growing in the summer (higher $b$), and a $d$-specialist which is better at surviving the winter (lower $d$). Neither type has an advantage over a full environmental cycle, and they stably coexist. This is due to a combination of the storage and bounded density effects (recall that stable coexistence between $b$ and $d$ specialists was not possible in a constant environment). 
 
 The classic lottery model (Eq. 1) fails to give co-existence for these parameters because expansion to carrying capacity occurs immediately at the start of the summer (Fig. \ref{fig:fluctuatingselection}d-f). As a result, coexistence requires that the winter survivor's $b$ must be about $5$ times smaller than required when we properly account for the growth in the abundance of each type using Eq. \eqref{eq:master} (keeping the other parameters the same; Fig.~\ref{fig:fluctuatingselection}g-i). Previous models of the promotion of genetic variation via the storage effect  \citep{ellner_1994} similarly assume that the total number of offspring per iteration is constant, and would produce a similar error. 
-
 
 \begin{figure}
 \centering
