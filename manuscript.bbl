@@ -1,314 +1,276 @@
-\begin{thebibliography}{54}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[{Aerts(1999)}]{aerts_1999}
-Aerts, R. 1999.
+\bibitem[Aerts(1999)]{aerts_1999}
+Rien Aerts.
 \newblock Interspecific competition in natural plant communities: mechanisms,
   trade-offs and plant-soil feedbacks.
-\newblock Journal of Experimental Botany 50:29--37.
+\newblock \emph{Journal of Experimental Botany}, 50\penalty0 (330):\penalty0
+  29--37, 1999.
 
-\bibitem[{Allan(1976)}]{allan_76}
-Allan, J.~D. 1976.
-\newblock Life history patterns in zooplankton.
-\newblock The American Naturalist 110:165--180.
-
-\bibitem[{Arenbaev(1977)}]{arenbaev_1977}
-Arenbaev, N. 1977.
+\bibitem[Arenbaev(1977)]{arenbaev_1977}
+NK~Arenbaev.
 \newblock Asymptotic behavior of the multinomial distribution.
-\newblock Theory of Probability \& Its Applications 21:805--810.
+\newblock \emph{Theory of Probability \& Its Applications}, 21\penalty0
+  (4):\penalty0 805--810, 1977.
 
-\bibitem[{Barton(1998)}]{barton_1998}
-Barton, N.~H. 1998.
-\newblock The effect of hitch-hiking on neutral genealogies.
-\newblock Genetical Research 72:123--133.
-
-\bibitem[{Bergland et~al.(2014)Bergland, Behrman, O'Brien, Schmidt, and
-  Petrov}]{bergland_14}
-Bergland, A.~O., E.~L. Behrman, K.~R. O'Brien, P.~S. Schmidt, and D.~A. Petrov.
-  2014.
+\bibitem[Bergland et~al.(2014)Bergland, Behrman, O'Brien, Schmidt, and
+  Petrov]{bergland_14}
+Alan~O. Bergland, Emily~L. Behrman, Katherine~R. O'Brien, Paul~S. Schmidt, and
+  Dmitri~A. Petrov.
 \newblock Genomic evidence of rapid and stable adaptive oscillations over
   seasonal time scales in drosophila.
-\newblock PLOS Genetics 10:1--19.
+\newblock \emph{PLOS Genetics}, 10\penalty0 (11):\penalty0 1--19, 11 2014.
+\newblock \doi{10.1371/journal.pgen.1004775}.
 
-\bibitem[{Bertram et~al.(2017)Bertram, Gomez, and Masel}]{bertram_2017}
-Bertram, J., K.~Gomez, and J.~Masel. 2017.
-\newblock Predicting patterns of long-term adaptation and extinction with
-  population genetics.
-\newblock Evolution 71:204--214.
-
-\bibitem[{Bolker and Pacala(1999)}]{bolker_99}
-Bolker, B.~M., and S.~W. Pacala. 1999.
+\bibitem[Bolker and Pacala(1999)]{bolker_99}
+Benjamin~M. Bolker and Stephen~W. Pacala.
 \newblock Spatial moment equations for plant competition: Understanding spatial
   strategies and the advantages of short dispersal.
-\newblock The American Naturalist 153:575--602.
+\newblock \emph{The American Naturalist}, 153\penalty0 (6):\penalty0 575--602,
+  1999.
+\newblock \doi{10.1086/303199}.
 
-\bibitem[{Boyce(1984)}]{boyce_1984}
-Boyce, M.~S. 1984.
+\bibitem[Boyce(1984)]{boyce_1984}
+Mark~S Boyce.
 \newblock Restitution of r-and k-selection as a model of density-dependent
   natural selection.
-\newblock Annual Review of Ecology and Systematics 15:427--447.
+\newblock \emph{Annual Review of Ecology and Systematics}, 15:\penalty0
+  427--447, 1984.
 
-\bibitem[{Case and Gilpin(1974)}]{case_1974}
-Case, T.~J., and M.~E. Gilpin. 1974.
+\bibitem[Case and Gilpin(1974)]{case_1974}
+Ted~J Case and Michael~E Gilpin.
 \newblock Interference competition and niche theory.
-\newblock Proceedings of the National Academy of Sciences 71:3073--3077.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 71\penalty0
+  (8):\penalty0 3073--3077, 1974.
 
-\bibitem[{Chesson and Warner(1981)}]{chesson_1981}
-Chesson, P.~L., and R.~R. Warner. 1981.
+\bibitem[Chesson and Warner(1981)]{chesson_1981}
+Peter~L Chesson and Robert~R Warner.
 \newblock Environmental variability promotes coexistence in lottery competitive
   systems.
-\newblock American Naturalist pages 923--943.
+\newblock \emph{American Naturalist}, pages 923--943, 1981.
 
-\bibitem[{Darling et~al.(2012)Darling, Alvarez-Filip, Oliver, McClanahan, and
-  Côté}]{darling_2012}
-Darling, E.~S., L.~Alvarez-Filip, T.~A. Oliver, T.~R. McClanahan, and I.~M.
-  Côté. 2012.
+\bibitem[Darling et~al.(2012)Darling, Alvarez-Filip, Oliver, McClanahan, and
+  Côté]{darling_2012}
+Emily~S. Darling, Lorenzo Alvarez-Filip, Thomas~A. Oliver, Timothy~R.
+  McClanahan, and Isabelle~M. Côté.
 \newblock Evaluating life-history strategies of reef corals from species
   traits.
-\newblock Ecology Letters 15:1378--1386.
+\newblock \emph{Ecology Letters}, 15\penalty0 (12):\penalty0 1378--1386, 2012.
+\newblock ISSN 1461-0248.
+\newblock \doi{10.1111/j.1461-0248.2012.01861.x}.
+\newblock URL \url{http://dx.doi.org/10.1111/j.1461-0248.2012.01861.x}.
 
-\bibitem[{Davis et~al.(1998)Davis, Wrage, and Reich}]{davis_1998}
-Davis, M.~A., K.~J. Wrage, and P.~B. Reich. 1998.
+\bibitem[Davis et~al.(1998)Davis, Wrage, and Reich]{davis_1998}
+Mark~A Davis, Keith~J Wrage, and Peter~B Reich.
 \newblock Competition between tree seedlings and herbaceous vegetation: support
   for a theory of resource supply and demand.
-\newblock Journal of Ecology 86:652--661.
+\newblock \emph{Journal of Ecology}, 86\penalty0 (4):\penalty0 652--661, 1998.
 
-\bibitem[{Dempster(1955)}]{dempster_1955}
-Dempster, E.~R. 1955.
+\bibitem[Dempster(1955)]{dempster_1955}
+Everett~Ross Dempster.
 \newblock Maintenance of genetic heterogeneity.
-\newblock Cold Spring Harb Symp Quant Biol 20:25--31.
+\newblock \emph{Cold Spring Harb Symp Quant Biol}, 20:\penalty0 25--31, 1955.
 
-\bibitem[{Desai and Fisher(2007)}]{desai_2007}
-Desai, M.~M., and D.~S. Fisher. 2007.
+\bibitem[Desai and Fisher(2007)]{desai_2007}
+Michael~M. Desai and Daniel~S. Fisher.
 \newblock Beneficial mutation–selection balance and the effect of linkage on
   positive selection.
-\newblock Genetics 176:1759--1798.
+\newblock \emph{Genetics}, 176\penalty0 (3):\penalty0 1759--1798, 2007.
+\newblock \doi{10.1534/genetics.106.067678}.
 
-\bibitem[{Diekmann et~al.(2004)}]{diekmann_2004}
-Diekmann, O., et~al. 2004.
-\newblock A beginner's guide to adaptive dynamics.
-\newblock Banach Center Publications 63:47--86.
-
-\bibitem[{Ellner and Hairston~Jr(1994)}]{ellner_1994}
-Ellner, S., and N.~G. Hairston~Jr. 1994.
+\bibitem[Ellner and Hairston~Jr(1994)]{ellner_1994}
+Stephen Ellner and Nelson~G Hairston~Jr.
 \newblock Role of overlapping generations in maintaining genetic variation in a
   fluctuating environment.
-\newblock The American Naturalist 143:403--417.
+\newblock \emph{The American Naturalist}, 143\penalty0 (3):\penalty0 403--417,
+  1994.
 
-\bibitem[{Ewens(2004)}]{ewens_2004}
-Ewens, W.~J. 2004.
-\newblock Mathematical Population Genetics 1: Theoretical Introduction.
-\newblock Springer Science \& Business Media.
+\bibitem[Ewens(2004)]{ewens_2004}
+Warren~J Ewens.
+\newblock \emph{Mathematical Population Genetics 1: Theoretical Introduction}.
+\newblock Springer Science \& Business Media, 2004.
 
-\bibitem[{Fitzsimmons et~al.(2010)Fitzsimmons, Schoustra, Kerr, and
-  Kassen}]{fitzsimmons_2010}
-Fitzsimmons, J.~M., S.~E. Schoustra, J.~T. Kerr, and R.~Kassen. 2010.
+\bibitem[Fitzsimmons et~al.(2010)Fitzsimmons, Schoustra, Kerr, and
+  Kassen]{fitzsimmons_2010}
+Jay~M Fitzsimmons, Sijmen~E Schoustra, Jeremy~T Kerr, and Rees Kassen.
 \newblock Population consequences of mutational events: effects of antibiotic
   resistance on the r/k trade-off.
-\newblock Evolutionary Ecology 24:227--236.
+\newblock \emph{Evolutionary Ecology}, 24\penalty0 (1):\penalty0 227--236,
+  2010.
 
-\bibitem[{Gerrish and Lenski(1998)}]{gerrish_1998}
-Gerrish, P.~J., and R.~E. Lenski. 1998.
+\bibitem[Gerrish and Lenski(1998)]{gerrish_1998}
+Philip~J Gerrish and Richard~E Lenski.
 \newblock The fate of competing beneficial mutations in an asexual population.
-\newblock Genetica 102:127--144.
+\newblock \emph{Genetica}, 102:\penalty0 127--144, 1998.
 
-\bibitem[{Gill(1974)}]{gill_1974}
-Gill, D.~E. 1974.
+\bibitem[Gill(1974)]{gill_1974}
+Douglas~E Gill.
 \newblock Intrinsic rate of increase, saturation density, and competitive
   ability. ii. the evolution of competitive ability.
-\newblock American Naturalist 108:103--116.
+\newblock \emph{American Naturalist}, 108:\penalty0 103--116, 1974.
 
-\bibitem[{Grime(1974)}]{grime_1974}
-Grime, J.~P. 1974.
-\newblock Vegetation classification by reference to strategies.
-\newblock Nature 250:26--31.
-
-\bibitem[{Grime(1977)}]{grime_1977}
----{}---{}---. 1977.
-\newblock Evidence for the existence of three primary strategies in plants and
-  its relevance to ecological and evolutionary theory.
-\newblock American Naturalist 111:1169--1194.
-
-\bibitem[{Grime(1988)}]{grime_1988}
----{}---{}---. 1988.
-\newblock Plant Evolutionary Biology, chap. The C-S-R model of primary plant
-  strategies --- origins, implications and tests, pages 371--393.
-\newblock Springer Netherlands, Dordrecht.
-
-\bibitem[{Haldane(1927)}]{haldane_1927}
-Haldane, J. B.~S. 1927.
-\newblock A mathematical theory of natural and artificial selection, part v:
-  selection and mutation 23:838--844.
-
-\bibitem[{Hendriks et~al.(2005)Hendriks, Maas-Diepeveen, Heugens, and van
-  Straalen}]{hendriks_2005}
-Hendriks, A.~J., J.~L. Maas-Diepeveen, E.~H. Heugens, and N.~M. van Straalen.
-  2005.
+\bibitem[Hendriks et~al.(2005)Hendriks, Maas-Diepeveen, Heugens, and van
+  Straalen]{hendriks_2005}
+A~Jan Hendriks, Johanna~LM Maas-Diepeveen, Evelyn~HW Heugens, and Nico~M van
+  Straalen.
 \newblock Meta-analysis of intrinsic rates of increase and carrying capacity of
   populations affected by toxic and other stressors.
-\newblock Environmental Toxicology and Chemistry 24:2267--2277.
+\newblock \emph{Environmental Toxicology and Chemistry}, 24\penalty0
+  (9):\penalty0 2267--2277, 2005.
 
-\bibitem[{Joshi et~al.(2001)Joshi, Prasad, and Shakarad}]{joshi_2001}
-Joshi, A., N.~Prasad, and M.~Shakarad. 2001.
+\bibitem[Joshi et~al.(2001)Joshi, Prasad, and Shakarad]{joshi_2001}
+Amitabh Joshi, NG~Prasad, and Mallikarjun Shakarad.
 \newblock K-selection, $\alpha$-selection, effectiveness, and tolerance in
   competition: density-dependent selection revisited.
-\newblock Journal of Genetics 80:63--75.
+\newblock \emph{Journal of Genetics}, 80\penalty0 (2):\penalty0 63--75, 2001.
 
-\bibitem[{Kuno(1991)}]{kuno_1991}
-Kuno, E. 1991.
+\bibitem[Kuno(1991)]{kuno_1991}
+Eizi Kuno.
 \newblock {Some strange properties of the logistic equation defined with r and
   K: Inherent defects or artifacts?}
-\newblock Researches on Population Ecology 33:33--39.
+\newblock \emph{Researches on Population Ecology}, 33\penalty0 (1):\penalty0
+  33--39, 1991.
 
-\bibitem[{Levins and Culver(1971)}]{levins_71}
-Levins, R., and D.~Culver. 1971.
+\bibitem[Levins and Culver(1971)]{levins_71}
+Richard Levins and David Culver.
 \newblock Regional coexistence of species and competition between rare species.
-\newblock Proceedings of the National Academy of Sciences 68:1246--1248.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 68\penalty0
+  (6):\penalty0 1246--1248, 1971.
 
-\bibitem[{Luckinbill(1978)}]{luckinbill_1978}
-Luckinbill, L.~S. 1978.
+\bibitem[Luckinbill(1978)]{luckinbill_1978}
+Leo~S Luckinbill.
 \newblock r and k selection in experimental populations of escherichia coli.
-\newblock Science (New York, NY) 202:1201--1203.
+\newblock \emph{Science (New York, NY)}, 202\penalty0 (4373):\penalty0
+  1201--1203, 1978.
 
-\bibitem[{Luckinbill(1979)}]{luckinbill_1979}
----{}---{}---. 1979.
+\bibitem[Luckinbill(1979)]{luckinbill_1979}
+Leo~S Luckinbill.
 \newblock Selection and the r/k continuum in experimental populations of
   protozoa.
-\newblock American Naturalist pages 427--437.
+\newblock \emph{American Naturalist}, pages 427--437, 1979.
 
-\bibitem[{MacArthur(1962)}]{macarthur_1962}
-MacArthur, R.~H. 1962.
+\bibitem[MacArthur(1962)]{macarthur_1962}
+Robert~H MacArthur.
 \newblock Some generalized theorems of natural selection.
-\newblock Proceedings of the National Academy of Sciences 48:1893--1897.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 48\penalty0
+  (11):\penalty0 1893--1897, 1962.
 
-\bibitem[{MacArthur and Wilson(1967)}]{macarthur_1967}
-MacArthur, R.~H., and E.~O. Wilson. 1967.
-\newblock Theory of Island Biogeography.
-\newblock Princeton University Press.
+\bibitem[MacArthur and Wilson(1967)]{macarthur_1967}
+Robert~H MacArthur and Edward~O Wilson.
+\newblock \emph{Theory of Island Biogeography}.
+\newblock Princeton University Press, 1967.
 
-\bibitem[{Messer et~al.(2016)Messer, Ellner, and Hairston}]{messer_2016}
-Messer, P.~W., S.~P. Ellner, and N.~G. Hairston. 2016.
+\bibitem[Messer et~al.(2016)Messer, Ellner, and Hairston]{messer_2016}
+Philipp~W Messer, Stephen~P Ellner, and Nelson~G Hairston.
 \newblock Can population genetics adapt to rapid evolution?
-\newblock Trends in Genetics 32:408--418.
+\newblock \emph{Trends in Genetics}, 32\penalty0 (7):\penalty0 408--418, 2016.
 
-\bibitem[{Metz et~al.(1992)Metz, Nisbet, and Geritz}]{metz_1992}
-Metz, J.~A., R.~M. Nisbet, and S.~A. Geritz. 1992.
-\newblock How should we define ‘fitness’ for general ecological scenarios?
-\newblock Trends in Ecology \& Evolution 7:198--202.
-
-\bibitem[{Pianka(1970)}]{pianka_1970}
-Pianka, E.~R. 1970.
+\bibitem[Pianka(1970)]{pianka_1970}
+Eric~R. Pianka.
 \newblock On r- and {K-Selection}.
-\newblock The American Naturalist 104:592--597.
+\newblock \emph{The American Naturalist}, 104\penalty0 (940):\penalty0
+  592--597, 1970.
+\newblock ISSN 00030147, 15375323.
+\newblock URL \url{http://www.jstor.org/stable/2459020}.
 
-\bibitem[{Pianka(1972)}]{pianka_1972}
----{}---{}---. 1972.
+\bibitem[Pianka(1972)]{pianka_1972}
+Eric~R. Pianka.
 \newblock r and {K} selection or b and d selection?
-\newblock The American Naturalist 106:581--588.
+\newblock \emph{The American Naturalist}, 106\penalty0 (951):\penalty0
+  581--588, 1972.
+\newblock ISSN 00030147, 15375323.
+\newblock URL \url{http://www.jstor.org/stable/2459721}.
 
-\bibitem[{Ram et~al.(2016)Ram, Dellus-Gur, Bibi, Obolski, Berman, and
-  Hadany}]{ram_2016}
-Ram, Y., E.~Dellus-Gur, M.~Bibi, U.~Obolski, J.~Berman, and L.~Hadany. 2016.
+\bibitem[Ram et~al.(2016)Ram, Dellus-Gur, Bibi, Obolski, Berman, and
+  Hadany]{ram_2016}
+Yoav Ram, Eynat Dellus-Gur, Maayan Bibi, Uri Obolski, Judith Berman, and Lilach
+  Hadany.
 \newblock Predicting microbial relative growth in a mixed culture from growth
   curve data.
-\newblock bioRxiv 10.1101/022640 .
+\newblock \emph{bioRxiv 10.1101/022640}, 2016.
 
-\bibitem[{Reznick et~al.(2002)Reznick, Bryant, and Bashey}]{reznick_2002}
-Reznick, D., M.~J. Bryant, and F.~Bashey. 2002.
+\bibitem[Reznick et~al.(2002)Reznick, Bryant, and Bashey]{reznick_2002}
+David Reznick, Michael~J. Bryant, and Farrah Bashey.
 \newblock r- and k-selection revisited: The role of population regulation in
   life-history evolution.
-\newblock Ecology 83:1509--1520.
+\newblock \emph{Ecology}, 83\penalty0 (6):\penalty0 1509--1520, 2002.
+\newblock ISSN 1939-9170.
+\newblock \doi{10.1890/0012-9658(2002)083[1509:RAKSRT]2.0.CO;2}.
+\newblock URL
+  \url{http://dx.doi.org/10.1890/0012-9658(2002)083[1509:RAKSRT]2.0.CO;2}.
 
-\bibitem[{Sale(1977)}]{sale_77}
-Sale, P.~F. 1977.
+\bibitem[Sale(1977)]{sale_77}
+Peter~F. Sale.
 \newblock Maintenance of high diversity in coral reef fish communities.
-\newblock The American Naturalist 111:337--359.
+\newblock \emph{The American Naturalist}, 111\penalty0 (978):\penalty0
+  337--359, 1977.
 
-\bibitem[{Shmida and Ellner(1984)}]{shmida_84}
-Shmida, A., and S.~Ellner. 1984.
+\bibitem[Shmida and Ellner(1984)]{shmida_84}
+A.~Shmida and S.~Ellner.
 \newblock Coexistence of plant species with similar niches.
-\newblock Vegetatio 58:29--55.
+\newblock \emph{Vegetatio}, 58\penalty0 (1):\penalty0 29--55, 1984.
+\newblock ISSN 00423106.
 
-\bibitem[{Southwood(1977)}]{southwood_1977}
-Southwood, T. R.~E. 1977.
-\newblock Habitat, the templet for ecological strategies?
-\newblock Journal of Animal Ecology 46:337--365.
-
-\bibitem[{Stearns(1977)}]{stearns_1977}
-Stearns, S.~C. 1977.
+\bibitem[Stearns(1977)]{stearns_1977}
+Stephen~C. Stearns.
 \newblock The evolution of life history traits: A critique of the theory and a
   review of the data.
-\newblock Annual Review of Ecology and Systematics 8:145--171.
+\newblock \emph{Annual Review of Ecology and Systematics}, 8:\penalty0
+  145--171, 1977.
+\newblock ISSN 00664162.
+\newblock URL \url{http://www.jstor.org/stable/2096724}.
 
-\bibitem[{Svardal et~al.(2015)Svardal, Rueffler, and Hermisson}]{svardal_2015}
-Svardal, H., C.~Rueffler, and J.~Hermisson. 2015.
+\bibitem[Svardal et~al.(2015)Svardal, Rueffler, and Hermisson]{svardal_2015}
+Hannes Svardal, Claus Rueffler, and Joachim Hermisson.
 \newblock A general condition for adaptive genetic polymorphism in temporally
   and spatially heterogeneous environments.
-\newblock Theoretical Population Biology 99:76 -- 97.
+\newblock \emph{Theoretical Population Biology}, 99:\penalty0 76 -- 97, 2015.
+\newblock ISSN 0040-5809.
+\newblock \doi{http://dx.doi.org/10.1016/j.tpb.2014.11.002}.
 
-\bibitem[{Taylor et~al.(1990)Taylor, Aarssen, and Loehle}]{taylor_1990}
-Taylor, D.~R., L.~W. Aarssen, and C.~Loehle. 1990.
-\newblock On the relationship between r/k selection and environmental carrying
-  capacity: a new habitat templet for plant life history strategies.
-\newblock Oikos pages 239--250.
-
-\bibitem[{Tilman(1982)}]{tilman_1982}
-Tilman, D. 1982.
-\newblock Resource competition and community structure.
-\newblock Princeton University Press.
-
-\bibitem[{Tilman(1994)}]{tilman_94}
----{}---{}---. 1994.
-\newblock Competition and biodiversity in spatially structured habitats.
-\newblock Ecology 75:2--16.
-
-\bibitem[{Tilman(2007)}]{tilman_2007}
----{}---{}---. 2007.
+\bibitem[Tilman(2007)]{tilman_2007}
+D~Tilman.
 \newblock Resource competition and plant traits: a response to craine et al.
   2005.
-\newblock Journal of Ecology 95:231--234.
+\newblock \emph{Journal of Ecology}, 95\penalty0 (2):\penalty0 231--234, 2007.
+\newblock ISSN 1365-2745.
+\newblock \doi{10.1111/j.1365-2745.2007.01201.x}.
+\newblock URL \url{http://dx.doi.org/10.1111/j.1365-2745.2007.01201.x}.
 
-\bibitem[{Uecker and Hermisson(2011)}]{uecker_2011}
-Uecker, H., and J.~Hermisson. 2011.
+\bibitem[Tilman(1982)]{tilman_1982}
+David Tilman.
+\newblock \emph{Resource competition and community structure}.
+\newblock Princeton University Press, 1982.
+
+\bibitem[Tilman(1994)]{tilman_94}
+David Tilman.
+\newblock Competition and biodiversity in spatially structured habitats.
+\newblock \emph{Ecology}, 75\penalty0 (1):\penalty0 2--16, 1994.
+
+\bibitem[Travis et~al.(2013)Travis, Leips, and Rodd]{travis_2013}
+Joseph Travis, Jeff Leips, and F.~Helen Rodd.
+\newblock Evolution in population parameters: Density-dependent selection or
+  density-dependent fitness?
+\newblock \emph{The American Naturalist}, 181\penalty0 (S1):\penalty0 S9--S20,
+  2013.
+\newblock \doi{10.1086/669970}.
+
+\bibitem[Uecker and Hermisson(2011)]{uecker_2011}
+Hildegard Uecker and Joachim Hermisson.
 \newblock On the fixation process of a beneficial mutation in a variable
   environment.
-\newblock Genetics 188:915--930.
+\newblock \emph{Genetics}, 188\penalty0 (4):\penalty0 915--930, 2011.
 
-\bibitem[{Violle et~al.(2007)Violle, Navas, Vile, Kazakou, Fortunel, Hummel,
-  and Garnier}]{violle_2007}
-Violle, C., M.-L. Navas, D.~Vile, E.~Kazakou, C.~Fortunel, I.~Hummel, and
-  E.~Garnier. 2007.
-\newblock Let the concept of trait be functional!
-\newblock Oikos 116:882--892.
-
-\bibitem[{Westoby(1998)}]{westoby_1998}
-Westoby, M. 1998.
-\newblock A leaf-height-seed {(LHS)} plant ecology strategy scheme.
-\newblock Plant and soil 199:213--227.
-
-\bibitem[{Winemiller et~al.(2015)Winemiller, Fitzgerald, Bower, and
-  Pianka}]{winemiller_2015}
-Winemiller, K.~O., D.~B. Fitzgerald, L.~M. Bower, and E.~R. Pianka. 2015.
-\newblock Functional traits, convergent evolution, and periodic tables of
-  niches.
-\newblock Ecology Letters 18:737--751.
-
-\bibitem[{Winemiller and Rose(1992)}]{winemiller_1992}
-Winemiller, K.~O., and K.~A. Rose. 1992.
-\newblock Patterns of life-history diversification in north american fishes:
-  implications for population regulation.
-\newblock Canadian Journal of Fisheries and Aquatic Sciences 49:2196--2218.
-
-\bibitem[{Yampolsky and Stoltzfus(2001)}]{yampolsky_2001}
-Yampolsky, L.~Y., and A.~Stoltzfus. 2001.
-\newblock Bias in the introduction of variation as an orienting factor in
-  evolution.
-\newblock Evolution \& Development 3:73--83.
-
-\bibitem[{Yi and Dean(2013)}]{yi_2013}
-Yi, X., and A.~M. Dean. 2013.
+\bibitem[Yi and Dean(2013)]{yi_2013}
+Xiao Yi and Antony~M Dean.
 \newblock Bounded population sizes, fluctuating selection and the tempo and
   mode of coexistence.
-\newblock Proceedings of the National Academy of Sciences 110:16945--16950.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 110\penalty0
+  (42):\penalty0 16945--16950, 2013.
 
 \end{thebibliography}

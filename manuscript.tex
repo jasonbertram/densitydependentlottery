@@ -35,15 +35,6 @@
 
 \bigskip
 
-%\textit{Manuscript type}: Article. 
-% Or e-article, note, e-note, natural history miscellany,
-% e-natural history miscellany, comment, reply, symposium, or
-% countdown to 150.
-
-\bigskip
-
-%\noindent{\footnotesize Prepared using the suggested \LaTeX{} 
-%template for \textit{Am.\ Nat.}}
 
 \linenumbers{}
 \modulolinenumbers[1]
@@ -64,17 +55,28 @@ We show that, with density dependence, co-existence is possible in the lottery m
 
 Inspired by natural \textit{Drosophila} populations, we consider co-existence under strong, seasonally-fluctuating selection coupled to large cycles in population density, and show that co-existence (stable polymorphism) is promoted via a combination of the classic storage effect and density-regulated population growth. 
 
-
 \newpage{}
 
 
 \section*{Introduction}
 
+
+Some of the earliest explicit discussions of the interplay between ecology and evolution appear in the density-dependent selection literature \citep{travis_2013}. 
+
+Much of this work grew out of MacArthur's $r$/$K$-selection scheme \citep{macarthur_1962,macarthur_1967} in which $r$-selection favors faster growth at low density, whereas $K$-selection favors the ability to keep growing at high density. 
+
+Although $r$ and $K$ are named after the common ``carrying capacity'' parameterization of the logistic model, the concepts of $r$- and $K$-selection are not restricted to that model \citep{macarthur_1967}.
+
+Yet selection does not only change relative genotypic proportions. Ultimately, it involves the births and deaths of individuals, and is therefore intimately connected to changes in absolute abundance \cite{evolution_demography_stuff}. This immediately poses a challenge: any description of evolution grounded in abundances needs to specify how population density is regulated, as well as how fitness depends on density, which may differ between genotypes (density-dependent selection). As a result, 
+
+
+
+
 One of the simplest and most widely used models of selection is to assign genotypes constant selection coefficients describing how their relative proportions change over time. This model is common in population genetics, where its simplicity is useful for analyzing the detailed time course of genotypic frequencies. 
 
-Yet selection does not only change relative genotypic proportions. Ultimately, it involves the births and deaths of individuals, and is therefore intimately connected to changes in absolute abundance \cite{evolution_demography_stuff}. This immediately poses a challenge: any description of evolution grounded in abundances needs to specify how population density is regulated, as well as how fitness depends on density, which may differ between genotypes (density-dependent selection). As a result, the early density-dependent selection literature was among the first to explicitly grapple with the interplay between ecology and evolution \citep{travis_2013}.
 
-Much of the work on density-dependent selection grew out of MacArthur's $r$/$K$-selection scheme \citep{macarthur_1962,macarthur_1967} in which $r$-selection favors faster growth at low density, whereas $K$-selection favors the ability to keep growing at high density. Although $r$ and $K$ are named after the common ``carrying capacity'' parameterization of the logistic model, the concepts of $r$- and $K$-selection are not restricted to that model \citep{macarthur_1967}. Nevertheless, much of the density-dependent selection literature has adopted variants of the logistic model, often in the setting of Mendelian inheritance \cite{roughgarden etc}. 
+
+ Nevertheless, much of the density-dependent selection literature has adopted variants of the logistic model, often in the setting of Mendelian inheritance \cite{roughgarden etc}. 
 
 with genotype-specific $K$ values parameterizing growth ability at high density. A closely related approach is to add Lotka-Volterra-type inter-genotypic competition terms with $\alpha$ competition coefficients, which adds ``$\alpha$-selection'' to the mix \citealt{gill_1974,case_1974,joshi_2001}.
 
