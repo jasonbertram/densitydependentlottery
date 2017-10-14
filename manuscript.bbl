@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -17,6 +17,12 @@ NK~Arenbaev.
 \newblock Asymptotic behavior of the multinomial distribution.
 \newblock \emph{Theory of Probability \& Its Applications}, 21\penalty0
   (4):\penalty0 805--810, 1977.
+
+\bibitem[Barton et~al.(2007)Barton, Briggs, Eisen, Goldstein, and
+  Patel]{barton_2007}
+NH~Barton, DEG Briggs, JA~Eisen, DB~Goldstein, and NH~Patel.
+\newblock \emph{Evolution}.
+\newblock NY: Cold Spring Harbor Laboratory Press, 2007.
 
 \bibitem[Bergland et~al.(2014)Bergland, Behrman, O'Brien, Schmidt, and
   Petrov]{bergland_14}
@@ -53,6 +59,12 @@ Peter~L Chesson and Robert~R Warner.
 \newblock Environmental variability promotes coexistence in lottery competitive
   systems.
 \newblock \emph{American Naturalist}, pages 923--943, 1981.
+
+\bibitem[Christiansen(2004)]{christiansen_2004}
+F~Christiansen.
+\newblock Density dependent selection.
+\newblock In \emph{Evolution of Population Biology: Modern Synthesis}, pages
+  139--155. Cambridge University Press, 2004.
 
 \bibitem[Darling et~al.(2012)Darling, Alvarez-Filip, Oliver, McClanahan, and
   Côté]{darling_2012}
@@ -128,6 +140,11 @@ Amitabh Joshi, NG~Prasad, and Mallikarjun Shakarad.
 \newblock K-selection, $\alpha$-selection, effectiveness, and tolerance in
   competition: density-dependent selection revisited.
 \newblock \emph{Journal of Genetics}, 80\penalty0 (2):\penalty0 63--75, 2001.
+
+\bibitem[Kostitzin(1939)]{kostitzin_1939}
+Vladimir~Alexandrovitch Kostitzin.
+\newblock \emph{Mathematical biology}.
+\newblock George G. Harrap And Company Ltd.; London, 1939.
 
 \bibitem[Kuno(1991)]{kuno_1991}
 Eizi Kuno.

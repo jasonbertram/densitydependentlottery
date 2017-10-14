@@ -60,26 +60,19 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 
 \section*{Introduction}
 
-Selection has two broadly different connotations, which both appear in the simplest models of evolution. The first is that if one genotype grows faster than another, its frequency will increase. Mathematically, if one genotype's abundance increases at a constant per-capita rate $r_1$, and another at $r_2$, then the frequency of the first $p_1$ changes at rate $(r_1-r_2)p_1 p_2$. Here $s=r_1-r_2$ is the ``selection coefficient''. The second is directly phrased in terms of genotypic frequencies. Two genotypes are assigned relative fitnesss $w_1$ and $w_2$ respectively, and then $p_1$ changes at rate $(w_1-w_2)/\overline{w} p_1 p_2$, where $\overline{w}=w_1p_1+w_2p_2$ is mean relative fitness. While this formulation is agnostic about population size $N$, it is often assumed that $N$ is constant. Thus, in the first connotation, selection is simply differential growth, and does not require interactions between genotypes. The second, on the other hand, connotes the displacement of one genotypes by another, which is intimately connected to the ecological concept of competition \cite{gill_1974}. 
+In a huge class of evolutionary models, and in many introductory texts, selection is described in terms of shifts in genotypic frequencies (e.g. \cite[pp. 468]{barton_2007}). Genotypes are assigned constant selection coefficients describing how their relative proportions change over time. These selective shifts in frequency result from two fundamentally different population processes: i) in the absence of interactions between individuals, genotypic growth rates differ; ii) as a result of competitive interactions between individuals, some genotypes displace others. Population density is the key factor that controls whether individuals interact, thus controlling the relative contributions of these forms of selection.
 
-The existence of these two different forms of selection was perceived long ago by MacArthur in his $r$/$K$ scheme \citep{macarthur_1962,macarthur_1967}, and before that by Kostitzin \cite{kostitzin_book}.  
+The distinction between these forms of selection was perceived long ago by Kostitzin \citep{kostitzin_1939,christiansen_2004}, but is mostly associated with MacArthur's $r$/$K$ scheme \citep{macarthur_1962,macarthur_1967} and the following literature on density-dependent selection. 
 
 
 
 The density-dependent selection literature contains some of the earliest explicit analyses of the interplay between ecology and evolution \citep{travis_2013}. This work is most famously associated with MacArthur's $r$/$K$ scheme \citep{macarthur_1962,macarthur_1967} in which $r$-selection favors faster growth at low density, whereas $K$-selection favors the ability to keep growing at high density. 
 
 
-Starting with Kostitzin's 
-
 
 Although $r$ and $K$ are named after the common ``carrying capacity'' parameterization of the logistic model, the concepts of $r$- and $K$-selection are not restricted to that model \citep{macarthur_1967}.
 
-Yet selection does not only change relative genotypic proportions. Ultimately, it involves the births and deaths of individuals, and is therefore intimately connected to changes in absolute abundance \cite{evolution_demography_stuff}. This immediately poses a challenge: any description of evolution grounded in abundances needs to specify how population density is regulated, as well as how fitness depends on density, which may differ between genotypes (density-dependent selection). As a result, 
-
-
-
-
-One of the simplest and most widely used models of selection is to assign genotypes constant selection coefficients describing how their relative proportions change over time. This model is common in population genetics, where its simplicity is useful for analyzing the detailed time course of genotypic frequencies. 
+ This immediately poses a challenge: any description of evolution grounded in abundances needs to specify how population density is regulated, as well as how fitness depends on density, which may differ between genotypes (density-dependent selection). As a result, 
 
 
 
