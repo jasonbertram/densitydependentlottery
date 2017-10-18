@@ -61,6 +61,12 @@ def deltnplusclassic(m,c,U):
         return U*m*c/sum(m*c)
     else:
         return np.zeros(len(m))
+        
+def deltnplusclassicboundedm(m,c,U):
+    if sum(m)>0:
+        return np.min(np.array([m,U*m*c/sum(m*c)]),0)
+    else:
+        return np.zeros(len(m))        
 
 #Simulation comparison figure
 #================================================================
@@ -68,9 +74,10 @@ m=np.array([10000,90000])
 M=float(sum(m)) 
 c=np.array([1.5,1.])
 cbar=sum(m*c)/sum(m)
-maxl=2; Us=np.array([int(m[0]/x) for x in linspace(0.001,maxl,100)]);
+maxl=2; Us=np.array([int(m[0]/x) for x in np.linspace(0.001,maxl,100)]);
 exact=np.array([deltnplussim(m,c,U) for U in Us]);
 totalclassic=np.array([deltnplusclassic(m,c,U) for U in Us]);
+totalclassicboundedm=np.array([deltnplusclassicboundedm(m,c,U) for U in Us]);
 
 #First genotype
 nocomp=np.array([np.exp(-M/U) for U in Us]);
@@ -81,8 +88,9 @@ subplot(221)
 plt.plot(float(m[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/m[0],'k.',markersize=1.,label="Simulation")
 plt.plot(float(m[0])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_1/m_1$")
 plt.plot(float(m[0])/Us,totalclassic[:,0]/m[0],'k--',label=r"Classic lottery")
-xlim([0,maxl])
-ylim([0,1])
+plt.plot(float(m[0])/Us,totalclassicboundedm[:,0]/m[0],'kx',label=r"Classic lottery")
+plt.xlim([0,maxl])
+plt.ylim([0,1.1])
 gca().xaxis.set_label_coords(0.5, -0.09)
 gca().set_xticklabels(['0','','1','','2','','3'])
 xlabel(r"$l_1$",fontsize=14)
