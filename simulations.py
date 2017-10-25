@@ -37,16 +37,25 @@ def R(m,c,U):
     l=m/float(U)
     L=sum(l)
     cbar=sum(m*c)/sum(m); 
-    return cbar*np.exp(-l)*(1-np.exp(-(L-l)))\
+    out=cbar*np.exp(-l)*(1-np.exp(-(L-l)))\
             /(c + (L-1+np.exp(-L))/(1-(1+L)*np.exp(-L))*(cbar*L-c*l)/(L-l))
+    
+    for i in range(len(out)):
+        if np.isnan(out)[i]: out[i]=0
+            
+    return out
 
 def A(m,c,U):
     l=m/float(U)
     L=sum(l)
     cbar=sum(m*c)/sum(m)
-    return (1-np.exp(-l))\
+    out=(1-np.exp(-l))\
             /((1-np.exp(-l))/(1-(1+l)*np.exp(-l))*c*l\
             +(L*(1-np.exp(-L))/(1-(1+L)*np.exp(-L))-l*(1-np.exp(-l))/(1-(1+l)*np.exp(-l)))/(L-l)*(sum(c*l)-c*l))
+    for i in range(len(out)):
+        if np.isnan(out)[i]: out[i]=0
+            
+    return out
     
 def deltnplus(m,c,U):
     if sum(m)>0 and U>0:
@@ -172,7 +181,7 @@ def d(t):
 c=np.array([1.,1.])
 T=100000
 g=40.     #iterations per seasonal cycle
-bparam=np.array([[0.0,0.0],[.5,.217]])
+bparam=np.array([[0.0,0.0],[2.,.5]])
 dparam=np.array([[0.0,0.0],[0.2,0.1]])
 totaltime=100
 
@@ -225,7 +234,7 @@ n=np.array([60000.,25000.])
 nhistclassic=[n];
 for t in range(totaltime):
     U=T-sum(n)
-    n = n + deltnplusclassic((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
+    n = n + deltnplusclassicboundedm((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
     nhistclassic.append(list(n))
 
 fig=plt.subplot(332)
@@ -274,7 +283,7 @@ n=np.array([60000.,25000.])
 nhistclassic=[n];
 for t in range(totaltime):
     U=T-sum(n)
-    n = n + deltnplusclassic((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
+    n = n + deltnplusclassicboundedm((b(t)*n*U/T).astype(np.int),c,U.astype(np.int))-d(t)*n
     nhistclassic.append(list(n))
     
 fig=plt.subplot(333)

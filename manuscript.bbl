@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -225,6 +225,12 @@ David Reznick, Michael~J. Bryant, and Farrah Bashey.
 \newblock \doi{10.1890/0012-9658(2002)083[1509:RAKSRT]2.0.CO;2}.
 \newblock URL
   \url{http://dx.doi.org/10.1890/0012-9658(2002)083[1509:RAKSRT]2.0.CO;2}.
+
+\bibitem[Roughgarden(1979)]{roughgarden_1979}
+Jonathan Roughgarden.
+\newblock Theory of population genetics and evolutionary ecology: an
+  introduction.
+\newblock 1979.
 
 \bibitem[Sale(1977)]{sale_77}
 Peter~F. Sale.

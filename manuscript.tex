@@ -60,13 +60,32 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 
 \section*{Introduction}
 
-MacArthur famously distinguished between ``$r$-selection'' for faster growth at low population density, and ``$K$-selection'' for the ability to keep growing at higher densities \citep{macarthur_1962,macarthur_1967}. The $r$/$K$ scheme is mostly known, and critiqued, for its role in the study of life-history evolution \citep{pianka_1970,boyce_1984,charlesworth_1994,reznick_2002}. The $r$/$K$ scheme also initiated a sizeable literature on density-dependent selection  (note that Kostitzin presented similar ideas much earlier \citep{kostitzin_1939,christiansen_2004}). This literature is remarkable in that it contains some of earliest explicit analyses of the interplay between ecology and evolution \citep{travis_2013}, yet it has left a complex legacy.
+MacArthur famously distinguished between ``$r$-selection'' for faster growth at low population density, and ``$K$-selection'' for the ability to keep growing at higher densities \citep{macarthur_1962,macarthur_1967}. While the $r$/$K$ scheme is primarily known for its seminal role in the study of life-history evolution \citep{pianka_1970,boyce_1984,charlesworth_1994,reznick_2002}, it
+also initiated a sizeable literature on density-dependent selection. This literature is remarkable in that it contains some of earliest models of the interplay between ecology and evolution \citep{roughgarden_1979,travis_2013}, 
 
-Although $r$ and $K$ are named after the parameters of the logistic model, $K$ generally refers to carrying capacity regardless of how the density regulation of population size occurs \citep{macarthur_1967}. Yet the ability to keep growing at ever higher densities is only one aspect of selection at high population density. Competition is critically important at high densities, and cannot be represented solely in terms of the density regulation of total population size. This led to the notion of ``$\alpha$-selection'' after the competition coefficients in the Lotka-Volterra equations \citep{gill_1974,case_1974,joshi_2001}. 
+Identifying selection at high densities with ``$K$-selection'' is a compelling oversimplification. Starting from a very general description of density-regulated population growth
+\begin{equation}
+\frac{d n_1}{d t}=f_1(n_1,n_2)\qquad\frac{d n_2}{d t}=f_2(n_1,n_2)
+\end{equation}
+
+``population genetics of crowded populations where fitness is $K$''. 
+
+ $K$ generally refers to carrying capacity regardless of how the density regulation of population size occurs \citep{macarthur_1967}.
+
+
+
+%Competition is critically important at high densities, and cannot be represented solely in terms of the density regulation of total population size. This led to the notion of ``$\alpha$-selection'' after the competition coefficients in the Lotka-Volterra equations \citep{gill_1974,case_1974,joshi_2001}. 
+
+
+Yet selection at high population density clearly involves more than carrying capacity.
+
+
+
+and the widespread use of the logistic model in the density-dependent literature is more problematic than simply being a mathematical idealization [citations].
 
 In the standard representation of selection, genotypes are assigned selection coefficients describing how their relative proportions change over time (e.g. \cite[pp. 468]{barton_2007}). 
 
-It is thus broadly misleading to view $r$- and $K$-selection as two main contrasting forms of selection, and the widespread use of the logistic model in the density-dependent literature is more problematic than simply being a mathematical idealization [citations].
+
 
 The true contrast hinted at by the $r$/$K$ scheme is between interaction-dependent, and interaction-independent selection. That is, selective shifts in frequency are a result of differences in growth rates between genotypes, and genotypic growth rates may differ in the absence of interactions between individuals, or as a result of interactions between individuals. 
 
@@ -94,6 +113,8 @@ The second feature is the close connection between the lottery model and one of 
 The critical flaw of the classic lottery model is that it breaks down at low densities (few propagules dispersing to each territory), precluding density-dependent behaviour. Our first task is to analytically extend the classic lottery model to correctly account for low density behavior (sections ``Model'' and ``Mean field approximation'').
 
 Taking an example inspired by recent studies of rapid, seasonal evolution in \textit{Drosophila} \citep{bergland_14}, we discuss how environmental fluctuations might stabilize polymorphisms when population density is cyclical. 
+
+
  
 \section*{Model}\label{sec:model}
 
