@@ -63,15 +63,24 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 MacArthur famously distinguished between ``$r$-selection'' for faster growth at low population density, and ``$K$-selection'' for the ability to keep growing at higher densities \citep{macarthur_1962,macarthur_1967}. While the $r$/$K$ scheme is primarily known for its seminal role in the study of life-history evolution \citep{pianka_1970,boyce_1984,charlesworth_1994,reznick_2002}, it
 also initiated a sizeable literature on density-dependent selection. This literature is remarkable for containing some of earliest models of the interplay between ecology and evolution \citep{roughgarden_1979,travis_2013}. 
 
-In MacArthur's view, ``$K$-selection'' is how selection operates at high densities, such that in ``crowded populations ... fitness is $K$'' \citep[pp. 149]{macarthur_1967}. 
+Given the 
+For MacArthur, in ``crowded populations ... fitness is $K$'' \citep[pp. 149]{macarthur_1967}. The argument  is quite general,
 
-MacArthur's argument is based on general equations for density-regulated population growth
+ for density-regulated population growth a community with two types 
+
+MacArthur's argument is based on very general 
 \begin{equation}
 \frac{d n_1}{d t}=f_1(n_1,n_2)\qquad\frac{d n_2}{d t}=f_2(n_1,n_2),
 \end{equation}
-where, by definition, each 
+where $n_1$ and $n_2$ are the respective densities of the two types, and the growth rates $f_1$ and $f_2$ decrease with both $n_1$ and $n_2$. 
+
+ the environmental carrying capacities for each type are defined by $f_1(K_1,0)=0$
 
  $K$ generally refers to carrying capacity regardless of how the density regulation of population size occurs \citep{macarthur_1967}.
+
+
+Yet the $r$/$K$ scheme is strikingly incompatible with the  model of selection
+
 
 
 
