@@ -60,39 +60,17 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 
 \section*{Introduction}
 
-MacArthur famously distinguished between ``$r$-selection'' for faster growth at low population density, and ``$K$-selection'' for the ability to keep growing at higher densities \citep{macarthur_1962,macarthur_1967}. While the $r$/$K$ scheme is primarily known for its seminal role in the study of life-history evolution \citep{pianka_1970,boyce_1984,charlesworth_1994,reznick_2002}, it
+MacArthur famously distinguished between ``$r$-selection'' for faster growth at low population density, and ``$K$-selection'' for the ability to keep growing at high densities \citep{macarthur_1962,macarthur_1967}. While the $r$/$K$ scheme is primarily known for its seminal role in the study of life-history evolution \citep{pianka_1970,boyce_1984,charlesworth_1994,reznick_2002}, it
 also initiated a sizeable literature on density-dependent selection. This literature is remarkable for containing some of earliest models of the interplay between ecology and evolution \citep{roughgarden_1979,travis_2013}. 
 
-MacArthur justified the $r$/$K$ scheme as follows. Consider two types subject to density-dependent population regulation described by
+Verbal interpretations of the $r$/$K$ scheme, and the logistic model, tend to obscure the generality of MacArthur's argument, and so it is worth briefly reviewing that argument here. Consider two types with densities $n_1$ and $n_2$ subject to density-dependent population regulation described by
 \begin{equation}
 \frac{d n_1}{d t}=f_1(n_1,n_2)\qquad\frac{d n_2}{d t}=f_2(n_1,n_2), \label{eq:macgeneral}
 \end{equation}
-where $n_1$ and $n_2$ are the respective densities of the two types, and the growth functions $f_1$ and $f_2$ decrease with both $n_1$ and $n_2$. Now suppose that the population starts growing from low density. Then $n_1$ and $n_2$ will increase until at least one type stops growing; it makes no difference which type, so assume $f_1(n_1,n_2)=0$. Then $n_1$ can never increase again, 
+where $f_1$ and $f_2$ are strictly decreasing functions of $n_1$ and $n_2$. By plotting the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$ in $(n_1,n_2)$ space, it becomes clear that for type $2$ to persist, its nullcline must enclose a region of $(n_1,n_2)$ space that type $1$'s nullcline does not. This region locally corresponds to greater $n_1$ and/or $n_2$ than can be tolerated by type $1$, because $f_1$ and $f_2$ are strictly decreasing. In this sense, selection at high density favors the ability to keep growing at ever greater densities. 
 
-Then $n_2$ either keeps growing, or $f_2(n_1,n_2)=0$ as well. In either case, $n_2$ is guaranteed to persist, 
+MacArthur then analyzed the possible outcomes of Eq.~\eqref{eq:macgeneral} in terms of "carrying capacities" (generally labeled ``$K$''), defined as the points where the nullclines intersect the axes (i.e. $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$, $f_2(K_{21},0)=0$). These intersection points neatly summarize the high density behavior of each type provided that the nullclines are approximately linear. He concluded that in ``crowded populations ... fitness is $K$'' \citep[pp. 149]{macarthur_1967}. Note that only $K_{11}$ and $K_{22}$ are saturation densities; $K_{12}$ and $K_{21}$ measure the effects of competition between types. For instance, if $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$, then  $K_{12}=\alpha_{12}$ is just the standard Lotka-Volterra competition coefficient. This led to the distinction between selection for greater saturation density ($K$-selection in the strict sense) and selection for greater competitive ability (``$\alpha$-selection'') at high density \citep{gill_1974,case_1974,joshi_2001}.
 
-if the population is allowed to grow according Eq. \eqref{eq:macgeneral}
-
-persistence depends on being able to grow at higher values of $n_1$ and $n_2$ than the other type in some region. Formally, a type will be excluded unless there are some values of $n_1$ and $n_2$
-
-In the simplest case that each type suppresses its own growth and the growth of the other type equally, $f_1=f_1(N)$ and $f_2=f_2(N)$ only depend on total density $n_1+n_2=N$. If 
-
-the environmental carrying capacities for each type are defined by $f_1(K_1,0)=0$
-
- and any type that can keep growing 
-
-
-For MacArthur, in ``crowded populations ... fitness is $K$'' \citep[pp. 149]{macarthur_1967}. The argument  is quite general,
-
- for density-regulated population growth a community with two types 
-
-
-
-
-
- 
-
- $K$ generally refers to carrying capacity regardless of how the density regulation of population size occurs \citep{macarthur_1967}.
 
 
 Yet the $r$/$K$ scheme is strikingly incompatible with the  model of selection
@@ -100,14 +78,8 @@ Yet the $r$/$K$ scheme is strikingly incompatible with the  model of selection
 
 
 
-%Competition is critically important at high densities, and cannot be represented solely in terms of the density regulation of total population size. This led to the notion of ``$\alpha$-selection'' after the competition coefficients in the Lotka-Volterra equations \citep{gill_1974,case_1974,joshi_2001}. 
 
 
-Yet selection at high population density clearly involves more than carrying capacity.
-
-
-
-and the widespread use of the logistic model in the density-dependent literature is more problematic than simply being a mathematical idealization [citations].
 
 In the standard representation of selection, genotypes are assigned selection coefficients describing how their relative proportions change over time (e.g. \cite[pp. 468]{barton_2007}). 
 
