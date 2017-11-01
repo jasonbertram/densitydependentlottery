@@ -31,7 +31,7 @@
 
 \bigskip
 
-\textit{Keywords}: r/K selection, absolute fitness, eco-evo, Grime's triangle, competition-colonization trade-off, fluctuating selection, storage effect.
+\textit{Keywords}: r/K selection, absolute fitness, eco-evo, competition-colonization trade-off, fluctuating selection, storage effect.
 
 \bigskip
 
@@ -60,34 +60,29 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 
 \section*{Introduction}
 
-MacArthur famously distinguished between ``$r$-selection'' for faster growth at low population density, and ``$K$-selection'' for the ability to keep growing at high densities \citep{macarthur_1962,macarthur_1967}. While the $r$/$K$ scheme is primarily known in the life-history context \citep{pianka_1970,boyce_1984,charlesworth_1994,reznick_2002}, it
-also initiated a sizeable literature on density-dependent selection. This literature is remarkable for containing some of earliest models of the interplay between ecology and evolution \citep{roughgarden_1979,travis_2013}. 
+MacArthur's $r$/$K$ scheme \citep{macarthur_1962,macarthur_1967} is famous for its early role in life-history theory \citep{charlesworth_1994,reznick_2002}, and for initiating a sizeable literature on density-dependent selection \citep{christiansen_2004}, which contains some of earliest treatments of the interplay between ecology and evolution \citep{roughgarden_1979,travis_2013}. The central claim of the $r$/$K$ scheme is that in ``crowded populations ... fitness is $K$'' ($K$ will be defined below) \citep[pp. 149]{macarthur_1967}. Remarkably, not only does MacArthur's argument for this claim seem to apply to essentially any population subject to density-regulated growth, the claim is also incompatible with the standard representation of selection in evolutionary biology. Since the general version of the ``fitness is $K$'' claim has been somewhat obscured by the widespread use of single-locus variants of the logistic model in the density-dependent selection literature, as well as well as the problems of the $r$/$K$ life-history literature \cite[pp. 265]{charlesworth_1994}, we briefly review MacArthur's argument before proceeding.
 
-The $r$/$K$ scheme is almost universally discussed in terms of the logistic model. This has obscured the remarkable generality of MacArthur's argument, which we thus now briefly review. Consider two types with densities $n_1$ and $n_2$ subject to density-dependent population regulation described by
+MacArthur considers two types subject to density-dependent population growth described by
 \begin{equation}
 \frac{d n_1}{d t}=f_1(n_1,n_2)\qquad\frac{d n_2}{d t}=f_2(n_1,n_2), \label{eq:macgeneral}
 \end{equation}
-where $f_1$ and $f_2$ are strictly decreasing functions of $n_1$ and $n_2$. Plotting the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$ in $(n_1,n_2)$ space, it becomes clear that for a type to persist, its nullcline must enclose a region of $(n_1,n_2)$ space that the other type's nullcline does not. Since $f_1$ and $f_2$ are strictly decreasing, this corresponds to growth in a region of greater $n_1$ and/or $n_2$ than can be tolerated by the other type. The term ``$K$-selection'' comes from four ``carrying capacities'' defined as the points where the nullclines intersect the axes (i.e. $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$, $f_2(K_{21},0)=0$). These intersection points summarize the nullcline structure provided that the nullclines are sufficiently linear, and led MacArthur to conclude that in ``crowded populations ... fitness is $K$'' \citep[pp. 149]{macarthur_1967}
+where $f_1$ and $f_2$ are strictly decreasing functions of the population densities $n_1$ and $n_2$. Plotting the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$, it becomes clear that one type will be excluded unless it is able to grow at greater densities than the other type in some region of $(n_1,n_2)$ space (Fig.~\ref{fig:Ksel}). The term ``$K$-selection'' comes from four ``carrying capacities'' defined by $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$ and $f_2(K_{21},0)=0$. These $K$ values summarize the nullcline structure provided that the nullclines do not curve too much. Note that only $K_{11}$ and $K_{22}$ are saturation densities analogous to ``$K$'' in the logistic model; $K_{12}$ and $K_{21}$ represent the effects of competition between types. For instance, under Lotka-Volterra competition we have $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$, where $\alpha_{11}=1/K_{11}$ measures intra-type competitive effects, and $\alpha_{12}=1/K_{12}$ measures inter-type competitive effects. In the case of exploitation competition for consumable resources, intra- and inter-type competition are connected via resource use ``efficiency'', but obviously this need not be true more generally \citep{gill_1974,case_1974}. Nevertheless, bearing in mind MacArthur's broad use of ``$K$'', it seems hard to disagree that ``fitness is $K$'' i.e. that selection in crowded populations either favors the ability to keep growing at ever higher densities, or the ability to stop the growth of competitors at lower densities. 
 
-Note that while $K$ is often interpreted as saturation density following the logistic model \citep{gill_1974}, MacArthur's ``$K$'' is broader: $K_{11}$ and $K_{22}$ are saturation densities while $K_{12}$ and $K_{21}$ represent the effects of competition between types. For instance, under Lotka-Volterra competition we have $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$, where saturation density $\alpha_{11}=1/K_{11}$ measures intra-type competitive effects, and $\alpha_{12}=1/K_{12}$ measures inter-type competitive effects. Obviously intra- and inter-type competition need not be closely connected, but in the case of exploitation competition for consumable resources they are connected via resource use ``efficiency''  \citep{gill_1974,case_1974}. Nevertheless, given the generality of the preceding argument, it seems hard to disagree that ``fitness is $K$'' in the general sense that selection at high density either favors the ability to keep growing at ever higher densities, or the ability to stop the growth of competitors at lower densities. 
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Ksel.pdf}
+\caption{\label{fig:Ksel} MacArthur's argument for why ``fitness is $K$'' in crowded environments (adapted from \citep[pp. 147]{macarthur_1967}). Arrows show the local direction of the dynamical trajectories of Eq.~\eqref{eq:macgeneral}. The nullclines where $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$ need not be linear, but the ``carrying capacities'' $K$ are then less informative about the nullcline structure. Assuming these nullclines exist, exclusion is certain unless a type's nullcline extends out to greater densities in some region (here the outcome depends on initial condition).}
+\end{figure}
 
-It is therefore remarkable that MacArthur's $K$-selection is incompatible with the standard representation of selection in evolutionary biology. This representation focuses on the change the proportion of different types (frequencies) over time, 
+By contrast, in the standard ``relative fitness'' representation of selection, each type is assigned a selection coefficient describing the change in its relative proportion over time (e.g. \cite[pp. 468]{barton_2007}), with no consideration of population density. While this can describe selection in an uncrowded, expanding population, most commonly (e.g. in the Wright-Fisher model) it is assumed that total population density $N$ is fixed. In the latter case, the population is crowded in the sense that one type must displace another to grow. Selection happens along a line defined by $n_1+n_2=N$ and population density is otherwise irrelevant. Given this inconsistency with the $r$/$K$ scheme, the constant-$N$, shifting-frequency picture of selection does not seem compatible with the extremely broad variety of absolute population growth dynamics represented by Eq.~\eqref{eq:macgeneral}.
 
-each type is assigned a selection coefficient describing the change in its relative proportion over time (e.g. \cite[pp. 468]{barton_2007}).
-  
+In fact, one step in MacArthur's argument considerably narrows its scope: assuming that the nullclines of $f_1$ and $f_2$ exist at all. The strength of this assumption is clear if we note that essence of the dichotomy underlying the $r$/$K$ scheme is between interaction-dependent selection and interaction-independent selection. That is, selective shifts in frequency are a result of differences in absolute growth rates, but these differences can arise in two logically distinct ways: 1) some types expand more rapidly the absence of interactions between individuals or 2) some types are superior in their interactions with other types. Population density is a key factor controlling whether individuals interact, thereby setting the relative contributions of these forms of selection. But there are obviously important forms of interaction that are not expressible in terms of slanted density isoclines. For instance, contests for territory and mates are predominantly relative. MacArthur's argument starts with assumptions about how selection depends on density, and then tries to make sense of what this says about the evolution of competitive traits such as ``efficiency'' of consumable resource consumption. The study of density-dependent selection should start from a description of the interactions between types, and then analyze how the effects of those interactions vary with density. 
 
+%This  also seems to be why the density-dependent selection literature expended such considerable effort to showing that evolution under density-dependent selection optimizes population size in some sense \citep{roughgarden_1979} --- a meaningless 
 
+Here we investigate the 
 
-The true contrast hinted at by the $r$/$K$ scheme is between interaction-dependent, and interaction-independent selection. That is, selective shifts in frequency are a result of differences in growth rates between genotypes, and genotypic growth rates may differ in the absence of interactions between individuals, or as a result of interactions between individuals. 
-
-
-Population density is a key factor controling whether individuals interact, thereby setting the relative contributions of these forms of selection. Since a huge class of growth-affecting interactions are competitive, it seems clear that the study of density-dependent selection should be grounded a reasonable representation of competition and how its effects vary with density. 
-
- 
-%including considerable effort devoted to showing that evolution under density-dependent selection optimizes population size in some sense, akin to a maximization of fitness.
-
-
-in a simplified, territorial model of growth, dispersal and competition. 
+territorial model of growth, dispersal and competition. 
 
 We revisit the classic lottery model of \cite{chesson_1981}, which has two features that make it well suited for this role, but one critical flaw that we rectify here.
 
