@@ -60,6 +60,8 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 
 \section*{Introduction}
 
+
+
 MacArthur's $r$/$K$ scheme \citep{macarthur_1962,macarthur_1967} is famous for its early role in life-history theory \citep{charlesworth_1994,reznick_2002}, and for initiating a sizeable literature on density-dependent selection \citep{christiansen_2004}, which contains some of earliest treatments of the interplay between ecology and evolution \citep{roughgarden_1979,travis_2013}. The central claim of the $r$/$K$ scheme is that in ``crowded populations ... fitness is $K$'' ($K$ will be defined below) \citep[pp. 149]{macarthur_1967}. Remarkably, not only does MacArthur's argument for this claim seem to apply to essentially any population subject to density-regulated growth, the claim is also incompatible with the standard representation of selection in evolutionary biology. Since the general version of the ``fitness is $K$'' claim has been somewhat obscured by the widespread use of single-locus variants of the logistic model in the density-dependent selection literature, as well as well as the problems of the $r$/$K$ life-history literature \cite[pp. 265]{charlesworth_1994}, we briefly review MacArthur's argument before proceeding.
 
 MacArthur considers two types subject to density-dependent population growth described by
@@ -70,8 +72,8 @@ where $f_1$ and $f_2$ are strictly decreasing functions of the population densit
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.6]{Ksel.pdf}
-\caption{\label{fig:Ksel} MacArthur's argument for why ``fitness is $K$'' in crowded environments (adapted from \citep[pp. 147]{macarthur_1967}). Arrows show the local direction of the dynamical trajectories of Eq.~\eqref{eq:macgeneral}. The nullclines where $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$ need not be linear, but the ``carrying capacities'' $K$ are then less informative about the nullcline structure. Assuming these nullclines exist, exclusion is certain unless a type's nullcline extends out to greater densities in some region (here the outcome depends on initial condition).}
+\includegraphics[scale=0.8]{Kplot.pdf}
+\caption{\label{fig:Ksel} (a) MacArthur's dynamical argument for why ``fitness is $K$'' in crowded environments. The nullclines where $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$ need not be linear, but the ``carrying capacities'' $K$ are then less informative about the nullcline structure. Assuming these nullclines exist, exclusion is certain unless a type's nullcline extends out to greater densities in some region (here the outcome depends on initial condition).}
 \end{figure}
 
 By contrast, in the standard ``relative fitness'' representation of selection, each type is assigned a selection coefficient describing the change in its relative proportion over time (e.g. \cite[pp. 468]{barton_2007}), with no consideration of population density. While this can describe selection in an uncrowded, expanding population, most commonly (e.g. in the Wright-Fisher model) it is assumed that total population density $N$ is fixed. In the latter case, the population is crowded in the sense that one type must displace another to grow. Selection happens along a line defined by $n_1+n_2=N$ and population density is otherwise irrelevant. Given this inconsistency with the $r$/$K$ scheme, the constant-$N$, shifting-frequency picture of selection does not seem compatible with the extremely broad variety of absolute population growth dynamics represented by Eq.~\eqref{eq:macgeneral}.
