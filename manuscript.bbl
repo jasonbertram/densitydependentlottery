@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{44}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,6 +24,13 @@ NH~Barton, DEG Briggs, JA~Eisen, DB~Goldstein, and NH~Patel.
 \newblock \emph{Evolution}.
 \newblock NY: Cold Spring Harbor Laboratory Press, 2007.
 
+\bibitem[Benton and Grant(2000)]{benton_2000}
+TG~Benton and A~Grant.
+\newblock Evolutionary fitness in ecology: comparing measures of fitness in
+  stochastic, density-dependent environments.
+\newblock \emph{Evolutionary ecology research}, 2\penalty0 (6):\penalty0
+  769--789, 2000.
+
 \bibitem[Bergland et~al.(2014)Bergland, Behrman, O'Brien, Schmidt, and
   Petrov]{bergland_14}
 Alan~O. Bergland, Emily~L. Behrman, Katherine~R. O'Brien, Paul~S. Schmidt, and
@@ -40,13 +47,6 @@ Benjamin~M. Bolker and Stephen~W. Pacala.
 \newblock \emph{The American Naturalist}, 153\penalty0 (6):\penalty0 575--602,
   1999.
 \newblock \doi{10.1086/303199}.
-
-\bibitem[Boyce(1984)]{boyce_1984}
-Mark~S Boyce.
-\newblock Restitution of r-and k-selection as a model of density-dependent
-  natural selection.
-\newblock \emph{Annual Review of Ecology and Systematics}, 15:\penalty0
-  427--447, 1984.
 
 \bibitem[Case and Gilpin(1974)]{case_1974}
 Ted~J Case and Michael~E Gilpin.
@@ -70,6 +70,11 @@ F~Christiansen.
 \newblock Density dependent selection.
 \newblock In \emph{Evolution of Population Biology: Modern Synthesis}, pages
   139--155. Cambridge University Press, 2004.
+
+\bibitem[Crow et~al.(1970)Crow, Kimura, et~al.]{crow_1970}
+James~F Crow, Motoo Kimura, et~al.
+\newblock An introduction to population genetics theory.
+\newblock \emph{An introduction to population genetics theory.}, 1970.
 
 \bibitem[Darling et~al.(2012)Darling, Alvarez-Filip, Oliver, McClanahan, and
   Côté]{darling_2012}
@@ -146,11 +151,6 @@ Amitabh Joshi, NG~Prasad, and Mallikarjun Shakarad.
   competition: density-dependent selection revisited.
 \newblock \emph{Journal of Genetics}, 80\penalty0 (2):\penalty0 63--75, 2001.
 
-\bibitem[Kostitzin(1939)]{kostitzin_1939}
-Vladimir~Alexandrovitch Kostitzin.
-\newblock \emph{Mathematical biology}.
-\newblock George G. Harrap And Company Ltd.; London, 1939.
-
 \bibitem[Kuno(1991)]{kuno_1991}
 Eizi Kuno.
 \newblock {Some strange properties of the logistic equation defined with r and
@@ -192,13 +192,21 @@ Philipp~W Messer, Stephen~P Ellner, and Nelson~G Hairston.
 \newblock Can population genetics adapt to rapid evolution?
 \newblock \emph{Trends in Genetics}, 32\penalty0 (7):\penalty0 408--418, 2016.
 
-\bibitem[Pianka(1970)]{pianka_1970}
-Eric~R. Pianka.
-\newblock On r- and {K-Selection}.
-\newblock \emph{The American Naturalist}, 104\penalty0 (940):\penalty0
-  592--597, 1970.
-\newblock ISSN 00030147, 15375323.
-\newblock URL \url{http://www.jstor.org/stable/2459020}.
+\bibitem[Metcalf and Pavard(2007)]{metcalf_2007}
+C.~Jessica~E. Metcalf and Samuel Pavard.
+\newblock Why evolutionary biologists should be demographers.
+\newblock \emph{Trends in Ecology and Evolution}, 22\penalty0 (4):\penalty0 205
+  -- 212, 2007.
+\newblock ISSN 0169-5347.
+\newblock \doi{https://doi.org/10.1016/j.tree.2006.12.001}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0169534706003806}.
+
+\bibitem[Metz et~al.(1992)Metz, Nisbet, and Geritz]{metz_1992}
+Johan~AJ Metz, Roger~M Nisbet, and Stefan~AH Geritz.
+\newblock How should we define ‘fitness’ for general ecological scenarios?
+\newblock \emph{Trends in Ecology \& Evolution}, 7\penalty0 (6):\penalty0
+  198--202, 1992.
 
 \bibitem[Pianka(1972)]{pianka_1972}
 Eric~R. Pianka.
