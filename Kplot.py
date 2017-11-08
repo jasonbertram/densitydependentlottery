@@ -12,7 +12,7 @@ x,y=np.linspace(0,1,1000),np.linspace(0,1,1000)
 X, Y = np.meshgrid(x,y)
 U = 2*(1-X-1.5*Y)*X
 V = (1-Y-1.5*X)*Y
-speed = np.sqrt(U*U + V*V)
+#speed = np.sqrt(U*U + V*V)
 
 fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
 ax1.set_aspect(1)
