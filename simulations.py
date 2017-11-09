@@ -163,12 +163,12 @@ plt.savefig('/home/jbertram/repos/densitydependentlottery/simulationcomparison.p
 #(n1,n2) vector field
 #=================================================================
 T=100000
-x,y=np.linspace(0.0,1.,201),np.linspace(0.,1.,201)
+x,y=np.linspace(0.0,1.,401),np.linspace(0.,1.,401)
 xgrid, ygrid=np.meshgrid(x,y)
 X,Y=np.zeros([len(x),len(y)]),np.zeros([len(x),len(y)])
-b=np.array([3.,2.5])
-c=np.array([1.,5.])
-d=np.array([0.2,0.2])
+b=np.array([1.,1.])
+c=np.array([1.,1.5])
+d=np.array([0.1,0.1])
 
 for i in xrange(len(x)):
     for j in xrange(len(y)):
@@ -182,15 +182,14 @@ ax1.set_aspect(1)
 plt.tight_layout()
 #seedpoints=np.concatenate([[[_,0.2-_] for _ in np.arange(0.02,0.2,0.02)],\
 #            [[float(_)/10,1.-_*0.1] for _ in range(0,11) if _ not in [2,7]]])
-ax1.streamplot(x, y, X, Y,start_points=[[0.01,0.01]],linewidth=1.)
-#ax1.streamplot(x, y, X, Y,density=2,linewidth=1.)
+seedpoints=np.array([[0.5*x[_],0.5*y[200-_]] for _ in range(0,201,10)])
+#ax1.streamplot(x, y, X, Y,start_points=seedpoints,linewidth=1.,density=10)
+ax1.streamplot(x, y, X, Y,start_points=[[ 0.025,  0.9]],linewidth=1.,density=100)
 ax1.set_xlim([0,1])
 ax1.set_ylim([0,1])
 
 z1=np.linspace(0,1,10)
-z2=1-z1
-ax1.plot(z1,z2/1.5,'k',linewidth=2)
-ax1.plot(z2/1.5,z1,'k',linewidth=2)
+
 
 
 ax1.annotate(r'$\frac{dn_2}{dt}=0$',xy=(0.15,0.81),xycoords='axes fraction',fontsize=16)
