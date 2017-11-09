@@ -166,26 +166,35 @@ T=100000
 x,y=np.linspace(0.0,1.,201),np.linspace(0.,1.,201)
 xgrid, ygrid=np.meshgrid(x,y)
 X,Y=np.zeros([len(x),len(y)]),np.zeros([len(x),len(y)])
-b=np.array([3.,2.5])
-c=np.array([1.,5.])
-d=np.array([0.2,0.2])
+b=np.array([10.,10.])
+c=np.array([1.,2.])
+d=np.array([0.1,0.1])
 
 for i in xrange(len(x)):
     for j in xrange(len(y)):
         n=T*np.array([x[i],y[j]])
         U=T-sum(n)
-        X[j,i],Y[j,i]=deltnplus(b*n*U/T,c,U)-d*n
+        X[j,i],Y[j,i]=deltnplus(b*n*U/float(T),c,U)-d*n
 
 fig1, ax1 = plt.subplots()#(ncols=2,figsize=[8,4])
 ax1.set_aspect(1)
 #ax2.set_aspect(1)
 plt.tight_layout()
-#seedpoints=np.concatenate([[[_,0.2-_] for _ in np.arange(0.02,0.2,0.02)],\
-#            [[float(_)/10,1.-_*0.1] for _ in range(0,11) if _ not in [2,7]]])
-ax1.streamplot(x, y, X, Y,start_points=[[0.01,0.01]],linewidth=1.)
-#ax1.streamplot(x, y, X, Y,density=2,linewidth=1.)
+seedpoints=[[x[_]/2,y[200-_]/2] for _ in range(0,201,10)]
+ax1.streamplot(x, y, X, Y,start_points=seedpoints,linewidth=1.,density=20)
 ax1.set_xlim([0,1])
 ax1.set_ylim([0,1])
+
+
+
+f1null=np.array([[x[[_ for _ in range(len(x)) if X[i,_]>0][-1]],y[i]] for i in range(1,len(y)) if max(X[i])>0])
+f2null=np.array([[x[[_ for _ in range(len(x)) if Y[i,_]>0][-1]],y[i]] for i in range(1,len(y)) if max(Y[i])>0])
+plt.plot(f1null[:,0],f1null[:,1],'k',linewidth=2.)
+plt.plot(f2null[:,0],f2null[:,1],'b',linewidth=2.)
+
+plt.plot([f2null[0,1],f2null[-1,1]],[f2null[-1,1],f2null[0,1]])
+
+
 
 z1=np.linspace(0,1,10)
 z2=1-z1
