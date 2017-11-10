@@ -10,8 +10,9 @@ import matplotlib.pyplot as plt
 
 x,y=np.linspace(0,1,1000),np.linspace(0,1,1000)
 X, Y = np.meshgrid(x,y)
-U = 2*(1-X-1.5*Y)*X
-V = (1-Y-1.5*X)*Y
+alphas=np.array([[1,1.5],[1.5,1]])
+U = 2*(1-alphas[0,0]*X-alphas[0,1]*Y)*X
+V = (1-alphas[1,1]*Y-alphas[1,0]*X)*Y
 #speed = np.sqrt(U*U + V*V)
 
 fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
@@ -20,12 +21,13 @@ ax2.set_aspect(1)
 plt.tight_layout()
 seedpoints=np.concatenate([[[_,0.2-_] for _ in np.arange(0.02,0.2,0.02)],\
             [[float(_)/10,1.-_*0.1] for _ in range(0,11) if _ not in [2,7]]])
-ax1.streamplot(x, y, U, V,density=10,start_points=seedpoints,linewidth=1.)
+ax1.streamplot(x, y, U, V,density=100,start_points=seedpoints,linewidth=1.)
 
 z1=np.linspace(0,1,10)
 z2=1-z1
-ax1.plot(z1,z2/1.5,'k',linewidth=2)
-ax1.plot(z2/1.5,z1,'k',linewidth=2)
+ax1.plot(z1,(1-alphas[0,0]*z1)/alphas[0,1],'k',linewidth=2)
+ax1.plot(z1,(1-alphas[1,0]*z1)/alphas[1,1],'k',linewidth=2)
+#ax1.plot([0,1/alphas[0,0]],[1/alphas[1,1],0],'y',linewidth=2)
 ax1.set_xlim([0,1])
 ax1.set_ylim([0,1])
 
@@ -52,6 +54,7 @@ ax2.set_xlabel(r"$n_1$",fontsize=20)
 ax2.set_ylabel(r"$n_2$",fontsize=20)
 
 plt.savefig('/home/jbertram/repos/densitydependentlottery/Kplot.pdf',bbox="tight")
+
 
 
 #fig1, ax1 = plt.subplots()
