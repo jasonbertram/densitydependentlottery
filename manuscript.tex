@@ -61,59 +61,15 @@ Inspired by natural \textit{Drosophila} populations, we consider co-existence un
 
 There are a variety of different measures of fitness. Some widely used examples in evolutionary ecology are expected lifetime reproductive ratio $R_0$, intrinsic growth rate $r$, saturation population density (often labeled ``$K$'') \citep{benton_2000}, and invasion fitness \citep{metz_1992}. In addition, ``relative fitness'' is the standard in much of evolutionary biology, particularly evolutionary genetics, where attention is generally restricted to relative genotypic proportions \cite[pp. 468]{barton_2007}. This variety is not problematic by itself because different fitness measures serve different purposes. But ultimately any measure of fitness should be grounded in the processes of birth and death which govern population ecology and demography \citep{metcalf_2007}. While this connection is apparent for absolute fitness measures like $r$ and $K$, relative fitness seems largely divorced from population ecology. 
 
-In uncrowded populations, relative fitness simply represents differences in the intrinsic exponential growth rate $r$ \citep[pp. 26]{crow_1970}, with selection favoring greater $r$ ($r$-selection). In crowded populations, relative fitness models almost universally assume that total population size $N$ is fixed, or has some externally imposed time course. This is exemplified by the Wright-Fisher model, in which time advances in discrete generations which do not overlap, and fitness can be interpreted as a product of fertility and juvenile viability \citep[pp. 185]{crow_1970}. The limitations of these relative fitness models are openly acknowledged, usually with an emphasis on the difficulty of incorporating more of the life cycle ``components'' of fitness (e.g. \cite[pp. 276]{ewens_2004}). But more fundamentally, the constant-$N$, relative fitness description uncouples selection and demography, at odds with the fact that the same birth/death events drive both. 
+In uncrowded populations, relative fitness simply represents differences in the intrinsic exponential growth rate $r$ \citep[pp. 26]{crow_1970}, with selection favoring greater $r$ ($r$-selection). In crowded populations, relative fitness models almost universally assume that total population size $N$ is fixed, or has some externally imposed time course. This is exemplified by the Wright-Fisher model, in which time advances in discrete non-overlapping generations, and fitness can be interpreted as a product of fertility and juvenile viability \citep[pp. 185]{crow_1970}. The limitations of these relative fitness models are openly acknowledged, usually with an emphasis on the difficulty of incorporating more of the life cycle ``components'' of fitness (e.g. \cite[pp. 276]{ewens_2004}). But more fundamentally, the constant-$N$, relative fitness description uncouples selection and demography, at odds with the fact that the same birth/death events drive both. 
 
 The issue can be expressed more formally by revisiting MacArthur's famous analysis of selection in crowded populations \citep{macarthur_1967}. MacArthur considers a population consisting of two types with densities $n_1$ and $n_2$ subject to density-dependent population growth described by general differential equations
 \begin{equation}
 \frac{d n_1}{d t}=f_1(n_1,n_2)\qquad\frac{d n_2}{d t}=f_2(n_1,n_2). \label{eq:macgeneral}
 \end{equation}
-Since no population has unlimited resources, the functions $f_1$ and $f_2$ must decline to zero if either $n_1$ or $n_2$ are made sufficiently large. The outcome of selection can then be determined by the shape of the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$. Specifically, a type will be excluded if its nullcline is completely contained in the region bounded by the other type's nullcline. For a type to have the possibility of persisting, it must be able to keep growing to higher densities than the other type can tolerate in some region of $(n_1,n_2)$ space (Fig.~\ref{fig:Ksel}a). 
+Since no population has unlimited resources, the functions $f_1$ and $f_2$ must decline to zero if either $n_1$ or $n_2$ are made sufficiently large. The outcome of selection can then be determined by the shape of the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$ in $(n_1,n_2)$ space. Specifically, a type will be excluded if its nullcline is completely contained in the region bounded by the other type's nullcline. In other words, for a type to have the possibility of persisting, it must be able to keep growing to higher densities than the other type can tolerate in some region of $(n_1,n_2)$ space (Fig.~\ref{fig:Ksel}a). 
 
-MacArthur's argument is clearly incompatible with a narrow interpretation of relative fitness models as selection along lines defined by $n_1+n_2=N$ for each $N$ (Fig.~\ref{fig:Ksel}b). In this case the $f_1$ and $f_2$ nullclines are not even defined. Moreover, at face value MacArthur's, conclusion that ``fitness is $K$'' in crowded populations \citep[pp. 149]{macarthur_1967} seems to be incompatible with constant $N$. In particular, the logistic model and its bi-allelic diploid variants are widely used to analyze MacArthur's ``$K$-selection'' in which case positive selection is necessarily tied to increases in $N$. More sophisticated models using the Lotka-Volterra competition equations, or explicit resource consumption, also intrinsically tie high-density selection to changes in population density. This raises the possibility that the ubiquitous constant-$N$, relative fitness description of selection could be incompatible with a huge class of population ecological processes occurring in nature and the lab.
-
-Here we introduce a novel density-dependent model of population growth based on territorial contests, and show that when this model reaches a demographic steady-state, the constant-$N$, relative fitness picture emerges. We show that our model is entirely consistent with the claim that ``fitness is $K$'' in crowded populations when MacArthur's very liberal use of ``$K$'' is taken into account. In particular, MacArthur's argument does not justify the widespread intuition that selection in crowded environments  attempts to maximize population size is a consequence of 
-
-
-
-argument is widely interpreted to mean that positive selection in crowded populations involves the ability to keep growing at ever higher population densities [citations]
-
-Moreover, it is not compatible with most verbal interpretations of MacArthur's argument, 
-
-\citep{anderson_1971}
-
-
-
-
-
-
- with the assumption of constant $N$, although as we will discuss below, it is a narrow interpretation of MacArthur's argument. 
-
-
-
-
-
-We revisit the classic lottery model of \cite{chesson_1981}, which has two features that make it well suited for this role, but one critical flaw that we rectify here.
-
-The first feature is that the lottery representation of competition is  particularly concise. Mature individuals (``adults'') each require their own territory, whereas newborn individuals (``propagules'') disperse to, and subsequently compete for, territories made available by the death of adults. Territorial contest among propagules leaves a single victorious adult per territory, the victor chosen at random from the propagules present, with probabilities weighted by a coefficient for each type representing competitive ability, akin to a lottery \citep{sale_77}.  
-
-The second feature is the close connection between the lottery model and one of the foundational models of population genetics, the Wright-Fisher model of genetic drift, which we discuss further below. 
-
-The critical flaw of the classic lottery model is that it breaks down at low densities (few propagules dispersing to each territory), precluding density-dependent behaviour. Our first task is to analytically extend the classic lottery model to correctly account for low density behavior (sections ``Model'' and ``Mean field approximation''). 
-
-
-
-
-
-
-
-
- 
-
-
-
- 
-
-MacArthur defines four ``carrying capacities'' as the intersection points of the nullclines with the $n_1$ and $n_2$ axes (i.e. $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$ and $f_2(K_{21},0)=0$). Assuming that the nullclines are close to linear, these $K$ values determine whether a region of higher-density growth exists for each type. Note that only $K_{11}$ and $K_{22}$ are saturation densities analogous to ``$K$'' in the logistic model; $K_{12}$ and $K_{21}$ represent the effects of competition between types. For instance, under Lotka-Volterra competition we have $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$. Then the nullclines are linear and $\alpha_{11}=1/K_{11}$ measures intra-type competitive effects, while $\alpha_{12}=1/K_{12}$ measures inter-type competitive effects.  Thus, to summarize, ``fitness is $K$'' in the sense that selection in crowded populations either favors the ability to keep growing at ever higher densities (moving a type's own nullcline outwards), or the ability to suppress the growth of competitors at lower densities (moving the nullcline of competitors inwards). This general idea applies even if the nullclines are nonlinear to such an extent that the ``$K$'' values themselves do not give much information about the regions of high-density growth.
+MacArthur's argument is clearly incompatible with a narrow interpretation of relative fitness models as selection along lines defined by $n_1+n_2=N$ for each $N$ (Fig.~\ref{fig:Ksel}b). In this case the $f_1$ and $f_2$ nullclines are not even defined. Moreover, at face value MacArthur's, conclusion that ``fitness is $K$'' in crowded populations \citep[pp. 149]{macarthur_1967} seems to be incompatible with constant $N$. In particular, the logistic model and its bi-allelic diploid variants are widely used to analyze MacArthur's ``$K$-selection'' in which case positive selection is necessarily tied to increases in $N$. More sophisticated models using the Lotka-Volterra competition equations, or explicit resource consumption, also intrinsically tie high-density selection to changes in population density. This raises the possibility that the ubiquitous constant-$N$, relative fitness description of selection could be incompatible with a huge class of population ecological processes occurring in nature and experiments.
 
 \begin{figure}
 \centering
@@ -121,19 +77,15 @@ MacArthur defines four ``carrying capacities'' as the intersection points of the
 \caption{\label{fig:Ksel} (a) MacArthur's dynamical argument for why ``fitness is $K$'' in crowded environments, using a Lotka-Volterra form for Eq. \eqref{eq:macgeneral}. Assuming the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$ exist, exclusion is certain unless a type's nullcline extends out to greater densities in some region. In this example, the outcome depends on initial condition. (b) The constant-$N$, relative fitness description of selection.}
 \end{figure}
 
+Here we introduce a novel model of density-dependent population growth based on territorial contests, and show that when this model reaches a demographic steady-state, the constant-$N$, relative fitness picture emerges. Our model is firmly grounded in population ecology, with fundamental parameters given by birth and death rates, and competitive ability. We show that this model can also be interpreted as a density-dependent generalization of the Wright-Fisher model with overlapping generations. 
 
+Futhermore, we show that our model is entirely consistent with the claim that ``fitness is $K$'' in crowded populations provided that MacArthur's liberal use of ``$K$'' is taken into account. In particular, we emphasize that MacArthur's argument does not justify the widespread intuition that selection in crowded environments is necessarily connected to achieving greater densities \citep{anderson_1971}. This is largely an artifact of the models historically used in the density-dependent selection literature, which ignore relative contests. 
 
+%This  also seems to be why the density-dependent selection literature expended such considerable effort to showing that evolution under density-dependent selection optimizes population size in some sense \citep{roughgarden_1979} --- a meaningless
 
+Our model is essentially a density-dependent generalization of the classic ecological lottery model \cite{chesson_1981}. In the lottery model, mature individuals (``adults'') each require their own territory, whereas newborn individuals (``propagules'') disperse to, and subsequently compete for, territories made available by the death of adults. Territorial contest among propagules leaves a single victorious adult per territory, the victor chosen at random from the propagules present, with probabilities weighted by a coefficient for each type representing competitive ability, akin to a weighted lottery \citep{sale_77}.  
 
-
-
-%This  also seems to be why the density-dependent selection literature expended such considerable effort to showing that evolution under density-dependent selection optimizes population size in some sense \citep{roughgarden_1979} --- a meaningless 
-
-
-
-
-
-
+The classic lottery model assumes a saturated population with constant $N$, and a large number of propagules dispersing to each territory (the Wright-Fisher model makes a similar ``infinite propagule'' assumption to justify sampling with replacement). As such, the lottery model breaks down at low densities (few propagules dispersing to each territory). Our first task is to analytically extend the classic lottery model to correctly account for low density behavior (sections ``Model'' and ``Mean field approximation''). We then...
 
  
 \section*{Model}\label{sec:model}
@@ -145,7 +97,7 @@ We assume that the $n_i$ and $T$ are large enough that stochastic fluctuations i
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{lottery.pdf}
-\caption{\label{fig:lottery} Each iteration of our model has three elements. First, propagules are produced by adults and dispersed at random (only propagules landing on unoccupied territories are shown). Lottery competition then occurs in each unoccupied territory (only illustrated in one territory). Each genotype has a probability proportional to $c_i x_i$ of securing a given territory, where $c_i$ measures competitive ability and $x_i$ is the number of propagules that disperse there. In the illustrated territory, the black genotype disperses more propagules but is a poorer competitor. Territories are then made available by adult mortality (red crosses).}
+\caption{\label{fig:lottery} Each iteration of our model has three elements. First, propagules are produced by adults and dispersed at random (only propagules landing on unoccupied territories are shown). Some territories may receive zero propagules. Lottery competition then occurs in each unoccupied territory that receives a propagule (only illustrated in one territory). Each genotype has a probability proportional to $c_i x_i$ of securing a given territory, where $c_i$ measures competitive ability and $x_i$ is the number of propagules that disperse there. In the illustrated territory, the black genotype disperses more propagules but is a poorer competitor. Territories are then made available by adult mortality (red crosses).}
 \end{figure}
 
 Each iteration, adults produce new offspring (``propagules''), $m_i$ of which disperse to unoccupied territories. We assume that adults cannot be ousted from their territories, so that $m_i$ only includes propagules landing on unoccupied territories. Propagules disperse at random over the unoccupied territories, regardless of distance from their parents, and independently of each other. There is no interaction between propagules (e.g. avoidance of territories crowded with propagules). Loss of propagules during dispersal is subsumed into $m_i$. 
@@ -215,13 +167,18 @@ This classical argument overlooks two general mechanisms that promote coexistenc
 
 Fig.~\ref{fig:fluctuatingselection}a-c shows the behavior of Eq. \eqref{eq:master} for an example where $b$ and $d$ cycle between zero and positive values (``summers'' with rapid growth and no mortality, and ``winters'' with mortality and no growth). Both the storage effect (adults are sheltered from selection during the summer growth phase) and the bounded density effect (expansion to high density occurs every cycle) are operating. Two types are present, a $b$-specialist, which is better at rapidly growing in the summer (higher $b$), and a $d$-specialist which is better at surviving the winter (lower $d$). Neither type has an advantage over a full environmental cycle, and they stably coexist. This is due to a combination of the storage and bounded density effects (recall that stable coexistence between $b$ and $d$ specialists was not possible in a constant environment). 
 
-The classic lottery model (Eq. 1) fails to give co-existence for these parameters because expansion to carrying capacity occurs immediately at the start of the summer (Fig. \ref{fig:fluctuatingselection}d-f). As a result, coexistence requires that the winter survivor's $b$ must be about $5$ times smaller than required when we properly account for the growth in the abundance of each type using Eq. \eqref{eq:master} (keeping the other parameters the same; Fig.~\ref{fig:fluctuatingselection}g-i). Previous models of the promotion of genetic variation via the storage effect  \citep{ellner_1994} similarly assume that the total number of offspring per iteration is constant, and would produce a similar error. 
+The classic lottery model (Eq. BLAH) fails to give co-existence for these parameters because expansion to carrying capacity occurs immediately at the start of the summer (Fig. \ref{fig:fluctuatingselection}d-f). As a result, coexistence requires that the winter survivor's $b$ must be about $5$ times smaller than required when we properly account for the growth in the abundance of each type using Eq. \eqref{eq:master} (keeping the other parameters the same; Fig.~\ref{fig:fluctuatingselection}g-i). Previous models of the promotion of genetic variation via the storage effect  \citep{ellner_1994} similarly assume that the total number of offspring per iteration is constant, and would produce a similar error. 
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.7]{fluctuatingselection.pdf}
 \caption{\label{fig:fluctuatingselection} Stable coexistence between $b$ and $d$ specialists in a fluctuating environment requires a much greater $b$ advantage in the classic lottery model compared to our density-dependent extension of it when population density is seasonally cyclical. (a) Birth and death rates seasonally alternate being nonzero (white for winter, green for summer). The $b$-specialist (black) has higher $b$ and $d$ ($b=0.5$, $d=0.2$) than the $d$-specialist ($b=0.217$, $d=0.1$) (blue). (b) Both types grow during the positive $b$ phase, and decline during the positive $d$ phase, but the $d$-specialist does so at a lower rate. Total height (blue+black) is population density $N/T$. (c) Summer favors the $b$ specialist, winter the $d$-specialist, and they stably coexist. (d-f) Same as (a-c) for the classic lottery model; the types no longer coexist. (g-i) Same as (d-f) where now $b = 0.0421$ for the $d$ specialist and the types coexist. For illustration, the propagule abundances are assumed to have the form $m_i=b_i(1-N/T)n_i$, reflecting non-directed dispersal.} 
 \end{figure}
+
+\subsection*{K-selection versus relative fitness}
+
+MacArthur defines four ``carrying capacities'' as the intersection points of the nullclines with the $n_1$ and $n_2$ axes (i.e. $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$ and $f_2(K_{21},0)=0$). Assuming that the nullclines are close to linear, these $K$ values determine whether a region of higher-density growth exists for each type. Note that only $K_{11}$ and $K_{22}$ are saturation densities analogous to ``$K$'' in the logistic model; $K_{12}$ and $K_{21}$ represent the effects of competition between types. For instance, under Lotka-Volterra competition we have $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$. Then the nullclines are linear and $\alpha_{11}=1/K_{11}$ measures intra-type competitive effects, while $\alpha_{12}=1/K_{12}$ measures inter-type competitive effects.  Thus, to summarize, ``fitness is $K$'' in the sense that selection in crowded populations either favors the ability to keep growing at ever higher densities (moving a type's own nullcline outwards), or the ability to suppress the growth of competitors at lower densities (moving the nullcline of competitors inwards). This general idea applies even if the nullclines are nonlinear to such an extent that the ``$K$'' values themselves do not give much information about the regions of high-density growth.
+
 
 \section*{Discussion}
 
