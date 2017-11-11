@@ -44,7 +44,7 @@ ax1.set_yticklabels([])
 ax1.set_xlabel(r"$n_1$",fontsize=20)
 ax1.set_ylabel(r"$n_2$",fontsize=20)
 
-ax2.quiver(z1[:-1], z2[:-1], z1[1:]-z1[:-1], z2[1:]-z2[:-1], scale_units='xy', angles='xy', scale=1)
+ax2.quiver(z1[:-1], z2[:-1], z1[1:]-z1[:-1], z2[1:]-z2[:-1], color="b", scale_units='xy', angles='xy', scale=1)
 ax2.annotate(r'$\frac{dN}{dt}=0$',xy=(0.53,0.53),xycoords='axes fraction',fontsize=16)
 ax2.annotate(r'$(b)$',xy=(0.9,0.93),xycoords='axes fraction',fontsize=16)
 
