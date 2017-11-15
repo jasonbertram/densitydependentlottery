@@ -74,7 +74,7 @@ MacArthur's argument is clearly incompatible with a narrow interpretation of rel
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Kplot.pdf}
-\caption{\label{fig:Ksel} (a) MacArthur's dynamical argument for why ``fitness is $K$'' in crowded environments, illustrated using the logistic model in Eq. \eqref{eq:macgeneral}. The type that  (b) The constant-$N$, relative fitness description of selection.}
+\caption{\label{fig:Ksel} (a) MacArthur's dynamical argument for why ``fitness is $K$'' in crowded environments, illustrated using the logistic model $f_1=r_1(1-\frac{n_1+n_2}{K_1})n_1$ and $f_2=r_2(1-\frac{n_1+n_2}{K_2})n_1$ in Eq. \eqref{eq:macgeneral}. Here $r_1=r_2$ and $K_1>K_2$. (b) The constant-$N$, relative fitness description of selection.}
 \end{figure}
 
 Here we introduce a novel model of density-dependent population growth based on territorial contests, and show that when this model reaches a demographic steady-state, the constant-$N$, relative fitness picture emerges. Our model is firmly grounded in population ecology, with fundamental parameters given by birth and death rates, and competitive ability. We show that this model can also be interpreted as a density-dependent generalization of the Wright-Fisher model with overlapping generations. 
@@ -155,9 +155,13 @@ Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery p
 
 \subsection*{$K$-selection, $c$-selection and relative fitness}
 
-Here we compare $K$-selection and MacArthur's broader claims about selection in crowded populations with our density-dependent lottery model. To do so we first need to clarify MacArthur's particular use of ``$K$''.
+Here we compare MacArthur's claims about selection in crowded populations with our density-dependent lottery model. 
 
-MacArthur defines four ``carrying capacities'' as the intersection points of the nullclines with the $n_1$ and $n_2$ axes (i.e. $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$ and $f_2(K_{21},0)=0$). Assuming that the nullclines are close to linear, these $K$ values determine whether a region of higher-density growth exists for each type. Note that only $K_{11}$ and $K_{22}$ are saturation densities analogous to ``$K$'' in the logistic model; $K_{12}$ and $K_{21}$ represent the effects of competition between types. For instance, under Lotka-Volterra competition we have $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$. Then the nullclines are linear and $\alpha_{11}=1/K_{11}$ measures intra-type competitive effects, while $\alpha_{12}=1/K_{12}$ measures inter-type competitive effects.  Thus, to summarize, ``fitness is $K$'' in the sense that selection in crowded populations either favors the ability to keep growing at ever higher densities (moving a type's own nullcline outwards), or the ability to suppress the growth of competitors at lower densities (moving the nullcline of competitors inwards). This general idea applies even if the nullclines are nonlinear to such an extent that the ``$K$'' values themselves do not give much information about the regions of high-density growth.
+As discussed in the Introduction, MacArthur's general argument starts from Eq.~\eqref{eq:macgeneral} and then hinges on the shape of the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$. The symbol ``$K$'' enters the argument as the general label for the four intersection points of the nullclines with the $n_1$ and $n_2$ axes, specifically $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$ and $f_2(K_{21},0)=0$. These $K$ values determine whether a region of higher-density growth exists for each type, provided that the nullclines are close to being straight lines. 
+
+We are now in a position to evaluate MacArthur's claim that ``fitness is $K$'' in crowded environments. Importantly, only $K_{11}$ and $K_{22}$ are saturation densities analogous to ``$K$'' in the logistic model; $K_{12}$ and $K_{21}$ represent the effects of competition between types. For instance, in the case of the Lotka-Volterra competition model we have $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$ where $\alpha_{11}=1/K_{11}$ measures competitive effects between individuals of the first type, whereas $\alpha_{12}=1/K_{12}$ measures the effects of competition from individuals of the second type.  Thus, ``fitness is $K$'' in the sense that selection in crowded populations either favors the ability to keep growing at ever higher densities (moving a type's own nullcline outwards), or the ability to suppress the growth of competitors at lower densities (moving the nullcline of competitors inwards). This general idea applies even if the nullclines are nonlinear to such an extent that the ``$K$'' values themselves do not give much information about the regions of high-density growth.
+
+
 
 \subsection*{Coexistence in constant and cyclical environments}\label{sec:invas}
 
