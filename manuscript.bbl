@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -11,6 +11,13 @@ Rien Aerts.
   trade-offs and plant-soil feedbacks.
 \newblock \emph{Journal of Experimental Botany}, 50\penalty0 (330):\penalty0
   29--37, 1999.
+
+\bibitem[Anderson(1971)]{anderson_1971}
+Wyatt~W Anderson.
+\newblock Genetic equilibrium and population growth under density-regulated
+  selection.
+\newblock \emph{The American Naturalist}, 105\penalty0 (946):\penalty0
+  489--498, 1971.
 
 \bibitem[Arenbaev(1977)]{arenbaev_1977}
 NK~Arenbaev.
@@ -54,22 +61,11 @@ Ted~J Case and Michael~E Gilpin.
 \newblock \emph{Proceedings of the National Academy of Sciences}, 71\penalty0
   (8):\penalty0 3073--3077, 1974.
 
-\bibitem[Charlesworth(1994)]{charlesworth_1994}
-Brian Charlesworth.
-\newblock \emph{Evolution in age-structured populations}, volume~2.
-\newblock Cambridge University Press Cambridge, 1994.
-
 \bibitem[Chesson and Warner(1981)]{chesson_1981}
 Peter~L Chesson and Robert~R Warner.
 \newblock Environmental variability promotes coexistence in lottery competitive
   systems.
 \newblock \emph{American Naturalist}, pages 923--943, 1981.
-
-\bibitem[Christiansen(2004)]{christiansen_2004}
-F~Christiansen.
-\newblock Density dependent selection.
-\newblock In \emph{Evolution of Population Biology: Modern Synthesis}, pages
-  139--155. Cambridge University Press, 2004.
 
 \bibitem[Crow et~al.(1970)Crow, Kimura, et~al.]{crow_1970}
 James~F Crow, Motoo Kimura, et~al.
@@ -104,6 +100,13 @@ Michael~M. Desai and Daniel~S. Fisher.
   positive selection.
 \newblock \emph{Genetics}, 176\penalty0 (3):\penalty0 1759--1798, 2007.
 \newblock \doi{10.1534/genetics.106.067678}.
+
+\bibitem[Doebeli et~al.(2017)Doebeli, Ispolatov, and Simon]{doebeli_2017}
+Michael Doebeli, Yaroslav Ispolatov, and Burt Simon.
+\newblock Towards a mechanistic foundation of evolutionary theory.
+\newblock \emph{eLife}, 6:\penalty0 e23804, feb 2017.
+\newblock ISSN 2050-084X.
+\newblock \doi{10.7554/eLife.23804}.
 
 \bibitem[Ellner and Hairston~Jr(1994)]{ellner_1994}
 Stephen Ellner and Nelson~G Hairston~Jr.
@@ -176,12 +179,6 @@ Leo~S Luckinbill.
   protozoa.
 \newblock \emph{American Naturalist}, pages 427--437, 1979.
 
-\bibitem[MacArthur(1962)]{macarthur_1962}
-Robert~H MacArthur.
-\newblock Some generalized theorems of natural selection.
-\newblock \emph{Proceedings of the National Academy of Sciences}, 48\penalty0
-  (11):\penalty0 1893--1897, 1962.
-
 \bibitem[MacArthur and Wilson(1967)]{macarthur_1967}
 Robert~H MacArthur and Edward~O Wilson.
 \newblock \emph{Theory of Island Biogeography}.
@@ -224,22 +221,6 @@ Yoav Ram, Eynat Dellus-Gur, Maayan Bibi, Uri Obolski, Judith Berman, and Lilach
   curve data.
 \newblock \emph{bioRxiv 10.1101/022640}, 2016.
 
-\bibitem[Reznick et~al.(2002)Reznick, Bryant, and Bashey]{reznick_2002}
-David Reznick, Michael~J. Bryant, and Farrah Bashey.
-\newblock r- and k-selection revisited: The role of population regulation in
-  life-history evolution.
-\newblock \emph{Ecology}, 83\penalty0 (6):\penalty0 1509--1520, 2002.
-\newblock ISSN 1939-9170.
-\newblock \doi{10.1890/0012-9658(2002)083[1509:RAKSRT]2.0.CO;2}.
-\newblock URL
-  \url{http://dx.doi.org/10.1890/0012-9658(2002)083[1509:RAKSRT]2.0.CO;2}.
-
-\bibitem[Roughgarden(1979)]{roughgarden_1979}
-Jonathan Roughgarden.
-\newblock Theory of population genetics and evolutionary ecology: an
-  introduction.
-\newblock 1979.
-
 \bibitem[Sale(1977)]{sale_77}
 Peter~F. Sale.
 \newblock Maintenance of high diversity in coral reef fish communities.
@@ -278,14 +259,6 @@ David Tilman.
 David Tilman.
 \newblock Competition and biodiversity in spatially structured habitats.
 \newblock \emph{Ecology}, 75\penalty0 (1):\penalty0 2--16, 1994.
-
-\bibitem[Travis et~al.(2013)Travis, Leips, and Rodd]{travis_2013}
-Joseph Travis, Jeff Leips, and F.~Helen Rodd.
-\newblock Evolution in population parameters: Density-dependent selection or
-  density-dependent fitness?
-\newblock \emph{The American Naturalist}, 181\penalty0 (S1):\penalty0 S9--S20,
-  2013.
-\newblock \doi{10.1086/669970}.
 
 \bibitem[Uecker and Hermisson(2011)]{uecker_2011}
 Hildegard Uecker and Joachim Hermisson.
