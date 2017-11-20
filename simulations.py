@@ -166,22 +166,22 @@ T=100000
 x,y=np.linspace(0.0,1.,401),np.linspace(0.,1.,401)
 xgrid, ygrid=np.meshgrid(x,y)
 X,Y=np.zeros([len(x),len(y)]),np.zeros([len(x),len(y)])
-b=np.array([2.,1.])
-c=np.array([1.,10.])
-d=np.array([0.1,0.2])
+b=np.array([2.,.2])
+c=np.array([1.,1.])
+d=np.array([0.1,0.1])
 
 for i in xrange(len(x)):
     for j in xrange(len(y)):
         n=T*np.array([x[i],y[j]])
         U=T-sum(n)
-        X[j,i],Y[j,i]=deltnplus(b*n*U/float(T),c,U)-d*n
+        X[j,i],Y[j,i]=deltnplus(b*n,c,U)-d*n
 
 fig1, ax1 = plt.subplots()#(ncols=2,figsize=[8,4])
 ax1.set_aspect(1)
 #ax2.set_aspect(1)
 plt.tight_layout()
 seedpoints=[[x[_]/2,y[200-_]/2] for _ in range(0,201,10)]
-ax1.streamplot(x, y, X, Y,start_points=seedpoints,linewidth=1.,density=20)
+ax1.streamplot(x, y, X, Y,start_points=seedpoints,linewidth=1.,density=100)
 ax1.set_xlim([0,1])
 ax1.set_ylim([0,1])
 

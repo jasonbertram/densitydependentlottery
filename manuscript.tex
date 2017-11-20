@@ -44,10 +44,6 @@
 \section*{Abstract}
 
 
-This excludes fundamental ecological factors such as dynamic population size or density-dependence from the most genetically-realistic treatments of evolution, a problem that inspired MacArthur's influential but problematic $r$/$K$ theory. 
-
-Following the spirit of $r$/$K$-selection as a general-purpose theory of density-dependent selection
-
 new model of density-dependent selection by generalizing the fixed-density classic lottery model of territorial acquisition to accommodate arbitrary population densities. 
 
 We show that, with density dependence, co-existence is possible in the lottery model in a stable environment. 
@@ -112,7 +108,7 @@ When multiple propagules land on the same territory, the victor is determined by
 
 In the classic lottery model \citep{chesson_1981}, unoccupied territories are assumed to be saturated with propagules from every genotype $l_i\gg 1$. From the law of large numbers, the composition of propagules in each territory will then not deviate appreciably from the mean composition $l_1,l_2,\ldots,l_G$ ($G$ is the number of genotypes present), and so the probability that genotype $i$ wins any particular unoccupied territory is approximately $c_i l_i/\sum_j c_j l_j$. Let $\Delta_+ n_i$ denote the number of territories won by genotype $i$. Then $\Delta_+ n_1,\Delta_+ n_2,\ldots,\Delta_+ n_G$ follow a multinomial distribution with $U$ trials and success probabilities $\frac{c_1 l_1}{\sum_j c_j l_j},\frac{c_2 l_2}{\sum_j c_j l_j},\ldots,\frac{c_G l_G}{\sum_j c_j l_j}$, respectively. Genotype $i$ is expected to win $c_i l_i/\sum_j c_j l_j$ of the $U$ available territories, and deviations from this expected outcome are small (since $T$ is large by assumption), giving 
 \begin{equation}
-\Delta_+ n_i(t)=\frac{c_i l_i}{\sum_j c_j l_j}U(t)=b_i n_i\frac{1}{L}\frac{c_i}{\overline{c}}, \label{eq:lottery}
+\Delta_+ n_i(t)=\frac{c_i l_i}{\sum_j c_j l_j}U(t)=\frac{c_i l_i}{\overline{c}L}U(t), \label{eq:lottery}
 \end{equation}
 where $\overline{c}=\sum_j c_j m_j/M$ is the mean propagule competitive ability for a randomly selected propagule, $L=M/U$ is the total propagule density and $M=\sum_j m_j$ is the total number of propagules. 
 
@@ -157,11 +153,11 @@ Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery p
 
 We now compare MacArthur's claims about selection in crowded environments with our density-dependent lottery model.
 
-As shown in the Introduction, MacArthur's argument revolves around relationship between the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$ of Eq.~\eqref{eq:macgeneral}. To formalize this relationship, the familiar symbol ``$K$'' is introduced to label the four intersection points of the nullclines with the $n_1$ and $n_2$ axes, specifically $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$ and $f_2(K_{21},0)=0$. These $K$ values determine whether a region of higher-density growth exists for each type, provided that the nullclines are close to being straight lines. It is in this sense that MacArthur concludes that ``fitness is $K$'' in crowded populations \citep[pp. 149]{macarthur_1967}. 
+As shown in the Introduction, MacArthur's argument revolves around the behaviour of  ecological models of the general form Eq.~\ref{eq:macgeneral}, which depends on the relationship between the nullclines $f_1(n_1,n_2)=0$ and $f_2(n_1,n_2)=0$. To formalize this relationship, MacArthur used the symbol ``$K$'' to label the four intersection points of the nullclines with the $n_1$ and $n_2$ axes, specifically $f_1(K_{11},0)=0$, $f_1(0,K_{12})=0$, $f_2(0,K_{22})=0$ and $f_2(K_{21},0)=0$. These $K$ values determine whether a region of higher-density growth exists for each type, provided that the nullclines are close to being straight lines. Note that, while $K_{11}$ and $K_{22}$ are saturation densities akin to the $K$ parameter in the logistic model, this is not true for $K_{12}$ and $K_{21}$, which are related to competition between types. For instance, in the Lotka-Volterra competition model we have $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$ where $\alpha_{11}=1/K_{11}$ measures competitive effects within the first type, whereas $\alpha_{12}=1/K_{12}$ measures competitive effects on the first type due to the second.  
 
-Notice that this use of ``$K$'' is considerably more general than the $K$ parameter in the logistic model, including both the saturation densities $K_{11}$ and $K_{22}$ and high-density interaction terms $K_{12}$ and $K_{21}$. For instance, in the Lotka-Volterra competition model we have $f_1(n_1,n_2)=r_1(1-\alpha_{11}n_1-\alpha_{12}n_2)n_1$ where $\alpha_{11}=1/K_{11}$ measures competitive effects within the first type, whereas $\alpha_{12}=1/K_{12}$ measures competitive effects on the first type due to the second.  Thus, ``fitness is $K$'' in the sense that selection in crowded populations either favors the ability to keep growing at ever higher densities (moving a type's own nullcline outwards), or the ability to suppress the growth of competitors at lower densities (moving the nullcline of competitors inwards). This general idea applies even if the nullclines are nonlinear to such an extent that the ``$K$'' values themselves do not give much information about the regions of high-density growth.
+Thus, when MacArthur concludes that  ``fitness is $K$'' in crowded populations \citep[pp. 149]{macarthur_1967}, the meaning is that selection in crowded populations either favors the ability to keep growing at ever higher densities (moving a type's own nullcline outwards), or the ability to suppress the growth of competitors at lower densities (moving the nullcline of competitors inwards). This general idea applies even if the nullclines are nonlinear to such an extent that the ``$K$'' values themselves do not give much information about the regions of high-density growth.
 
-
+The nullclines of Eq.~\eqref{eq:master} 
 
 
 \subsection*{Coexistence in constant and cyclical environments}\label{sec:invas}
