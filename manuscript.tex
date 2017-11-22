@@ -148,26 +148,15 @@ and
 A_i=\frac{\overline{c}(1-e^{-l_i})}{\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}c_il_i+\frac{\overline{c}L- c_il_i}{L-l_i}\left(L\frac{1-e^{-L}}{1-(1+L)e^{-L}}-l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right)}.\label{eq:Da}
 \end{equation}
 
-Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery per-propagule success rate $c_i/\overline{c}L$ has been replaced by three separate terms. The first, $e^{-L}$, accounts for propagules which land alone on unoccupied territories; these territories are won without contest. The second, $R_i c_i/\overline{c}$ represents competitive victories when the $i$ type is a rare invader in a high density population, determining its invasion fitness \citep{metz_1992}. The third term, $A_ic_i/\overline{c}$, represents competitive victories when the $i$ type is abundant. The relative importance of these three terms varies with both the overall propagule density $L$ and the relative propagule frequencies $m_i/M$. If $l_i\gg 1$ for all types, we recover the classic lottery model (only the $A_ic_i/\overline{c}$ term remains, and $A_i\rightarrow 1/L$). 
+Comparing Eq. \eqref{eq:master} to Eq. \eqref{eq:lottery}, the classic lottery per-propagule success rate $c_i/\overline{c}L$ has been replaced by three separate terms. The first, $e^{-L}$, accounts for propagules which land alone on unoccupied territories; these territories are won without contest. The second, $R_i c_i/\overline{c}$ represents competitive victories when the $i$ type is a rare invader in a high density population, determining its invasion fitness \citep{metz_1992}. The third term, $A_ic_i/\overline{c}$, represents competitive victories when the $i$ type is abundant. The relative importance of these three terms varies with both the overall propagule density $L$ and the relative propagule frequencies $m_i/M$. If $l_i\gg 1$ for all types, we recover the classic lottery model (only the $A_ic_i/\overline{c}$ term remains, and $A_i\rightarrow 1/L$). Note that not all unoccupied territories are claimed each iteration, since under Poisson dispersal a fraction $e^{-L}$ remain unoccupied; the total number of territories gained is thus $\Delta_+ N=U(1-e^{-L})$.
 
-Fig.~\ref{fig:simcomp} shows that Eq. \eqref{eq:master} and its components closely approximate our density-dependent lottery model over a wide range of propagule densities (the latter is evaluated by direct simulations of uniform random dispersal and lottery competition). Two types are present, one of which is at low frequency. The growth of the low-frequency type relies crucially on the low-density competition term $R_i c_i/\overline{c}$, and also to a lesser extent on the high density competition term $A_i c_i/\overline{c}$ if $l_1$ is large enough (Fig.~\ref{fig:simcomp}b). On the other hand, $R_i c_i/\overline{c}$ is negligible for the high-frequency type, which depends instead on high density territorial victories (Fig.~\ref{fig:simcomp}d). Fig. 3 also shows the breakdown of the classic lottery model at low propagule densities.
+Fig.~\ref{fig:simcomp} shows that Eq. \eqref{eq:master} and its components closely approximate individual-based simulations of the density-dependent lottery model over a wide range of propagule densities $l_i$. Two types are present, one of which is at low frequency. The growth of the low-frequency type relies crucially on the low-density competition term $R_i c_i/\overline{c}$. On the other hand, $R_i c_i/\overline{c}$ is negligible for the high-frequency type, which depends instead on high density territorial victories. Fig.~\ref{fig:simcomp} also shows the breakdown of the classic lottery model at low propagule densities.
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.7]{simulationcomparison.pdf}
-\caption{\label{fig:simcomp} The change in type abundances in a density dependent lottery model is closely approximated by Eq. \eqref{eq:master}. (a) and (c) per-propagule success probability $\Delta_+ n_i/l_i U$ from Eq. \eqref{eq:master}, the classic lottery model and  individual-based simulations of random dispersal and lottery competition. (b) and (d) the separate components of Eq. \eqref{eq:master}. Two types are present. (a) and (b) show a low-frequency type with a $c$-advantage ($c_1=1.5$), (c) and (d) show a high-frequency predominant type ($c_2=1$). Simulation points are almost invisible in (c) and (d) due to near exact agreement with Eq. \eqref{eq:master}. Dashed lines in (a) and (c) show the breakdown of the classic lottery model. Parameters: $m_1=10^4$ and $m_2=9\times 10^4$ and $U$ is varied between $5\times 10^3$ and $10^6$.} 
+\includegraphics[scale=0.8]{simulationcomparison.pdf}
+\caption{\label{fig:simcomp} Comparison of mean field approximation Eq. \eqref{eq:master} with simulations. Per-propagule success probability $\Delta_+ n_i/l_i U$ from Eq. \eqref{eq:master} and its three components, the classic lottery model, and  individual-based simulations of random dispersal and lottery competition. Two types are present, a rare type with $c_1=1.5$, and a common type with $c_2=1$. Simulation points are almost invisible in for the common type due to near exact agreement with Eq. \eqref{eq:master}. Dashed lines in show the breakdown of the classic lottery model. Parameters: $m_1=10^4$ and $m_2=9\times 10^4$ and $U$ is varied between $5\times 10^3$ and $10^6$.} 
 \end{figure}
-
-Note that unlike the classic lottery model, not all unoccupied territories are claimed each iteration, since under Poisson dispersal a fraction $e^{-L}$ remain unoccupied.
-
-$\Delta_+ N=U(1-e^{-L})$
-
-
-
-
-
-
-
 
 
 \subsection*{$K$-selection, $c$-selection and relative fitness}

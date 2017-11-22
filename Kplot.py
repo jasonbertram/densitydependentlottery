@@ -99,8 +99,6 @@ ax2.set_yticklabels([])
 ax2.set_xlabel(r"$n_1$",fontsize=20)
 ax2.set_ylabel(r"$n_2$",fontsize=20)
 
-plt.savefig('/home/jbertram/repos/densitydependentlottery/Kplot.pdf',bbox="tight")
-
 
 #fig1, ax1 = plt.subplots()
 #ax1.streamplot(X, Y, U, V,density=0.5)

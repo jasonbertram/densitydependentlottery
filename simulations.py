@@ -88,71 +88,62 @@ exact=np.array([deltnplussim(m,c,U) for U in Us]);
 totalclassic=np.array([deltnplusclassic(m,c,U) for U in Us]);
 totalclassicboundedm=np.array([deltnplusclassicboundedm(m,c,U) for U in Us]);
 
-fig1, (ax1, ax2) = plt.subplots(nrows=2,figsize=[4,8])
+fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
 
 #First genotype
 nocomp=np.array([np.exp(-M/U) for U in Us]);
 comp1=np.array([R(m,c,U)[0]*c[0]/cbar for U in Us]);
 comp2=np.array([A(m,c,U)[0]*c[0]/cbar for U in Us]);
 
+ax1.plot(float(m[0])/Us,nocomp,'k',label=r"$e^{-L}$")
+ax1.plot(float(m[0])/Us,comp1,'r',label=r"$R_i \frac{c_i}{\overline{c}}$")
+ax1.plot(float(m[0])/Us,comp2,'b',label=r"$A_i \frac{c_i}{\overline{c}}$")
+ax1.plot(float(m[0])/Us,(nocomp+comp1+comp2),'k',label=r"$e^{-L}+R_i \frac{c_i}{\overline{c}}+A_i \frac{c_i}{\overline{c}}$",linewidth=2)
+
 ax1.plot(float(m[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/m[0],'k.',markersize=1.,label="Simulation")
-ax1.plot(float(m[0])/Us,(nocomp+comp1+comp2),'k',label=r"Eq. (5)")
-ax1.plot(float(m[0])/Us,totalclassic[:,0]/m[0],'k--',label=r"Classic lottery")
-ax1.set_xlim([0,maxl])
-ax1.set_ylim([0,1.1])
-ax1.xaxis.set_label_coords(0.5, -0.09)
-ax1.set_xticklabels(['0','','1','','2','','3'])
-ax1.set_xlabel(r"$l_1$",fontsize=14)
-ax1.set_ylabel("Per propagule success",fontsize=14)
-
-ax1.annotate(r'$(a)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
-ax1.legend(loc='upper center',prop={'size':10})
-
 ax1.plot(float(m[0])/Us,exact[:,0,0]/m[0],'k.',markersize=1)
 ax1.plot(float(m[0])/Us,exact[:,1,0]/m[0],'k.',markersize=1)
 ax1.plot(float(m[0])/Us,exact[:,2,0]/m[0],'k.',markersize=1)
 
-ax1.plot(float(m[0])/Us,nocomp,'k',label=r"$e^{-L}$")
-ax1.plot(float(m[0])/Us,comp1,'r',label=r"$R_1 c_1/\overline{c}$")
-ax1.plot(float(m[0])/Us,comp2,'b',label=r"$A_1 c_1/\overline{c}$")
+ax1.plot(float(m[0])/Us,totalclassic[:,0]/m[0],'k--',label=r"Classic lottery",linewidth=2)
+ax1.set_xlim([0,maxl])
+ax1.set_ylim([0,1])
 ax1.xaxis.set_label_coords(0.5, -0.09)
+ax1.yaxis.set_label_coords(-0.1, 0.5)
+ax1.set_xticklabels(['0','','1','','2','','3'])
 ax1.set_xlabel(r"$l_1$",fontsize=14)
-ax1.legend(loc='upper center',prop={'size':10})
+ax1.set_ylabel("Success per propagule",fontsize=12)
+
+ax1.annotate('Rare type',xy=(0.65,0.32),xycoords='axes fraction',fontsize=12)
+ax1.legend(loc='upper center',prop={'size':11})
 
 #Second genotype
 nocomp=np.array([np.exp(-M/U) for U in Us]);
 comp1=np.array([R(m,c,U)[1]*c[1]/cbar for U in Us]);
 comp2=np.array([A(m,c,U)[1]*c[1]/cbar for U in Us]);
     
-plt.subplot(223)
-plt.plot(float(m[1])/Us,(exact[:,0,1]+exact[:,1,1]+exact[:,2,1])/m[1],'k.',markersize=1,label="Simulation")
-plt.plot(float(m[1])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_2/l_2 U$")
-plt.plot(float(m[1])/Us,totalclassic[:,1]/m[1],'k--',label=r"Classic lottery")
-plt.xlim([0,3*maxl])
-plt.ylim([0,1])
-plt.gca().xaxis.set_label_coords(0.5, -0.09)
-plt.xlabel(r"$l_2$",fontsize=14)
-plt.ylabel("Per propagule success",fontsize=14)
-plt.gca().annotate(r'$(c)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
-plt.legend(loc='upper center',prop={'size':10})
+ax2.plot(float(m[1])/Us,nocomp,'k',label=r"$e^{-L}$")
+ax2.plot(float(m[1])/Us,comp1,'r',label=r"$R_2 c_2/\overline{c}$")
+ax2.plot(float(m[1])/Us,comp2,'b',label=r"$A_2 c_2/\overline{c}$")
 
-plt.subplot(224)
-plt.plot(float(m[1])/Us,exact[:,0,1]/m[1],'k.',markersize=1,label="Simulation")
-plt.plot(float(m[1])/Us,exact[:,1,1]/m[1],'k.',markersize=1)
-plt.plot(float(m[1])/Us,exact[:,2,1]/m[1],'k.',markersize=1)
+ax2.plot(float(m[1])/Us,(exact[:,0,1]+exact[:,1,1]+exact[:,2,1])/m[1],'k.',markersize=1,label="Simulation")
+ax2.plot(float(m[1])/Us,(nocomp+comp1+comp2),'k',label="Total",linewidth=2)
+ax2.plot(float(m[1])/Us,totalclassic[:,1]/m[1],'k--',label=r"Classic lottery",linewidth=2)
+ax2.set_xlim([0,3*maxl])
+ax2.set_ylim([0,1])
+ax2.xaxis.set_label_coords(0.5, -0.09)
+ax2.yaxis.set_label_coords(-0.1, 0.5)
+ax2.set_xlabel(r"$l_2$",fontsize=14)
 
-plt.plot(float(m[1])/Us,nocomp,'k',label=r"$e^{-L}$")
-plt.plot(float(m[1])/Us,comp1,'r',label=r"$R_2 c_2/\overline{c}$")
-plt.plot(float(m[1])/Us,comp2,'b',label=r"$A_2 c_2/\overline{c}$")
-#plt.ylim([0,10000])
-plt.xlim([0,3*maxl])
-plt.gca().xaxis.set_label_coords(0.5, -0.09)
-plt.xlabel(r"$l_2$",fontsize=14)
-plt.gca().set_yticklabels([])
-plt.gca().annotate(r'$(d)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
-plt.legend(loc='upper center',prop={'size':10})
+ax2.plot(float(m[1])/Us,exact[:,0,1]/m[1],'k.',markersize=1,label="Simulation")
+ax2.plot(float(m[1])/Us,exact[:,1,1]/m[1],'k.',markersize=1)
+ax2.plot(float(m[1])/Us,exact[:,2,1]/m[1],'k.',markersize=1)
 
-plt.savefig('/home/jbertram/repos/densitydependentlottery/simulationcomparison.pdf')
+ax2.annotate('Common type',xy=(0.6,0.32),xycoords='axes fraction',fontsize=12)
+
+plt.tight_layout()
+
+plt.savefig('/home/jason/repos/densitydependentlottery/simulationcomparison.pdf',bbox="tight")
 
 #(n1,n2) vector field
 #=================================================================
@@ -160,8 +151,8 @@ T=100000
 x,y=np.linspace(0.0,1.,401),np.linspace(0.,1.,401)
 xgrid, ygrid=np.meshgrid(x,y)
 X,Y=np.zeros([len(x),len(y)]),np.zeros([len(x),len(y)])
-b=np.array([2.,.2])
-c=np.array([1.,1.])
+b=np.array([1.,1.])
+c=np.array([5.,1.])
 d=np.array([0.1,0.1])
 
 for i in xrange(len(x)):
@@ -170,22 +161,32 @@ for i in xrange(len(x)):
         U=T-sum(n)
         X[j,i],Y[j,i]=deltnplus(b*n,c,U)-d*n
 
-fig1, ax1 = plt.subplots()#(ncols=2,figsize=[8,4])
+
+fig1, (ax2, ax1) = plt.subplots(ncols=2,figsize=[8,4])
 ax1.set_aspect(1)
-#ax2.set_aspect(1)
-plt.tight_layout()
+ax2.set_aspect(1)
+
+ax1.plot([f2null[-1,0],f1null[0,0]],[f2null[-1,1],f1null[0,1]],'y',linewidth=2)
+
 seedpoints=[[x[_]/2,y[200-_]/2] for _ in range(0,201,10)]
+seedpoints=np.concatenate([[[_,0.2-_] for _ in np.arange(0.02,0.2,0.02)],\
+            [[float(_)/10,1.-_*0.1] for _ in range(0,11) if _ not in []]])
+
 ax1.streamplot(x, y, X, Y,start_points=seedpoints,linewidth=1.,density=100)
 ax1.set_xlim([0,1])
 ax1.set_ylim([0,1])
 
 f1null=np.array([[x[[_ for _ in range(len(x)) if X[i,_]>0][-1]],y[i]] for i in range(1,len(y)) if max(X[i])>0])
 f2null=np.array([[x[[_ for _ in range(len(x)) if Y[i,_]>0][-1]],y[i]] for i in range(1,len(y)) if max(Y[i])>0])
-plt.plot(f1null[:,0],f1null[:,1],'k',linewidth=2.)
-plt.plot(f2null[:,0],f2null[:,1],'b',linewidth=2.)
+ax1.plot(f1null[:,0],f1null[:,1],'k',linewidth=2.)
+ax1.plot(f2null[:,0],f2null[:,1],'k',linewidth=2.)
 
-#plt.plot([f2null[-1,0],f1null[0,0]],[f2null[-1,1],f1null[0,1]],'y',linewidth=2)
 #plt.plot([f2null[0,0],f2null[-1,0]],[f2null[0,1],f2null[-1,1]],'y',linewidth=2)
+
+ax1.set_xticklabels([])
+ax1.set_yticklabels([])
+ax1.set_xlabel(r"$n_1$",fontsize=20)
+ax1.set_ylabel(r"$n_2$",fontsize=20)
 
 
 x,y=np.linspace(0,1,1000),np.linspace(0,1,1000)
@@ -193,45 +194,33 @@ X, Y = np.meshgrid(x,y)
 alphas=np.array([[1.2,1.5],[1.1,1.2]])
 U = 2*(1-alphas[0,0]*X-alphas[0,1]*Y)*X
 V = (1-alphas[1,1]*Y-alphas[1,0]*X)*Y
-#speed = np.sqrt(U*U + V*V)
 
-fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
-ax1.set_aspect(1)
-ax2.set_aspect(1)
-plt.tight_layout()
 seedpoints=np.concatenate([[[_,0.2-_] for _ in np.arange(0.02,0.2,0.02)],\
             [[float(_)/10,1.-_*0.1] for _ in range(0,11) if _ not in [2,7]]])
-ax1.streamplot(x, y, U, V,density=100,start_points=seedpoints,linewidth=1.)
+ax2.streamplot(x, y, U, V,density=100,start_points=seedpoints,linewidth=1.)
 
 z1=np.linspace(0,1,10)
 z2=1-z1
-ax1.plot(z1,(1-alphas[0,0]*z1)/alphas[0,1],'k',linewidth=2)
-ax1.plot(z1,(1-alphas[1,0]*z1)/alphas[1,1],'k',linewidth=2)
-ax1.plot([0,1/alphas[0,0]],[1/alphas[1,1],0],'y',linewidth=2)
-ax1.set_xlim([0,1])
-ax1.set_ylim([0,1])
+ax2.plot(z1,(1-alphas[0,0]*z1)/alphas[0,1],'k',linewidth=2)
+ax2.plot(z1,(1-alphas[1,0]*z1)/alphas[1,1],'k',linewidth=2)
+ax2.plot([0,1/alphas[0,0]],[1/alphas[1,1],0],'y',linewidth=2)
+ax2.set_xlim([0,1])
+ax2.set_ylim([0,1])
 
-ax1.annotate(r'$\frac{dn_2}{dt}=0$',xy=(0.15,0.81),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$\frac{dn_1}{dt}=0$',xy=(0.62,0.28),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$K_{21}$',xy=(0.65,-0.07),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$K_{11}$',xy=(0.95,-0.07),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$K_{12}$',xy=(-0.13,0.65),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$K_{22}$',xy=(-0.13,.97),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$(a)$',xy=(0.9,0.93),xycoords='axes fraction',fontsize=16)
-
-ax1.set_xticklabels([])
-ax1.set_yticklabels([])
-ax1.set_xlabel(r"$n_1$",fontsize=20)
-ax1.set_ylabel(r"$n_2$",fontsize=20)
-
-ax2.quiver(z1[:-1], z2[:-1], z1[1:]-z1[:-1], z2[1:]-z2[:-1], scale_units='xy', angles='xy', scale=1)
-ax2.annotate(r'$\frac{dN}{dt}=0$',xy=(0.53,0.53),xycoords='axes fraction',fontsize=16)
-ax2.annotate(r'$(b)$',xy=(0.9,0.93),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$\frac{dn_2}{dt}=0$',xy=(0.15,0.81),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$\frac{dn_1}{dt}=0$',xy=(0.62,0.28),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$K_{21}$',xy=(0.65,-0.07),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$K_{11}$',xy=(0.95,-0.07),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$K_{12}$',xy=(-0.13,0.65),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$K_{22}$',xy=(-0.13,.97),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$(a)$',xy=(0.9,0.93),xycoords='axes fraction',fontsize=16)
 
 ax2.set_xticklabels([])
 ax2.set_yticklabels([])
 ax2.set_xlabel(r"$n_1$",fontsize=20)
 ax2.set_ylabel(r"$n_2$",fontsize=20)
+
+plt.tight_layout()
 
 
 #Seasonal population fluctuations
