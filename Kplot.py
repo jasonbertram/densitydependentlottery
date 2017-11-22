@@ -55,7 +55,8 @@ plt.savefig('/home/jbertram/repos/densitydependentlottery/Kplot.pdf',bbox="tight
 
 #===============================================================================
 X, Y = np.meshgrid(x,y)
-alphas=np.array([[1,1.5],[1.5,1]])
+#alphas=np.array([[1,1.5],[1.5,1]])
+alphas=np.array([[1,0.8],[1.2,1]])
 U = 2*(1-alphas[0,0]*X-alphas[0,1]*Y)*X
 V = (1-alphas[1,1]*Y-alphas[1,0]*X)*Y
 #speed = np.sqrt(U*U + V*V)

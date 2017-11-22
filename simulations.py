@@ -83,47 +83,41 @@ m=np.array([10000,90000])
 M=float(sum(m)) 
 c=np.array([1.5,1.])
 cbar=sum(m*c)/sum(m)
-maxl=2; Us=np.array([int(m[0]/x) for x in np.linspace(0.001,maxl,100)]);
+maxl=2; Us=np.array([int(m[0]/x) for x in np.linspace(0.001,maxl,1000)]);
 exact=np.array([deltnplussim(m,c,U) for U in Us]);
 totalclassic=np.array([deltnplusclassic(m,c,U) for U in Us]);
 totalclassicboundedm=np.array([deltnplusclassicboundedm(m,c,U) for U in Us]);
+
+fig1, (ax1, ax2) = plt.subplots(nrows=2,figsize=[4,8])
 
 #First genotype
 nocomp=np.array([np.exp(-M/U) for U in Us]);
 comp1=np.array([R(m,c,U)[0]*c[0]/cbar for U in Us]);
 comp2=np.array([A(m,c,U)[0]*c[0]/cbar for U in Us]);
 
-plt.subplot(221)
-plt.plot(float(m[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/m[0],'k.',markersize=1.,label="Simulation")
-plt.plot(float(m[0])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_1/m_1$")
-plt.plot(float(m[0])/Us,totalclassic[:,0]/m[0],'k--',label=r"Classic lottery")
-#plt.plot(float(m[0])/Us,totalclassicboundedm[:,0]/m[0],'kx',label=r"Classic lottery")
-plt.xlim([0,maxl])
-plt.ylim([0,1.1])
-plt.gca().xaxis.set_label_coords(0.5, -0.09)
-plt.gca().set_xticklabels(['0','','1','','2','','3'])
-plt.xlabel(r"$l_1$",fontsize=14)
-plt.ylabel(r"$\Delta_+ n_1/m_1$",fontsize=14)
+ax1.plot(float(m[0])/Us,(exact[:,0,0]+exact[:,1,0]+exact[:,2,0])/m[0],'k.',markersize=1.,label="Simulation")
+ax1.plot(float(m[0])/Us,(nocomp+comp1+comp2),'k',label=r"Eq. (5)")
+ax1.plot(float(m[0])/Us,totalclassic[:,0]/m[0],'k--',label=r"Classic lottery")
+ax1.set_xlim([0,maxl])
+ax1.set_ylim([0,1.1])
+ax1.xaxis.set_label_coords(0.5, -0.09)
+ax1.set_xticklabels(['0','','1','','2','','3'])
+ax1.set_xlabel(r"$l_1$",fontsize=14)
+ax1.set_ylabel("Per propagule success",fontsize=14)
 
-plt.gca().annotate(r'$(a)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
-plt.legend(loc='upper center',prop={'size':10})
+ax1.annotate(r'$(a)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
+ax1.legend(loc='upper center',prop={'size':10})
 
-plt.subplot(222)
-plt.plot(float(m[0])/Us,exact[:,0,0]/m[0],'k.',markersize=1, label="Simulation")
-plt.plot(float(m[0])/Us,exact[:,1,0]/m[0],'k.',markersize=1)
-plt.plot(float(m[0])/Us,exact[:,2,0]/m[0],'k.',markersize=1)
+ax1.plot(float(m[0])/Us,exact[:,0,0]/m[0],'k.',markersize=1)
+ax1.plot(float(m[0])/Us,exact[:,1,0]/m[0],'k.',markersize=1)
+ax1.plot(float(m[0])/Us,exact[:,2,0]/m[0],'k.',markersize=1)
 
-plt.plot(float(m[0])/Us,nocomp,'k',label=r"$e^{-L}$")
-plt.plot(float(m[0])/Us,comp1,'r',label=r"$R_1 c_1/\overline{c}$")
-plt.plot(float(m[0])/Us,comp2,'b',label=r"$A_1 c_1/\overline{c}$")
-#ylim([0,1000])
-plt.xlim([0,maxl])
-plt.gca().xaxis.set_label_coords(0.5, -0.09)
-plt.xlabel(r"$l_1$",fontsize=14)
-plt.gca().set_xticklabels(['0','','1','','2','','3'])
-plt.gca().set_yticklabels([])
-plt.gca().annotate(r'$(b)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
-plt.legend(loc='upper center',prop={'size':10})
+ax1.plot(float(m[0])/Us,nocomp,'k',label=r"$e^{-L}$")
+ax1.plot(float(m[0])/Us,comp1,'r',label=r"$R_1 c_1/\overline{c}$")
+ax1.plot(float(m[0])/Us,comp2,'b',label=r"$A_1 c_1/\overline{c}$")
+ax1.xaxis.set_label_coords(0.5, -0.09)
+ax1.set_xlabel(r"$l_1$",fontsize=14)
+ax1.legend(loc='upper center',prop={'size':10})
 
 #Second genotype
 nocomp=np.array([np.exp(-M/U) for U in Us]);
@@ -132,13 +126,13 @@ comp2=np.array([A(m,c,U)[1]*c[1]/cbar for U in Us]);
     
 plt.subplot(223)
 plt.plot(float(m[1])/Us,(exact[:,0,1]+exact[:,1,1]+exact[:,2,1])/m[1],'k.',markersize=1,label="Simulation")
-plt.plot(float(m[1])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_2/m_2$")
+plt.plot(float(m[1])/Us,(nocomp+comp1+comp2),'k',label=r"$\Delta_+ n_2/l_2 U$")
 plt.plot(float(m[1])/Us,totalclassic[:,1]/m[1],'k--',label=r"Classic lottery")
 plt.xlim([0,3*maxl])
 plt.ylim([0,1])
 plt.gca().xaxis.set_label_coords(0.5, -0.09)
 plt.xlabel(r"$l_2$",fontsize=14)
-plt.ylabel(r"$\Delta_+ n_2/m_2$",fontsize=14)
+plt.ylabel("Per propagule success",fontsize=14)
 plt.gca().annotate(r'$(c)$',xy=(0.9,0.9),xycoords='axes fraction',fontsize=12)
 plt.legend(loc='upper center',prop={'size':10})
 

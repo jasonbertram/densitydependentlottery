@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -47,6 +47,15 @@ Alan~O. Bergland, Emily~L. Behrman, Katherine~R. O'Brien, Paul~S. Schmidt, and
 \newblock \emph{PLOS Genetics}, 10\penalty0 (11):\penalty0 1--19, 11 2014.
 \newblock \doi{10.1371/journal.pgen.1004775}.
 
+\bibitem[Bertram et~al.(2017)Bertram, Gomez, and Masel]{bertram_2017}
+J~Bertram, K~Gomez, and J~Masel.
+\newblock Predicting patterns of long-term adaptation and extinction with
+  population genetics.
+\newblock \emph{Evolution}, 71\penalty0 (2):\penalty0 204--214, 2017.
+\newblock ISSN 1558-5646.
+\newblock \doi{10.1111/evo.13116}.
+\newblock URL \url{http://dx.doi.org/10.1111/evo.13116}.
+
 \bibitem[Bolker and Pacala(1999)]{bolker_99}
 Benjamin~M. Bolker and Stephen~W. Pacala.
 \newblock Spatial moment equations for plant competition: Understanding spatial
@@ -60,6 +69,13 @@ Ted~J Case and Michael~E Gilpin.
 \newblock Interference competition and niche theory.
 \newblock \emph{Proceedings of the National Academy of Sciences}, 71\penalty0
   (8):\penalty0 3073--3077, 1974.
+
+\bibitem[Chesson(1983)]{chesson_1983}
+Peter~L. Chesson.
+\newblock \emph{Coexistence of Competitors in a Stochastic Environment: The
+  Storage Effect}, pages 188--198.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1983.
+\newblock ISBN 978-3-642-87893-0.
 
 \bibitem[Chesson and Warner(1981)]{chesson_1981}
 Peter~L Chesson and Robert~R Warner.
@@ -259,12 +275,6 @@ David Tilman.
 David Tilman.
 \newblock Competition and biodiversity in spatially structured habitats.
 \newblock \emph{Ecology}, 75\penalty0 (1):\penalty0 2--16, 1994.
-
-\bibitem[Uecker and Hermisson(2011)]{uecker_2011}
-Hildegard Uecker and Joachim Hermisson.
-\newblock On the fixation process of a beneficial mutation in a variable
-  environment.
-\newblock \emph{Genetics}, 188\penalty0 (4):\penalty0 915--930, 2011.
 
 \bibitem[Yi and Dean(2013)]{yi_2013}
 Xiao Yi and Antony~M Dean.
