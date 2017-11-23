@@ -25,8 +25,8 @@ ax1.streamplot(x, y, U, V,density=100,start_points=seedpoints,linewidth=1.)
 
 z1=np.linspace(0,1,10)
 z2=1-z1
-ax1.plot(z1,(1-alphas[0,0]*z1)/alphas[0,1],'k',linewidth=2)
-ax1.plot(z1,(1-alphas[1,0]*z1)/alphas[1,1],'k',linewidth=2)
+ax1.plot(z1,(1-alphas[0,0]*z1)/alphas[0,1],'k--',linewidth=2)
+ax1.plot(z1,(1-alphas[1,0]*z1)/alphas[1,1],'k--',linewidth=2)
 #ax1.plot([0,1/alphas[0,0]],[1/alphas[1,1],0],'y',linewidth=2)
 ax1.set_xlim([0,1])
 ax1.set_ylim([0,1])
