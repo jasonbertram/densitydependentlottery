@@ -1,4 +1,4 @@
-\begin{thebibliography}{41}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -154,6 +154,11 @@ Douglas~E Gill.
 \newblock Intrinsic rate of increase, saturation density, and competitive
   ability. ii. the evolution of competitive ability.
 \newblock \emph{American Naturalist}, 108:\penalty0 103--116, 1974.
+
+\bibitem[Grover(1997)]{grover_1997}
+James~P Grover.
+\newblock \emph{Resource competition}, volume~19.
+\newblock Springer Science \& Business Media, 1997.
 
 \bibitem[Hendriks et~al.(2005)Hendriks, Maas-Diepeveen, Heugens, and van
   Straalen]{hendriks_2005}
