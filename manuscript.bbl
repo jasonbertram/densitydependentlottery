@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -38,15 +38,6 @@ TG~Benton and A~Grant.
 \newblock \emph{Evolutionary ecology research}, 2\penalty0 (6):\penalty0
   769--789, 2000.
 
-\bibitem[Bergland et~al.(2014)Bergland, Behrman, O'Brien, Schmidt, and
-  Petrov]{bergland_14}
-Alan~O. Bergland, Emily~L. Behrman, Katherine~R. O'Brien, Paul~S. Schmidt, and
-  Dmitri~A. Petrov.
-\newblock Genomic evidence of rapid and stable adaptive oscillations over
-  seasonal time scales in drosophila.
-\newblock \emph{PLOS Genetics}, 10\penalty0 (11):\penalty0 1--19, 11 2014.
-\newblock \doi{10.1371/journal.pgen.1004775}.
-
 \bibitem[Bertram et~al.(2017)Bertram, Gomez, and Masel]{bertram_2017}
 J~Bertram, K~Gomez, and J~Masel.
 \newblock Predicting patterns of long-term adaptation and extinction with
@@ -63,12 +54,6 @@ Benjamin~M. Bolker and Stephen~W. Pacala.
 \newblock \emph{The American Naturalist}, 153\penalty0 (6):\penalty0 575--602,
   1999.
 \newblock \doi{10.1086/303199}.
-
-\bibitem[Case and Gilpin(1974)]{case_1974}
-Ted~J Case and Michael~E Gilpin.
-\newblock Interference competition and niche theory.
-\newblock \emph{Proceedings of the National Academy of Sciences}, 71\penalty0
-  (8):\penalty0 3073--3077, 1974.
 
 \bibitem[Chesson(1983)]{chesson_1983}
 Peter~L. Chesson.
@@ -88,34 +73,11 @@ James~F Crow, Motoo Kimura, et~al.
 \newblock An introduction to population genetics theory.
 \newblock \emph{An introduction to population genetics theory.}, 1970.
 
-\bibitem[Darling et~al.(2012)Darling, Alvarez-Filip, Oliver, McClanahan, and
-  Côté]{darling_2012}
-Emily~S. Darling, Lorenzo Alvarez-Filip, Thomas~A. Oliver, Timothy~R.
-  McClanahan, and Isabelle~M. Côté.
-\newblock Evaluating life-history strategies of reef corals from species
-  traits.
-\newblock \emph{Ecology Letters}, 15\penalty0 (12):\penalty0 1378--1386, 2012.
-\newblock ISSN 1461-0248.
-\newblock \doi{10.1111/j.1461-0248.2012.01861.x}.
-\newblock URL \url{http://dx.doi.org/10.1111/j.1461-0248.2012.01861.x}.
-
 \bibitem[Davis et~al.(1998)Davis, Wrage, and Reich]{davis_1998}
 Mark~A Davis, Keith~J Wrage, and Peter~B Reich.
 \newblock Competition between tree seedlings and herbaceous vegetation: support
   for a theory of resource supply and demand.
 \newblock \emph{Journal of Ecology}, 86\penalty0 (4):\penalty0 652--661, 1998.
-
-\bibitem[Dempster(1955)]{dempster_1955}
-Everett~Ross Dempster.
-\newblock Maintenance of genetic heterogeneity.
-\newblock \emph{Cold Spring Harb Symp Quant Biol}, 20:\penalty0 25--31, 1955.
-
-\bibitem[Desai and Fisher(2007)]{desai_2007}
-Michael~M. Desai and Daniel~S. Fisher.
-\newblock Beneficial mutation–selection balance and the effect of linkage on
-  positive selection.
-\newblock \emph{Genetics}, 176\penalty0 (3):\penalty0 1759--1798, 2007.
-\newblock \doi{10.1534/genetics.106.067678}.
 
 \bibitem[Doebeli et~al.(2017)Doebeli, Ispolatov, and Simon]{doebeli_2017}
 Michael Doebeli, Yaroslav Ispolatov, and Burt Simon.
@@ -124,30 +86,10 @@ Michael Doebeli, Yaroslav Ispolatov, and Burt Simon.
 \newblock ISSN 2050-084X.
 \newblock \doi{10.7554/eLife.23804}.
 
-\bibitem[Ellner and Hairston~Jr(1994)]{ellner_1994}
-Stephen Ellner and Nelson~G Hairston~Jr.
-\newblock Role of overlapping generations in maintaining genetic variation in a
-  fluctuating environment.
-\newblock \emph{The American Naturalist}, 143\penalty0 (3):\penalty0 403--417,
-  1994.
-
 \bibitem[Ewens(2004)]{ewens_2004}
 Warren~J Ewens.
 \newblock \emph{Mathematical Population Genetics 1: Theoretical Introduction}.
 \newblock Springer Science \& Business Media, 2004.
-
-\bibitem[Fitzsimmons et~al.(2010)Fitzsimmons, Schoustra, Kerr, and
-  Kassen]{fitzsimmons_2010}
-Jay~M Fitzsimmons, Sijmen~E Schoustra, Jeremy~T Kerr, and Rees Kassen.
-\newblock Population consequences of mutational events: effects of antibiotic
-  resistance on the r/k trade-off.
-\newblock \emph{Evolutionary Ecology}, 24\penalty0 (1):\penalty0 227--236,
-  2010.
-
-\bibitem[Gerrish and Lenski(1998)]{gerrish_1998}
-Philip~J Gerrish and Richard~E Lenski.
-\newblock The fate of competing beneficial mutations in an asexual population.
-\newblock \emph{Genetica}, 102:\penalty0 127--144, 1998.
 
 \bibitem[Gill(1974)]{gill_1974}
 Douglas~E Gill.
@@ -160,45 +102,11 @@ James~P Grover.
 \newblock \emph{Resource competition}, volume~19.
 \newblock Springer Science \& Business Media, 1997.
 
-\bibitem[Hendriks et~al.(2005)Hendriks, Maas-Diepeveen, Heugens, and van
-  Straalen]{hendriks_2005}
-A~Jan Hendriks, Johanna~LM Maas-Diepeveen, Evelyn~HW Heugens, and Nico~M van
-  Straalen.
-\newblock Meta-analysis of intrinsic rates of increase and carrying capacity of
-  populations affected by toxic and other stressors.
-\newblock \emph{Environmental Toxicology and Chemistry}, 24\penalty0
-  (9):\penalty0 2267--2277, 2005.
-
-\bibitem[Joshi et~al.(2001)Joshi, Prasad, and Shakarad]{joshi_2001}
-Amitabh Joshi, NG~Prasad, and Mallikarjun Shakarad.
-\newblock K-selection, $\alpha$-selection, effectiveness, and tolerance in
-  competition: density-dependent selection revisited.
-\newblock \emph{Journal of Genetics}, 80\penalty0 (2):\penalty0 63--75, 2001.
-
-\bibitem[Kuno(1991)]{kuno_1991}
-Eizi Kuno.
-\newblock {Some strange properties of the logistic equation defined with r and
-  K: Inherent defects or artifacts?}
-\newblock \emph{Researches on Population Ecology}, 33\penalty0 (1):\penalty0
-  33--39, 1991.
-
 \bibitem[Levins and Culver(1971)]{levins_71}
 Richard Levins and David Culver.
 \newblock Regional coexistence of species and competition between rare species.
 \newblock \emph{Proceedings of the National Academy of Sciences}, 68\penalty0
   (6):\penalty0 1246--1248, 1971.
-
-\bibitem[Luckinbill(1978)]{luckinbill_1978}
-Leo~S Luckinbill.
-\newblock r and k selection in experimental populations of escherichia coli.
-\newblock \emph{Science (New York, NY)}, 202\penalty0 (4373):\penalty0
-  1201--1203, 1978.
-
-\bibitem[Luckinbill(1979)]{luckinbill_1979}
-Leo~S Luckinbill.
-\newblock Selection and the r/k continuum in experimental populations of
-  protozoa.
-\newblock \emph{American Naturalist}, pages 427--437, 1979.
 
 \bibitem[MacArthur and Wilson(1967)]{macarthur_1967}
 Robert~H MacArthur and Edward~O Wilson.
@@ -225,14 +133,6 @@ Johan~AJ Metz, Roger~M Nisbet, and Stefan~AH Geritz.
 \newblock How should we define ‘fitness’ for general ecological scenarios?
 \newblock \emph{Trends in Ecology \& Evolution}, 7\penalty0 (6):\penalty0
   198--202, 1992.
-
-\bibitem[Pianka(1972)]{pianka_1972}
-Eric~R. Pianka.
-\newblock r and {K} selection or b and d selection?
-\newblock \emph{The American Naturalist}, 106\penalty0 (951):\penalty0
-  581--588, 1972.
-\newblock ISSN 00030147, 15375323.
-\newblock URL \url{http://www.jstor.org/stable/2459721}.
 
 \bibitem[Ram et~al.(2016)Ram, Dellus-Gur, Bibi, Obolski, Berman, and
   Hadany]{ram_2016}
