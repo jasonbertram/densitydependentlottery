@@ -10,15 +10,15 @@ import matplotlib.pyplot as plt
 import bisect
 
 def deltnplussim(m,c,U):
-    scatter=[[0 for x in range(len(m))] for y in range(U)];
+    scatter=np.zeros([int(U),len(m)])
     for i in range(len(m)):
-        for y in xrange(m[i]):
-            cell=int(U*np.random.rand());
-            scatter[cell][i]=scatter[cell][i]+1;
+        for y in xrange(int(m[i])):
+            cell=int(int(U)*np.random.rand());
+            scatter[cell,i]=scatter[cell,i]+1;
     
     winsnocomp=np.zeros(len(m)); wins1=np.zeros(len(m)); wins2=np.zeros(len(m));
     comp=np.zeros(U);
-    for i in range(U):
+    for i in range(int(U)):
         comp[i]=sum(scatter[i])
         if comp[i]>0:            
             lotterycmf=np.cumsum(np.array(scatter[i])*c)

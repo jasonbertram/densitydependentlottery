@@ -36,15 +36,40 @@ plt.ylim([0,1])
 
 T=100000
 totaltime=200
-b=np.array([5.,5.])
-c=np.array([1.,2.])
-d=np.array([0.1,0.1])
+s=0.5
+b=np.array([1.,1.*(1+s)])
+c=np.array([1.,1.])
+d=np.array([.1,.1])
 
 n=np.array([90000.,100.])
 nhist=[n];
 for t in range(totaltime):
     U=T-sum(n)
     n=n+deltnplus(b*n*U/T,c,U)-d*n
+    nhist.append(list(n))
+    
+nhist=np.array(nhist)
+
+plt.plot(nhist[:,1])
+
+plt.figure()
+plt.plot(np.sum(nhist,1))
+
+plt.ylim([0,T])
+
+plt.figure()
+plt.plot(map(np.log,nhist[:,1]))
+
+print (nhist[11,1]-nhist[10,1])/nhist[10,1]
+
+
+
+
+n=np.array([90000.,100.])
+nhist=[n];
+for t in range(totaltime):
+    U=T-sum(n)
+    n=n+np.sum(deltnplussim(b*n*U/T,c,U),0)-d*n
     nhist.append(list(n))
     
 nhist=np.array(nhist)
