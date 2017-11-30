@@ -35,13 +35,26 @@ plt.ylim([0,1])
 #==========================================================
 
 T=100000
-totaltime=200
-s=0.5
-b=np.array([1.,1.*(1+s)])
+totaltime=100
+b=np.array([5.,5.])
 c=np.array([1.,1.])
-d=np.array([.1,.1])
+d=np.array([1.,1.])
+n0=np.array([49000.,100.])
 
-n=np.array([90000.,100.])
+n=n0;
+nhist=[n];
+for t in range(totaltime/2):
+    U=T-sum(n)
+    n=n+deltnplus(b*n*U/T,c,U)-d*n
+    nhist.append(list(n))
+
+#plt.plot(np.sum(nhist,1))
+n0=np.array(n)
+print n0 #equilibrium
+
+s=0.4
+d=np.array([1.,1.*(1-s)])
+n=n0;
 nhist=[n];
 for t in range(totaltime):
     U=T-sum(n)
@@ -49,32 +62,37 @@ for t in range(totaltime):
     nhist.append(list(n))
     
 nhist=np.array(nhist)
+Nhist=np.sum(nhist,1)
+print "b absolute: ", nhist[1,1]/nhist[0,1]-1
+print "b relative: ", nhist[1,1]/nhist[0,1]*Nhist[0]/Nhist[1]-1
+print "N change: ", Nhist[-1]/Nhist[0]
 
-plt.plot(nhist[:,1])
-
-plt.figure()
-plt.plot(np.sum(nhist,1))
-
-plt.ylim([0,T])
-
-plt.figure()
-plt.plot(map(np.log,nhist[:,1]))
-
-print (nhist[11,1]-nhist[10,1])/nhist[10,1]
+plt.plot(nhist[:,1]/Nhist)
+#plt.plot(Nhist)
 
 
-
-
-n=np.array([90000.,100.])
+d=np.array([1.,1.])
+c=np.array([1.,2.01])
+n=n0;
 nhist=[n];
 for t in range(totaltime):
     U=T-sum(n)
-    n=n+np.sum(deltnplussim(b*n*U/T,c,U),0)-d*n
+    n=n+deltnplus(b*n*U/T,c,U)-d*n
     nhist.append(list(n))
     
 nhist=np.array(nhist)
+Nhist=np.sum(nhist,1)
+print nhist[1,1]/nhist[0,1]-1
+print nhist[1,1]/nhist[0,1]*Nhist[0]/Nhist[1]-1
 
-plt.plot(nhist[:,1])
+plt.plot(nhist[:,1]/Nhist)
+#plt.plot(Nhist)
 
-plt.figure()
-plt.plot(np.sum(nhist,1))
+
+
+#plt.figure()
+#plt.plot(map(np.log,nhist[:,1]))
+
+#plt.figure()
+#plt.plot(np.sum(nhist,1))
+#plt.ylim([0,T])
