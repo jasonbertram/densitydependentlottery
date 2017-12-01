@@ -13,7 +13,7 @@ from scipy.integrate import odeint
 #==========================================================
 
 r=[1,1];
-s=0.1
+s=0.3
 K=[1e5,1e5*(1+s)];
 
 x=np.linspace(0,20/s,1000)
@@ -30,6 +30,9 @@ solrel=odeint(g,1/K[0],x)
 plt.plot(x,solK[:,1]/(solK[:,0]+solK[:,1]))
 plt.plot(x,solrel)
 plt.ylim([0,1])
+
+s=np.linspace(0,0.9,100)
+plt.plot(s,s/(1-s)-s)
 
 #lottery model
 #==========================================================
