@@ -38,8 +38,8 @@ plt.plot(s,s/(1-s)-s)
 #==========================================================
 
 T=100000
-totaltime=100
-b=np.array([5.,5.])
+totaltime=80
+b=np.array([3.,3.])
 c=np.array([1.,1.])
 d=np.array([1.,1.])
 n0=np.array([49000.,100.])
@@ -70,12 +70,16 @@ print "b absolute: ", nhist[1,1]/nhist[0,1]-1
 print "b relative: ", nhist[1,1]/nhist[0,1]*Nhist[0]/Nhist[1]-1
 print "N change: ", Nhist[-1]/Nhist[0]
 
-plt.plot(nhist[:,1]/Nhist)
-#plt.plot(Nhist)
+
+fig1,ax1=plt.subplots()
+ax1.plot(nhist[:,1]/Nhist)
+
+fig2,ax2=plt.subplots()
+ax2.plot(Nhist)
 
 
 d=np.array([1.,1.])
-c=np.array([1.,2.01])
+c=np.array([1.,3.])
 n=n0;
 nhist=[n];
 for t in range(totaltime):
@@ -88,8 +92,8 @@ Nhist=np.sum(nhist,1)
 print nhist[1,1]/nhist[0,1]-1
 print nhist[1,1]/nhist[0,1]*Nhist[0]/Nhist[1]-1
 
-plt.plot(nhist[:,1]/Nhist)
-#plt.plot(Nhist)
+ax1.plot(nhist[:,1]/Nhist)
+ax2.plot(Nhist)
 
 
 
