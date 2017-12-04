@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{31}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -192,6 +192,11 @@ David Tilman.
 David Tilman.
 \newblock Competition and biodiversity in spatially structured habitats.
 \newblock \emph{Ecology}, 75\penalty0 (1):\penalty0 2--16, 1994.
+
+\bibitem[Wagner(2010)]{wagner_2010}
+G{\"u}nter~P Wagner.
+\newblock The measurement theory of fitness.
+\newblock \emph{Evolution}, 64\penalty0 (5):\penalty0 1358--1376, 2010.
 
 \bibitem[Yi and Dean(2013)]{yi_2013}
 Xiao Yi and Antony~M Dean.
