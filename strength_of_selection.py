@@ -12,7 +12,7 @@ from scipy.integrate import odeint
 #SS figure
 #========================================================
 
-fig1,ax1=plt.subplots(figsize=[4,4])
+fig1,ax1=plt.subplots(figsize=[5,4])
 
 s=np.linspace(0,0.5,100)
 ax1.plot(s,1/(1-s),'k',linewidth=2)
@@ -21,10 +21,12 @@ ax1.set_ylim([1,2])
 ax1.set_xlabel(r"$\epsilon$",fontsize=20)
 ax1.set_ylabel(r"$s_{\rm final}/s_{\rm initial}$",fontsize=20)
 
+ax1.xaxis.set_label_coords(0.5, -0.09)
+ax1.yaxis.set_label_coords(-0.1, 0.5)
+
 plt.tight_layout()
 
-
-plt.savefig('/home/jbertram/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
+plt.savefig('/home/jason/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
 
 #Logistic model
 #==========================================================
