@@ -1,23 +1,9 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Aerts(1999)]{aerts_1999}
-Rien Aerts.
-\newblock Interspecific competition in natural plant communities: mechanisms,
-  trade-offs and plant-soil feedbacks.
-\newblock \emph{Journal of Experimental Botany}, 50\penalty0 (330):\penalty0
-  29--37, 1999.
-
-\bibitem[Anderson(1971)]{anderson_1971}
-Wyatt~W Anderson.
-\newblock Genetic equilibrium and population growth under density-regulated
-  selection.
-\newblock \emph{The American Naturalist}, 105\penalty0 (946):\penalty0
-  489--498, 1971.
 
 \bibitem[Arenbaev(1977)]{arenbaev_1977}
 NK~Arenbaev.
@@ -55,22 +41,34 @@ Benjamin~M. Bolker and Stephen~W. Pacala.
   1999.
 \newblock \doi{10.1086/303199}.
 
+\bibitem[Chesson(1983)]{chesson_1983}
+Peter~L. Chesson.
+\newblock \emph{Coexistence of Competitors in a Stochastic Environment: The
+  Storage Effect}, pages 188--198.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1983.
+\newblock ISBN 978-3-642-87893-0.
+
 \bibitem[Chesson and Warner(1981)]{chesson_1981}
 Peter~L Chesson and Robert~R Warner.
 \newblock Environmental variability promotes coexistence in lottery competitive
   systems.
 \newblock \emph{American Naturalist}, pages 923--943, 1981.
 
+\bibitem[Christiansen(2004)]{christiansen_2004}
+F~Christiansen.
+\newblock Density dependent selection.
+\newblock In \emph{Evolution of Population Biology: Modern Synthesis}, pages
+  139--155. Cambridge University Press, 2004.
+
 \bibitem[Crow et~al.(1970)Crow, Kimura, et~al.]{crow_1970}
 James~F Crow, Motoo Kimura, et~al.
 \newblock An introduction to population genetics theory.
 \newblock \emph{An introduction to population genetics theory.}, 1970.
 
-\bibitem[Davis et~al.(1998)Davis, Wrage, and Reich]{davis_1998}
-Mark~A Davis, Keith~J Wrage, and Peter~B Reich.
-\newblock Competition between tree seedlings and herbaceous vegetation: support
-  for a theory of resource supply and demand.
-\newblock \emph{Journal of Ecology}, 86\penalty0 (4):\penalty0 652--661, 1998.
+\bibitem[Diekmann et~al.(2004)]{diekmann_2004}
+Odo Diekmann et~al.
+\newblock A beginner's guide to adaptive dynamics.
+\newblock \emph{Banach Center Publications}, 63:\penalty0 47--86, 2004.
 
 \bibitem[Doebeli et~al.(2017)Doebeli, Ispolatov, and Simon]{doebeli_2017}
 Michael Doebeli, Yaroslav Ispolatov, and Burt Simon.
@@ -142,13 +140,11 @@ Timothy Prout.
   density-dependent population growth.
 \newblock \emph{Evol. Biol}, 13:\penalty0 1--68, 1980.
 
-\bibitem[Ram et~al.(2016)Ram, Dellus-Gur, Bibi, Obolski, Berman, and
-  Hadany]{ram_2016}
-Yoav Ram, Eynat Dellus-Gur, Maayan Bibi, Uri Obolski, Judith Berman, and Lilach
-  Hadany.
-\newblock Predicting microbial relative growth in a mixed culture from growth
-  curve data.
-\newblock \emph{bioRxiv 10.1101/022640}, 2016.
+\bibitem[Roughgarden(1979)]{roughgarden_1979}
+Jonathan Roughgarden.
+\newblock Theory of population genetics and evolutionary ecology: an
+  introduction.
+\newblock 1979.
 
 \bibitem[Sale(1977)]{sale_77}
 Peter~F. Sale.
@@ -156,11 +152,12 @@ Peter~F. Sale.
 \newblock \emph{The American Naturalist}, 111\penalty0 (978):\penalty0
   337--359, 1977.
 
-\bibitem[Shmida and Ellner(1984)]{shmida_84}
-A.~Shmida and S.~Ellner.
-\newblock Coexistence of plant species with similar niches.
-\newblock \emph{Vegetatio}, 58\penalty0 (1):\penalty0 29--55, 1984.
-\newblock ISSN 00423106.
+\bibitem[Smouse(1976)]{smouse_1976}
+Peter~E Smouse.
+\newblock The implications of density-dependent population growth for
+  frequency-and density-dependent selection.
+\newblock \emph{The American Naturalist}, 110\penalty0 (975):\penalty0
+  849--860, 1976.
 
 \bibitem[Svardal et~al.(2015)Svardal, Rueffler, and Hermisson]{svardal_2015}
 Hannes Svardal, Claus Rueffler, and Joachim Hermisson.
@@ -169,20 +166,6 @@ Hannes Svardal, Claus Rueffler, and Joachim Hermisson.
 \newblock \emph{Theoretical Population Biology}, 99:\penalty0 76 -- 97, 2015.
 \newblock ISSN 0040-5809.
 \newblock \doi{http://dx.doi.org/10.1016/j.tpb.2014.11.002}.
-
-\bibitem[Tilman(2007)]{tilman_2007}
-D~Tilman.
-\newblock Resource competition and plant traits: a response to craine et al.
-  2005.
-\newblock \emph{Journal of Ecology}, 95\penalty0 (2):\penalty0 231--234, 2007.
-\newblock ISSN 1365-2745.
-\newblock \doi{10.1111/j.1365-2745.2007.01201.x}.
-\newblock URL \url{http://dx.doi.org/10.1111/j.1365-2745.2007.01201.x}.
-
-\bibitem[Tilman(1982)]{tilman_1982}
-David Tilman.
-\newblock \emph{Resource competition and community structure}.
-\newblock Princeton University Press, 1982.
 
 \bibitem[Tilman(1994)]{tilman_94}
 David Tilman.
@@ -193,12 +176,5 @@ David Tilman.
 G{\"u}nter~P Wagner.
 \newblock The measurement theory of fitness.
 \newblock \emph{Evolution}, 64\penalty0 (5):\penalty0 1358--1376, 2010.
-
-\bibitem[Yi and Dean(2013)]{yi_2013}
-Xiao Yi and Antony~M Dean.
-\newblock Bounded population sizes, fluctuating selection and the tempo and
-  mode of coexistence.
-\newblock \emph{Proceedings of the National Academy of Sciences}, 110\penalty0
-  (42):\penalty0 16945--16950, 2013.
 
 \end{thebibliography}
