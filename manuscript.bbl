@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -40,6 +40,12 @@ Benjamin~M. Bolker and Stephen~W. Pacala.
 \newblock \emph{The American Naturalist}, 153\penalty0 (6):\penalty0 575--602,
   1999.
 \newblock \doi{10.1086/303199}.
+
+\bibitem[Chesson(2000)]{chesson_2000}
+Peter Chesson.
+\newblock Mechanisms of maintenance of species diversity.
+\newblock \emph{Annual review of Ecology and Systematics}, 31\penalty0
+  (1):\penalty0 343--366, 2000.
 
 \bibitem[Chesson(1983)]{chesson_1983}
 Peter~L. Chesson.
@@ -92,6 +98,12 @@ Douglas~E Gill.
 James~P Grover.
 \newblock \emph{Resource competition}, volume~19.
 \newblock Springer Science \& Business Media, 1997.
+
+\bibitem[Joshi et~al.(2001)Joshi, Prasad, and Shakarad]{joshi_2001}
+Amitabh Joshi, NG~Prasad, and Mallikarjun Shakarad.
+\newblock K-selection, $\alpha$-selection, effectiveness, and tolerance in
+  competition: density-dependent selection revisited.
+\newblock \emph{Journal of Genetics}, 80\penalty0 (2):\penalty0 63--75, 2001.
 
 \bibitem[Kostitzin(1939)]{kostitzin_1939}
 Vladimir~Alexandrovitch Kostitzin.
