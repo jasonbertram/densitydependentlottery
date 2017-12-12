@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -40,12 +40,6 @@ Benjamin~M. Bolker and Stephen~W. Pacala.
 \newblock \emph{The American Naturalist}, 153\penalty0 (6):\penalty0 575--602,
   1999.
 \newblock \doi{10.1086/303199}.
-
-\bibitem[Chesson(2000)]{chesson_2000}
-Peter Chesson.
-\newblock Mechanisms of maintenance of species diversity.
-\newblock \emph{Annual review of Ecology and Systematics}, 31\penalty0
-  (1):\penalty0 343--366, 2000.
 
 \bibitem[Chesson(1983)]{chesson_1983}
 Peter~L. Chesson.
@@ -105,6 +99,11 @@ Amitabh Joshi, NG~Prasad, and Mallikarjun Shakarad.
   competition: density-dependent selection revisited.
 \newblock \emph{Journal of Genetics}, 80\penalty0 (2):\penalty0 63--75, 2001.
 
+\bibitem[Kimura and Crow(1969)]{kimura1969natural}
+Motoo Kimura and James~F Crow.
+\newblock Natural selection and gene substitution.
+\newblock \emph{Genetics Research}, 13\penalty0 (2):\penalty0 127--141, 1969.
+
 \bibitem[Kostitzin(1939)]{kostitzin_1939}
 Vladimir~Alexandrovitch Kostitzin.
 \newblock \emph{Mathematical biology}.
@@ -146,6 +145,12 @@ Johan~AJ Metz, Roger~M Nisbet, and Stefan~AH Geritz.
 \newblock \emph{Trends in Ecology \& Evolution}, 7\penalty0 (6):\penalty0
   198--202, 1992.
 
+\bibitem[Nei(1971)]{nei1971fertility}
+Masatoshi Nei.
+\newblock Fertility excess necessary for gene substitution in regulated
+  populations.
+\newblock \emph{Genetics}, 68\penalty0 (1):\penalty0 169, 1971.
+
 \bibitem[Prout(1980)]{prout_1980}
 Timothy Prout.
 \newblock Some relationships between density-independent selection and
@@ -183,6 +188,11 @@ Hannes Svardal, Claus Rueffler, and Joachim Hermisson.
 David Tilman.
 \newblock Competition and biodiversity in spatially structured habitats.
 \newblock \emph{Ecology}, 75\penalty0 (1):\penalty0 2--16, 1994.
+
+\bibitem[Turner and Williamson(1968)]{turner1968population}
+JRG Turner and MH~Williamson.
+\newblock Population size, natural selection and the genetic load.
+\newblock \emph{Nature}, 218\penalty0 (5142):\penalty0 700--700, 1968.
 
 \bibitem[Wagner(2010)]{wagner_2010}
 G{\"u}nter~P Wagner.
