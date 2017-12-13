@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-\begin{thebibliography}{29}
-=======
 \begin{thebibliography}{32}
->>>>>>> 0b39f3da86481906d6d5aad93be3957abc5326c8
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
