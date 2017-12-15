@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{37}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -33,6 +33,12 @@ Alan~O. Bergland, Emily~L. Behrman, Katherine~R. O'Brien, Paul~S. Schmidt, and
 \newblock \emph{PLOS Genetics}, 10\penalty0 (11):\penalty0 1--19, 11 2014.
 \newblock \doi{10.1371/journal.pgen.1004775}.
 
+\bibitem[Bertram et~al.(2017)Bertram, Gomez, and Masel]{bertram2017predicting}
+Jason Bertram, Kevin Gomez, and Joanna Masel.
+\newblock Predicting patterns of long-term adaptation and extinction with
+  population genetics.
+\newblock \emph{Evolution}, 71\penalty0 (2):\penalty0 204--214, 2017.
+
 \bibitem[Bolker and Pacala(1999)]{bolker_99}
 Benjamin~M. Bolker and Stephen~W. Pacala.
 \newblock Spatial moment equations for plant competition: Understanding spatial
@@ -40,6 +46,12 @@ Benjamin~M. Bolker and Stephen~W. Pacala.
 \newblock \emph{The American Naturalist}, 153\penalty0 (6):\penalty0 575--602,
   1999.
 \newblock \doi{10.1086/303199}.
+
+\bibitem[Burger and Lynch(1995)]{burger1995evolution}
+Reinhard Burger and Michael Lynch.
+\newblock Evolution and extinction in a changing environment: a
+  quantitative-genetic analysis.
+\newblock \emph{Evolution}, pages 151--163, 1995.
 
 \bibitem[Chesson(1983)]{chesson_1983}
 Peter~L. Chesson.
@@ -65,10 +77,10 @@ James~F Crow, Motoo Kimura, et~al.
 \newblock An introduction to population genetics theory.
 \newblock \emph{An introduction to population genetics theory.}, 1970.
 
-\bibitem[Diekmann et~al.(2004)]{diekmann_2004}
-Odo Diekmann et~al.
-\newblock A beginner's guide to adaptive dynamics.
-\newblock \emph{Banach Center Publications}, 63:\penalty0 47--86, 2004.
+\bibitem[Dieckmann and Ferri{\`e}re(2004)]{dieckmann2004adaptive}
+Ulf Dieckmann and R{\'e}gis Ferri{\`e}re.
+\newblock Adaptive dynamics and evolving biodiversity.
+\newblock 2004.
 
 \bibitem[Doebeli et~al.(2017)Doebeli, Ispolatov, and Simon]{doebeli_2017}
 Michael Doebeli, Yaroslav Ispolatov, and Burt Simon.
@@ -77,10 +89,27 @@ Michael Doebeli, Yaroslav Ispolatov, and Burt Simon.
 \newblock ISSN 2050-084X.
 \newblock \doi{10.7554/eLife.23804}.
 
+\bibitem[Engen et~al.(2013)Engen, Lande, Sæther, Gardner, and Day]{engen_2013}
+Steinar Engen, Russell Lande, Bernt-Erik Sæther, Associate Editor:~Andy
+  Gardner, and Editor:~Troy Day.
+\newblock A quantitative genetic model of <em>r</em>- and <em>k</em>-selection
+  in a fluctuating population.
+\newblock \emph{The American Naturalist}, 181\penalty0 (6):\penalty0 725--736,
+  2013.
+\newblock ISSN 00030147, 15375323.
+\newblock URL \url{http://www.jstor.org/stable/10.1086/670257}.
+
 \bibitem[Ewens(2004)]{ewens_2004}
 Warren~J Ewens.
 \newblock \emph{Mathematical Population Genetics 1: Theoretical Introduction}.
 \newblock Springer Science \& Business Media, 2004.
+
+\bibitem[Ferriere and Legendre(2013)]{ferriere2013eco}
+Regis Ferriere and St{\'e}phane Legendre.
+\newblock Eco-evolutionary feedbacks, adaptive dynamics and evolutionary rescue
+  theory.
+\newblock \emph{Phil. Trans. R. Soc. B}, 368\penalty0 (1610):\penalty0
+  20120081, 2013.
 
 \bibitem[Gill(1974)]{gill_1974}
 Douglas~E Gill.
@@ -188,6 +217,14 @@ Hannes Svardal, Claus Rueffler, and Joachim Hermisson.
 David Tilman.
 \newblock Competition and biodiversity in spatially structured habitats.
 \newblock \emph{Ecology}, 75\penalty0 (1):\penalty0 2--16, 1994.
+
+\bibitem[Travis et~al.(2013)Travis, Leips, and Rodd]{travis_2013}
+Joseph Travis, Jeff Leips, and F.~Helen Rodd.
+\newblock Evolution in population parameters: Density-dependent selection or
+  density-dependent fitness?
+\newblock \emph{The American Naturalist}, 181\penalty0 (S1):\penalty0 S9--S20,
+  2013.
+\newblock \doi{10.1086/669970}.
 
 \bibitem[Turner and Williamson(1968)]{turner1968population}
 JRG Turner and MH~Williamson.
