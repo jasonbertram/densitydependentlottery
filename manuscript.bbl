@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -143,6 +143,12 @@ Richard Levins and David Culver.
 \newblock Regional coexistence of species and competition between rare species.
 \newblock \emph{Proceedings of the National Academy of Sciences}, 68\penalty0
   (6):\penalty0 1246--1248, 1971.
+
+\bibitem[MacArthur(1962)]{macarthur_1962}
+Robert~H MacArthur.
+\newblock Some generalized theorems of natural selection.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 48\penalty0
+  (11):\penalty0 1893--1897, 1962.
 
 \bibitem[MacArthur and Wilson(1967)]{macarthur_1967}
 Robert~H MacArthur and Edward~O Wilson.
