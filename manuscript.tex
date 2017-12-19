@@ -1,14 +1,11 @@
-\documentclass[11pt]{article}
-\usepackage[sc]{mathpazo}
-\usepackage{amsmath,pifont}
+\documentclass[12pt]{article}
+\usepackage{amsmath}
 \usepackage{fullpage}
-\usepackage[authoryear,sectionbib,sort]{natbib}
-\linespread{1.7}
-\usepackage[utf8]{inputenc}
+\usepackage[authoryear,round]{natbib}
 \usepackage{lineno}
-
 \usepackage{graphicx} 
-\usepackage{tabularx,setspace}
+\usepackage{setspace}
+\doublespacing
 
 \title{Density-dependent selection and the limits of relative fitness}
 \author{Jason Bertram $^{1,\ast}$ \\ 
@@ -24,39 +21,50 @@ Joanna Masel $^{1}$}
 
 \noindent{}$\ast$ Corresponding author; e-mail: jbertram@email.arizona.edu.
 
-
-\bigskip
-
-%\textit{Manuscript elements}: 
-
 \bigskip
 
 \textit{Keywords}: Lottery model, competitive Lotka-Volterra, $r$/$K$-selection, interference competition, $R^*$ theory, eco-evo.
 
 \bigskip
 
+\textit{Author contributions}: JB and JM conceptualized the manuscript. JB did the formal analysis. JB wrote the manuscript with review and editing from JM. 
+
+\bigskip
+
+\textit{Running title}: Density-dependence and relative fitness
+
+\bigskip
+
+\textit{Acknowledgments}: We thank Peter Chesson and Joachim Hermisson for many constructive comments on an earlier and quite different version of this manuscript. This work was financially supported by the National Science Foundation (DEB-1348262) and the John Templeton Foundation (60814).
 
 \linenumbers{}
 \modulolinenumbers[1]
 
 \newpage{}
 
-\section*{Abstract}
 
-It it common in evolutionary biology to describe selection in terms of constant relative fitness values. Yet the population ecological basis of relative fitness is poorly understood, and the classical ecology literature on selection in crowded populations seems to be incompatible with widely-used relative fitness models such as the Wright-Fisher. Here we develop a generalization of the Wright-Fisher model in which density depends dynamically on the demographic rates of the types present. We then explore the population ecology of relative fitness using this model as a reference point. Our model makes a clear distinction between density-dependent selection and selection-dependent density, both of which are necessary for relative fitness to break down. These two effects are confounded in the classical literature on density-dependent selection, where density-regulating traits are almost always subject to density-dependent selection. We show that the presence of both effects is necessary but not sufficient: even strong selection on a density-regulating trait that is subject to density-dependent selection can conform to the classical relative fitness description almost exactly. We argue that selection-independent density is ecologically plausible for many species given the prevalence of reproductive excesses, an important aspect of selection omitted in many ecological models. Our model also offers a possible alternative to relative fitness when the latter is untenable, as is likely the case far from demographic equilibrium. 
+\section*{\centering \huge  Density-dependent selection and the limits of relative fitness}
+
+\bigskip
+
+\subsection*{Abstract}
+
+Selection is commonly described in terms of relative fitness. Yet much of the ecological theory of selection in density-regulated populations seems to be incompatible with widely-used, constant-density relative fitness models such as the Wright-Fisher. Here we analyze the population ecological limits of relative fitness using a novel generalization of the Wright-Fisher model in which population density depends dynamically on the demographic rates of the types present. Our model clearly distinguishes between density-dependent selection and selection-dependent density. These two effects are confounded in many standard models of density-regulated population growth. Both effects are necessary, in combination with strong selection, for relative fitness to break down in populations close to demographic equilibrium.  Remarkably, both effects are not sufficient: we show that strong selection on a density-regulating trait that is subject to density-dependent selection can conform to the relative fitness description almost exactly. We reiterate the prevalence of reproductive excesses, an important aspect of selection omitted in many population growth models, which implies that even strong selection need not affect density in many species. Our model also offers a possible alternative to relative fitness when the latter is untenable, as is likely the case far from demographic equilibrium. 
+
+\noindent (195 words)
+
+
 
 \newpage{}
 
 
 \section*{Introduction}
 
-There are a variety of different measures of fitness. Some widely used examples in evolutionary ecology are expected lifetime reproductive ratio $R_0$, intrinsic population growth rate $r$, saturation population density (often labeled ``$K$'') \citep{benton_2000}, and invasion fitness \citep{metz_1992}. In addition, ``relative fitness'' is the standard in much of evolutionary biology, particularly evolutionary genetics, where attention is generally restricted to relative genotypic proportions \cite[pp. 468]{barton_2007}. The variety of fitness measures is not problematic in itself, because different measures may be more useful in different circumstances. But it should be clear how the measure being used is connected to the processes of birth and death which govern population biology \citep{metcalf_2007,doebeli_2017}. While such a connection is fairly clear for absolute fitness measures like $r$, relative fitness seems largely divorced from population biology. It has even been proposed that relative fitness be justified from measure theory, abandoning population biology altogether \citep{wagner_2010}.
+There are a variety of different measures of fitness. Some widely used examples in evolutionary ecology are expected lifetime reproductive ratio $R_0$, intrinsic population growth rate $r$, saturation population density (often labeled ``$K$'') \citep{benton_2000}, and invasion fitness \citep{metz_1992}. In addition, ``relative fitness'' is the standard in much of evolutionary biology, particularly evolutionary genetics, where attention is generally restricted to relative genotypic proportions \cite[pp. 468]{barton_2007}. The variety of fitness measures is not problematic in itself, because different measures may be more useful in different circumstances. But it should be clear how the measure being used is connected to the processes of birth and death which govern population biology \citep{metcalf_2007,doebeli_2017}. While such a connection is fairly clear for absolute fitness measures like $r$, relative fitness seems largely divorced from population biology. It has even been proposed that relative fitness be justified from measure theory, abandoning population biology altogether \citep{wagner_2010}. Given the ubiquitous use of relative fitness, it is important that we understand its population ecological basis, both to clarify its domain of applicability, and as part of the broader challenge of synthesizing ecology and evolution.
 
-In age-structured, sexual populations, selection cannot in general be represented in terms of type-specific relative-fitness constants \citep[Chap. 4]{charlesworth_1994}. Constant relative fitness values are then be justified as a linear approximation \cite[pp. 277]{ewens_2004} \citep[Chap. 4]{charlesworth_1994}. Provided that selection is sufficiently weak and stable over time, this linear approximation is close to exact. Yet strong, temporally-variable selection occurs widely in nature and the lab, including in wild \textit{Drosophila}, where population density varies by orders of magnitude each seasonal cycle \citep{messer_2016,bergland_14}. Nevertheless, relative fitness models are the foundation for much of the evolutionary genetics literature, and are still widely used without considering the ``linear approximation'' restriction or the broader lack of integration with population ecology \citep{mallet_2012}. 
+Constant relative fitness values can be justified as a linear approximation \cite[pp. 277]{ewens_2004} \citep[Chap. 4]{charlesworth_1994} which is close to exact provided that selection is sufficiently weak and stable over time. Yet strong, temporally-variable selection occurs widely in nature and the lab, including in wild \textit{Drosophila}, where population density varies by orders of magnitude each seasonal cycle \citep{messer_2016,bergland_14}. The question is whether relative fitness can be used when selection is not vanishingly weak. In age-structured populations that reproduce by outcrossing, selection cannot in general be represented in terms of type-specific relative-fitness constants unless selection is weak \citep[Chap. 4]{charlesworth_1994}. We will therefore restrict our attention to asexual haploids with little or no age structure, where the relative fitness description may be valid even if selection is strong. This simplification also makes it easier to grasp the population ecological underpinnings of selection, as opposed to the role of mating systems or complex changes in age structure.
 
-The aim of this maniscript is to explore the population ecological limits of relative fitness models in the context of density-dependent selection. We set aside age structure and mating because, as noted above, relative fitness models break down in the presence of these complications. In asexual haploids with no age structure, even strong selection need not invalidate constant relative fitness. By studying this simpler case, we get a clearer picture of what is needed for relative fitness to break down.
-
-With these simplifications, the basis of relative fitness is straightforward in uncrowded populations: it simply represents differences in intrinsic population growth rate. In discrete time, the change in frequency of type $i$ is $\Delta p_i=\left(\frac{W_i}{\overline{W}}-1\right) p_i$, where $W_i$ is the intrinsic absolute growth factor of type $i$, and $\overline{W}=\sum_i W_i p_i$ is the population mean $W$. Here we can rescale $W$ however we please and replace it with ``relative fitness'' $w$ without affecting the ratio $\frac{W_i}{\overline{W}}=\frac{w_i}{\overline{w}}$. In continuous time, the canonical selection equation is $\frac{d p_i}{dt}=(r_i-\overline{r}) p_i$, where $W$ is replaced by the intrinsic exponential growth rate $r$ \citep[pp. 26]{crow_1970}. If there are two types present, a wildtype and a mutant for instance, then the continuous time canonical selection equation can be written as
+The basis of relative fitness is straightforward in the absence of crowding: it simply represents differences in intrinsic population growth rate. In discrete time, the change in frequency of type $i$ is $\Delta p_i=\left(\frac{W_i}{\overline{W}}-1\right) p_i$, where $W_i$ is the intrinsic absolute growth factor of type $i$, and $\overline{W}=\sum_i W_i p_i$ is the population mean $W$. Here we can rescale $W$ however we please and replace it with ``relative fitness'' $w$ without affecting the ratio $\frac{W_i}{\overline{W}}=\frac{w_i}{\overline{w}}$. In continuous time, the canonical selection equation is $\frac{d p_i}{dt}=(r_i-\overline{r}) p_i$, where $W$ is replaced by the intrinsic exponential growth rate $r$ \citep[pp. 26]{crow_1970}. If there are two types present, a wildtype and a mutant for instance, then the continuous time canonical selection equation can be written as
 \begin{equation}
 \frac{d p_i}{dt}=s p_i(1-p_i), \label{eq:canonical}
 \end{equation}
@@ -226,24 +234,20 @@ Summarizing the three traits in the variable-density lottery model: (i) $c$-sele
 
 To briefly review: based on a diploid, bi-allelic variant of the logistic model, the $r$/$K$ scheme proposed a dichotomy between $r$-selection (uncrowded) and $K$-selection (crowded) \citep{macarthur_1962}, with the latter taken to mean selection for greater saturation density \citep{gill_1974}. A more general Lotka-Volterra model introduces the inter-type $\alpha_{ij}$ competition coefficients, with selection on these termed ``$\alpha$-selection'' \citep{gill_1974,joshi_2001}. Setting aside $r$ which confers no selective advantage at equilibrium, we are left with $K$ and $\alpha$, which both behave like $\delta$ in that they are density-dependent and cause density to change over a sweep (although $N$ only dips temporarily during an $\alpha$-sweep). Thus, strong selection is sufficient for relative fitness to break down in the classical view of density-dependent selection. Indeed, in the defense of Eq.~\eqref{eq:canonical} given by \cite{kimura1969natural}, it was necessary to assume that $s$ will be a few percent at most. 
 
-Our variable-density lottery model shows that it is not simply a lack of ecological realism that underlies the incompatibility of relative fitness with the classical view of density-dependent selection. Rather, in many population growth models, only one life-history stage is represented, and the competitive effects resulting from crowding appear as a reduction in absolute fitness that only depends on the type densities at this life-history stage (e.g. the $n_i^2$ and $n_in_j$ terms in the Lotka Volterra equation). As noted in the introduction, this precludes selection concentrated at a fragile juvenile stage as a result of a reproductive excess \citep{chesson_1983,turner1968population,kimura1969natural,nei1971fertility}. 
+Our variable-density lottery model shows that it is not simply a lack of ecological realism that underlies the contrast between relative fitness with the classical view of density-dependent selection. Rather, in many population growth models, only one life-history stage is represented, and the competitive effects resulting from crowding appear as a reduction in absolute fitness that only depends on the type densities at this life-history stage (e.g. the $n_i^2$ and $n_in_j$ terms in the Lotka Volterra equation). As noted in the introduction, this precludes selection concentrated at a fragile juvenile stage as a result of a reproductive excess \citep{chesson_1983,turner1968population,kimura1969natural,nei1971fertility}. 
 
-Reproductive excesses appear in the variable-density lottery model when the number of propagules is greater than the number of available territories. Then only $\approx 1/L$ of the juveniles contesting available territories survive to adulthood. Unlike the role of adult density $n_i$ in single-life-stage models, it is the propagule densities $l_i$ that represent the crowding that drives competition (a ``critical age-group'' \cite[pp. 54]{charlesworth_1994}). In general, reproductive excesses will tend to produce strictly-relative lottery-type contests in which fitter types grow at the expense of others by preferentially filling the available adult ``slots''. The number of slots can remain fixed or change independently of selection at the juvenile stage. By ignoring reproductive excesses, single life-stage models are biased to have total population density be sensitive to ongoing selection. In this respect, the Wright-Fisher model and similar viability selection heuristics actually capture an important ecological process.
+Reproductive excesses appear in the variable-density lottery model when the number of propagules is greater than the number of available territories. Then only $\approx 1/L$ of the juveniles contesting available territories survive to adulthood. Unlike the role of adult density $n_i$ in single-life-stage models, it is the propagule densities $l_i$ that represent the crowding that drives competition (a ``critical age-group''; \citealt[pp. 54]{charlesworth_1994}). In general, reproductive excesses will tend to produce strictly-relative lottery-type contests in which fitter types grow at the expense of others by preferentially filling the available adult ``slots''. The number of slots can remain fixed or change independently of selection at the juvenile stage. By ignoring reproductive excesses, single life-stage models are biased to have total population density be sensitive to ongoing selection. In this respect, the Wright-Fisher model and similar viability selection heuristics actually capture an important ecological process.
 
 We now turn to the breakdown of Eq.~\eqref{eq:canonical}. We first discuss the problem shown in Fig.~\ref{fig:strengthofselection}, which occurs when strong selection changes population density and is also density-dependent. In the variable-density lottery, this occurs if and only if types differ in more than one trait. The $c$ and $d$ traits represent the two distinct directions in which density and selection interact: selection may depend on density, and density may depend on selection \citep{prout_1980}. The combination is necessary to pose a threat to Eq.~\eqref{eq:canonical}. However, the $b$ trait remarkably demonstrates that the combination is not sufficient, since the density-dependence of $b$-selection disappears over equilibrium-to-equilibrium $b$-sweeps. Thus, the simple linear models that have become standard in discussions of density-dependent selection \citep{roughgarden_1979,christiansen_2004,mallet_2012,travis_2013} actually represent a complicated form of the interaction between density and selection, and their parameters confound the underlying issues. 
 
 While this is a conceptual reason to be wary of the classical density-dependent selection models, it is not clear how we should expect the trait variation in nature to align. For instance, should we expect mutations to generally affect $b$, $c$ and $d$ independently of each other, or pleiotropically such that $\delta$-like selection is prevalent? In the case of well-mixed indirect exploitation competition for consumable resources, the $R^*$ rule  suggests that $\delta$-like selection will be prevalent. However, for many populations consumable resources are not well-mixed. Spatial localization of consumable resources (e.g. due to restricted movement of  nutrients through soils) will tend to create a territorial situation similar to the lottery model, where resource competition only occurs locally and both it any interference competition are subsumed into the competitive ability $c$, which does not affect $N$. 
 
-Relative fitness models truly break down when $N$ is far from equilibrium and selection is density-dependent (as seems likely \citep{travis_2013}). For example, wild \textit{Drosophila} experience large seasonal boom-bust cycles in population density coupled to strong selection that drives large swings in allele frequency \citep{bergland_14}. In this case there is no choice but to abandon relative fitness, and our model provides one potentially suitable option. Whether or not our density-dependent lottery model is a good description of \textit{Drosophila} ecology, the close connection between our model and Wright-Fisher is useful, because drift in our model should behave broadly similarly. Thus, our model it should provide a useful starting point for analyzing evolution in this and other far-from-equilibrium situations. 
+Relative fitness models truly break down when $N$ is far from equilibrium and selection is density-dependent (as seems likely; \citealt{travis_2013}). For example, wild \textit{Drosophila} experience large seasonal boom-bust cycles in population density coupled to strong selection that drives large swings in allele frequency \citep{bergland_14}. In this case there is no choice but to abandon relative fitness, and our model provides one potentially suitable option. Whether or not our density-dependent lottery model is a good description of \textit{Drosophila} ecology, the close connection between our model and Wright-Fisher is useful, because drift in our model should behave broadly similarly. Thus, our model it should provide a useful starting point for analyzing evolution in this and other far-from-equilibrium situations. 
 
 Another issue with the constant-$N$ relative fitness description of selection is that it precludes consideration of longer-term aspects of the interplay between evolution and ecology such as population extinction. A variety of approaches have been developed for dealing with these issues in quantitative genetics \citep{burger1995evolution,engen_2013}, population genetics \citep{bertram2017predicting} and adaptive dynamics \citep{ferriere2013eco,dieckmann2004adaptive}. Although density-dependent selection is  pertinent to these longer-term issues \citep{travis_2013}, our focus here has been the description of the time-dependent process by which selection changes allele frequencies. This is particularly critical for making sense of evolution at the genetic level, for which we now have abundant data.
 
 
-\section*{Acknowledgments}
-
-We thank Peter Chesson and Joachim Hermisson for many constructive comments on an earlier and quite different version of this manuscript. This work was financially supported by the National Science Foundation (DEB-1348262) and the John Templeton Foundation (60814).
-
-\bibliographystyle{plainnat}
+\bibliographystyle{abbrvnat}
 \bibliography{reference} 
 
 \section*{Appendix A: Poisson approximation}
