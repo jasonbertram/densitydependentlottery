@@ -1,4 +1,4 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -52,6 +52,11 @@ Reinhard Burger and Michael Lynch.
 \newblock Evolution and extinction in a changing environment: a
   quantitative-genetic analysis.
 \newblock \emph{Evolution}, pages 151--163, 1995.
+
+\bibitem[Charlesworth(1994)]{charlesworth_1994}
+Brian Charlesworth.
+\newblock \emph{Evolution in age-structured populations}, volume~2.
+\newblock Cambridge University Press Cambridge, 1994.
 
 \bibitem[Chesson(1983)]{chesson_1983}
 Peter~L. Chesson.
