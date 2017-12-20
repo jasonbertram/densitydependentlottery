@@ -92,7 +92,7 @@ Equipped with this new model, we turn to the evaluation of Eq.~\eqref{eq:canonic
 
 \subsection*{Assumptions and definitions} 
 
-We assume that reproductively mature individuals (``adults'') each require their own territory to survive and reproduce (Fig.~\ref{fig:lottery}). All territories are identical, and the total number of territories is $T$. Time advances in discrete iterations, each representing the time from birth to reproductive maturity. In a given iteration, the number of adults of the $i$'th type will be denoted by $n_i$, the total number of adults by $N=\sum_i n_i$, and the number of unoccupied territories by $U=T-N$. We assume that the $n_i$ are large enough that stochastic fluctuations in the $n_i$ (``drift'') can be ignored (with $T$ also assumed large to allow for small type densities $n_i/T$).
+We assume that reproductively mature individuals (``adults'') each require their own territory to survive and reproduce. All territories are identical, and the total number of territories is $T$. Time advances in discrete iterations, each representing the time from birth to reproductive maturity. In a given iteration, the number of adults of the $i$'th type will be denoted by $n_i$, the total number of adults by $N=\sum_i n_i$, and the number of unoccupied territories by $U=T-N$. We assume that the $n_i$ are large enough that stochastic fluctuations in the $n_i$ (``drift'') can be ignored (with $T$ also assumed large to allow for small type densities $n_i/T$).
 
 \begin{figure}
 \centering
@@ -114,6 +114,7 @@ Finally, we assume that adult mortality only occurs in adults present at the sta
 \begin{equation}
 \Delta n_i=\Delta_+ n_i-d_i n_i. \label{eq:delttot}
 \end{equation}
+Fig.~2 illustrates one iteration of the model. 
 
 \subsection*{Connection to the Wright-Fisher and classic lottery models}
 
@@ -273,7 +274,7 @@ The second component, $\Delta_r n_i$, accounts for territories where a single fo
 \begin{equation}
 \Delta_r n_i = m_i e^{-l_i}(1-e^{-(L-l_i)})\left\langle  \frac{c_i}{c_i +\sum_{j\neq i} c_j x_j } \right\rangle_{\tilde{p}},  \label{eq:deltr}
 \end{equation}
-where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagule abundances $x_j$ \textit{after} dispersal, in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
+where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagule abundances $x_j$ \textit{after} dispersal (the significance of evaluating after dispersal should become clearer below), in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
 
 Our approximation is to replace $x_j$ with its mean in the last term in Eq.~\eqref{eq:deltr},
 \begin{equation}
@@ -281,13 +282,11 @@ Our approximation is to replace $x_j$ with its mean in the last term in Eq.~\eqr
 \end{equation}
 Below we justify this replacement by arguing that the standard deviation $\sigma_{\tilde{p}}(\sum_{j\neq i} c_j x_j)$ (with respect to $\tilde{p}$), is much smaller than $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$. If this standard deviation is small as claimed, then the mean value gives an accurate representation of the values taken by $\sum_{j\neq i} c_j x_j$ across territories. 
 
-We first calculate $\langle x_j \rangle_{\tilde{p}}$. Let $X=\sum_j x_j$ denote the total number of propagules in a territory and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ denote the vector of non-focal abundances, so that $p({\mathbf x_i})=p_1(x_1)\ldots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\ldots p_G(x_G)$. Then, $\tilde{p}$ can be written as
-\begin{align}
-\tilde{p}({\mathbf x_i})&=p({\mathbf x_i}|X\geq 2,x_i=1)\nonumber\\
-&=\frac{P({\mathbf x_i},X\geq 2|x_i=1)}{P(X\geq 2)}\nonumber\\
-&=\frac{1}{1-(1+L)e^{-L}}\sum_{X=2}^{\infty} P(X) p({\mathbf x_i}|X_i=X-1),
-\end{align}
-and so
+We first calculate $\langle x_j \rangle_{\tilde{p}}$. Let $X=\sum_j x_j$ denote the total number of propagules in a territory and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ denote the vector of non-focal abundances, so that $p({\mathbf x_i})=p_1(x_1)\cdots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\cdots p_G(x_G)$. Then, $\tilde{p}$ is the probability distribution for ${\mathbf x_i}$ conditional on the territory having received $X\geq 2$ propagules, where $X_i=X-1$ of them are nonfocal, giving
+\begin{equation}
+\tilde{p}({\mathbf x_i})=\sum_{X=2}^{\infty}P(X|X\geq 2) p({\mathbf x_i}|X_i=X-1)
+\end{equation}
+Here the total number of propagules $X$ follows a Poisson distribution with mean $L$, and we have $P(X|X\geq 2)=P(X)/P(X\geq 2)=P(X)/(1-(1+L)e^{-L})$. Thus,
 \begin{align}
 \langle x_j \rangle_{\tilde{p}}&=\sum_{\mathbf x_i} \tilde{p}({\mathbf x_i})x_j\nonumber\\
 &=\frac{1}{1-(1+L)e^{-L}}\sum_{X=2}^{\infty} P(X) \sum_{\mathbf x_i} p({\mathbf x_i}|X_i=X-1)x_j.
@@ -301,7 +300,7 @@ The inner sum over ${\mathbf x_i}$ is the mean number of propagules of a given n
 \end{align}
 where the last line follows from $\sum_{X=2}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)X-\sum_{X=1}^{\infty}P(X)$.
 
-Having evaluated the mean propagule numbers, we now evaluate the variance in propagule numbers to check that the mean value replacement in Eq.~\eqref{eq:meanfieldr} is justified. This is complicated because the $x_j$ are not independent with respect to $\tilde{p}$. Here we use the following approximation to give some insight into the magnitude of these fluctuations and also the nature of the correlations between the $x_j$. We replace $\tilde{p}$ with $\tilde{q}$, defined as the ${\mathbf x_i}$ Poisson dispersal probabilities conditional on $X_i\geq1$ (which are independent). The distinction between $\tilde{p}$ with $\tilde{q}$ will be discussed further below. The $\tilde{q}$ approximation gives $\langle x_j \rangle_{\tilde{q}}=\langle x_j \rangle_p/C=l_j/C$, where $C=1-e^{-(L-l_i)}$, with variances and covariances given by
+Having evaluated the mean propagule numbers, we now evaluate the variance in propagule numbers to check that the mean value replacement in Eq.~\eqref{eq:meanfieldr} is justified. This is complicated because the $x_j$ are not independent with respect to $\tilde{p}$. Here we use the following approximation to give some insight into the magnitude of these fluctuations and also the nature of the correlations between the $x_j$. We replace $\tilde{p}$ with $\tilde{q}$, defined as the ${\mathbf x_i}$ Poisson dispersal probabilities conditional on $X_i\geq1$ (which are independent). The distinction between $\tilde{p}$ and $\tilde{q}$ will be discussed further below. The $\tilde{q}$ approximation gives $\langle x_j \rangle_{\tilde{q}}=\langle x_j \rangle_p/C=l_j/C$, where $C=1-e^{-(L-l_i)}$, with variances and covariances given by
 \begin{align}
 \sigma_{\tilde{q}}^2(x_j)&=\langle x_j^2 \rangle_{\tilde{q}}-\langle x_j \rangle_{\tilde{q}}^2\nonumber\\
 &=\frac{1}{C}\langle x_j^2 \rangle_p-\frac{l_j^2}{C^2}\nonumber \\
@@ -312,10 +311,10 @@ and
 \begin{align}
 \sigma_{\tilde{q}}(x_j,x_k)&=\langle x_j x_k \rangle_{\tilde{q}}-\langle x_j \rangle_{\tilde{q}}\langle x_k \rangle_{\tilde{q}}\nonumber\\
 &=\frac{1}{C}\langle x_j x_k \rangle_p-\frac{l_jl_k}{C^2}\nonumber\\
-&=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right)\qquad\qquad $j\neq k$. \label{eq:covr}
+&=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right)\qquad\qquad j\neq k. \label{eq:covr}
 \end{align}
 
-The exact distribution $\tilde{p}$ assumes that exactly one of the  propagules present in a given site after dispersal belongs to the focal type, whereas $\tilde{q}$ assumes that there is a focal propagule present before non-focal dispersal commences. As a result, $\tilde{q}$ predicts that the mean propagule density is greater than $L$ (in sites with only one focal propagule is present) when the focal type is rare and the propagule density is high. This is erroneous, because the mean number of propagules in every site is $L$ by definition. Specifically, if $L-l_i \approx L\gg 1$, then the mean propagule density predicted by $\tilde{q}$ is approximately $L+1$. The discrepancy causes rare invaders to have an intrinsic rarity disadvantage (territorial contests under $\tilde{q}$ are more intense than they should be). In contrast, Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $\sum_{j\neq i}\langle x_j \rangle_{\tilde{p}}\approx L-1$ nonfocal propagules because $\tilde{p}$ accounts for potentially large negative covariances between the $x_j$ ``after dispersal''. By neglecting the latter covariances, $\tilde{q}$ overestimates the fluctuations in $\sum_{j\neq i} c_j x_j$; thus $\tilde{q}$ gives an upper bound on the fluctuations. The discrepancy between $\tilde{q}$ and $\tilde{p}$ will be largest when $L$ is of order $1$ or smaller, because then the propagule assumed to already be present under $\tilde{q}$ is comparable to, or greater than, the entire propagule density. 
+The distinction between $\tilde{p}$ and $\tilde{q}$ is closely connected to why the exact dispersal probability distribution $\tilde{p}$ is evaluated \textit{after} dispersal. $\tilde{p}$ assumes that one of the propagules present in a given territory after dispersal belongs to the focal type (a statement about propagule identity), whereas $\tilde{q}$ assumes that there is a focal propagule present before non-focal dispersal commences (a statement about propagule presence). As a result, if the focal type is rare, $\tilde{q}$ predicts that the mean propagule density is $L+1$ in territories with one focal propagule. This is erroneous, because the mean number of propagules per territory when lottery competition commences is $L$, regardless of whether a focal propagule happens to be present. The discrepancy causes rare invaders evaluated under $\tilde{q}$ to have an intrinsic rarity disadvantage, which is absurd (i.e. even if $b$, $c$ and $d$ are identical, $\tilde{q}$ predicts that a rare type will decline in frequency). By contrast, Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $\sum_{j\neq i}\langle x_j \rangle_{\tilde{p}}\approx L-1$ nonfocal propagules because $\tilde{p}$ accounts for potentially large negative covariances between the $x_j$ ``after dispersal''. By neglecting the latter covariances, $\tilde{q}$ overestimates the fluctuations in $\sum_{j\neq i} c_j x_j$; thus $\tilde{q}$ gives an upper bound on the fluctuations. The discrepancy between $\tilde{q}$ and $\tilde{p}$ will be largest when $L$ is of order $1$ or smaller, because then the propagule assumed to already be present under $\tilde{q}$ is comparable to, or greater than, the entire propagule density. 
 
 Decomposing the variance in $\sum_{j\neq i} c_j x_j$,
 \begin{equation}
@@ -362,10 +361,11 @@ For nonfocal types $j\neq i$, we have
 &=\sum_{X}P(X|x_i\geq 2)\sum_{x_i} p(x_i|x_i\geq 2,X) \sum_{\mathbf x_i} x_j p(\mathbf x_i|X_i=X-x_i)\nonumber\\
 &=\sum_{X}P(X|x_i\geq 2)\sum_{x_i}p(x_i|x_i\geq 2,X) \frac{l_j(X-x_i)}{L-l_i} \nonumber\\
 &=\frac{l_j}{L-l_i}\left[\sum_{X}P(X|x_i\geq 2)X - \sum_{x_i}p(x_i|x_i\geq 2) x_i \right]\nonumber\\
-&=\frac{l_j}{L-l_i}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right). 
+&=\frac{l_j}{L-l_i}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right).
 \end{align}
+In going from line 3 to 4, we used the same logic used to evaluate the inner sum in Eq.~\eqref{eq:raremonster1}, and in going from 4 to 5 we have separately evaluated the contributions from the $X$ and $x_i$ terms in the numerator.
 
-To calculate the relative fluctuations in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\hat{p}$ is approximated by $\hat{q}$, defined as the ${\mathbf x}$ dispersal probabilities in a territory conditional on $x_i>2$ (that is, treating the $x_j$ as indepenent). All covariances between nonfocal types are now zero, so that $\sigma_{\hat{q}}^2(\sum c_j x_j)=\sum c_j^2 \sigma_{\hat{q}}^2(x_j)$, where $\sigma_{\hat{q}}^2(x_j)=l_j$ for $j\neq i$, and  
+To calculate the standard deviation in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\hat{p}$ is approximated by $\hat{q}$, defined as the ${\mathbf x}$ dispersal probabilities in a territory conditional on $x_i>2$ (that is, treating the $x_j$ as independent). All covariances between nonfocal types are now zero, so that $\sigma_{\hat{q}}^2(\sum c_j x_j)=\sum c_j^2 \sigma_{\hat{q}}^2(x_j)$, where $\sigma_{\hat{q}}^2(x_j)=l_j$ for $j\neq i$, and  
 \begin{equation}
 \sigma_{\hat{q}}^2(x_i)=\frac{l_i}{D}\left(l_i+1-e^{-l_i}-\frac{l_i}{D}\left(1-e^{-l_i}\right)^2\right),
 \end{equation}
