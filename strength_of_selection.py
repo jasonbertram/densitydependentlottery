@@ -12,7 +12,7 @@ from scipy.integrate import odeint
 #SS figure
 #========================================================
 
-fig1,ax1=plt.subplots(figsize=[5,4])
+fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
 
 s=np.linspace(0,0.5,100)
 ax1.plot(s,1/(1-s),'k',linewidth=2)
@@ -23,32 +23,36 @@ ax1.set_ylabel(r"$s_{\rm final}/s_{\rm initial}$",fontsize=20)
 
 ax1.xaxis.set_label_coords(0.5, -0.09)
 ax1.yaxis.set_label_coords(-0.1, 0.5)
+ax1.annotate(r'$(a)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
 
-plt.tight_layout()
+b=np.array([1,1]);
+s=0.2
+d=np.array([1e-4,1e-4*(1-s)]);
 
-plt.savefig('/home/jason/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
-
-#Logistic model
-#==========================================================
-
-r=[1,1];
-s=0.3
-K=[1e5,1e5*(1+s)];
-
-x=np.linspace(0,20/s,1000)
+x=np.linspace(0,10/s,1000)
 
 def f(n,t):
-    return [r[0]*(1-(n[0]+n[1])/K[0])*n[0],r[0]*(1-(n[0]+n[1])/K[1])*n[1]]
+    return (b-d*sum(n))*n
     
 def g(p,t):
     return s*p*(1-p)
 
-solK=odeint(f,[K[0]-1.,1.],x)
-solrel=odeint(g,1/K[0],x)
+solK=odeint(f,[0.99*b[0]/d[0],0.01*b[0]/d[0]],x)
+solrel=odeint(g,0.01,x)
 
-plt.plot(x,solK[:,1]/(solK[:,0]+solK[:,1]))
-plt.plot(x,solrel)
-plt.ylim([0,1])
+ax2.plot(x,solK[:,1]/(solK[:,0]+solK[:,1]),'k--', linewidth=2,label=r"$\epsilon=0.2$ (Eq. 11)")
+ax2.plot(x,solrel,'k', linewidth=2,label=r"Canonical (Eq. 1)")
+ax2.legend(loc='lower right',prop={'size':11})
+ax2.annotate(r'$(b)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
+ax2.set_xticklabels([])
+ax2.set_xlabel("Time",fontsize=14)
+ax2.set_yticklabels(['0','','','','','1'])
+ax2.set_ylabel("Frequency",fontsize=14)
+
+plt.tight_layout()
+
+plt.savefig('/home/jbertram/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
+
 
 #lottery model
 #==========================================================

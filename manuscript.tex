@@ -197,9 +197,9 @@ The constant-$N$ behavior of $c$-selection arises from the role of $c$ as a trai
 
 \subsection*{Density-regulating traits and the threat of strong selection}
 
-In the previous section we showed that selection and the regulation of population density can be independent even if population growth is density-regulated. Nevertheless, selection and density regulation \textit{are} intimately connected in widely used models of population growth, as well as for the $b$ and $d$ traits in our variable-density lottery model.
+In the previous section we showed that $c$-selection and the regulation of population density are independent even though population growth is density-regulated in our variable-density lottery. Nevertheless, selection and density regulation \textit{are} intimately connected in widely used models of population growth, as well as for the lottery $b$ and $d$ traits.
 
-To see why this potentially poses a threat to relative fitness, consider the simple birth-death model \cite[pp. 20]{kostitzin_1939} \citep{travis_2013} 
+To see why this connection potentially poses a threat to relative fitness, consider the simple birth-death model \cite[pp. 20]{kostitzin_1939} \citep{travis_2013} 
 \begin{equation}
 \frac{d n_i}{dt}=(b_i -\delta_iN) n_i \label{eq:simplebirthdeath}
 \end{equation}
@@ -211,23 +211,29 @@ Starting from a monomorphic population, the frequency of a $\delta_i\rightarrow 
 \end{equation}
 The selection coefficient $s=\epsilon \delta_i N$ thus depends on density (compare with Model III in \cite{kimura1969natural}). On the other hand, the frequency of a $b_i\rightarrow b_i(1+\epsilon)$ variant will exactly obey Eq.~\eqref{eq:canonical} with $s=\epsilon b_i$, independent of density.
 
-In practice the density dependence in Eq.~\eqref{eq:Ndependentsweep} only matters if $N$ changes substantially during a sweep. This can easily occur if a population is far from demographic equilibrium (we return to this scenario in the Discussion). However, even if $N$ has reached equilibrium, it will change substantially over a $\delta$-sweep if selection on $\delta$ is sufficiently strong. To quantify this effect, we need to account for how much $N$ changes as a result of a $\delta$-sweep beginning and ending in equilibrium \citep{kimura1969natural}; from Eq.~\eqref{eq:simplebirthdeath} we have an increase from $N_{\rm initial}=b_i/\delta_i$ to $N_{\rm final}=b_i/\delta_i(1-\epsilon)=N_{\rm initial}/(1-\epsilon)$. The corresponding selection coefficient increases from $s_{\rm initial}= \epsilon b_i$ to $s_{\rm final}=s_{\rm initial}/(1-\epsilon)$. Consequently, substantial deviations from Eq.~\eqref{eq:canonical} occur with proportional changes to $\delta$ of order $\epsilon=0.1$ and upwards (Fig.~\ref{fig:strengthofselection}). 
+In practice the density dependence in Eq.~\eqref{eq:Ndependentsweep} only matters if $N$ changes substantially during a sweep. This can easily occur if a population is far from demographic equilibrium (we return to this scenario in the Discussion). However, even if $N$ has reached equilibrium, it will change substantially over a $\delta$-sweep if selection on $\delta$ is sufficiently strong. To quantify this effect, we need to account for how much $N$ changes as a result of a $\delta$-sweep beginning and ending in equilibrium \citep{kimura1969natural}; from Eq.~\eqref{eq:simplebirthdeath} we have an increase from $N_{\rm initial}=b_i/\delta_i$ to $N_{\rm final}=b_i/\delta_i(1-\epsilon)=N_{\rm initial}/(1-\epsilon)$. The corresponding selection coefficient increases from $s_{\rm initial}= \epsilon b_i$ to $s_{\rm final}=s_{\rm initial}/(1-\epsilon)$. Consequently, noticeable deviations from Eq.~\eqref{eq:canonical} occur with proportional changes to $\delta$ of order $\epsilon=0.2$ and upwards i.e. selection must be quite strong (Fig.~\ref{fig:strengthofselection}). 
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{strengthofselection.pdf}
-\caption{\label{fig:strengthofselection} Proportional change in the selection coefficient over a ``$K$-like'' sweep for a type that experiences proportionally $1-\epsilon$ fewer deaths induced by crowding. The population is in demographic equilibrium at the start and end of the sweep.}
+\caption{\label{fig:strengthofselection} (a) Proportional change in the selection coefficient over a ``$K$-like'' sweep for a type that experiences proportionally $1-\epsilon$ fewer deaths induced by crowding. The population is in demographic equilibrium at the start and end of the sweep. (b) Example equilibrium-to-equilibrium $\delta$-sweep (Eq.~\ref{eq:Ndependentsweep}) for $\epsilon=0.2$ showing a noticeable deviation from the canonical selection equation.}
 \end{figure}
 
 Let us now turn to selection on $b$ and $d$ in our lottery model. Recall that $m_i=b_i n_i U/T$, and so $L=M/U=\overline{b}N/T$ where $\overline{b}$ is the population mean $b$. Thus, from Eq.~\eqref{eq:masterequalc} we have
 \begin{equation}
 \Delta n_i = \left(\frac{b_i}{\overline{b}}\frac{1-e^{-\overline{b}N/T}}{N}(T-N)-d_i\right)n_i. \label{eq:bdensitydependence}
 \end{equation}
-It can be seen that the mortality $d$ is akin to the birth rate in Eq.~\eqref{eq:simplebirthdeath}, and so, while $d$ does affect density, selection on $d$ is density independent. Thus, $d$ sweeps follow the canonical relative fitness model exactly.
+It can be seen that the mortality $d$ is akin to the birth rate in Eq.~\eqref{eq:simplebirthdeath}, and so, while $d$ does affect density, selection on $d$ is density independent. Thus, $d$ sweeps follow the canonical relative fitness model exactly (Fig.~\ref{fig:DDS_lottery}).
 
 At first glance, $b$ in Eq.~\eqref{eq:bdensitydependence} appears to be analogous to the $\delta$ in Eq.~\eqref{eq:simplebirthdeath} because it regulates density and is multiplied by the density-dependent term $f(\overline{b},N)=\frac{1-e^{-\overline{b}N/T}}{N}(T-N)$. This term declines from $\overline{b}$ at low density to zero at high density and as a result, selection on $b$ is density-dependent. The source of this density-depedence is that the selective advantage from having greater $b$ depends on the number of territories being contested; if almost all are occupied, then there is little advantage to having a greater $b$.
 
 Nevertheless, the behavior of equilibrium-to-equilibrium $b$-sweeps are qualitatively different from the $\delta$ sweeps above. The reason is that $b$ regulates density by controlling how many unoccupied territories receive propagules. Thus, greater $b$ means more propagules contesting territories, but also more territories being contested. The net effect on $f(\overline{b},N)$ is precisely zero in equilibrium: in a single-type equilibrium we have $b_i/\overline{b}=1$ and so $f(\overline{b},N)=d_i$ exactly at the beginning and end of a pure $b$ sweep, even though the density $N$ increases. Strictly speaking there is some deviation in $f(N)$ from $d_i$ during the sweep, but this deviation is an order of magnitude smaller than for a $\delta$ sweep (the deviation due to a sweep with proportional effect $b_i\rightarrow b_i(1+\epsilon)$ is only of order $\epsilon^2$, whereas the analogous effect in Fig.~\ref{fig:strengthofselection} is of order $\epsilon$; see Appendix D for details). Since selection must already be quite strong for a $\delta$ sweep to threaten Eq.~\eqref{eq:canonical}, we conclude that $b$ sweeps also obey the canonical selection equation (to a close approximation). 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{DDS_lottery.pdf}
+\caption{\label{fig:DDS_lottery} The density-dependence of selection in our variable-density lottery plotted as the selection coefficient $(\Delta n_j-\Delta n_i)/n_j$ experienced by an adaptive variant $j$ present at the same frequency as a wildtype $i$. Here $b_i=1$, $d_i=0.5$ and $c_i=1$. For $b$-selection we set $b_j=b_i(1+\epsilon)$, and similarly for $c$ and $d$, with $\epsilon=0.1$. $d$-selection is density-independent, $b$-selection gets weaker with lower territorial availability, while $c$-selection initially increases with density as territorial contests become more important, but eventually also declines as  available territories become scarce. The equilibrium density for the $i$ type is $\approx 0.4$.}
+\end{figure}
 
 \section*{Discussion}
 
