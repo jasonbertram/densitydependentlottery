@@ -93,10 +93,10 @@ M.~Doebeli, Y.~Ispolatov, and B.~Simon.
 \newblock ISSN 2050-084X.
 \newblock \doi{10.7554/eLife.23804}.
 
-\bibitem[Engen et~al.(2013)Engen, Lande, Sæther, Gardner, and Day]{engen_2013}
-S.~Engen, R.~Lande, B.-E. Sæther, A.~E.~A. Gardner, and E.~T. Day.
-\newblock A quantitative genetic model of <em>r</em>- and <em>k</em>-selection
-  in a fluctuating population.
+\bibitem[Engen et~al.(2013)Engen, Lande, and Saether]{engen_2013}
+S.~Engen, R.~Lande, and B.-E. Saether.
+\newblock A quantitative genetic model of $r$- and $k$-selection in a
+  fluctuating population.
 \newblock \emph{The American Naturalist}, 181\penalty0 (6):\penalty0 725--736,
   2013.
 \newblock ISSN 00030147, 15375323.
@@ -162,7 +162,7 @@ R.~H. MacArthur and E.~O. Wilson.
 J.~Mallet.
 \newblock The struggle for existence. how the notion of carrying capacity, k,
   obscures the links between demography, darwinian evolution and speciation.
-\newblock 2012.
+\newblock \emph{Evol Ecol Res}, 14:\penalty0 627--665, 2012.
 
 \bibitem[Messer et~al.(2016)Messer, Ellner, and Hairston]{messer_2016}
 P.~W. Messer, S.~P. Ellner, and N.~G. Hairston.
