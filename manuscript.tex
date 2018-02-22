@@ -193,7 +193,7 @@ It is obvious from Eq.~\eqref{eq:LV} that selection can favor a superior competi
 
 By contrast, if one type in our density-dependent lottery model has a $c$ advantage but the types are otherwise identical (so that each type has the same saturation density), the density trajectories converge on the line of constant density equal to the saturation density (Fig.~\ref{fig:LVvslottery}b). Selection then occurs purely along this line, similarly to Fig.~\ref{fig:Ksel}b. This occurs because $c$ does not directly affect $N$: it only affects the relative likelihood for each type to win a contested territory, not whether a territory is contested in the first place (this can be seen formally in Eq.~\eqref{eq:Nmaster}). In other words, once the population reaches demographic equilibrium, it behaves indistinguishably from a constant-$N$ relative fitness model. While quite different from classical growth models like the Lotka-Volterra, this is all perfectly consistent with MacArthur's general argument. 
 
-The constant-$N$ behavior of $c$-selection arises from the role of $c$ as a trait determining relative competitive success in territorial contests. As such, this behavior is a result of a reproductive excesses Eq.~\eqref{eq:canonical}. By contrast, previous models of selection-independent density either used unusual models of competition \citep{kimura1969natural,nei1971fertility}, or made restrictive parameter choices in the Lotka-Volterra model (Appendix C; \citealt{smouse_1976,mallet_2012}). 
+The constant-$N$ behavior of $c$-selection arises from the role of $c$ as a trait determining relative competitive success in territorial contests. As such, this behavior is a result of a reproductive excesses. By contrast, previous models of selection-independent density either used unusual models of competition \citep{kimura1969natural,nei1971fertility}, or made restrictive parameter choices in the Lotka-Volterra model (Appendix C; \citealt{smouse_1976,mallet_2012}). 
 
 \subsection*{Density-regulating traits and the threat of strong selection}
 
@@ -257,9 +257,9 @@ Another issue with the constant-$N$ relative fitness description of selection is
 \bibliographystyle{abbrvnat}
 \bibliography{reference} 
 
-\section*{Appendix A: Poisson approximation}
+\section*{Appendix A: Poisson dispersal}
 
-For simplicity of presentation, we have assumed a Poisson distribution for the $x_i$ as our model of dispersal. Strictly speaking, the total number of $i$ propagules $\sum x_i$ (summed over unoccupied territories) is then no longer a constant $m_i$, but fluctuates between generations for a given mean $m_i$, which is more biologically realistic. Nevertheless, since we do not consider the random fluctuations in type abundances here, and for ease of comparison with the classic lottery model, we ignore the fluctuations in $m_i$. Instead we focus, on Poisson fluctuations in propagule composition in each territory. 
+For simplicity of presentation, we assume a Poisson distribution for the $x_i$ as our model of dispersal. Strictly speaking, the total number of $i$ propagules $\sum x_i$ (summed over unoccupied territories) is then no longer a constant $m_i$, but fluctuates between generations for a given mean $m_i$. Nevertheless, since we do not consider the random fluctuations in type abundances here, and for ease of comparison with the classic lottery model, we ignore the fluctuations in $m_i$. Instead we focus on Poisson fluctuations in propagule composition in each territory. 
 
 In the exact model of random dispersal, the counts of a type's propagules across unnocupied territories follows a multinomial distribution with dimension $U$, total number of trials equal to $m_i$, and equal probabilities $1/U$ for a propagule to land in a given territory. Thus, the $x_i$ in different territories are not independent random variables. However, for sufficiently large $U$ and $m_i$, this multinomial distribution for the $x_i$ across territories is closely approximated by a product of independent Poisson distributions for each territory, each with rate parameter $l_i$ \citep[Theorem 1]{arenbaev_1977}. Since we are ignoring finite population size effects, we effectively have $T\rightarrow \infty$, in which case $U$ can only be small enough to violate the Poisson approximation if there is vanishing population turnover, and then the dispersal distribution is irrelevant anyway. Likewise, in ignoring stochastic finite population size for the $n_i$, we have effectively already assumed that $m_i$ is large enough to justify the Poisson approximation (the error scales as $1/\sqrt{m_i}$; \citealt{arenbaev_1977}).
 
@@ -276,7 +276,7 @@ The first component, $\Delta_u n_i$, accounts for territories where only one foc
 
 \subsection*{Competition when rare}
 
-The second component, $\Delta_r n_i$, accounts for territories where a single focal propagule is present along with at least one non-focal propagule ($r$ stands for ``rare'') i.e. $x_i=1$ and $X_i\geq 1$ where $X_i=\sum_{j\neq i} x_j$ is the number of nonfocal propagules. The number of territories where this occurs is $Up_i(1)P(X_i\geq 1)=b_i n_i e^{-l_i}(1-e^{-(L-l_i)})$. Thus 
+The second component, $\Delta_r n_i$, accounts for territories where a single focal propagule is present along with at least one non-focal propagule ($r$ stands for ``rare'') i.e. $x_i=1$ and $X_i\geq 1$ where $X_i=\sum_{j\neq i} x_j$ is the number of nonfocal propagules. The number of territories where this occurs is $Up_i(1)P(X_i\geq 1)=m_i e^{-l_i}(1-e^{-(L-l_i)})$. Thus 
 \begin{equation}
 \Delta_r n_i = m_i e^{-l_i}(1-e^{-(L-l_i)})\left\langle  \frac{c_i}{c_i +\sum_{j\neq i} c_j x_j } \right\rangle_{\tilde{p}},  \label{eq:deltr}
 \end{equation}
