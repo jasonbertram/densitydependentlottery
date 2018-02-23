@@ -280,12 +280,37 @@ The second component, $\Delta_r n_i$, accounts for territories where a single fo
 \begin{equation}
 \Delta_r n_i = m_i e^{-l_i}(1-e^{-(L-l_i)})\left\langle  \frac{c_i}{c_i +\sum_{j\neq i} c_j x_j } \right\rangle_{\tilde{p}},  \label{eq:deltr}
 \end{equation}
-where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagule abundances $x_j$ \textit{after} dispersal (the significance of evaluating after dispersal should become clearer below), in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
+where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagule abundances $x_j$, in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
 
-Our approximation is to replace $x_j$ with its mean in the last term in Eq.~\eqref{eq:deltr},
+To evaluate the expectation in Eq. \eqref{eq:deltr}, we replace the $x_j$ with  ``effective'' mean values $\langle x_j\rangle_{\tilde{q}}$, to obtain the approximation
 \begin{equation}
-\left\langle\frac{c_i}{c_i +\sum_{j\neq i} c_j x_j}\right\rangle_{\tilde{p}}\approx \frac{c_i}{c_i +\sum_{j\neq i} c_j \langle x_j\rangle_{\tilde{p}}}.\label{eq:meanfieldr}
+\left\langle\frac{c_i}{c_i +\sum_{j\neq i} c_j x_j}\right\rangle_{\tilde{p}}\approx \frac{c_i}{c_i +\sum_{j\neq i} c_j \langle x_j\rangle_{\tilde{q}}}.\label{eq:meanfieldr}
 \end{equation}
+Note that the effective means $\langle x_j\rangle_{\tilde{q}}$ are taken with respect to a new distribution $\tilde{q}$. We will define $\tilde{q}$ below; first we explain the motivation for introducing it. Suppose that we use $\tilde{p}$ instead of $\tilde{q}$ in Eq. \eqref{eq:meanfieldr} ($x_j\rightarrow \langle x_j\rangle_{\tilde{p}}$). Moreover, suppose that the focal type is rare ($l_i\ll 1$), that the total propagule density is high $L\gg 1$, and that all types have identical $b$, $c$ and $d$. Then the mean total propagule density in territories with one focal propagule is $1+\sum_j \langle x_j\rangle_{\tilde{p}}\approx L+1$ and the right hand side of Eq. \eqref{eq:meanfieldr} is approximately $1/(L+1)$. Since $L$ is large and the focal type is rare, a negligible fraction of territories will be have a single uncontested focal propagule or more than one focal propagule. Thus, $1/(L+1)$ is the probability that a random focal propagule successfully wins a territory in the Eq. \eqref{eq:meanfieldr} approximation. On the other hand, virtually all nonfocal propagules 
+
+ territories
+
+\label{eq:meanfieldr} 
+
+ 
+
+ 
+Since $x_i$ and the $x_j$ are independent under $\tilde{p}$
+
+If the focal type is rare, the mean propagule density is $L+1$ in territories with one focal propagule. 
+
+
+The discrepancy causes rare invaders evaluated under $\tilde{q}$ to have an intrinsic rarity disadvantage, which is absurd (i.e. even if $b$, $c$ and $d$ are identical, $\tilde{q}$ predicts that a rare type will decline in frequency). 
+
+By contrast, Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $\sum_{j\neq i}\langle x_j \rangle_{\tilde{p}}\approx L-1$ nonfocal propagules because $\tilde{p}$ accounts for potentially large negative covariances between the $x_j$ ``after dispersal''. By neglecting the latter covariances, $\tilde{q}$ overestimates the fluctuations in $\sum_{j\neq i} c_j x_j$; thus $\tilde{q}$ gives an upper bound on the fluctuations. The discrepancy between $\tilde{q}$ and $\tilde{p}$ will be largest when $L$ is of order $1$ or smaller, because then the propagule assumed to already be present under $\tilde{q}$ is comparable to, or greater than, the entire propagule density.
+
+$\tilde{p}$
+
+
+The distinction between $\tilde{p}$ and $\tilde{q}$ is closely connected to why the exact dispersal probability distribution $\tilde{p}$ is evaluated \textit{after} dispersal. $\tilde{p}$ assumes that one of the propagules present in a given territory after dispersal belongs to the focal type (a statement about propagule identity), whereas $\tilde{q}$ assumes that there is a focal propagule present before non-focal dispersal commences (a statement about propagule presence). 
+
+
+
 Below we justify this replacement by arguing that the standard deviation $\sigma_{\tilde{p}}(\sum_{j\neq i} c_j x_j)$ (with respect to $\tilde{p}$), is much smaller than $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$. If this standard deviation is small as claimed, then the mean value gives an accurate representation of the values taken by $\sum_{j\neq i} c_j x_j$ across territories. 
 
 We first calculate $\langle x_j \rangle_{\tilde{p}}$. Let $X=\sum_j x_j$ denote the total number of propagules in a territory and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ denote the vector of non-focal abundances, so that $p({\mathbf x_i})=p_1(x_1)\cdots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\cdots p_G(x_G)$. Then, $\tilde{p}$ is the probability distribution for ${\mathbf x_i}$ conditional on the territory having received $X\geq 2$ propagules, where $X_i=X-1$ of them are nonfocal, giving
@@ -318,9 +343,7 @@ and
 \sigma_{\tilde{q}}(x_j,x_k)&=\langle x_j x_k \rangle_{\tilde{q}}-\langle x_j \rangle_{\tilde{q}}\langle x_k \rangle_{\tilde{q}}\nonumber\\
 &=\frac{1}{C}\langle x_j x_k \rangle_p-\frac{l_jl_k}{C^2}\nonumber\\
 &=\frac{l_j l_k}{C}\left(1-\frac{1}{C}\right)\qquad\qquad j\neq k. \label{eq:covr}
-\end{align}
-
-The distinction between $\tilde{p}$ and $\tilde{q}$ is closely connected to why the exact dispersal probability distribution $\tilde{p}$ is evaluated \textit{after} dispersal. $\tilde{p}$ assumes that one of the propagules present in a given territory after dispersal belongs to the focal type (a statement about propagule identity), whereas $\tilde{q}$ assumes that there is a focal propagule present before non-focal dispersal commences (a statement about propagule presence). As a result, if the focal type is rare, $\tilde{q}$ predicts that the mean propagule density is $L+1$ in territories with one focal propagule. This is erroneous, because the mean number of propagules per territory when lottery competition commences is $L$, regardless of whether a focal propagule happens to be present. The discrepancy causes rare invaders evaluated under $\tilde{q}$ to have an intrinsic rarity disadvantage, which is absurd (i.e. even if $b$, $c$ and $d$ are identical, $\tilde{q}$ predicts that a rare type will decline in frequency). By contrast, Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $\sum_{j\neq i}\langle x_j \rangle_{\tilde{p}}\approx L-1$ nonfocal propagules because $\tilde{p}$ accounts for potentially large negative covariances between the $x_j$ ``after dispersal''. By neglecting the latter covariances, $\tilde{q}$ overestimates the fluctuations in $\sum_{j\neq i} c_j x_j$; thus $\tilde{q}$ gives an upper bound on the fluctuations. The discrepancy between $\tilde{q}$ and $\tilde{p}$ will be largest when $L$ is of order $1$ or smaller, because then the propagule assumed to already be present under $\tilde{q}$ is comparable to, or greater than, the entire propagule density. 
+\end{align} 
 
 Decomposing the variance in $\sum_{j\neq i} c_j x_j$,
 \begin{equation}
