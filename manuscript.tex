@@ -265,34 +265,53 @@ In the exact model of random dispersal, the counts of a type's propagules across
 
 \section*{Appendix B: Derivation of growth equation}
 
-We separate the right hand side of Eq.~\eqref{eq:growthsumuncoupled} into three components $\Delta_+ n_i = \Delta_u n_i+\Delta_r n_i+\Delta_a n_i$ which vary in relative magnitude depending on the propagule densities $l_i$. Following the notation in the main text, the Poisson distributions for the $x_i$ (or some subset of the $x_i$) will be denoted $p$, and we use $P$ as a general shorthand for the probability of particular outcomes.
-
-\subsection*{Growth without competition}
-
-The first component, $\Delta_u n_i$, accounts for territories where only one focal propagule is present $x_i=1$ and $x_j=0$ for $j\neq i$ ($u$ stands for ``uncontested''). The proportion of territories where this occurs is $l_i e^{-L}$, and so 
+In this appendix we derive Eq.~\eqref{eq:master}. We start by separating the right hand side of Eq.~\eqref{eq:growthsumuncoupled} into three components
+\begin{equation}
+\Delta_+ n_i = \Delta_u n_i+\Delta_r n_i+\Delta_a n_i,
+\end{equation}
+which vary in relative magnitude depending on the propagule densities $l_i$. The first component, $\Delta_u n_i$, accounts for territories where only one focal propagule is present ($x_i=1$ and $x_j=0$ for $j\neq i$; $u$ stands for ``uncontested''). The proportion of territories where this occurs is $l_i e^{-L}$, and so 
 \begin{equation}
 \Delta_u n_i=Ul_i e^{-L}=m_i e^{-L}.
 \end{equation}
 
-\subsection*{Competition when rare}
-
-The second component, $\Delta_r n_i$, accounts for territories where a single focal propagule is present along with at least one non-focal propagule ($r$ stands for ``rare'') i.e. $x_i=1$ and $X_i\geq 1$ where $X_i=\sum_{j\neq i} x_j$ is the number of nonfocal propagules. The number of territories where this occurs is $Up_i(1)P(X_i\geq 1)=m_i e^{-l_i}(1-e^{-(L-l_i)})$. Thus 
+The second component, $\Delta_r n_i$, accounts for territories where a single focal propagule is present along with at least one non-focal propagule ($x_i=1$ and $X_i\geq 1$ where $X_i=\sum_{j\neq i} x_j$ is the number of nonfocal propagules; $r$ stands for ``rare''). The number of territories where this occurs is $Up_i(1)P(X_i\geq 1)=m_i e^{-l_i}(1-e^{-(L-l_i)})$. Thus 
 \begin{equation}
 \Delta_r n_i = m_i e^{-l_i}(1-e^{-(L-l_i)})\left\langle  \frac{c_i}{c_i +\sum_{j\neq i} c_j x_j } \right\rangle_{\tilde{p}},  \label{eq:deltr}
 \end{equation}
-where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to $\tilde{p}$, and $\tilde{p}$ is the probability distribution of nonfocal propagule abundances $x_j$, in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
+where $\langle \rangle_{\tilde{p}}$ denotes the expectation with respect to the probability distribution $\tilde{p}$ of nonfocal propagule abundances $x_j$, in those territories where exactly one focal propagule, and at least one non-focal propagule, landed. 
 
-To evaluate the expectation in Eq. \eqref{eq:deltr}, we replace the $x_j$ with  ``effective'' mean values $\langle x_j\rangle_{\tilde{q}}$, to obtain the approximation
+The final contribution, $\Delta_a n_i$, accounts for territories where two or more focal propagules are present ($x_i\geq 2$; $a$ stands for ``abundant"). Similar to Eq.~\eqref{eq:deltr}, we have 
+\begin{equation}
+\Delta_a n_i=U(1-(1+l_i)e^{-l_i})\left\langle \frac{c_i x_i}{\sum_j c_j x_j} \right\rangle_{\hat{p}}\label{eq:delta}
+\end{equation}
+where $\hat{p}$ is the probability distribution of both focal and nonfocal propagule abundances in those territories where at least two focal propagules landed. 
+
+To derive Eq.~\eqref{eq:master} we approximate the expectations in Eq.~\eqref{eq:deltr} and Eq.~\eqref{eq:delta} by replacing $x_i$ and the $x_j$ with ``effective'' mean values as follows 
 \begin{equation}
 \left\langle\frac{c_i}{c_i +\sum_{j\neq i} c_j x_j}\right\rangle_{\tilde{p}}\approx \frac{c_i}{c_i +\sum_{j\neq i} c_j \langle x_j\rangle_{\tilde{q}}}.\label{eq:meanfieldr}
 \end{equation}
-Note that the effective means $\langle x_j\rangle_{\tilde{q}}$ are taken with respect to a new distribution $\tilde{q}$. We will define $\tilde{q}$ below; first we explain the motivation for introducing it. Suppose that we use $\tilde{p}$ instead of $\tilde{q}$ in Eq. \eqref{eq:meanfieldr} ($x_j\rightarrow \langle x_j\rangle_{\tilde{p}}$). Moreover, suppose that the focal type is rare ($l_i\ll 1$), that the total propagule density is high $L\gg 1$, and that all types have identical $b$, $c$ and $d$. Then the mean total propagule density in territories with one focal propagule is $1+\sum_j \langle x_j\rangle_{\tilde{p}}\approx L+1$ and the right hand side of Eq. \eqref{eq:meanfieldr} is approximately $1/(L+1)$. Since $L$ is large and the focal type is rare, a negligible fraction of territories will be have a single uncontested focal propagule or more than one focal propagule. Thus, $1/(L+1)$ is the probability that a random focal propagule successfully wins a territory in the Eq. \eqref{eq:meanfieldr} approximation. On the other hand, virtually all nonfocal propagules 
+\begin{equation}
+\left\langle \frac{c_i x_i}{\sum_j c_j x_j} \right\rangle_{\hat{p}}\approx  \frac{c_i \langle x_i \rangle_{\hat{q}}}{\sum_j c_j \langle x_j\rangle_{\hat{q}}}.\label{eq:meanfielda}
+\end{equation}
+Here the effective means $\langle \rangle_{\tilde{q}}$ and $\langle \rangle_{\hat{q}}$ are taken with respect to new distributions $\tilde{q}$ and $\hat{q}$, respectively. In the following subsection we define $\tilde{q}$ and $\hat{q}$ and explain our reasoning for using these distributions to take the effective means. 
 
- territories
+\subsection*{The effective distributions $\tilde{q}$ and $\hat{q}$}
 
-\label{eq:meanfieldr} 
+When making approximations \eqref{eq:meanfieldr} and \eqref{eq:meanfielda}, we must ensure that the resulting growth equations are logically consistent. For instance, suppose that two identical types are present (same $b$, $c$ and $d$), one with low density $l_1\ll 1$, and the other with high density $l_2\approx L\gg 1$. Since $L$ is large, uncontested territories make a negligible contribution to growth. Consequently, the rare type grows almost entirely due to $\Delta_r n_1$, while the common type grows almost entirely due to $\Delta_a n_2$. The approximate per-capita growth rates $\Delta_r n_1/m_1 = \Delta_a n_2/m_2$ implied by \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must then be exactly equal for logical consistency. Even if \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} are individually excellent approximations, without this consistency condition the resulting approximate model implies that the rare type grows or declines purely by virtue of being rare, but we could select any rare subset of a single-type population and predict the same behavior --- a contradiction.
 
- 
+To be more concrete, suppose that we naively use $\tilde{p}$ and $\hat{p}$ instead of $\tilde{q}$ and $\hat{q}$ in Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanfielda}, respectively. Then, for the rare type, the mean total propagule density in territories were it is present is $\langle x_2\rangle_{\tilde{p}}+1\approx L+1$ (since the rare and common types disperse independently), and the right hand side of Eq. \eqref{eq:meanfieldr} is approximately $1/(L+1)$. 
+
+in the Eq. \eqref{eq:meanfieldr} approximation. 
+
+On the other hand, virtually all nonfocal propagules 
+
+
+$\tilde{q}$ and $\hat{q}$ are chosen to 
+
+$\langle x_j\rangle_{\tilde{q}}$, to obtain the approximation
+
+%Following the notation in the main text, the Poisson distributions for the $x_i$ (or some subset of the $x_i$) will be denoted $p$, and we use $P$ as a general shorthand for the probability of particular outcomes.
+
 
  
 Since $x_i$ and the $x_j$ are independent under $\tilde{p}$
@@ -300,7 +319,6 @@ Since $x_i$ and the $x_j$ are independent under $\tilde{p}$
 If the focal type is rare, the mean propagule density is $L+1$ in territories with one focal propagule. 
 
 
-The discrepancy causes rare invaders evaluated under $\tilde{q}$ to have an intrinsic rarity disadvantage, which is absurd (i.e. even if $b$, $c$ and $d$ are identical, $\tilde{q}$ predicts that a rare type will decline in frequency). 
 
 By contrast, Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $\sum_{j\neq i}\langle x_j \rangle_{\tilde{p}}\approx L-1$ nonfocal propagules because $\tilde{p}$ accounts for potentially large negative covariances between the $x_j$ ``after dispersal''. By neglecting the latter covariances, $\tilde{q}$ overestimates the fluctuations in $\sum_{j\neq i} c_j x_j$; thus $\tilde{q}$ gives an upper bound on the fluctuations. The discrepancy between $\tilde{q}$ and $\tilde{p}$ will be largest when $L$ is of order $1$ or smaller, because then the propagule assumed to already be present under $\tilde{q}$ is comparable to, or greater than, the entire propagule density.
 
@@ -366,16 +384,11 @@ where $R_i$ is defined in Eq.~\eqref{eq:Dr}.
 
 \subsection*{Competition when abundant}
 
-The final contribution, $\Delta_a n_i$, accounts for territories where two or more focal propagules are present ($a$ stands for ``abundant"). Similarly to Eq.~\eqref{eq:deltr}, we have 
-\begin{equation}
-\Delta_a n_i=U(1-(1+l_i)e^{l_i})\left\langle \frac{c_i x_i}{\sum_j c_j x_j} \right\rangle_{\hat{p}}\label{eq:delta}
-\end{equation}
-where $\hat{p}$ is the probability distribution of both focal and nonfocal propagule abundances \textit{after} dispersal in those territories where at least two focal propagules landed. 
+
 
 Again, we argue that the relative fluctuations in $\sum c_j x_j$ are much smaller than $1$ (with respect to $\hat{p}$), so that,
-\begin{equation}
-\left\langle \frac{c_i x_i}{\sum_j c_j x_j} \right\rangle_{\hat{p}}\approx  \frac{c_i \langle x_i \rangle_{\hat{p}}}{\sum_j c_j \langle x_j\rangle_{\hat{p}}}.\label{eq:meanfielda}
-\end{equation}
+
+
 Following a similar procedure as for $\Delta_r n_i$, where the vector of propagule abundances is denoted ${\mathbf x}$, the mean focal type abundance is, 
 \begin{align}
 \langle x_i \rangle_{\hat{p}}&=\sum_{\mathbf x} x_i p(\mathbf x|x_i\geq 2)\nonumber \\
