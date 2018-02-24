@@ -263,7 +263,7 @@ For simplicity of presentation, we assume a Poisson distribution for the $x_i$ a
 
 In the exact model of random dispersal, the counts of a type's propagules across unnocupied territories follows a multinomial distribution with dimension $U$, total number of trials equal to $m_i$, and equal probabilities $1/U$ for a propagule to land in a given territory. Thus, the $x_i$ in different territories are not independent random variables. However, for sufficiently large $U$ and $m_i$, this multinomial distribution for the $x_i$ across territories is closely approximated by a product of independent Poisson distributions for each territory, each with rate parameter $l_i$ \citep[Theorem 1]{arenbaev_1977}. Since we are ignoring finite population size effects, we effectively have $T\rightarrow \infty$, in which case $U$ can only be small enough to violate the Poisson approximation if there is vanishing population turnover, and then the dispersal distribution is irrelevant anyway. Likewise, in ignoring stochastic finite population size for the $n_i$, we have effectively already assumed that $m_i$ is large enough to justify the Poisson approximation (the error scales as $1/\sqrt{m_i}$; \citealt{arenbaev_1977}).
 
-\section*{Appendix B: Derivation of growth equation}
+\section*{Appendix B: Growth equation derivation}
 
 In this appendix we derive Eq.~\eqref{eq:master}. We start by separating the right hand side of Eq.~\eqref{eq:growthsumuncoupled} into three components
 \begin{equation}
@@ -297,35 +297,23 @@ Here the effective means $\langle \rangle_{\tilde{q}}$ and $\langle \rangle_{\ha
 
 \subsection*{The effective distributions $\tilde{q}$ and $\hat{q}$}
 
-When making approximations \eqref{eq:meanfieldr} and \eqref{eq:meanfielda}, we must ensure that the resulting growth equations are logically consistent. For instance, suppose that two identical types are present (same $b$, $c$ and $d$), one with low density $l_1\ll 1$, and the other with high density $l_2\approx L\gg 1$. Since $L$ is large, uncontested territories make a negligible contribution to growth. Consequently, the rare type grows almost entirely due to $\Delta_r n_1$, while the common type grows almost entirely due to $\Delta_a n_2$. The approximate per-capita growth rates $\Delta_r n_1/m_1 = \Delta_a n_2/m_2$ implied by \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must then be exactly equal for logical consistency. Even if \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} are individually excellent approximations, without this consistency condition the resulting approximate model implies that the rare type grows or declines purely by virtue of being rare, but we could select any rare subset of a single-type population and predict the same behavior --- a contradiction.
+The approximations \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must be done in a way that ensures consistency between rare and common types. Suppose that two identical types are present (same $b$, $c$ and $d$), one with low density $l_1\ll 1$, and the other with high density $l_2\approx L\gg 1$. Since $L$ is large, uncontested territories make a negligible contribution each type's growth. The rare type grows almost entirely due to $\Delta_r n_1$, while the common type grows almost entirely due to $\Delta_a n_2$. To ensure consistency, these identical types should retain constant relative frequencies, and so the approximate per-capita growth rates $\Delta_r n_1/m_1 = \Delta_a n_2/m_2$ implied by \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must be equal. 
 
-To be more concrete, suppose that we naively use $\tilde{p}$ and $\hat{p}$ instead of $\tilde{q}$ and $\hat{q}$ in Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanfielda}, respectively. Then, for the rare type, the mean total propagule density in territories were it is present is $\langle x_2\rangle_{\tilde{p}}+1\approx L+1$ (since the rare and common types disperse independently), and the right hand side of Eq. \eqref{eq:meanfieldr} is approximately $1/(L+1)$. 
+This consistency requirement is not automatically satisfied even if \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} are individually good approximations. Even small violations will cause one of the identical types to grow exponentially relative to the other. This pathological growth occurs purely because one group is treated as rare and the other as common. Since a single-type population can be divided into arbitrary rare and common subsets of identical types, and clearly not all such subsets can grow/decline, we have a logical contradiction.
 
-in the Eq. \eqref{eq:meanfieldr} approximation. 
+To be more concrete, suppose that we use $\tilde{p}$ and $\hat{p}$ in place of $\tilde{q}$ and $\hat{q}$ in Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanfielda}, respectively. Then, since $\langle x_2\rangle_{\tilde{p}}\approx L$, the right hand side of Eq. \eqref{eq:meanfieldr} is approximately $1/(L+1)$ for the rare type. And, since $l_1\ll 1$ and $L\gg 1$ in Eq.~\eqref{eq:deltr}, we have $\Delta_r n_1 \approx 1/(L+1)$. Similarly, for the common type, $\sum_j \langle x_j\rangle_{\hat{p}}\approx L$ in Eq. \eqref{eq:meanfielda}, and so $\Delta_a n_2 \approx 1/L$. Therefore, the consistency requirement is violated if we naively use the conditional distributions $\tilde{p}$ and $\hat{p}$ derived from the dispersal distribution $p$ to calculate the effective means. 
 
-On the other hand, virtually all nonfocal propagules 
+The effective distributions $\tilde{q}$ and $\hat{q}$ are chosen to ensure that this consistency requirement is satisfied. 
 
+$\tilde{p}$ assumes that one of the propagules present in a given territory after dispersal belongs to the focal type (a statement about propagule identity), whereas $\tilde{q}$ assumes that there is a focal propagule present before non-focal dispersal commences (a statement about propagule presence). 
 
-$\tilde{q}$ and $\hat{q}$ are chosen to 
-
-$\langle x_j\rangle_{\tilde{q}}$, to obtain the approximation
 
 %Following the notation in the main text, the Poisson distributions for the $x_i$ (or some subset of the $x_i$) will be denoted $p$, and we use $P$ as a general shorthand for the probability of particular outcomes.
 
-
- 
-Since $x_i$ and the $x_j$ are independent under $\tilde{p}$
-
-If the focal type is rare, the mean propagule density is $L+1$ in territories with one focal propagule. 
-
-
-
 By contrast, Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $\sum_{j\neq i}\langle x_j \rangle_{\tilde{p}}\approx L-1$ nonfocal propagules because $\tilde{p}$ accounts for potentially large negative covariances between the $x_j$ ``after dispersal''. By neglecting the latter covariances, $\tilde{q}$ overestimates the fluctuations in $\sum_{j\neq i} c_j x_j$; thus $\tilde{q}$ gives an upper bound on the fluctuations. The discrepancy between $\tilde{q}$ and $\tilde{p}$ will be largest when $L$ is of order $1$ or smaller, because then the propagule assumed to already be present under $\tilde{q}$ is comparable to, or greater than, the entire propagule density.
 
-$\tilde{p}$
 
 
-The distinction between $\tilde{p}$ and $\tilde{q}$ is closely connected to why the exact dispersal probability distribution $\tilde{p}$ is evaluated \textit{after} dispersal. $\tilde{p}$ assumes that one of the propagules present in a given territory after dispersal belongs to the focal type (a statement about propagule identity), whereas $\tilde{q}$ assumes that there is a focal propagule present before non-focal dispersal commences (a statement about propagule presence). 
 
 
 
