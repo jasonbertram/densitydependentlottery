@@ -300,78 +300,71 @@ Here the effective means $\langle \rangle_{\tilde{q}}$ and $\langle \rangle_{\ha
 
 \subsection*{The effective distributions $\tilde{q}$ and $\hat{q}$}
 
-The approximations \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must be done in a way that ensures consistency between rare and common types. To illustrate, suppose that two identical (same $b$, $c$ and $d$) types are present, one with low density $l_1\ll 1$, and the other with high density $l_2\approx L\gg 1$. Since $L$ is large, uncontested territories make up a negligible fraction of the total, and the rare type grows almost entirely due to $\Delta_r n_1$, while the common type grows almost entirely due to $\Delta_a n_2$. To ensure consistency, the approximate per-capita growth rates implied by the approximations \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must be equal $\Delta_r n_1/m_1 = \Delta_a n_2/m_2$. Even small violations of this consistency condition would mean exponential growth of one type relative to the other. This behavior is pathological: any single-type population can be arbitrarily partitioned into identical rare and common subtypes, but a given small group of individuals would be predicted to either grow or shrink depending on whether it viewed as part of the rare or common type.
+The approximations \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must be consistent between rare and common types. To illustrate, suppose that two identical types (same $b$, $c$ and $d$) are present, with low $l_1\ll 1$ and high density $l_2\approx L\gg 1$ respectively. Since $L$ is large, uncontested territories make up a negligible fraction of the total. The rare type grows almost entirely due to $\Delta_r n_1$, while the common type grows almost entirely due to $\Delta_a n_2$. To ensure consistency, the approximate per-capita growth rates implied by the approximations \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must be equal $\Delta_r n_1/m_1 = \Delta_a n_2/m_2$. Even small violations of this consistency condition would mean exponential growth of one type relative to the other. This behavior is clearly pathological, because any single-type population can be arbitrarily partitioned into identical rare and common subtypes. Thus,   predicted growth or decline would depend on an arbitrary assignment of rarity.
 
-The above pathology arises if we naively use $\tilde{p}$ and $\hat{p}$ to calculate the effective means. The right hand side of Eq. \eqref{eq:meanfieldr} is then approximately $1/(1+L)$, and since $l_1\ll 1$ and $L\gg 1$ we have $\Delta_r n_1 \approx 1/(1+L)$ in Eq.~\eqref{eq:deltr}. Similarly, for the common type, $\sum_j \langle x_j\rangle_{\hat{p}} = L$ in Eq. \eqref{eq:meanfielda}, and so $\Delta_a n_2 \approx 1/L$. Thus, the identical rare type is  pathologically predicted to decline in frequency.
+For example, suppose that we use $\tilde{p}$ and $\hat{p}$ to calculate the effective means. The right hand side of Eq. \eqref{eq:meanfieldr} is then approximately $1/(L+1)$, and since $l_1\ll 1$ and $L\gg 1$ we have $\Delta_r n_1 \approx 1/(L+1)$ in Eq.~\eqref{eq:deltr}. Similarly, for the common type, $\sum_j \langle x_j\rangle_{\hat{p}} = L$ in Eq. \eqref{eq:meanfielda}, and so $\Delta_a n_2 \approx 1/L$. Thus, the identical rare type is  pathologically predicted to decline in frequency.
 
-The effective distributions $\tilde{q}$ and $\hat{q}$ are devised to avoid this pathology. Let ${\mathbf x}$ denote the vector of propagule abundances $(x_1,\ldots,x_G)$ in a given territory, and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ similarly denote the vector of non-focal abundances, so that $p({\mathbf x_i})=p_1(x_1)\cdots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\cdots p_G(x_G)$. The corresponding total propagule numbers are denoted $X=\sum_j x_j$ and $X_i=X-x_i$. Then, in territories where one focal propagule and at least one non-focal propagule were received, the effective distribution is defined by 
+The effective distributions $\tilde{q}$ and $\hat{q}$ are devised to avoid this pathology. The idea is to make the approximation that the distribution for the total number of propagules per territory is the same in all territories. This is only an approximation because conditioning on focal propagules being present does change the distribution of $X$ in the corresponding subset of territories (in the above example, the mean propagule density across all territories is $L$, but in the territories responsible for the growth of the rare type we have $\langle X \rangle_{\tilde{p}}=L+1$). 
+
+More formally, let ${\mathbf x}$ denote the vector of propagule abundances $(x_1,\ldots,x_G)$ in a given territory, and ${\mathbf x_i}=(x_1,\ldots,x_{i-1},x_{i+1}\ldots,x_G)$ similarly denote the vector of non-focal abundances, so that $p({\mathbf x_i})=p_1(x_1)\cdots p_{i-1}(x_{i-1})p_{i+1}(x_{i+1})\cdots p_G(x_G)$. The corresponding total propagule numbers are denoted $X=\sum_j x_j$ and $X_i=X-x_i$. Then, in territories where one focal propagule and at least one non-focal propagule are present, the effective distribution is defined by 
 \begin{equation}
 \tilde{q}({\mathbf x_i})=\sum_{X=2}^{\infty}P(X|X\geq 2) p({\mathbf x_i}|X_i=X-1),
 \end{equation}
-where the total number of propagules $X$ follows a Poisson distribution with mean $L$. Similarly, in territories where more than one focal propagule was received, the effective distribution is defined by 
+where the total number of propagules $X$ follows a Poisson distribution with mean $L$, and $P(X|X\geq 2)=P(X)/P(X\geq 2)=P(X)/(1-(1+L)e^{-L})$. Similarly, in territories where more than one focal propagule is present, the effective distribution is defined by 
 \begin{equation}
-\hat{q}({x})=\sum_{X=2}^{\infty}P(X|x_i\geq 2) p({\mathbf x}|x_i\geq 2, X).
+\hat{q}({\mathbf x})=\sum_{X=2}^{\infty}P(X|X\geq 2) p({\mathbf x}|x_i\geq 2, X).
 \end{equation}
-In other words, $\tilde{q}$ and $\hat{q}$ make the approximation that the distribution for the total number of propagules per territory is the same in all territories. In reality, conditioning on one or more focal propagules being present does affect the distribution of $X$ in the corresponding subset of territories. Thus, for $\tilde{p}$ and $\hat{p}$, which are simply the corresponding conditional distributions of the actual dispersal distribution $p$, the mean propagule density is $L$ but $\langle X \rangle_{\tilde{p}}=L+1$. 
-
-
-%By contrast, Eq. \eqref{eq:meanxjrare} correctly predicts that there are on average $\sum_{j\neq i}\langle x_j \rangle_{\tilde{p}}\approx L-1$ nonfocal propagules because $\tilde{p}$ accounts for potentially large negative covariances between the $x_j$ ``after dispersal''. By neglecting the latter covariances, $\tilde{q}$ overestimates the fluctuations in $\sum_{j\neq i} c_j x_j$; thus $\tilde{q}$ gives an upper bound on the fluctuations. The discrepancy between $\tilde{q}$ and $\tilde{p}$ will be largest when $L$ is of order $1$ or smaller, because then the propagule assumed to already be present under $\tilde{q}$ is comparable to, or greater than, the entire propagule density.
-
-%Below we justify this replacement by arguing that the standard deviation $\sigma_{\tilde{p}}(\sum_{j\neq i} c_j x_j)$ (with respect to $\tilde{p}$), is much smaller than $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$. If this standard deviation is small as claimed, then the mean value gives an accurate representation of the values taken by $\sum_{j\neq i} c_j x_j$ across territories. 
-
+ 
 \subsection*{Calculating the effective means}
 
-We first calculate $\langle x_j \rangle_{\tilde{p}}$. 
-
-and we have $P(X|X\geq 2)=P(X)/P(X\geq 2)=P(X)/(1-(1+L)e^{-L})$
- Thus,
+Here we calculate the effective means, starting with the $\Delta_r n_i$ component. We have
 \begin{align}
-\langle x_j \rangle_{\tilde{p}}&=\sum_{\mathbf x_i} \tilde{p}({\mathbf x_i})x_j\nonumber\\
+\langle x_j \rangle_{\tilde{q}}&=\sum_{\mathbf x_i} \tilde{q}({\mathbf x_i})x_j\nonumber\\
 &=\frac{1}{1-(1+L)e^{-L}}\sum_{X=2}^{\infty} P(X) \sum_{\mathbf x_i} p({\mathbf x_i}|X_i=X-1)x_j.
 \label{eq:raremonster1}
 \end{align}
 The inner sum over ${\mathbf x_i}$ is the mean number of propagules of a given nonfocal type $j$ that will be found in a territory which received $X-1$ nonfocal propagules in total, which is equal to $\frac{l_j}{L-l_i}(X-1)$. Thus, 
 \begin{align}
-\langle x_j \rangle_{\tilde{p}}&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{X=2}^{\infty} P(X) (X-1)\nonumber\\
+\langle x_j \rangle_{\tilde{q}}&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{X=2}^{\infty} P(X) (X-1)\nonumber\\
 &=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i},
 \label{eq:meanxjrare}
 \end{align}
-where the last line follows from $\sum_{X=2}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)X-\sum_{X=1}^{\infty}P(X)$.
-
-
-
-Substituting Eqs. \eqref{eq:meanfieldr} and \eqref{eq:meanxjrare} into Eq.~\eqref{eq:deltr}, we obtain
+where the last line follows from $\sum_{X=2}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)X-\sum_{X=1}^{\infty}P(X)$. Substituting Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanxjrare} into Eq.~\eqref{eq:deltr}, we obtain
 \begin{equation}
 \Delta_r n_i\approx m_i R_i\frac{c_i}{\overline{c}}, \label{eq:deltrfinal}
 \end{equation}
 where $R_i$ is defined in Eq.~\eqref{eq:Dr}.
 
-
-Following a similar procedure as for $\Delta_r n_i$, where the vector of propagule abundances is denoted ${\mathbf x}$, the mean focal type abundance is, 
+Turning now to the $\Delta_a n_i$ component, the mean focal abundance is 
 \begin{align}
-\langle x_i \rangle_{\hat{p}}&=\sum_{\mathbf x} x_i p(\mathbf x|x_i\geq 2)\nonumber \\
-&=\sum_{x_i} x_i p(x_i|x_i\geq 2) \nonumber\\
+\langle x_i \rangle_{\hat{q}}&=\sum_{\mathbf x} \hat{q}({\mathbf x}) x_i\nonumber \\
+&=\sum_{x_i} p(x_i|x_i\geq 2)x_i \nonumber\\
 &=\frac{1}{1-(1+l_i)e^{-l_i}}\sum_{x_i\geq 2} p(x_i)x_i\nonumber\\
 &=l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}.
 \end{align}
 For nonfocal types $j\neq i$, we have
 \begin{align}
-\langle x_j \rangle_{\hat{p}}&=\sum_{\mathbf x} x_j p(\mathbf x|x_i\geq 2)\nonumber \\
-&=\sum_{X}P(X|x_i\geq 2)\sum_{\mathbf x} x_j p({\mathbf x}|x_i\geq 2,X)\nonumber\\
-&=\sum_{X}P(X|x_i\geq 2)\sum_{x_i} p(x_i|x_i\geq 2,X) \sum_{\mathbf x_i} x_j p(\mathbf x_i|X_i=X-x_i)\nonumber\\
-&=\sum_{X}P(X|x_i\geq 2)\sum_{x_i}p(x_i|x_i\geq 2,X) \frac{l_j(X-x_i)}{L-l_i} \nonumber\\
-&=\frac{l_j}{L-l_i}\left[\sum_{X}P(X|x_i\geq 2)X - \sum_{x_i}p(x_i|x_i\geq 2) x_i \right]\nonumber\\
+\langle x_j \rangle_{\hat{q}}&=\sum_{X=2}^{\infty}P(X|X\geq 2)\sum_{\mathbf x}  p({\mathbf x}|x_i\geq 2,X) x_j\nonumber\\
+&=\sum_{X=2}^{\infty}P(X|X\geq 2)\sum_{x_i} p(x_i|x_i\geq 2,X) \sum_{\mathbf x_i}  p(\mathbf x_i|X_i=X-x_i) x_j\nonumber\\
+&=\sum_{X=2}^{\infty}P(X|X\geq 2)\sum_{x_i}p(x_i|x_i\geq 2,X) \frac{l_j(X-x_i)}{L-l_i} \nonumber\\
+&=\frac{l_j}{L-l_i}\left[\sum_{X=2}^{\infty}P(X|X\geq 2)X - \sum_{x_i}p(x_i|x_i\geq 2) x_i \right]\nonumber\\
 &=\frac{l_j}{L-l_i}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right).
 \end{align}
-In going from line 3 to 4, we used the same logic used to evaluate the inner sum in Eq.~\eqref{eq:raremonster1}, and in going from 4 to 5 we have separately evaluated the contributions from the $X$ and $x_i$ terms in the numerator.
-
-Combining Eqs. \eqref{eq:delta} and \eqref{eq:meanfielda}, we obtain
+In going from line 2 to 3, we used the same logic used to evaluate the inner sum in Eq.~\eqref{eq:raremonster1}, and in going from 3 to 4 we have separately evaluated the contributions from the $X$ and $x_i$ terms in the numerator. Combining these results with Eqs.~\eqref{eq:delta} and \eqref{eq:meanfielda}, we obtain
 \begin{equation}
 \Delta_a n_i=m_i A_i \frac{c_i}{\overline{c}},
 \end{equation}
 where $A_i$ is defined in Eq.~\eqref{eq:Da}.
 
 \subsection*{Limits of the approximation}
+
+The validity of the approximations in Eq.~\eqref{eq:meanfieldr} and \eqref{eq:meanfielda} 
+
+If this standard deviation is small as claimed, then the mean value gives an accurate representation of the values taken by $\sum_{j\neq i} c_j x_j$ across territories.
+
+
+are relies on the standard deviation $\sigma_{\tilde{q}}(\sum_{j\neq i} c_j x_j)$ (with respect to $\tilde{q}$) being much smaller than the corresponding mean $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{p}}$.  
+
 
 Having evaluated the mean propagule numbers, we now evaluate the variance in propagule numbers to check that the mean value replacement in Eq.~\eqref{eq:meanfieldr} is justified. This is complicated because the $x_j$ are not independent with respect to $\tilde{p}$. Here we use the following approximation to give some insight into the magnitude of these fluctuations and also the nature of the correlations between the $x_j$. We replace $\tilde{p}$ with $\tilde{q}$, defined as the ${\mathbf x_i}$ Poisson dispersal probabilities conditional on $X_i\geq1$ (which are independent). The distinction between $\tilde{p}$ and $\tilde{q}$ will be discussed further below. The $\tilde{q}$ approximation gives $\langle x_j \rangle_{\tilde{q}}=\langle x_j \rangle_p/C=l_j/C$, where $C=1-e^{-(L-l_i)}$, with variances and covariances given by
 \begin{align}
