@@ -364,41 +364,45 @@ The fundamental requirement for making the replacement in Eqs.~\eqref{eq:meanfie
 
 To evaluate these standard deviations, we will work with $\tilde{p}$ and $\hat{p}$ distributions instead of $\tilde{q}$ and $\hat{q}$. This is mathematically much simpler because the $x_i$ are independent under $\tilde{p}$ and $\hat{p}$, and is justified by the fact that $\tilde{p}$ and $\hat{p}$ are closely related to $\tilde{q}$ and $\hat{q}$ respectively, and so we expect the relevant means and standard deviations will be similar.
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{approx_details.pdf}
-\caption{\label{fig:approx_details} Horse.}
-\end{figure}
-
-Starting with Eq.~\eqref{eq:meanfieldr}, we have $\langle x_j \rangle_{\tilde{p}}=l_j/C$, where $C=1-e^{-(L-l_i)}$, and the corresponding variance is given by
+Starting with Eq.~\eqref{eq:meanfieldr}, we have $\langle x_j \rangle_{\tilde{p}}=l_j/C$, where $C=1-e^{-(L-l_i)}$, and the corresponding variances and covariances are given by
 \begin{align}
 \sigma_{\tilde{p}}^2(x_j)&=\langle x_j^2 \rangle_{\tilde{p}}-\langle x_j \rangle_{\tilde{p}}^2\nonumber\\
 &=\frac{l_j^2 + l_j}{C}-\frac{l_j^2}{C^2}\nonumber \\
 &=\left(1-\frac{1}{C}\right)\frac{l_j^2}{C}+\frac{l_j}{C},\label{eq:varr}
 \end{align}
-Since $\sigma^2_{\tilde{p}}(\sum_{j\neq i} c_j x_j)=\sum_{j\neq i} c_j^2\sigma^2_{\tilde{p}}(x_j)$, and the first term in Eq. \eqref{eq:varr} is negative (because $C<1$), we obtain an upper bound on the relative fluctuations in $\sum_{j\neq i} c_j x_j$, 
+and
+\begin{align}
+\sigma_{\tilde{p}}(x_j,x_k)&=\langle x_j x_k \rangle_{\tilde{p}}-\langle x_j \rangle_{\tilde{p}}\langle x_k \rangle_{\tilde{p}}\nonumber\\
+&=\frac{1}{C}\langle x_j x_k \rangle_p-\frac{l_jl_k}{C^2}\nonumber\\
+&=\left(1-\frac{1}{C}\right)\frac{l_j l_k}{C}\qquad\qquad j\neq k. \label{eq:covr}
+\end{align} 
+Note that $1-1/C$ is negative because $C<1$. Decomposing the variance in $\sum_{j\neq i} c_j x_j$,
 \begin{equation}
-\frac{\sigma(\sum_{j\neq i} c_j x_j)}{\langle\sum_{j\neq i} c_j x_j\rangle}=C^{1/2}\frac{\left(\sum_{j\neq i}c_j^2 ((1-\frac{1}{C})l_j^2+l_j)\right)^{1/2}}{\sum_{j\neq i}c_j l_j}<C^{1/2}\frac{\left(\sum_{j\neq i}c_j^2 l_j\right)^{1/2}}{\sum_{j\neq i}c_j l_j}. \label{eq:cvr}
+\sigma_{\tilde{p}}^2(\sum_{j\neq i} c_j x_j)=\sum_{j\neq i}\left[c_j^2\sigma_{\tilde{p}}^2(x_j)+2\sum_{k>j, k\neq i}c_j c_k\sigma_{\tilde{p}}(x_j,x_k)\right],\label{eq:vartotr}
+\end{equation}
+we obtain 
+\begin{equation}
+\frac{\sigma(\sum_{j\neq i} c_j x_j)}{\langle\sum_{j\neq i} c_j x_j\rangle}=C^{1/2}\frac{\left(\sum_{j\neq i}c_j^2 l_j+(1-\frac{1}{C})\left(\sum_{j\neq i}c_j l_j\right)^2 \right)^{1/2}}{\sum_{j\neq i}c_j l_j}. \label{eq:cvr}
 \end{equation}
 
-Suppose that the $c_j$ have similar magnitudes (their ratios are of order one). Then the right hand side of Eq.~\eqref{eq:cvr} is approximately equal to $\sqrt{\frac{1-e^{-(L-l_i)}}{L-l_i}}$. This quantity is small for both low and high nonfocal densities. The worst case scenario occurs when $L-l_i$ is of order one. Then the  Eq.~\eqref{eq:cvr} gives a relative error of approximately $50\%$
+Eq.~\eqref{eq:cvr} reveals two key points. First, when the $c_j$ have similar magnitudes (their ratios are of order one), Eq.~\eqref{eq:meanfieldr} is an excellent approximation. In this case, the right hand side of Eq.~\eqref{eq:cvr} is approximately equal to $C^{1/2}\left(\frac{1}{L-l_i}+1-\frac{1}{C}\right)^{1/2}$, which is small for both low and high nonfocal densities. The worst case scenario occurs when $L-l_i$ is of order one, and it can be directly verified that Eq.~\eqref{eq:meanfieldr} is then still a good approximation (see Fig.~\ref{fig:approx_details}). Second, if some of the $c_j$ are much larger than the others, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large. Specifically, in the presence of a rare,  strong competitor ($c_j l_j\gg c_{j'} l_{j'}$ for all other nonfocal types $j'$, and $l_j\ll 1$), then the right hand side of Eq. \eqref{eq:cvr} can be large and we cannot make the replacement Eq.~\eqref{eq:meanfieldr}. Fig.~\ref{fig:approx_details} shows the breakdown of the effective mean approximation when the are large differences in $c$. 
 
-Our numerical results (Fig. \ref{fig:simcomp}) confirm that the relative errors are indeed small.
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{approx_details.pdf}
+\caption{\label{fig:approx_details} Comparison of our approximation with simulations and the naive $\tilde{p}$,$\hat{p}$ approxmation as a function of the relative $c$-advantage between two types. Our approximation breaks down in the presence of large relative $c$-advantages. The inset shows the pathology of the $\tilde{p}$,$\hat{p}$ approxmation --- in the neutral case of $c=1$ one type grows faster than the other. }
+\end{figure}
 
-However, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large if some of the $c_j$ are much larger than the others. Specifically, in the presence of a rare, extremely strong competitor ($c_j l_j\gg c_{j'} l_{j'}$ for all other nonfocal types $j'$, and $l_j\ll 1$), then the RHS of Eq. \eqref{eq:cvr} can be large and we cannot make the replacement Eq.~\eqref{eq:meanfieldr}. 
-
-Again, we argue that the relative fluctuations in $\sum c_j x_j$ are much smaller than $1$ (with respect to $\hat{p}$), so that,
-
-To calculate the standard deviation in $\sum_{j\neq i} c_j x_j$, we use a similar approximation as for $\Delta_r n_i$: $\hat{p}$ is approximated by $\hat{q}$, defined as the ${\mathbf x}$ dispersal probabilities in a territory conditional on $x_i>2$ (that is, treating the $x_j$ as independent). All covariances between nonfocal types are now zero, so that $\sigma_{\hat{q}}^2(\sum c_j x_j)=\sum c_j^2 \sigma_{\hat{q}}^2(x_j)$, where $\sigma_{\hat{q}}^2(x_j)=l_j$ for $j\neq i$, and  
+Turning now to Eq.~\eqref{eq:meanfielda}, all covariances between nonfocal types are now zero, so that $\sigma_{\hat{p}}^2(\sum c_j x_j)=\sum c_j^2 \sigma_{\hat{p}}^2(x_j)$, where $\sigma_{\hat{p}}^2(x_j)=l_j$ for $j\neq i$. Here  
 \begin{equation}
-\sigma_{\hat{q}}^2(x_i)=\frac{l_i}{D}\left(l_i+1-e^{-l_i}-\frac{l_i}{D}\left(1-e^{-l_i}\right)^2\right),
+\sigma_{\hat{p}}^2(x_i)=\frac{l_i}{D}\left(l_i+1-e^{-l_i}-\frac{l_i}{D}\left(1-e^{-l_i}\right)^2\right),
 \end{equation}
 where $D= 1-(1+l_i)e^{-l_i}$, and 
 \begin{equation}
-\frac{\sigma_{\hat{q}}(\sum c_j x_j)}{\langle\sum c_j x_j\rangle} = \frac{\left(\sum_{j\neq i} c_j^2 l_j + c_i^2 \sigma_{\hat{q}}^2(x_i)\right)^{1/2}}{\sum_{j\neq i} c_j l_j + c_i l_i (1-e^{-l_i})/D} \label{eq:cva}.
+\frac{\sigma_{\hat{p}}(\sum c_j x_j)}{\langle\sum c_j x_j\rangle} = \frac{\left(\sum_{j\neq i} c_j^2 l_j + c_i^2 \sigma_{\hat{p}}^2(x_i)\right)^{1/2}}{\sum_{j\neq i} c_j l_j + c_i l_i (1-e^{-l_i})/D} \label{eq:cva}.
 \end{equation}
 
-Similarly to Eq.~\eqref{eq:cvr}, the RHS of Eq. \eqref{eq:cva} is $\ll 1$ for the case that $L \ll 1$ (due to a factor of $D^{1/2}$), and also for the case when at least some of the propagule densities (focal or nonfocal) are large --- provided that $c_i$ and the $c_j$ are all of similar magnitude. Again, the worst case scenario occurs when $l_i$ and $L-l_i$ are of order $1$, in which case Eq. \eqref{eq:cva} is around $35\%$, which is again where the $\hat{q}$ approximation produces the biggest overestimate of the fluctuations in ${\mathbf x}$. Similarly to Eq.~\eqref{eq:cvr}, the RHS of \eqref{eq:cva} will not be $\ll 1$ in the presence of a rare, extremely strong competitor.  
+Similarly to Eq.~\eqref{eq:cvr}, the right hand side of Eq. \eqref{eq:cva} is small for both low and high nonfocal densities. Again, the worst case scenario occurs when $l_i$ and $L-l_i$ are of order $1$, but Eq.~\eqref{eq:meanfielda} is still a good approximationin this case. Again, the approxmation breaks down in the presence of a rare, strong competitor (Fig.~\ref{fig:approx_details}).
 
 \section*{Appendix C: Total density in the Lotka-Volterra competition model}
 

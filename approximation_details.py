@@ -40,12 +40,12 @@ def wins(c):
             
 
 
-T=1000000
+T=10000
 cs=np.array([[10.**i,1.] for i in np.linspace(-2,2,101)])
 
 fig1, (ax1, ax2) = plt.subplots(nrows=2,figsize=[5,8])
 
-l1=3.; l2=3.; L=l1+l2
+l1=.1; l2=1.; L=l1+l2
 scatter=np.random.poisson(lam=[l1,l2],size=[T,2])
 m=np.array([l1*T,l2*T])
 
