@@ -5,11 +5,12 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Arenbaev(1977)]{arenbaev_1977}
-N.~Arenbaev.
-\newblock Asymptotic behavior of the multinomial distribution.
-\newblock \emph{Theory of Probability \& Its Applications}, 21\penalty0
-  (4):\penalty0 805--810, 1977.
+\bibitem[Anderson(1971)]{anderson_1971}
+W.~W. Anderson.
+\newblock Genetic equilibrium and population growth under density-regulated
+  selection.
+\newblock \emph{The American Naturalist}, 105\penalty0 (946):\penalty0
+  489--498, 1971.
 
 \bibitem[Barton et~al.(2007)Barton, Briggs, Eisen, Goldstein, and
   Patel]{barton_2007}
@@ -141,6 +142,13 @@ V.~A. Kostitzin.
 \newblock \emph{Mathematical biology}.
 \newblock George G. Harrap And Company Ltd.; London, 1939.
 
+\bibitem[Lande et~al.(2009)Lande, Engen, and S{\ae}ther]{lande_2009}
+R.~Lande, S.~Engen, and B.-E. S{\ae}ther.
+\newblock An evolutionary maximum principle for density-dependent population
+  dynamics in a fluctuating environment.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 364\penalty0 (1523):\penalty0 1511--1518, 2009.
+
 \bibitem[Levins and Culver(1971)]{levins_71}
 R.~Levins and D.~Culver.
 \newblock Regional coexistence of species and competition between rare species.
@@ -213,14 +221,6 @@ P.~E. Smouse.
   frequency-and density-dependent selection.
 \newblock \emph{The American Naturalist}, 110\penalty0 (975):\penalty0
   849--860, 1976.
-
-\bibitem[Svardal et~al.(2015)Svardal, Rueffler, and Hermisson]{svardal_2015}
-H.~Svardal, C.~Rueffler, and J.~Hermisson.
-\newblock A general condition for adaptive genetic polymorphism in temporally
-  and spatially heterogeneous environments.
-\newblock \emph{Theoretical Population Biology}, 99:\penalty0 76 -- 97, 2015.
-\newblock ISSN 0040-5809.
-\newblock \doi{http://dx.doi.org/10.1016/j.tpb.2014.11.002}.
 
 \bibitem[Tilman(1994)]{tilman_94}
 D.~Tilman.

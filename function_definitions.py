@@ -10,11 +10,14 @@ import matplotlib.pyplot as plt
 import bisect
 
 def deltnplussim(m,c,U):
-    scatter=np.zeros([int(U),len(m)])
-    for i in range(len(m)):
-        for y in xrange(int(m[i])):
-            cell=int(int(U)*np.random.rand());
-            scatter[cell,i]=scatter[cell,i]+1;
+#    scatter=np.zeros([int(U),len(m)])
+#    for i in range(len(m)):
+#        for y in xrange(int(m[i])):
+#            cell=int(int(U)*np.random.rand());
+#            scatter[cell,i]=scatter[cell,i]+1;
+
+    l=m/float(U)        
+    scatter=np.random.poisson(lam=l,size=[U,len(m)])
     
     winsnocomp=np.zeros(len(m)); wins1=np.zeros(len(m)); wins2=np.zeros(len(m));
     comp=np.zeros(U);
