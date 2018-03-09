@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -72,8 +72,8 @@ F.~Christiansen.
 
 \bibitem[Crow et~al.(1970)Crow, Kimura, et~al.]{crow_1970}
 J.~F. Crow, M.~Kimura, et~al.
-\newblock An introduction to population genetics theory.
-\newblock \emph{An introduction to population genetics theory.}, 1970.
+\newblock \emph{An introduction to population genetics theory.}
+\newblock New York, Evanston and London: Harper \& Row, Publishers, 1970.
 
 \bibitem[Dieckmann and Ferri{\`e}re(2004)]{dieckmann2004adaptive}
 U.~Dieckmann and R.~Ferri{\`e}re.
@@ -113,6 +113,11 @@ D.~E. Gill.
 \newblock Intrinsic rate of increase, saturation density, and competitive
   ability. ii. the evolution of competitive ability.
 \newblock \emph{American Naturalist}, 108:\penalty0 103--116, 1974.
+
+\bibitem[Gillespie(2010)]{gillespie_2004}
+J.~H. Gillespie.
+\newblock \emph{Population genetics: a concise guide (2nd Ed.)}.
+\newblock John Hopkins University Press, 2010.
 
 \bibitem[Grover(1997)]{grover_1997}
 J.~P. Grover.

@@ -8,6 +8,7 @@ Created on Mon Feb 19 14:37:21 2018
 import numpy as np
 import bisect
 import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 
 def deltnplusnaive(m,c,U):
     if sum(m)>0 and U>0:
@@ -39,19 +40,18 @@ def wins(c):
     return winsnocomp+wins1+wins2
             
 
-
-T=10000
+T=100000
 cs=np.array([[10.**i,1.] for i in np.linspace(-2,2,101)])
 
 fig1, (ax1, ax2) = plt.subplots(nrows=2,figsize=[5,8])
 
-l1=.1; l2=1.; L=l1+l2
+l1=3.; l2=3.; L=l1+l2
 scatter=np.random.poisson(lam=[l1,l2],size=[T,2])
 m=np.array([l1*T,l2*T])
 
-#deltaovermsim1=np.array(map(wins,cs))/m
-#deltaovermnaive1=np.array(map(lambda x: deltnplusnaive(m,x,T),cs))/m
-#deltaovermapprox1=np.array(map(lambda x: deltnplus(m,x,T),cs))/m
+deltaovermsim1=np.array(map(wins,cs))/m
+deltaovermnaive1=np.array(map(lambda x: deltnplusnaive(m,x,T),cs))/m
+deltaovermapprox1=np.array(map(lambda x: deltnplus(m,x,T),cs))/m
 
 ax1.plot(deltaovermsim1[:,0],'k.',markersize=3,label=r'Simulation')
 ax1.plot(deltaovermsim1[:,1],'k.',markersize=3)
@@ -72,9 +72,9 @@ l1=.1; l2=3.; L=l1+l2
 scatter=np.random.poisson(lam=[l1,l2],size=[T,2])
 m=np.array([l1*T,l2*T])
 
-#deltaovermsim2=np.array(map(wins,cs))/m
-#deltaovermnaive2=np.array(map(lambda x: deltnplusnaive(m,x,T),cs))/m
-#deltaovermapprox2=np.array(map(lambda x: deltnplus(m,x,T),cs))/m
+deltaovermsim2=np.array(map(wins,cs))/m
+deltaovermnaive2=np.array(map(lambda x: deltnplusnaive(m,x,T),cs))/m
+deltaovermapprox2=np.array(map(lambda x: deltnplus(m,x,T),cs))/m
 
 ax2.plot(deltaovermsim2[:,0],'k.',markersize=3,label=r'Simulation $l_1=0.1, l_2=3$')
 ax2.plot(deltaovermsim2[:,1],'k.',markersize=3)
@@ -102,6 +102,8 @@ ax3.set_xlim([45,55])
 ax3.set_ylim([0.25,0.35])
 ax3.set_xticklabels(['','','','1','',''])
 ax3.set_yticklabels([])
+
+mark_inset(ax2, ax3, loc1=1, loc2=3, fc="none", ec="0.5")
 
 plt.savefig('/home/jbertram/repos/densitydependentlottery/approx_details.pdf',bbox="tight")
 
