@@ -69,7 +69,7 @@ ax1.legend(loc='upper center',prop={'size':11})
 #ax1.plot([eq_dens,eq_dens],[0,0.1],'k',linewidth=2)
 
 ax1.set_xlabel(r"Density $N/T$")
-ax1.set_ylabel(r"$\Delta n_j/n_j-\Delta n_i/n_i$")
+ax1.set_ylabel(r"$\Delta n_2/n_2-\Delta n_1/n_1$")
 
 plt.tight_layout()
 

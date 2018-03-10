@@ -1,4 +1,4 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -140,6 +140,13 @@ V.~A. Kostitzin.
 \newblock \emph{Mathematical biology}.
 \newblock George G. Harrap And Company Ltd.; London, 1939.
 
+\bibitem[Lande et~al.(2009)Lande, Engen, and S{\ae}ther]{lande_2009}
+R.~Lande, S.~Engen, and B.-E. S{\ae}ther.
+\newblock An evolutionary maximum principle for density-dependent population
+  dynamics in a fluctuating environment.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 364\penalty0 (1523):\penalty0 1511--1518, 2009.
+
 \bibitem[Levins and Culver(1971)]{levins_71}
 R.~Levins and D.~Culver.
 \newblock Regional coexistence of species and competition between rare species.
@@ -187,6 +194,12 @@ M.~Nei.
 \newblock Fertility excess necessary for gene substitution in regulated
   populations.
 \newblock \emph{Genetics}, 68\penalty0 (1):\penalty0 169, 1971.
+
+\bibitem[Otto and Day(2011)]{otto_2011}
+S.~P. Otto and T.~Day.
+\newblock \emph{A biologist's guide to mathematical modeling in ecology and
+  evolution}.
+\newblock Princeton University Press, 2011.
 
 \bibitem[Prout(1980)]{prout_1980}
 T.~Prout.

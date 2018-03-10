@@ -91,8 +91,8 @@ Nhist=np.sum(nhist,1)
 
 fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
 
-ax1.plot(nhist[:,1],"k", linewidth=2,label=r"$d_j=0.7$, $c_j=2$")
-ax1.plot(nhist[:,0],"k--", linewidth=2,label=r"$d_i=0.9$, $c_i=1$")
+ax1.plot(nhist[:,1],"k", linewidth=2,label=r"$d_2=0.7$, $c_2=2$")
+ax1.plot(nhist[:,0],"k--", linewidth=2,label=r"$d_1=0.9$, $c_1=1$")
 ax1.plot(Nhist,"k:", linewidth=2,label=r"Total")
 ax1.annotate(r'$(a)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
 ax1.set_xticklabels([])
@@ -109,9 +109,9 @@ ax2.set_xticklabels([])
 ax2.set_xlabel("Time",fontsize=14)
 ax2.set_ylim([0.2,0.25])
 #ax2.set_yticklabels(['0','','','','','1'])
-ax2.set_ylabel(r"$\Delta n_j/n_j-\Delta n_i/n_i$")
+ax2.set_ylabel(r"$\Delta n_2/n_2-\Delta n_1/n_1$")
 
 plt.tight_layout()
 
-plt.savefig('/home/jason/repos/densitydependentlottery/multiple.pdf',bbox="tight")
+plt.savefig('/home/jbertram/repos/densitydependentlottery/multiple.pdf',bbox="tight")
 
