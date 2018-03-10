@@ -124,7 +124,7 @@ where $\overline{c}=\sum_i c_i m_i/\sum_i m_i$ is the mean competitive ability f
 
 \section*{Results}
 
-\subsection*{Solving the variable-density lottery}
+\subsection*{Analytical approximation of the variable-density lottery}
 
 Here we evaluate the expectation in Eq.~\eqref{eq:growthsumuncoupled} to better understand the dynamics of density-dependent lottery competition. Similarly to the classic lottery model, we replace the $x_i$, which take different values in different territories, with ``effective'' mean values. However, since we want to allow for low propagule densities, we cannot simply replace the $x_i$ with the means $l_i$ as in the classic lottery. For a low density type, growth comes almost entirely from territories with $x_i=1$, for which its mean density $l_i\ll 1$ is not representative. We therefore separate Eq.~\eqref{eq:growthsumuncoupled} into $x_i=1$ and $x_i>1$ components, taking care to ensure that the effective mean approximations for these components are consistent with each other (details in Appendix B). The resulting variable-density approximation only requires that there are no large discrepancies in competitive ability (i.e. we do not have $c_i/c_j\gg 1$ for any two types). We obtain
 \begin{equation}
@@ -146,7 +146,7 @@ Fig.~\ref{fig:simcomp} shows that Eq. \eqref{eq:master} and its components close
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{simulationcomparison.pdf}
-\caption{\label{fig:simcomp} Comparison of Eq.~\eqref{eq:master}, the classic lottery model, and simulations. The vertical axis is per-propagule success rate for all propagules $\Delta_+ n_i/m_i$, and for the three separate components in Eq.~\eqref{eq:master}. Simulations are 	conducted as follows: $x_1,\ldots,x_G$ values are sampled $U$ times from Poisson distributions with respective means $l_1,\ldots,l_G$, and the victor in each territory is then decided by random sampling weighted by the lottery win probabilities $c_ix_i/\sum_j c_j x_j$. Two types are present, a rare type with $c_1=1.5$, and a common type with $c_2=1$. Simulation points are almost invisible for the common type due to near exact agreement with Eq.~\eqref{eq:master}. Dashed lines show the breakdown of the classic lottery model. Parameters: $U=10^5$ and $l_1/l_2=0.1$ is kept fixed while varying the total density $L$.} 
+\caption{\label{fig:simcomp} Comparison of Eq.~\eqref{eq:master}, the classic lottery model, and simulations. The vertical axis is per-propagule success rate for all propagules $\Delta_+ n_i/m_i$, and for the three separate components in Eq.~\eqref{eq:master}. Simulations are 	conducted as follows: $x_i,x_j$ values are sampled $U$ times from Poisson distributions with respective means $l_i,l_j$, and the victor in each territory is then decided by random sampling weighted by the lottery win probabilities $c_ix_i/\sum_i c_i x_i$. Two types are present, a rare type with $c_j=1.5$, and a common type with $c_i=1$. Simulation points are almost invisible for the common type due to near exact agreement with Eq.~\eqref{eq:master}. Dashed lines show the failure of the classic lottery model at low density. Parameters: $U=10^5$ and $l_j/l_i=0.1$.} 
 \end{figure}
 
 In the special case that all types are competitively equivalent (identical $c_i$), Eq.~\eqref{eq:master} takes a simpler form,
@@ -168,7 +168,7 @@ Selection on $c$ is density-dependent, with the strength of selection  peaking a
 \begin{equation}
 \frac{\Delta n_i}{n_i} = \frac{b_i}{\overline{b}}\frac{1-e^{-\overline{b}N/T}}{N}(T-N)-d_i, \label{eq:bdensitydependence}
 \end{equation}
-where we have used that fact that $L=\overline{b}N/T$, and $\overline{b}$ is the population mean $b$. It is clear $d$-selection is independent of density. On the other hand, the strength of $b$-selection declines with density due to the presence of the $T-N$ factor; in words, the advantage of having greater $b$ gets smaller the fewer territories there are to be claimed (Fig.~\ref{fig:DDS_lottery}). 
+where we have used that fact that $L=\overline{b}N/T$, and $\overline{b}$ is the population mean $b$. It is clear $d$-selection is independent of density. On the other hand, the strength of $b$-selection declines with density because the advantage of having greater $b$ gets smaller the fewer territories there are to be claimed (Fig.~\ref{fig:DDS_lottery}). 
 
 \begin{figure}
 \centering
@@ -201,9 +201,9 @@ where $\alpha_{11}=1/K_{11}$ and $\alpha_{22}=1/K_{22}$ measure competitive effe
 
 Compared to simple birth-death models \citep{kostitzin_1939} or variants of the logistic \citep{roughgarden_1979}, the Lotka-Volterra model clearly distinguishes between intra- and inter-type competitive effects. Thus, one type can displace another without having a greater equilibrium density (Fig.~\ref{fig:LVvslottery}a). Nevertheless, selection drives transient changes in density in the Lotka-Volterra model even if the initial and final densities of a sweep are the same (constant density only occurs for a highly restricted subset of $r$ and $\alpha$ values; further details in Appendix C; also see \citealt{mallet_2012,smouse_1976}). Intuitively, for one type to exclude the other, competitive suppression of growth between types must be stronger than competitive suppression of growth within types, causing $N$ to dip over a sweep (Fig.~\ref{fig:LVvslottery}a). 
 
-By contrast, density trajectories for $c$-selection in the variable-density lottery converge on a line of constant equilibrium density (Fig.~\ref{fig:LVvslottery}b). This means that once the population reaches demographic equilibrium, it behaves indistinguishably from a constant-$N$ relative fitness model (Fig.~\ref{fig:Ksel}b). This complete uncoupling of density from $c$-selection arises due to the presence of an excess of propagules which pay the cost of selection without affecting adult density. As a result, Eq.~\eqref{eq:canonical} holds in equilibrium even though $c$-selection is density-dependent. We discuss the non-equilibrium case in [BLAH].
+By contrast, density trajectories for $c$-selection in the variable-density lottery converge on a line of constant equilibrium density (Fig.~\ref{fig:LVvslottery}b). This means that once the population reaches demographic equilibrium, it behaves indistinguishably from a constant-$N$ relative fitness model (Fig.~\ref{fig:Ksel}b). This complete uncoupling of density from $c$-selection arises due to the presence of an excess of propagules which pay the cost of selection without affecting adult density. As a result, Eq.~\eqref{eq:canonical} holds in equilibrium even though $c$-selection is density-dependent.
 
-\subsection*{Density-dependent selection on density-regulating traits}
+\subsection*{Density-regulating traits at equilibrium}
 
 The previous section underscores the fact that density must be affected by ongoing selection to threaten Eq.~\eqref{eq:canonical}. We now turn to selection on density-regulating traits such as $b$ and $d$ in the variable density lottery. 
 
@@ -221,7 +221,15 @@ Here $\delta_i$ is per-capita mortality due to crowding (for simplicity, there a
 \caption{\label{fig:strengthofselection} (a) Proportional change in the selection coefficient for a type that experiences proportionally $1-\epsilon$ fewer deaths induced by crowding. The population is in demographic equilibrium at the start and end of the sweep. (b) Example equilibrium-to-equilibrium sweep.}
 \end{figure}
 
-At first glance, $b$ in Eq.~\eqref{eq:bdensitydependence} appears to be analogous to the $\delta$ in Eq.~\eqref{eq:simplebirthdeath} because it regulates density and is multiplied by the density-dependent term $f(\overline{b},N)=\frac{1-e^{-\overline{b}N/T}}{N}(T-N)$. However, equilibrium-to-equilibrium $b$-sweeps are qualitatively different from $\delta$ sweeps. The reason is that $b$ is not a simple per-capita birth rate. Greater $b$ means more propagules contesting territories, but also more territories being contested. The net effect on $f(\overline{b},N)$ is precisely zero in equilibrium: in a single-type equilibrium we have $b_i/\overline{b}=1$ and so $f(\overline{b},N)=d_i$ exactly at the beginning and end of a $b$-sweep, even though $N$ increases. Strictly speaking there is some deviation in $f(\overline{b},N)$ from $d_i$ during the sweep, but this deviation is an order of magnitude smaller than for a $\delta$ sweep (deviation from Eq.~\eqref{eq:canonical} in Fig.~\ref{fig:strengthofselection} is of order $\epsilon$, whereas the analogous effect for $b$ sweep in the variable-density lottery is only of order $\epsilon^2$; see Appendix D for details). Since selection must already be quite strong for a $\delta$-sweep to threaten Eq.~\eqref{eq:canonical}, the constant-$s$ model effectively applies exactly for equilibrium $b$-sweeps. 
+In the variable-density lottery, equilibrium-to-equilibrium $b$-sweeps are qualitatively different from $\delta$ sweeps, because $b$ is not a simple birth rate. Greater $b$ means more propagules contesting territories, but also more territories being contested. The density-dependence of $b$-selection is represented by the term $f(\overline{b},N)=\frac{1-e^{-\overline{b}N/T}}{N}(T-N)$ in Eq.~\eqref{eq:bdensitydependence}. The net effect on $f(\overline{b},N)$ is precisely zero in equilibrium: in a single-type equilibrium we have $b_i/\overline{b}=1$ and so $f(\overline{b},N)=d_i$ exactly at the beginning and end of a $b$-sweep, even though $N$ increases. Strictly speaking there is some deviation in $f(\overline{b},N)$ from $d_i$ during the sweep, but this deviation is an order of magnitude smaller than for a $\delta$ sweep (deviation from Eq.~\eqref{eq:canonical} in Fig.~\ref{fig:strengthofselection} is of order $\epsilon$, whereas the analogous effect for $b$ sweep in the variable-density lottery is only of order $\epsilon^2$; see Appendix D for details). Since selection must already be quite strong for a $\delta$-sweep to threaten Eq.~\eqref{eq:canonical}, the density-independent model effectively applies exactly for equilibrium $b$-sweeps (however, selection is frequency-dependent because of the $1/\overline{b}$ factor). 
+
+If selection simultaneously acts on more than one trait in the variable-density lottery, then evolution in a density-regulating trait can drive changes in the strength of selection on a trait subject to density-dependent selection (Fig.~\ref{fig:multiple}). This can produce behavior reminiscent of Fig.~\ref{fig:strengthofselection}. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{multiple.pdf}
+\caption{\label{fig:multiple} Simultaneous selection on $d$ and $c$ as predicted by Eq.~\eqref{eq:master}. Selection is not constant over the sweep.}
+\end{figure}
 
 \section*{Discussion}
 

@@ -34,12 +34,12 @@ ax1.plot(ls[:,0],exact[:,1,0]/(ls[:,0]*U),'k.',markersize=1)
 ax1.plot(ls[:,0],exact[:,2,0]/(ls[:,0]*U),'k.',markersize=1)
 
 ax1.plot(ls[:,0],totalclassic[:,0]/(ls[:,0]*U),'k--',label=r"Classic lottery",linewidth=2)
-ax1.set_xlim([0,maxl])
+ax1.set_xlim([0,2])
 ax1.set_ylim([0,1])
 ax1.xaxis.set_label_coords(0.5, -0.09)
 ax1.yaxis.set_label_coords(-0.1, 0.5)
-ax1.set_xticklabels(['0','','1','','2','','3'])
-ax1.set_xlabel(r"$l_1$",fontsize=14)
+ax1.set_xticklabels([0,'',10,'',20])
+ax1.set_xlabel(r"$L$",fontsize=14)
 ax1.set_ylabel("Success per propagule",fontsize=12)
 
 ax1.annotate('Rare type',xy=(0.65,0.32),xycoords='axes fraction',fontsize=12)
@@ -61,7 +61,9 @@ ax2.set_xlim([0,20])
 ax2.set_ylim([0,1])
 ax2.xaxis.set_label_coords(0.5, -0.09)
 ax2.yaxis.set_label_coords(-0.1, 0.5)
-ax2.set_xlabel(r"$l_2$",fontsize=14)
+ax2.set_xlabel(r"$L$",fontsize=14)
+ax2.set_xticklabels([0,'',10,'',20])
+
 
 ax2.plot(ls[:,1],exact[:,0,1]/(ls[:,1]*U),'k.',markersize=1,label="Simulation")
 ax2.plot(ls[:,1],exact[:,1,1]/(ls[:,1]*U),'k.',markersize=1)
@@ -71,4 +73,4 @@ ax2.annotate('Common type',xy=(0.6,0.32),xycoords='axes fraction',fontsize=12)
 
 plt.tight_layout()
 
-plt.savefig('/home/jbertram/repos/densitydependentlottery/simulationcomparison.pdf',bbox="tight")
+plt.savefig('/home/jason/repos/densitydependentlottery/simulationcomparison.pdf',bbox="tight")

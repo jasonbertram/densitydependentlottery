@@ -51,18 +51,18 @@ ax2.set_ylabel("Frequency",fontsize=14)
 
 plt.tight_layout()
 
-plt.savefig('/home/jbertram/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
+plt.savefig('/home/jason/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
 
 
-#lottery model
+#lottery multiple traits
 #==========================================================
 
 T=100000
-totaltime=80
-b=np.array([3.,3.])
+totaltime=100
+b=np.array([1.,1.])
 c=np.array([1.,1.])
-d=np.array([1.,1.])
-n0=np.array([49000.,100.])
+d=np.array([.9,.9])
+n0=np.array([1000.,1000.])
 
 n=n0;
 nhist=[n];
@@ -71,55 +71,47 @@ for t in range(totaltime/2):
     n=n+deltnplus(b*n*U/T,c,U)-d*n
     nhist.append(list(n))
 
-#plt.plot(np.sum(nhist,1))
-n0=np.array(n)
-print n0 #equilibrium
+print nhist[-1]
 
-s=0.4
-d=np.array([1.,1.*(1-s)])
+totaltime=80
+b=np.array([1.,1.])
+c=np.array([1.,2.])
+d=np.array([.9,.7])
+n0=np.array([sum(nhist[-1]),10.])
+
 n=n0;
 nhist=[n];
 for t in range(totaltime):
     U=T-sum(n)
     n=n+deltnplus(b*n*U/T,c,U)-d*n
     nhist.append(list(n))
-    
+
 nhist=np.array(nhist)
 Nhist=np.sum(nhist,1)
-print "b absolute: ", nhist[1,1]/nhist[0,1]-1
-print "b relative: ", nhist[1,1]/nhist[0,1]*Nhist[0]/Nhist[1]-1
-print "N change: ", Nhist[-1]/Nhist[0]
 
+fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
 
-fig1,ax1=plt.subplots()
-ax1.plot(nhist[:,1]/Nhist)
+ax1.plot(nhist[:,1],"k", linewidth=2,label=r"$d_j=0.7$, $c_j=2$")
+ax1.plot(nhist[:,0],"k--", linewidth=2,label=r"$d_i=0.9$, $c_i=1$")
+ax1.plot(Nhist,"k:", linewidth=2,label=r"Total")
+ax1.annotate(r'$(a)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
+ax1.set_xticklabels([])
+ax1.set_xlabel("Time",fontsize=14)
+ax1.set_yticklabels([0,0.05,0.1,0.15,0.2,0.25,0.3])
+ax1.set_ylabel(r"Density/$T$",fontsize=14)
+ax1.set_ylim([0,30000])
+ax1.legend(loc='upper center',prop={'size':11})
 
-fig2,ax2=plt.subplots()
-ax2.plot(Nhist)
+ax2.plot((nhist[1:,1]-nhist[0:-1,1])/nhist[0:-1,1]-(nhist[1:,0]-nhist[0:-1,0])/nhist[0:-1,0],'k',linewidth=2)
+#plt.ylim([0,0.5])
+ax2.annotate(r'$(b)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
+ax2.set_xticklabels([])
+ax2.set_xlabel("Time",fontsize=14)
+ax2.set_ylim([0.2,0.25])
+#ax2.set_yticklabels(['0','','','','','1'])
+ax2.set_ylabel(r"$\Delta n_j/n_j-\Delta n_i/n_i$")
 
+plt.tight_layout()
 
-d=np.array([1.,1.])
-c=np.array([1.,3.])
-n=n0;
-nhist=[n];
-for t in range(totaltime):
-    U=T-sum(n)
-    n=n+deltnplus(b*n*U/T,c,U)-d*n
-    nhist.append(list(n))
-    
-nhist=np.array(nhist)
-Nhist=np.sum(nhist,1)
-print nhist[1,1]/nhist[0,1]-1
-print nhist[1,1]/nhist[0,1]*Nhist[0]/Nhist[1]-1
+plt.savefig('/home/jason/repos/densitydependentlottery/multiple.pdf',bbox="tight")
 
-ax1.plot(nhist[:,1]/Nhist)
-ax2.plot(Nhist)
-
-
-
-#plt.figure()
-#plt.plot(map(np.log,nhist[:,1]))
-
-#plt.figure()
-#plt.plot(np.sum(nhist,1))
-#plt.ylim([0,T])
