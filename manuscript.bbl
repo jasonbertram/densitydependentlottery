@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,6 +10,11 @@
 N.~Barton, D.~Briggs, J.~Eisen, D.~Goldstein, and N.~Patel.
 \newblock \emph{Evolution}.
 \newblock NY: Cold Spring Harbor Laboratory Press, 2007.
+
+\bibitem[Begon et~al.(1990)Begon, Harper, and Townsend]{begon_1990}
+M.~Begon, J.~L. Harper, and C.~R. Townsend.
+\newblock \emph{Ecology. Individuals, populations and communities. 2nd edn.}
+\newblock Blackwell scientific publications, 1990.
 
 \bibitem[Benton and Grant(2000)]{benton_2000}
 T.~Benton and A.~Grant.
@@ -220,9 +225,9 @@ T.~Prout.
 
 \bibitem[Roughgarden(1979)]{roughgarden_1979}
 J.~Roughgarden.
-\newblock Theory of population genetics and evolutionary ecology: an
-  introduction.
-\newblock 1979.
+\newblock \emph{Theory of population genetics and evolutionary ecology: an
+  introduction.}
+\newblock Macmillan New York NY United States 1979., 1979.
 
 \bibitem[Sale(1977)]{sale_77}
 P.~F. Sale.
