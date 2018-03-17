@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{49}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -45,11 +45,23 @@ B.~M. Bolker and S.~W. Pacala.
   1999.
 \newblock \doi{10.1086/303199}.
 
+\bibitem[Boyce(1984)]{boyce_1984}
+M.~S. Boyce.
+\newblock Restitution of r-and k-selection as a model of density-dependent
+  natural selection.
+\newblock \emph{Annual Review of Ecology and Systematics}, 15:\penalty0
+  427--447, 1984.
+
 \bibitem[Burger and Lynch(1995)]{burger1995evolution}
 R.~Burger and M.~Lynch.
 \newblock Evolution and extinction in a changing environment: a
   quantitative-genetic analysis.
 \newblock \emph{Evolution}, pages 151--163, 1995.
+
+\bibitem[Charlesworth(1971)]{charlesworth_1971}
+B.~Charlesworth.
+\newblock Selection in density-regulated populations.
+\newblock \emph{Ecology}, 52\penalty0 (3):\penalty0 469--474, 1971.
 
 \bibitem[Charlesworth(1994)]{charlesworth_1994}
 B.~Charlesworth.
@@ -113,6 +125,12 @@ R.~Ferriere and S.~Legendre.
 \newblock \emph{Phil. Trans. R. Soc. B}, 368\penalty0 (1610):\penalty0
   20120081, 2013.
 
+\bibitem[Fisher(1930)]{fisher_1930}
+R.~A. Fisher.
+\newblock \emph{The genetical theory of natural selection: a complete variorum
+  edition}.
+\newblock Oxford University Press, 1930.
+
 \bibitem[Gill(1974)]{gill_1974}
 D.~E. Gill.
 \newblock Intrinsic rate of increase, saturation density, and competitive
@@ -140,6 +158,13 @@ A.~Joshi, N.~Prasad, and M.~Shakarad.
   competition: density-dependent selection revisited.
 \newblock \emph{Journal of Genetics}, 80\penalty0 (2):\penalty0 63--75, 2001.
 
+\bibitem[Kimura(1978)]{kimura_1978}
+M.~Kimura.
+\newblock Change of gene frequencies by natural selection under population
+  number regulation.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 75\penalty0
+  (4):\penalty0 1934--1937, 1978.
+
 \bibitem[Kimura and Crow(1969)]{kimura1969natural}
 M.~Kimura and J.~F. Crow.
 \newblock Natural selection and gene substitution.
@@ -156,6 +181,12 @@ R.~Lande, S.~Engen, and B.-E. S{\ae}ther.
   dynamics in a fluctuating environment.
 \newblock \emph{Philosophical Transactions of the Royal Society B: Biological
   Sciences}, 364\penalty0 (1523):\penalty0 1511--1518, 2009.
+
+\bibitem[Leon and Charlesworth(1978)]{leon_1978}
+J.~A. Leon and B.~Charlesworth.
+\newblock Ecological versions of fisher's fundamental theorem of natural
+  selection.
+\newblock \emph{Ecology}, 59\penalty0 (3):\penalty0 457--464, 1978.
 
 \bibitem[Levins and Culver(1971)]{levins_71}
 R.~Levins and D.~Culver.
@@ -198,6 +229,12 @@ J.~A. Metz, R.~M. Nisbet, and S.~A. Geritz.
 \newblock How should we define ‘fitness’ for general ecological scenarios?
 \newblock \emph{Trends in Ecology \& Evolution}, 7\penalty0 (6):\penalty0
   198--202, 1992.
+
+\bibitem[Nagylaki(1979)]{nagylaki_1979}
+T.~Nagylaki.
+\newblock Dynamics of density-and frequency-dependent selection.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 76\penalty0
+  (1):\penalty0 438--441, 1979.
 
 \bibitem[Nei(1971)]{nei1971fertility}
 M.~Nei.
