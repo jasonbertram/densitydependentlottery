@@ -1,4 +1,4 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{50}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -235,6 +235,11 @@ T.~Nagylaki.
 \newblock Dynamics of density-and frequency-dependent selection.
 \newblock \emph{Proceedings of the National Academy of Sciences}, 76\penalty0
   (1):\penalty0 438--441, 1979.
+
+\bibitem[Nagylaki et~al.(1992)]{nagylaki_1992}
+T.~Nagylaki et~al.
+\newblock \emph{Introduction to theoretical population genetics}, volume 142.
+\newblock Springer-Verlag Berlin, 1992.
 
 \bibitem[Nei(1971)]{nei1971fertility}
 M.~Nei.
