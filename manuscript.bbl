@@ -1,9 +1,15 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{53}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amarasekare(2002)]{amarasekare_2002}
+P.~Amarasekare.
+\newblock Interference competition and species coexistence.
+\newblock \emph{Proceedings of the Royal Society of London B: Biological
+  Sciences}, 269\penalty0 (1509):\penalty0 2541--2550, 2002.
 
 \bibitem[Barton et~al.(2007)Barton, Briggs, Eisen, Goldstein, and
   Patel]{barton_2007}
@@ -58,6 +64,12 @@ R.~Burger and M.~Lynch.
   quantitative-genetic analysis.
 \newblock \emph{Evolution}, pages 151--163, 1995.
 
+\bibitem[Case and Gilpin(1974)]{case_1974}
+T.~J. Case and M.~E. Gilpin.
+\newblock Interference competition and niche theory.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 71\penalty0
+  (8):\penalty0 3073--3077, 1974.
+
 \bibitem[Charlesworth(1971)]{charlesworth_1971}
 B.~Charlesworth.
 \newblock Selection in density-regulated populations.
@@ -67,13 +79,6 @@ B.~Charlesworth.
 B.~Charlesworth.
 \newblock \emph{Evolution in age-structured populations}, volume~2.
 \newblock Cambridge University Press Cambridge, 1994.
-
-\bibitem[Chesson(1983)]{chesson_1983}
-P.~L. Chesson.
-\newblock \emph{Coexistence of Competitors in a Stochastic Environment: The
-  Storage Effect}, pages 188--198.
-\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1983.
-\newblock ISBN 978-3-642-87893-0.
 
 \bibitem[Chesson and Warner(1981)]{chesson_1981}
 P.~L. Chesson and R.~R. Warner.
@@ -130,6 +135,13 @@ R.~A. Fisher.
 \newblock \emph{The genetical theory of natural selection: a complete variorum
   edition}.
 \newblock Oxford University Press, 1930.
+
+\bibitem[Frank(2011)]{frank_2011}
+S.~A. Frank.
+\newblock Natural selection. i. variable environments and uncertain returns on
+  investment.
+\newblock \emph{Journal of evolutionary biology}, 24\penalty0 (11):\penalty0
+  2299--2309, 2011.
 
 \bibitem[Gill(1974)]{gill_1974}
 D.~E. Gill.
@@ -283,6 +295,14 @@ P.~E. Smouse.
   frequency-and density-dependent selection.
 \newblock \emph{The American Naturalist}, 110\penalty0 (975):\penalty0
   849--860, 1976.
+
+\bibitem[Svardal et~al.(2015)Svardal, Rueffler, and Hermisson]{svardal_2015}
+H.~Svardal, C.~Rueffler, and J.~Hermisson.
+\newblock A general condition for adaptive genetic polymorphism in temporally
+  and spatially heterogeneous environments.
+\newblock \emph{Theoretical Population Biology}, 99:\penalty0 76 -- 97, 2015.
+\newblock ISSN 0040-5809.
+\newblock \doi{http://dx.doi.org/10.1016/j.tpb.2014.11.002}.
 
 \bibitem[Tilman(1994)]{tilman_94}
 D.~Tilman.
