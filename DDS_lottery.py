@@ -57,8 +57,8 @@ eps=0.1
 
 ns=np.array([_*np.array([1,1]) for _ in np.linspace(1,T/2,100)]) 
 
-bWs=np.array([deltnplus(np.array([1.,1+eps])*b*x*(1-sum(x)/T),c,T-sum(x))/x-d for x in ns])
-bDDS=np.sum(np.array([-1,1])*bWs,1)/(1+np.mean(bWs,1))
+bWs=np.array([(1+deltnplus(np.array([1.,1+eps])*b*x*(1-sum(x)/T),c,T-sum(x))/x)/d for x in ns])
+bDDS=np.sum(np.array([-1,1])*bWs,1)/np.mean(bWs,1)
 cWs=np.array([deltnplus(b*x*(1-sum(x)/T),np.array([1.,1+eps])*c,T-sum(x))/x-d for x in ns])
 cDDS=np.sum(np.array([-1,1])*cWs,1)/(1+np.mean(cWs,1))
 dWs=np.array([deltnplus(b*x*(1-sum(x)/T),c,T-sum(x))/x-np.array([1.+eps,1.])*d for x in ns])
