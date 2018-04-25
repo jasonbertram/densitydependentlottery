@@ -106,7 +106,7 @@ ax1.legend(loc='upper center',prop={'size':11})
 
 Wbarhist=np.sum((nhist[:-1]*Whist),1)/Nhist[:-1]
 ax2.plot((Whist[:,1]-Whist[:,0])/Wbarhist,'k',linewidth=2)
-s=Whist[0,1]-Whist[0,0]
+s=Whist[0,1]/Whist[0,0]-1
 ax2.plot(s/(1+s*nhist[:-1,1]/Nhist[:-1]),'b',linewidth=2)
 #plt.ylim([0,0.5])
 ax2.annotate(r'$(b)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
