@@ -8,18 +8,18 @@ Created on Wed Nov 29 12:26:40 2017
 #(n1,n2) vector field
 #=================================================================
 T=100000
-x,y=np.linspace(0.0,1.,401),np.linspace(0.,1.,401)
+x,y=np.linspace(1e-5,1.,401),np.linspace(1e-5,1.,401)
 xgrid, ygrid=np.meshgrid(x,y)
 X,Y=np.zeros([len(x),len(y)]),np.zeros([len(x),len(y)])
 b=np.array([5.,5.])
 c=np.array([5.,1.])
-d=np.array([0.1,0.1])
+d=np.array([1.1,1.1])
 
 for i in xrange(len(x)):
     for j in xrange(len(y)):
         n=T*np.array([x[i],y[j]])
         U=T-sum(n)
-        X[j,i],Y[j,i]=deltnplus(b*n*U/float(T),c,U)-d*n
+        X[j,i],Y[j,i]=((1+deltnplus(b*n*U/float(T),c,U)/n)/d-1)*n
 
 
 fig1, (ax2, ax1) = plt.subplots(ncols=2,figsize=[8,4])
@@ -28,7 +28,6 @@ f1null=np.array([[x[[_ for _ in range(len(x)) if X[i,_]>0][-1]],y[i]] for i in r
 f2null=np.array([[x[[_ for _ in range(len(x)) if Y[i,_]>0][-1]],y[i]] for i in range(1,len(y)) if max(Y[i])>0])
 ax1.plot(f1null[:,0],f1null[:,1],'k--',linewidth=2.)
 ax1.plot(f2null[:,0],f2null[:,1],'k--',linewidth=2.)
-#plt.plot([f2null[0,0],f2null[-1,0]],[f2null[0,1],f2null[-1,1]],'y',linewidth=2)
 ax1.plot([f2null[-1,0],f1null[0,0]],[f2null[-1,1],f1null[0,1]],'k',linewidth=2,alpha=0.8)
 ax1.set_xlim([0,f1null[0,0]])
 ax1.set_ylim([0,f1null[-1,1]])

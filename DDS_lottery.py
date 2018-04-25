@@ -52,28 +52,28 @@ fig1, ax1 = plt.subplots(figsize=[5,4])
 T=100000
 b=np.array([1.,1.])
 c=np.array([1.,1.])
-d=np.array([.5,.5])
+d=np.array([2.,2.])
 eps=0.1
 
 ns=np.array([_*np.array([1,1]) for _ in np.linspace(1,T/2,100)]) 
 
 bWs=np.array([(1+deltnplus(np.array([1.,1+eps])*b*x*(1-sum(x)/T),c,T-sum(x))/x)/d for x in ns])
 bDDS=np.sum(np.array([-1,1])*bWs,1)/np.mean(bWs,1)
-cWs=np.array([deltnplus(b*x*(1-sum(x)/T),np.array([1.,1+eps])*c,T-sum(x))/x-d for x in ns])
-cDDS=np.sum(np.array([-1,1])*cWs,1)/(1+np.mean(cWs,1))
-dWs=np.array([deltnplus(b*x*(1-sum(x)/T),c,T-sum(x))/x-np.array([1.+eps,1.])*d for x in ns])
-dDDS=np.sum(np.array([-1,1])*dWs,1)/(1+np.mean(dWs,1))
+cWs=np.array([(1+deltnplus(b*x*(1-sum(x)/T),np.array([1.,1+eps])*c,T-sum(x))/x)/d for x in ns])
+cDDS=np.sum(np.array([-1,1])*cWs,1)/np.mean(cWs,1)
+dWs=np.array([(1+deltnplus(b*x*(1-sum(x)/T),c,T-sum(x))/x)/(np.array([1.+eps,1.])*d) for x in ns])
+dDDS=np.sum(np.array([-1,1])*dWs,1)/np.mean(dWs,1)
 ax1.plot(np.sum(ns,1)/T,bDDS,'k',linewidth=2,label=r"$b$ selection")
 ax1.plot(np.sum(ns,1)/T,cDDS,'k--',linewidth=2,label=r"$c$ selection")
 ax1.plot(np.sum(ns,1)/T,dDDS,'k:',linewidth=2,label=r"$d$ selection")
 ax1.legend(loc='upper center',prop={'size':11})
-#ax1.set_ylim([0,0.1])
+ax1.set_ylim([0,0.14])
 
 #eq_dens=optimize.fsolve(lambda D: (1-np.exp(-b[0]*D))*(1/D-1)-d[0],0.5)[0]
 #ax1.plot([eq_dens,eq_dens],[0,0.1],'k',linewidth=2)
 
 ax1.set_xlabel(r"Density $N/T$")
-ax1.set_ylabel(r"$\Delta n_2/n_2-\Delta n_1/n_1$")
+ax1.set_ylabel(r"$(W_2-W_1)/\overline{W}$")
 
 plt.tight_layout()
 
