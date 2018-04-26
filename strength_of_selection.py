@@ -54,7 +54,7 @@ plt.tight_layout()
 plt.savefig('/home/jason/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
 
 
-#lottery multiple traits
+#lottery bsweep
 #==========================================================
 
 T=100000
@@ -73,7 +73,7 @@ for t in range(totaltime/2):
 
 print nhist[-1]
 
-totaltime=200
+totaltime=100
 b=np.array([1.,1.5])
 c=np.array([1.,1.])
 d=np.array([1.5,1.5])
@@ -93,30 +93,105 @@ Whist=np.array(Whist)
 
 fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
 
-ax1.plot(nhist[:,1],"k", linewidth=2,label=r"$d_2=0.7$, $c_2=2$")
-ax1.plot(nhist[:,0],"k--", linewidth=2,label=r"$d_1=0.9$, $c_1=1$")
+ax1.plot(nhist[:,1],"k", linewidth=2,label=r"$b_2=1.5$")
+ax1.plot(nhist[:,0],"k--", linewidth=2,label=r"$b_1=1$")
 ax1.plot(Nhist,"k:", linewidth=2,label=r"Total")
 ax1.annotate(r'$(a)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
 ax1.set_xticklabels([])
 ax1.set_xlabel("Time",fontsize=14)
-#ax1.set_yticklabels([0,0.05,0.1,0.15,0.2,0.25,0.3])
+ax1.set_yticklabels([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7])
 ax1.set_ylabel(r"Density/$T$",fontsize=14)
-#ax1.set_ylim([0,30000])
+ax1.set_ylim([0,70000])
 ax1.legend(loc='upper center',prop={'size':11})
 
 Wbarhist=np.sum((nhist[:-1]*Whist),1)/Nhist[:-1]
-ax2.plot((Whist[:,1]-Whist[:,0])/Wbarhist,'k',linewidth=2)
-s=Whist[0,1]/Whist[0,0]-1
-ax2.plot(s/(1+s*nhist[:-1,1]/Nhist[:-1]),'b',linewidth=2)
-#plt.ylim([0,0.5])
+ax2.plot((Whist[:,1]-Whist[:,0])/Wbarhist,'k',linewidth=2,label=r"Density-dependent")
+s=b[1]/b[0]-1
+f=d[0]-1
+ax2.plot(f/(1+f)*s/(1+s*nhist[:-1,1]/Nhist[:-1]),'k--',linewidth=2,label=r"$f(\overline{b},N)=\mathrm{constant}$")
 ax2.annotate(r'$(b)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
+ax2.set_ylim([0.1,0.19])
 ax2.set_xticklabels([])
 ax2.set_xlabel("Time",fontsize=14)
 #ax2.set_ylim([0.2,0.25])
 #ax2.set_yticklabels(['0','','','','','1'])
 ax2.set_ylabel(r"$(W_2-W_1)/\overline{W}$")
+ax2.legend(loc='upper center',prop={'size':11})
 
 plt.tight_layout()
 
-plt.savefig('/home/jbertram/repos/densitydependentlottery/multiple.pdf',bbox="tight")
+plt.savefig('/home/jbertram/repos/densitydependentlottery/bsweep.pdf',bbox="tight")
+
+#lottery multiple traits
+#==========================================================
+
+T=100000
+totaltime=100
+b=np.array([1.,1.])
+c=np.array([1.,1.])
+d=np.array([1.5,1.5])
+n0=np.array([1000.,1000.])
+
+n=n0;
+nhist=[n];
+for t in range(totaltime/2):
+    U=T-sum(n)
+    n=n*(1+deltnplus(b*n*U/T,c,U)/n)/d
+    nhist.append(list(n))
+
+print nhist[-1]
+
+totaltime=100
+b=np.array([1.,1.25])
+c=np.array([1.,1.])
+d=np.array([1.5,1.4])
+n0=np.array([sum(nhist[-1]),10.])
+
+n=n0;
+nhist=[n]; Whist=[]
+for t in range(totaltime):
+    U=T-sum(n)
+    Whist.append((1+deltnplus(b*n*U/T,c,U)/n)/d)
+    n=n*Whist[-1]
+    nhist.append(list(n))
+
+nhist=np.array(nhist)
+Nhist=np.sum(nhist,1)
+Whist=np.array(Whist)
+
+fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
+
+ax1.plot(nhist[:,1],"k", linewidth=2,label=r"$b_2=1.25$, $d_2=1.4$")
+ax1.plot(nhist[:,0],"k--", linewidth=2,label=r"$b_1=1$, $d_1=1.5$")
+ax1.plot(Nhist,"k:", linewidth=2,label=r"Total")
+ax1.annotate(r'$(a)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
+ax1.set_xticklabels([])
+ax1.set_xlabel("Time",fontsize=14)
+ax1.set_yticklabels([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8])
+ax1.set_ylabel(r"Density/$T$",fontsize=14)
+ax1.set_ylim([0,80000])
+ax1.legend(loc='upper center',prop={'size':11})
+
+Wbarhist=np.sum((nhist[:-1]*Whist),1)/Nhist[:-1]
+ax2.plot((Whist[:,1]-Whist[:,0])/Wbarhist,'k',linewidth=2,label=r"Density-dependent")
+
+bbarhist=np.sum((nhist[:-1]*b),1)/Nhist[:-1]
+f=(1-np.exp(-bbarhist[0]*Nhist[0]/T))*(T-Nhist[0])/Nhist[0]
+W1histfconst=(1+f*b[0]/bbarhist)/d[0]
+W2histfconst=(1+f*b[1]/bbarhist)/d[1]
+Wbarhistfconst=(W1histfconst*nhist[:-1,0]+W1histfconst*nhist[:-1,1])/Nhist[:-1]
+ax2.plot((W2histfconst-W1histfconst)/Wbarhistfconst,'k--',linewidth=2,label=r"$f(\overline{b},N)=\mathrm{constant}$")
+ax2.annotate(r'$(b)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
+ax2.set_ylim([0.11,0.18])
+ax2.set_xticklabels([])
+ax2.set_xlabel("Time",fontsize=14)
+#ax2.set_ylim([0.2,0.25])
+#ax2.set_yticklabels(['0','','','','','1'])
+ax2.set_ylabel(r"$(W_2-W_1)/\overline{W}$")
+ax2.legend(loc='upper center',prop={'size':11})
+
+plt.tight_layout()
+
+plt.savefig('/home/jbertram/repos/densitydependentlottery/bdsweep.pdf',bbox="tight")
+
 

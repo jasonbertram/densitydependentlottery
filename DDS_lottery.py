@@ -63,11 +63,11 @@ cWs=np.array([(1+deltnplus(b*x*(1-sum(x)/T),np.array([1.,1+eps])*c,T-sum(x))/x)/
 cDDS=np.sum(np.array([-1,1])*cWs,1)/np.mean(cWs,1)
 dWs=np.array([(1+deltnplus(b*x*(1-sum(x)/T),c,T-sum(x))/x)/(np.array([1.+eps,1.])*d) for x in ns])
 dDDS=np.sum(np.array([-1,1])*dWs,1)/np.mean(dWs,1)
-ax1.plot(np.sum(ns,1)/T,bDDS,'k',linewidth=2,label=r"$b$ selection")
-ax1.plot(np.sum(ns,1)/T,cDDS,'k--',linewidth=2,label=r"$c$ selection")
-ax1.plot(np.sum(ns,1)/T,dDDS,'k:',linewidth=2,label=r"$d$ selection")
-ax1.legend(loc='upper center',prop={'size':11})
-ax1.set_ylim([0,0.14])
+ax1.plot(np.sum(ns,1)/T,bDDS,'k',linewidth=2,label=r"$b$")
+ax1.plot(np.sum(ns,1)/T,cDDS,'k--',linewidth=2,label=r"$c$")
+ax1.plot(np.sum(ns,1)/T,dDDS,'k:',linewidth=2,label=r"$d$")
+ax1.legend(loc='upper center',prop={'size':11},ncol=3)
+ax1.set_ylim([0,0.11])
 
 #eq_dens=optimize.fsolve(lambda D: (1-np.exp(-b[0]*D))*(1/D-1)-d[0],0.5)[0]
 #ax1.plot([eq_dens,eq_dens],[0,0.1],'k',linewidth=2)

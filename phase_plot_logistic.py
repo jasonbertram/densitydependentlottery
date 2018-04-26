@@ -31,16 +31,16 @@ ax1.plot(z1,(1-alphas[1,0]*z1)/alphas[1,1],'k--',linewidth=2)
 ax1.set_xlim([0,1])
 ax1.set_ylim([0,1])
 
-ax1.annotate(r'$\frac{dn_2}{dt}=0$',xy=(0.005,0.68),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$\frac{dn_1}{dt}=0$',xy=(0.65,0.4),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$K_{1}$',xy=(0.95,-0.07),xycoords='axes fraction',fontsize=16)
-ax1.annotate(r'$K_{2}$',xy=(-0.1,0.65),xycoords='axes fraction',fontsize=16)
+ax1.annotate(r'$\frac{dn_1}{dt}=0$',xy=(0.005,0.68),xycoords='axes fraction',fontsize=16)
+ax1.annotate(r'$\frac{dn_2}{dt}=0$',xy=(0.65,0.4),xycoords='axes fraction',fontsize=16)
+ax1.annotate(r'$K_{2}$',xy=(0.95,-0.07),xycoords='axes fraction',fontsize=16)
+ax1.annotate(r'$K_{1}$',xy=(-0.1,0.65),xycoords='axes fraction',fontsize=16)
 ax1.annotate(r'$(a)$',xy=(0.9,0.93),xycoords='axes fraction',fontsize=16)
 
 ax1.set_xticklabels([])
 ax1.set_yticklabels([])
-ax1.set_xlabel(r"$n_1$",fontsize=20)
-ax1.set_ylabel(r"$n_2$",fontsize=20)
+ax1.set_xlabel(r"$n_2$",fontsize=20)
+ax1.set_ylabel(r"$n_1$",fontsize=20)
 
 ax2.quiver(z1[:-1], z2[:-1], z1[1:]-z1[:-1], z2[1:]-z2[:-1], color="b", scale_units='xy', angles='xy', scale=1)
 ax2.annotate(r'$\frac{dN}{dt}=0$',xy=(0.53,0.53),xycoords='axes fraction',fontsize=16)
@@ -48,8 +48,8 @@ ax2.annotate(r'$(b)$',xy=(0.9,0.93),xycoords='axes fraction',fontsize=16)
 
 ax2.set_xticklabels([])
 ax2.set_yticklabels([])
-ax2.set_xlabel(r"$n_1$",fontsize=20)
-ax2.set_ylabel(r"$n_2$",fontsize=20)
+ax2.set_xlabel(r"$n_2$",fontsize=20)
+ax2.set_ylabel(r"$n_1$",fontsize=20)
 
 plt.savefig('/home/jbertram/repos/densitydependentlottery/Kplot.pdf',bbox="tight")
 

@@ -42,8 +42,8 @@ ax1.streamplot(x, y, X, Y,start_points=seedpoints,linewidth=1.,density=100)
 
 ax1.set_xticklabels([])
 ax1.set_yticklabels([])
-ax1.set_xlabel(r"$n_1$",fontsize=20)
-ax1.set_ylabel(r"$n_2$",fontsize=20)
+ax1.set_xlabel(r"$n_2$",fontsize=20)
+ax1.set_ylabel(r"$n_1$",fontsize=20)
 
 x,y=np.linspace(0,1.5,1000),np.linspace(0,1.5,1000)
 X, Y = np.meshgrid(x,y)
@@ -66,16 +66,16 @@ ax2.streamplot(x, y, U, V,density=100,start_points=seedpoints,linewidth=1.)
 
 #ax2.annotate(r'$\frac{dn_2}{dt}=0$',xy=(0.15,0.81),xycoords='axes fraction',fontsize=16)
 #ax2.annotate(r'$\frac{dn_1}{dt}=0$',xy=(0.62,0.28),xycoords='axes fraction',fontsize=16)
-ax2.annotate(r'$K_{21}$',xy=(0.82,-0.07),xycoords='axes fraction',fontsize=16)
-ax2.annotate(r'$K_{11}$',xy=(0.95,-0.07),xycoords='axes fraction',fontsize=16)
-ax2.annotate(r'$K_{22}$',xy=(-0.13,0.89),xycoords='axes fraction',fontsize=16)
-ax2.annotate(r'$K_{12}$',xy=(-0.13,.97),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$K_{12}$',xy=(0.82,-0.07),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$K_{22}$',xy=(0.95,-0.07),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$K_{11}$',xy=(-0.13,0.89),xycoords='axes fraction',fontsize=16)
+ax2.annotate(r'$K_{21}$',xy=(-0.13,.97),xycoords='axes fraction',fontsize=16)
 ax2.annotate(r'$(a)$',xy=(0.9,0.93),xycoords='axes fraction',fontsize=16)
 
 ax2.set_xticklabels([])
 ax2.set_yticklabels([])
-ax2.set_xlabel(r"$n_1$",fontsize=20)
-ax2.set_ylabel(r"$n_2$",fontsize=20)
+ax2.set_xlabel(r"$n_2$",fontsize=20)
+ax2.set_ylabel(r"$n_1$",fontsize=20)
 
 plt.tight_layout()
 

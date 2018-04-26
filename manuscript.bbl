@@ -26,14 +26,14 @@ M.~Begon, J.~L. Harper, and C.~R. Townsend.
 T.~Benton and A.~Grant.
 \newblock Evolutionary fitness in ecology: comparing measures of fitness in
   stochastic, density-dependent environments.
-\newblock \emph{Evolutionary ecology research}, 2\penalty0 (6):\penalty0
+\newblock \emph{Evolutionary Ecology Research}, 2\penalty0 (6):\penalty0
   769--789, 2000.
 
 \bibitem[Bergland et~al.(2014)Bergland, Behrman, O'Brien, Schmidt, and
   Petrov]{bergland_14}
 A.~O. Bergland, E.~L. Behrman, K.~R. O'Brien, P.~S. Schmidt, and D.~A. Petrov.
-\newblock Genomic evidence of rapid and stable adaptive oscillations over
-  seasonal time scales in drosophila.
+\newblock {Genomic Evidence of Rapid and Stable Adaptive Oscillations over
+  Seasonal Time Scales in Drosophila}.
 \newblock \emph{PLOS Genetics}, 10\penalty0 (11):\penalty0 1--19, 11 2014.
 \newblock \doi{10.1371/journal.pgen.1004775}.
 
@@ -62,7 +62,7 @@ M.~S. Boyce.
 R.~Burger and M.~Lynch.
 \newblock Evolution and extinction in a changing environment: a
   quantitative-genetic analysis.
-\newblock \emph{Evolution}, pages 151--163, 1995.
+\newblock \emph{Evolution}, 49\penalty0 (1):\penalty0 151--163, 1995.
 
 \bibitem[Case and Gilpin(1974)]{case_1974}
 T.~J. Case and M.~E. Gilpin.
@@ -84,7 +84,8 @@ B.~Charlesworth.
 P.~L. Chesson and R.~R. Warner.
 \newblock Environmental variability promotes coexistence in lottery competitive
   systems.
-\newblock \emph{American Naturalist}, pages 923--943, 1981.
+\newblock \emph{American Naturalist}, 117\penalty0 (6):\penalty0 923--943,
+  1981.
 
 \bibitem[Christiansen(2004)]{christiansen_2004}
 F.~Christiansen.
@@ -105,7 +106,7 @@ U.~Dieckmann and R.~Ferri{\`e}re.
 \bibitem[Doebeli et~al.(2017)Doebeli, Ispolatov, and Simon]{doebeli_2017}
 M.~Doebeli, Y.~Ispolatov, and B.~Simon.
 \newblock Towards a mechanistic foundation of evolutionary theory.
-\newblock \emph{eLife}, 6:\penalty0 e23804, feb 2017.
+\newblock \emph{eLife}, 6:\penalty0 e23804, Feb 2017.
 \newblock ISSN 2050-084X.
 \newblock \doi{10.7554/eLife.23804}.
 
@@ -123,8 +124,8 @@ W.~J. Ewens.
 \newblock \emph{Mathematical Population Genetics 1: Theoretical Introduction}.
 \newblock Springer Science \& Business Media, 2004.
 
-\bibitem[Ferriere and Legendre(2013)]{ferriere2013eco}
-R.~Ferriere and S.~Legendre.
+\bibitem[Ferri{\'e}re and Legendre(2013)]{ferriere2013eco}
+R.~Ferri{\'e}re and S.~Legendre.
 \newblock Eco-evolutionary feedbacks, adaptive dynamics and evolutionary rescue
   theory.
 \newblock \emph{Phil. Trans. R. Soc. B}, 368\penalty0 (1610):\penalty0
@@ -196,8 +197,8 @@ R.~Lande, S.~Engen, and B.-E. S{\ae}ther.
 
 \bibitem[Leon and Charlesworth(1978)]{leon_1978}
 J.~A. Leon and B.~Charlesworth.
-\newblock Ecological versions of fisher's fundamental theorem of natural
-  selection.
+\newblock {Ecological versions of Fisher's fundamental theorem of natural
+  selection}.
 \newblock \emph{Ecology}, 59\penalty0 (3):\penalty0 457--464, 1978.
 
 \bibitem[Levins and Culver(1971)]{levins_71}
@@ -219,8 +220,8 @@ R.~H. MacArthur and E.~O. Wilson.
 
 \bibitem[Mallet(2012)]{mallet_2012}
 J.~Mallet.
-\newblock The struggle for existence. how the notion of carrying capacity, k,
-  obscures the links between demography, darwinian evolution and speciation.
+\newblock {The struggle for existence. How the notion of carrying capacity, K,
+  obscures the links between demography, Darwinian evolution and speciation}.
 \newblock \emph{Evol Ecol Res}, 14:\penalty0 627--665, 2012.
 
 \bibitem[Messer et~al.(2016)Messer, Ellner, and Hairston]{messer_2016}
@@ -281,7 +282,7 @@ T.~Prout.
 J.~Roughgarden.
 \newblock \emph{Theory of population genetics and evolutionary ecology: an
   introduction.}
-\newblock Macmillan New York NY United States 1979., 1979.
+\newblock Macmillan New York NY United States, 1979.
 
 \bibitem[Sale(1977)]{sale_77}
 P.~F. Sale.
