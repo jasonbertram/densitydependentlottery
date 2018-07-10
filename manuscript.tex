@@ -113,7 +113,7 @@ We restrict our attention to asexual haploids, since it is then clearer how the 
 \caption{\label{fig:lottery} One iteration of our model. Propagules are dispersed by adults at random (only those propagules landing on unoccupied territories are shown). Some territories may receive zero propagules. Lottery competition then occurs in each territory that receives more than one propagule (only illustrated in one territory). In a given territory, type $i$ has probability proportional to $c_i x_i$ of winning the territory, where $c_i$ measures competitive ability and $x_i$ is the number of $i$ propagules present. In the illustrated territory, more black propagules are present, but white is a stronger competitor and has a higher probability of winning. Adult deaths make new territories available for the next iteration (red crosses).}
 \end{figure}
 
-Each iteration, adults produce propagules which disperse at random, independently of distance from their parents, and independently of each other. We assume that each adult from type $i$ produces $b_i$ propagules on average, so that the mean number of $i$ propagules dispersing to unoccupied territories is $m_i=b_in_iU/T$. The parameter $b_i$ can be thought of as a measure of ``colonization ability'', which combines fertility and dispersal ability \citep{levins_71,tilman_94}. Random dispersal is then modeled using a Poisson distribution $p_i(x_i)=l_i^{x_i} e^{-l_i}/x_i!$ for the number $x_i$ of $i$ propagules dispersing to any particular unoccupied territory, where $l_i=m_i/U$ is the mean propagule density in unoccupied territories. The total propagule density will be denoted $L=\sum_i l_i$.
+Each iteration, adults produce propagules which disperse at random, independently of distance from their parents, and independently of each other (undirected dispersal). We assume that each adult from type $i$ produces $b_i$ propagules on average, so that the mean number of $i$ propagules dispersing to unoccupied territories is $m_i=b_in_iU/T$. The parameter $b_i$ can be thought of as a measure of ``colonization ability'', which combines fertility and dispersal ability \citep{levins_71,tilman_94}. Random dispersal is then modeled using a Poisson distribution $p_i(x_i)=l_i^{x_i} e^{-l_i}/x_i!$ for the number $x_i$ of $i$ propagules dispersing to any particular unoccupied territory, where $l_i=m_i/U$ is the mean propagule density in unoccupied territories. The total propagule density will be denoted $L=\sum_i l_i$.
 
 We assume that adults cannot be ousted by juveniles, so that recruitment to adulthood occurs exclusively in unoccupied territories. When multiple propagules land on the same unoccupied territory, the winner is determined by lottery competition: type $i$ wins a territory with probability $c_i x_i/\sum_i c_i x_i$, where $c_i$ is a constant representing relative competitive ability (Fig. \ref{fig:lottery}). Since the expected fraction of unoccupied territories with propagule composition $x_1,\ldots,x_G$ is $p_1(x_1)\cdots p_G(x_G)$ where $G$ is the number of types present, and type $i$ is expected to win a proportion $c_i x_i/\sum_i c_i x_i$ of these, type $i$'s expected territorial acquisition is given by
 \begin{equation}
@@ -166,12 +166,13 @@ In the special case that all types are competitively equivalent (identical $c_i$
 \begin{equation}
 \Delta_+ n_i = \frac{l_i}{L}(1-e^{-L})U=\frac{b_i}{\overline{b}}\frac{1-e^{-\overline{b}N/T}}{N}(T-N), \label{eq:masterequalc}
 \end{equation}
-where we have used the fact that $L=\overline{b}N/T$ to make the dependence on $b$ and $N$ explicit ($\overline{b}$ is the population mean $b$). This formula can also be deduced directly from Eq.~\eqref{eq:growthsumuncoupled}: $1-e^{-L}$ is the fraction of territories that receive at least one propagule under Poisson dispersal, $(1-e^{-L})U$ is the total number of such territories, and type $i$ is expected to receive a fraction $l_i/L$ of these. 
+where we have used the fact that $L=\overline{b}N/T$ to make the dependence on $b$ and $N$ explicit ($\overline{b}$ is the population mean $b$). This formula can also be deduced directly from Eq.~\eqref{eq:growthsumuncoupled}, and is exact: $1-e^{-L}$ is the fraction of territories that receive at least one propagule under Poisson dispersal, $(1-e^{-L})U$ is the total number of such territories, and type $i$ is expected to receive a fraction $l_i/L$ of these. 
 
-Similarly, the total number of territories acquired is
+By similar reasoning, the total number of territories is given by
 \begin{equation}
-\Delta_+ N=(1-e^{-L})U=(1-e^{-\overline{b}N/T})(T-N) \label{eq:Nmaster}
-\end{equation} 
+\Delta_+ N=(1-e^{-L})U=(1-e^{-\overline{b}N/T})(T-N), \label{eq:Nmaster}
+\end{equation}
+which is exact and applies for arbitrary $b_i$, $c_i$ and $d_i$. 
 
 \subsection*{Density regulation and selection in the variable-density lottery}
 
