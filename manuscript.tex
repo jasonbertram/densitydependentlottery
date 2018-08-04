@@ -308,57 +308,46 @@ The decomposition Eq.~\eqref{eq:delt_decomp} is exact and involves no additional
 
 To illustrate this consistency requirement, suppose that two identical types (same $b$, $c$ and $d$) are present, the first with small density $l_1\ll 1$ and the second with large density $l_2 \gg 1$. In this case, uncontested territories make up a negligible fraction of $U$, the first type's territorial acquisition is almost entirely due to $\Delta_r n_1$, and the second type's territorial acquisition is almost entirely due to $\Delta_a n_2$. For consistency, the approximate per-capita growth rates in \eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must be equal $\Delta_r n_1/m_1 = \Delta_a n_2/m_2$. Even small violations of this consistency condition would mean exponential growth of one type relative to the other. This is pathological, because any single-type population can be arbitrarily partitioned into identical rare and common subtypes. Thus, predicted growth or decline would depend on an arbitrary assignment of rarity.
 
-Suppose that we simply used the conditional distributions $p({\mathbf x}|x_i=1,X_i\geq 1)$ and $p({\mathbf x}|x_i\geq 2)$ to calculate the effective means, such that $\langle \rangle_r=\langle \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}$ and $\langle \rangle_a=\langle \rangle_{p({\mathbf x}|x_i\geq 2)}$. Then, again using the example from the previous paragraph ($l_1\ll 1$, $l_2\gg 1$), the right hand side of Eq.~\eqref{eq:meanfieldr} would be $\approx 1/(l_2+1)$, and so $\Delta_r n_1/m_1 \approx 1/(l_2+1)$ in Eq.~\eqref{eq:deltr}. Similarly, $\sum_j \langle x_j\rangle_a = l_2$ in Eq.~\eqref{eq:meanfielda}, and so $\Delta_a n_2/m_2 \approx 1/l_2$. Thus, the rare type is pathologically predicted to decline in frequency under this approximation. This inconsistency occurs because the expected total numbers of propagules in the respective groups of territories are different; $\langle X \rangle_{p({\mathbf x}|x_1=1,X_1\geq 1)}\approx l_2+1 > \langle X \rangle_{p({\mathbf x}|x_2\geq 2)}\approx l_2 $. By approximating the expected outcome of lottery competition with effective means, the rare type is effectively assumed to experience more intense lottery competition. 
+Suppose that we used the conditional distributions $p({\mathbf x}|x_i=1,X_i\geq 1)$ and $p({\mathbf x}|x_i\geq 2)$ to calculate the effective means, such that $\langle \rangle_r=\langle \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}$ and $\langle \rangle_a=\langle \rangle_{p({\mathbf x}|x_i\geq 2)}$. Then, in the example from the previous paragraph ($l_1\ll 1$, $l_2\gg 1$), the right hand side of Eq.~\eqref{eq:meanfieldr} would be $\approx 1/(l_2+1)$, and so $\Delta_r n_1/m_1 \approx 1/(l_2+1)$ in Eq.~\eqref{eq:deltr}. Similarly, $\sum_j \langle x_j\rangle_a = l_2$ in Eq.~\eqref{eq:meanfielda}, and so $\Delta_a n_2/m_2 \approx 1/l_2$. Thus, the rare type would be pathologically predicted to decline in frequency. This pathological behavior occurs because the expected total density of propagules in the respective groups of territories are different; $\langle X \rangle_{p({\mathbf x}|x_1=1,X_1\geq 1)}\approx l_2+1 > \langle X \rangle_{p({\mathbf x}|x_2\geq 2)}\approx l_2 $. As a result, the rare type's behavior is approximated as though it experiences more intense lottery competition than the common type. To avoid this, the effective means must be taken in a way that ensures that the total propagule density $\langle X \rangle$ is the same in Eq.~\eqref{eq:meanfieldr} and Eq.~\eqref{eq:meanfielda}. 
 
-The effective distributions $\hat{p}$ are devised to avoid this pathology by forcing $\langle X \rangle$ to be same in all territories. They are defined as follows. For each propagule number $x_i$, $\hat{p}(x_i)=p$ which is independent of the other number
-
- by making the approximation that the distribution for $X$ is the same in all territories. 
-
- Then, in territories where one focal propagule and at least one non-focal propagule are present, the effective distribution is defined by 
+For the focal type $i$, we use the conditional dispersal distributions $p$ to calculate the effective mean, 
 \begin{equation}
-\tilde{q}({\mathbf x_i})=\sum_{X=2}^{\infty}P(X|X\geq 2) p({\mathbf x_i}|X_i=X-1),
+\langle x_i \rangle_r=1,\qquad \langle x_i \rangle_a = \langle x_i \rangle_{p(x_i|x_i\geq 2)}.
 \end{equation}
-where the total number of propagules $X$ follows a Poisson distribution with mean $L$, and $P(X|X\geq 2)=P(X)/P(X\geq 2)=P(X)/(1-(1+L)e^{-L})$. Similarly, in territories where more than one focal propagule is present, the effective distribution is defined by 
-\begin{equation}
-\hat{q}({\mathbf x})=\sum_{X=2}^{\infty}P(X|X\geq 2) p({\mathbf x}|x_i\geq 2, X).
-\end{equation}
- 
-\subsection*{Calculating the effective means}
-
-Here we calculate the effective means, starting with the $\Delta_r n_i$ component. We have
+However, for nonfocal types $j\neq i$, we explicitly evaluate the $X$-dependence of the conditional dispersal probabilities, assuming that $X$ has the same conditional Poisson distribution $P(X|X\geq 2)$ for both $\langle \rangle_r$ and $\langle \rangle_a$. Starting with $\langle \rangle_r$, we first imagine that $X$ is a fixed constant to obtain
 \begin{align}
-\langle x_j \rangle_{\tilde{q}}&=\sum_{\mathbf x_i} \tilde{q}({\mathbf x_i})x_j\nonumber\\
-&=\frac{1}{1-(1+L)e^{-L}}\sum_{X=2}^{\infty} P(X) \sum_{\mathbf x_i} p({\mathbf x_i}|X_i=X-1)x_j.
+\sum_{x_j} p(x_j|x_i=1,X)x_j=\frac{l_j}{L-l_i}(X-1)
 \label{eq:raremonster1}
 \end{align}
-The inner sum over ${\mathbf x_i}$ is the mean number of propagules of a given nonfocal type $j$ that will be found in a territory which received $X-1$ nonfocal propagules in total, which is equal to $\frac{l_j}{L-l_i}(X-1)$. Thus, 
+The right hand side is obtained by observing that the sum is the expected number of propagules with type $j$ that will be found in a territory which received $X-1$ nonfocal propagules in total. Applying our assumption about the distribution of $X$ gives
 \begin{align}
-\langle x_j \rangle_{\tilde{q}}&=\frac{l_j}{1-(1+L)e^{-L}}\frac{1}{L-l_i}\sum_{X=2}^{\infty} P(X) (X-1)\nonumber\\
-&=\frac{l_j}{1-(1+L)e^{-L}}\frac{L-1+e^{-L}}{L-l_i},
+\langle x_j \rangle_r&=\frac{l_j}{L-l_i}\sum_{X=2}^{\infty} P(X|X\geq 2) (X-1)\nonumber\\
+&=\frac{l_j}{L-l_i}\frac{L-1+e^{-L}}{1-(1+L)e^{-L}},
 \label{eq:meanxjrare}
 \end{align}
-where the last line follows from $\sum_{X=2}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)X-\sum_{X=1}^{\infty}P(X)$. Substituting Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanxjrare} into Eq.~\eqref{eq:deltr}, we obtain
+where the last line follows from $P(X|X\geq 2) =\frac{1}{{1-(1+L)e^{-L}}}P(X)$ and $\sum_{X=2}^{\infty} P(X)(X-1)=\sum_{X=1}^{\infty} P(X)(X-1)=L-1+e^{-L}$. Substituting Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanxjrare} into Eq.~\eqref{eq:deltr}, we obtain
 \begin{equation}
 \Delta_r n_i\approx m_i R_i\frac{c_i}{\overline{c}}, \label{eq:deltrfinal}
 \end{equation}
 where $R_i$ is defined in Eq.~\eqref{eq:Dr}.
 
-Turning now to the $\Delta_a n_i$ component, the mean focal abundance is 
+Turning now to $\langle \rangle_a$, the mean focal abundance is 
 \begin{align}
-\langle x_i \rangle_{\hat{q}}&=\sum_{\mathbf x} \hat{q}({\mathbf x}) x_i\nonumber \\
-&=\sum_{x_i} p(x_i|x_i\geq 2)x_i \nonumber\\
+\langle x_i \rangle_{a}&=\sum_{x_i} p(x_i|x_i\geq 2)x_i \nonumber\\
 &=\frac{1}{1-(1+l_i)e^{-l_i}}\sum_{x_i\geq 2} p(x_i)x_i\nonumber\\
 &=l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}.
 \end{align}
-For nonfocal types $j\neq i$, we have
+For nonfocal types $j\neq i$, we have analogously to Eq.~\eqref{eq:raremonster1},
 \begin{align}
-\langle x_j \rangle_{\hat{q}}&=\sum_{X=2}^{\infty}P(X|X\geq 2)\sum_{\mathbf x}  p({\mathbf x}|x_i\geq 2,X) x_j\nonumber\\
-&=\sum_{X=2}^{\infty}P(X|X\geq 2)\sum_{x_i} p(x_i|x_i\geq 2,X) \sum_{\mathbf x_i}  p(\mathbf x_i|X_i=X-x_i) x_j\nonumber\\
-&=\sum_{X=2}^{\infty}P(X|X\geq 2)\sum_{x_i}p(x_i|x_i\geq 2,X) \frac{l_j(X-x_i)}{L-l_i} \nonumber\\
-&=\frac{l_j}{L-l_i}\left[\sum_{X=2}^{\infty}P(X|X\geq 2)X - \sum_{x_i}p(x_i|x_i\geq 2) x_i \right]\nonumber\\
+\sum_{\mathbf x_i}  p(\mathbf x_i|x_i\geq 2,X) x_j&= \sum_{\mathbf x_i}  p(\mathbf x_i|X_i=X-x_i) x_j\nonumber\\
+&= \frac{l_j(X-x_i)}{L-l_i}.
+\end{align}
+Assuming again that $X$ has the conditional distribution $P(X|X\geq 2)$ yields 
+\begin{align}
+\langle x_j \rangle_a&=\frac{l_j}{L-l_i}\left[\sum_{X=2}^{\infty}P(X|X\geq 2)X - \langle x_i \rangle_a \right]\nonumber\\
 &=\frac{l_j}{L-l_i}\left( L\frac{1-e^{-L}}{1-(1+L)e^{-L}}- l_i\frac{1-e^{-l_i}}{1-(1+l_i)e^{-l_i}}\right).
 \end{align}
-In going from line 2 to 3, we used the same logic used to evaluate the inner sum in Eq.~\eqref{eq:raremonster1}, and in going from 3 to 4 we have separately evaluated the contributions from the $X$ and $x_i$ terms in the numerator. Combining these results with Eqs.~\eqref{eq:delta} and \eqref{eq:meanfielda}, we obtain
+Combining these results with Eqs.~\eqref{eq:delta} and \eqref{eq:meanfielda}, we obtain
 \begin{equation}
 \Delta_a n_i=m_i A_i \frac{c_i}{\overline{c}},
 \end{equation}
@@ -366,34 +355,30 @@ where $A_i$ is defined in Eq.~\eqref{eq:Da}.
 
 \subsection*{Approximation limits}
 
-Eq.~\eqref{eq:meanfieldr} and \eqref{eq:meanfielda} must not only be consistent with each other, they must also be individually good approximations. Here we evaluate these approximations.
+Having derived the approximation Eq.~\eqref{eq:master}, we now evaluate its domain of validity. Eq.~\eqref{eq:master} relies on ignoring the fluctuations in $x_i$ and $x_j$, such that we can replace them with constant effective mean values. Mathematically, this requires that the standard deviations $\sigma_{p({\mathbf x}|x_i=1,X_i\geq 1)}(\sum_{j\neq i} c_j x_j)$ and $\sigma_{p({\mathbf x}|x_i\geq 2)}(\sum_j c_j x_j)$ are sufficiently small compared to the corresponding means $\langle\sum_{j\neq i} c_j x_j\rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}$ and $\langle\sum_j c_j x_j\rangle_{p({\mathbf x}|x_i\geq 2)}$ in Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanfielda} respectively. We now evaluate these conditions.
 
-The fundamental requirement for making the replacement in Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanfielda} is that we can ignore the fluctuations in the $x_i$ and hence replace them with a constant effective mean value. Mathematically, we require that the standard deviations $\sigma_{\tilde{q}}(\sum_{j\neq i} c_j x_j)$ and $\sigma_{\hat{q}}(\sum_j c_j x_j)$ must be sufficiently small compared to the corresponding means $\langle\sum_{j\neq i} c_j x_j\rangle_{\tilde{q}}$ and $\langle\sum_j c_j x_j\rangle_{\hat{q}}$ in Eqs.~\eqref{eq:meanfieldr} and \eqref{eq:meanfielda} respectively.  
-
-To evaluate these standard deviations, we will work with $\tilde{p}$ and $\hat{p}$ distributions instead of $\tilde{q}$ and $\hat{q}$. This is mathematically much simpler because the $x_i$ are independent under $\tilde{p}$ and $\hat{p}$, and is justified by the fact that $\tilde{p}$ and $\hat{p}$ are closely related to $\tilde{q}$ and $\hat{q}$ respectively, and so we expect the relevant means and standard deviations will be similar.
-
-Starting with Eq.~\eqref{eq:meanfieldr}, we have $\langle x_j \rangle_{\tilde{p}}=l_j/C$, where $C=1-e^{-(L-l_i)}$, and the corresponding variances and covariances are given by
+We first calculate $\sigma_{p({\mathbf x}|x_i=1,X_i\geq 1)}(\sum_{j\neq i} c_j x_j)$. We have $\langle x_j \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}=l_j/C$, where $C=1-e^{-(L-l_i)}$, and the corresponding variances and covariances are given by
 \begin{align}
-\sigma_{\tilde{p}}^2(x_j)&=\langle x_j^2 \rangle_{\tilde{p}}-\langle x_j \rangle_{\tilde{p}}^2\nonumber\\
+\sigma_{p({\mathbf x}|x_i=1,X_i\geq 1)}^2(x_j)&=\langle x_j^2 \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}-\langle x_j \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}^2\nonumber\\
 &=\frac{l_j^2 + l_j}{C}-\frac{l_j^2}{C^2}\nonumber \\
 &=\left(1-\frac{1}{C}\right)\frac{l_j^2}{C}+\frac{l_j}{C},\label{eq:varr}
 \end{align}
 and
 \begin{align}
-\sigma_{\tilde{p}}(x_j,x_k)&=\langle x_j x_k \rangle_{\tilde{p}}-\langle x_j \rangle_{\tilde{p}}\langle x_k \rangle_{\tilde{p}}\nonumber\\
-&=\frac{1}{C}\langle x_j x_k \rangle_p-\frac{l_jl_k}{C^2}\nonumber\\
+\sigma_{p({\mathbf x}|x_i=1,X_i\geq 1)}(x_j,x_k)&=\langle x_j x_k \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}-\langle x_j \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}\langle x_k \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}\nonumber\\
+&=\frac{1}{C}\langle x_j x_k \rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}-\frac{l_jl_k}{C^2}\nonumber\\
 &=\left(1-\frac{1}{C}\right)\frac{l_j l_k}{C}\qquad\qquad j\neq k. \label{eq:covr}
 \end{align} 
 Note that $1-1/C$ is negative because $C<1$. Decomposing the variance in $\sum_{j\neq i} c_j x_j$,
 \begin{equation}
-\sigma_{\tilde{p}}^2(\sum_{j\neq i} c_j x_j)=\sum_{j\neq i}\left[c_j^2\sigma_{\tilde{p}}^2(x_j)+2\sum_{k>j, k\neq i}c_j c_k\sigma_{\tilde{p}}(x_j,x_k)\right],\label{eq:vartotr}
+\sigma^2(\sum_{j\neq i} c_j x_j)=\sum_{j\neq i}\left[c_j^2\sigma^2(x_j)+2\sum_{k>j, k\neq i}c_j c_k\sigma(x_j,x_k)\right],\label{eq:vartotr}
 \end{equation}
 we obtain 
 \begin{equation}
-\frac{\sigma(\sum_{j\neq i} c_j x_j)}{\langle\sum_{j\neq i} c_j x_j\rangle}=C^{1/2}\frac{\left(\sum_{j\neq i}c_j^2 l_j+(1-\frac{1}{C})\left(\sum_{j\neq i}c_j l_j\right)^2 \right)^{1/2}}{\sum_{j\neq i}c_j l_j}. \label{eq:cvr}
+\frac{\sigma_{p({\mathbf x}|x_i=1,X_i\geq 1)}(\sum_{j\neq i} c_j x_j)}{\langle\sum_{j\neq i} c_j x_j\rangle_{p({\mathbf x}|x_i=1,X_i\geq 1)}}=C^{1/2}\frac{\left(\sum_{j\neq i}c_j^2 l_j+(1-\frac{1}{C})\left(\sum_{j\neq i}c_j l_j\right)^2 \right)^{1/2}}{\sum_{j\neq i}c_j l_j}. \label{eq:cvr}
 \end{equation}
 
-Eq.~\eqref{eq:cvr} reveals two key points. First, when the $c_j$ have similar magnitudes (their ratios are of order one), Eq.~\eqref{eq:meanfieldr} is an excellent approximation. In this case, the right hand side of Eq.~\eqref{eq:cvr} is approximately equal to $C^{1/2}\left(\frac{1}{L-l_i}+1-\frac{1}{C}\right)^{1/2}$, which is small for both low and high nonfocal densities. The worst case scenario occurs when $L-l_i$ is of order one, and it can be directly verified that Eq.~\eqref{eq:meanfieldr} is then still a good approximation (see Fig.~\ref{fig:approx_details}). Second, if some of the $c_j$ are much larger than the others, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large. Specifically, in the presence of a rare,  strong competitor ($c_j l_j\gg c_{j'} l_{j'}$ for all other nonfocal types $j'$, and $l_j\ll 1$), then the right hand side of Eq. \eqref{eq:cvr} can be large and we cannot make the replacement Eq.~\eqref{eq:meanfieldr}. Fig.~\ref{fig:approx_details} shows the breakdown of the effective mean approximation when there are large differences in $c$. 
+Eq.~\eqref{eq:cvr} reveals two important points. First, when the $c_j$ have similar magnitudes (their ratios are of order one), Eq.~\eqref{eq:meanfieldr} is an excellent approximation. In this case, the right hand side of Eq.~\eqref{eq:cvr} is approximately equal to $C^{1/2}\left(\frac{1}{L-l_i}+1-\frac{1}{C}\right)^{1/2}$, which is small for both low and high nonfocal densities. The worst case scenario occurs when $L-l_i$ is of order one, and it can be directly verified that Eq.~\eqref{eq:meanfieldr} is then still a good approximation (see Fig.~\ref{fig:approx_details}). Second, if some of the $c_j$ are much larger than the others, the relative fluctuations in $\sum_{j\neq i} c_j x_j$ can be large. Specifically, in the presence of a rare,  strong competitor ($c_j l_j\gg c_{j'} l_{j'}$ for all other nonfocal types $j'$, and $l_j\ll 1$), then the right hand side of Eq. \eqref{eq:cvr} can be large and we cannot make the replacement Eq.~\eqref{eq:meanfieldr}. Fig.~\ref{fig:approx_details} shows the breakdown of the effective mean approximation when there are large differences in $c$. 
 
 \begin{figure}
 \centering
@@ -401,7 +386,7 @@ Eq.~\eqref{eq:cvr} reveals two key points. First, when the $c_j$ have similar ma
 \caption{\label{fig:approx_details} Comparison of our $\tilde{q}$,$\hat{q}$ approximation with simulations, and also with the naive $\tilde{p}$,$\hat{p}$ approximation, as a function of the relative $c$ difference between two types. Our approximation breaks down in the presence of large $c$ differences. The inset shows the pathology of the $\tilde{p}$,$\hat{p}$ approximation --- growth rates are not equal in the neutral case $c_1=c_2$. Simulation procedure is the same as in Fig.~\ref{fig:simcomp}, with $U=10^5$.}
 \end{figure}
 
-Turning now to Eq.~\eqref{eq:meanfielda}, all covariances between nonfocal types are now zero, so that $\sigma_{\hat{p}}^2(\sum c_j x_j)=\sum c_j^2 \sigma_{\hat{p}}^2(x_j)$, where $\sigma_{\hat{p}}^2(x_j)=l_j$ for $j\neq i$. Here  
+Turning now to Eq.~\eqref{eq:meanfielda}, all covariances between nonfocal types are now zero, so that $\sigma_{_{p({\mathbf x}|x_i\geq 2)}}^2(\sum c_j x_j)=\sum c_j^2 \sigma_{\hat{p}}^2(x_j)$, where $\sigma_{\hat{p}}^2(x_j)=l_j$ for $j\neq i$. Here  
 \begin{equation}
 \sigma_{\hat{p}}^2(x_i)=\frac{l_i}{D}\left(l_i+1-e^{-l_i}-\frac{l_i}{D}\left(1-e^{-l_i}\right)^2\right),
 \end{equation}
