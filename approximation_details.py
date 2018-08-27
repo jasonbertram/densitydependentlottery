@@ -55,9 +55,9 @@ deltaovermapprox1=np.array(map(lambda x: deltnplus(m,x,T),cs))/m
 
 ax1.plot(deltaovermsim1[:,0],'k.',markersize=3,label=r'Simulation')
 ax1.plot(deltaovermsim1[:,1],'k.',markersize=3)
-ax1.plot(deltaovermnaive1[:,0],'r',linewidth=2,label=r'$\tilde{p}$,$\hat{p}$ approximation')
+ax1.plot(deltaovermnaive1[:,0],'r',linewidth=2,label=r'Naive approx.')
 ax1.plot(deltaovermnaive1[:,1],'r',linewidth=2)
-ax1.plot(deltaovermapprox1[:,0],'b',linewidth=2,label=r'$\tilde{q}$,$\hat{q}$ approximation')
+ax1.plot(deltaovermapprox1[:,0],'b',linewidth=2,label=r'Eq.~(6)')
 ax1.plot(deltaovermapprox1[:,1],'b',linewidth=2)
 ax1.plot([50,50],[0,1],'k',linewidth=2)
 ax1.set_xticklabels([])
