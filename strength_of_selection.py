@@ -12,7 +12,7 @@ from scipy.integrate import odeint
 #SS figure
 #========================================================
 
-fig1, (ax1, ax2) = plt.subplots(ncols=2,figsize=[8,4])
+fig1, ax1 = plt.subplots(ncols=1,figsize=[4,4])
 
 s=np.linspace(0,0.5,100)
 ax1.plot(s,1/(1-s),'k',linewidth=2)
@@ -31,27 +31,27 @@ d=np.array([1e-4,1e-4*(1-s)]);
 
 x=np.linspace(0,10/s,1000)
 
-def f(n,t):
-    return (b-d*sum(n))*n
-    
-def g(p,t):
-    return s*p*(1-p)
-
-solK=odeint(f,[0.99*b[0]/d[0],0.01*b[0]/d[0]],x)
-solrel=odeint(g,0.01,x)
-
-ax2.plot(x,solK[:,1]/(solK[:,0]+solK[:,1]),'k--', linewidth=2,label=r"$\epsilon=0.2$ (Eq. 11)")
-ax2.plot(x,solrel,'k', linewidth=2,label=r"Canonical (Eq. 1)")
-ax2.legend(loc='lower right',prop={'size':11})
-ax2.annotate(r'$(b)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
-ax2.set_xticklabels([])
-ax2.set_xlabel("Time",fontsize=14)
-ax2.set_yticklabels(['0','','','','','1'])
-ax2.set_ylabel("Frequency",fontsize=14)
+#def f(n,t):
+#    return (b-d*sum(n))*n
+#    
+#def g(p,t):
+#    return s*p*(1-p)
+#
+#solK=odeint(f,[0.99*b[0]/d[0],0.01*b[0]/d[0]],x)
+#solrel=odeint(g,0.01,x)
+#
+#ax2.plot(x,solK[:,1]/(solK[:,0]+solK[:,1]),'k--', linewidth=2,label=r"$\epsilon=0.2$ (Eq. 11)")
+#ax2.plot(x,solrel,'k', linewidth=2,label=r"Canonical (Eq. 1)")
+#ax2.legend(loc='lower right',prop={'size':11})
+#ax2.annotate(r'$(b)$',xy=(0.01,0.93),xycoords='axes fraction',fontsize=16)
+#ax2.set_xticklabels([])
+#ax2.set_xlabel("Time",fontsize=14)
+#ax2.set_yticklabels(['0','','','','','1'])
+#ax2.set_ylabel("Frequency",fontsize=14)
 
 plt.tight_layout()
 
-plt.savefig('/home/jason/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
+plt.savefig('/home/jbertram/repos/densitydependentlottery/strengthofselection.pdf',bbox="tight")
 
 
 #lottery bsweep
