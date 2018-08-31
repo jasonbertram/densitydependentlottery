@@ -1,4 +1,4 @@
-\begin{thebibliography}{53}
+\begin{thebibliography}{55}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -87,11 +87,23 @@ P.~L. Chesson and R.~R. Warner.
 \newblock \emph{American Naturalist}, 117\penalty0 (6):\penalty0 923--943,
   1981.
 
+\bibitem[Chotibut and Nelson(2017)]{chotibut_2017}
+T.~Chotibut and D.~R. Nelson.
+\newblock Population genetics with fluctuating population sizes.
+\newblock \emph{Journal of Statistical Physics}, 167\penalty0 (3-4):\penalty0
+  777--791, 2017.
+
 \bibitem[Christiansen(2004)]{christiansen_2004}
 F.~Christiansen.
 \newblock Density dependent selection.
 \newblock In \emph{Evolution of Population Biology: Modern Synthesis}, pages
   139--155. Cambridge University Press, 2004.
+
+\bibitem[Constable and McKane(2017)]{constable_2017}
+G.~W. Constable and A.~J. McKane.
+\newblock Mapping of the stochastic lotka-volterra model to models of
+  population genetics and game theory.
+\newblock \emph{Physical Review E}, 96\penalty0 (2):\penalty0 022416, 2017.
 
 \bibitem[Crow et~al.(1970)Crow, Kimura, et~al.]{crow_1970}
 J.~F. Crow, M.~Kimura, et~al.
@@ -137,13 +149,6 @@ R.~A. Fisher.
   edition}.
 \newblock Oxford University Press, 1930.
 
-\bibitem[Frank(2011)]{frank_2011}
-S.~A. Frank.
-\newblock Natural selection. i. variable environments and uncertain returns on
-  investment.
-\newblock \emph{Journal of evolutionary biology}, 24\penalty0 (11):\penalty0
-  2299--2309, 2011.
-
 \bibitem[Gill(1974)]{gill_1974}
 D.~E. Gill.
 \newblock Intrinsic rate of increase, saturation density, and competitive
@@ -165,12 +170,6 @@ J.~B.~S. Haldane.
 \newblock The cost of natural selection.
 \newblock \emph{Journal of Genetics}, 55\penalty0 (3):\penalty0 511, 1957.
 
-\bibitem[Joshi et~al.(2001)Joshi, Prasad, and Shakarad]{joshi_2001}
-A.~Joshi, N.~Prasad, and M.~Shakarad.
-\newblock K-selection, $\alpha$-selection, effectiveness, and tolerance in
-  competition: density-dependent selection revisited.
-\newblock \emph{Journal of Genetics}, 80\penalty0 (2):\penalty0 63--75, 2001.
-
 \bibitem[Kimura(1978)]{kimura_1978}
 M.~Kimura.
 \newblock Change of gene frequencies by natural selection under population
@@ -187,6 +186,12 @@ M.~Kimura and J.~F. Crow.
 V.~A. Kostitzin.
 \newblock \emph{Mathematical biology}.
 \newblock George G. Harrap And Company Ltd.; London, 1939.
+
+\bibitem[Lambert et~al.(2005)]{lambert_2005}
+A.~Lambert et~al.
+\newblock The branching process with logistic growth.
+\newblock \emph{The Annals of Applied Probability}, 15\penalty0 (2):\penalty0
+  1506--1535, 2005.
 
 \bibitem[Lande et~al.(2009)Lande, Engen, and S{\ae}ther]{lande_2009}
 R.~Lande, S.~Engen, and B.-E. S{\ae}ther.
@@ -271,6 +276,13 @@ S.~P. Otto and T.~Day.
 \newblock \emph{A biologist's guide to mathematical modeling in ecology and
   evolution}.
 \newblock Princeton University Press, 2011.
+
+\bibitem[Parsons and Quince(2007)]{parsons_2007}
+T.~L. Parsons and C.~Quince.
+\newblock Fixation in haploid populations exhibiting density dependence i: the
+  non-neutral case.
+\newblock \emph{Theoretical population biology}, 72\penalty0 (1):\penalty0
+  121--135, 2007.
 
 \bibitem[Prout(1980)]{prout_1980}
 T.~Prout.
