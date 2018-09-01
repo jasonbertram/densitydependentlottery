@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  30 AUG 2018 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  31 AUG 2018 18:34
 entering extended mode
 **./manuscript.tex
 (manuscript.tex
@@ -261,68 +261,64 @@ File: simulationcomparison.pdf Graphic file (type pdf)
 <use simulationcomparison.pdf>
 Package pdftex.def Info: simulationcomparison.pdf  used on input line 161.
 (pdftex.def)             Requested size: 462.52863pt x 231.2643pt.
- [14 <./simulationcomparison.pdf>]
+ [14 <./simulationcomparison.pdf>] [15]
 Underfull \hbox (badness 2073) in paragraph at lines 183--184
 []\OT1/cmr/m/n/12 In the case of $\OML/cmm/m/it/12 c$\OT1/cmr/m/n/12 -selection
 , Eq. [] im-plies that $\OML/cmm/m/it/12 W[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/1
 2 W[]$ \OT1/cmr/m/n/12 is pro-por-tional to
  []
 
-[15]
 <DDS_lottery.pdf, id=164, 361.35pt x 289.08pt>
 File: DDS_lottery.pdf Graphic file (type pdf)
 <use DDS_lottery.pdf>
 Package pdftex.def Info: DDS_lottery.pdf  used on input line 189.
 (pdftex.def)             Requested size: 289.0804pt x 231.2643pt.
- [16 <./DDS_lottery.pdf>] [17]
+[16] [17 <./DDS_lottery.pdf>]
 <LVvslottery.pdf, id=216, 578.16pt x 289.08pt>
 File: LVvslottery.pdf Graphic file (type pdf)
 <use LVvslottery.pdf>
 Package pdftex.def Info: LVvslottery.pdf  used on input line 212.
 (pdftex.def)             Requested size: 462.52863pt x 231.2643pt.
- [18 <./LVvslottery.pdf>]
-<strengthofselection.pdf, id=252, 289.08pt x 289.08pt>
+ [18] [19 <./LVvslottery.pdf>]
+<strengthofselection.pdf, id=256, 289.08pt x 289.08pt>
 File: strengthofselection.pdf Graphic file (type pdf)
 <use strengthofselection.pdf>
 Package pdftex.def Info: strengthofselection.pdf  used on input line 228.
 (pdftex.def)             Requested size: 231.2643pt x 231.2643pt.
- [19]
-<bsweep.pdf, id=257, 578.16pt x 289.08pt>
+ [20]
+<bsweep.pdf, id=260, 578.16pt x 289.08pt>
 File: bsweep.pdf Graphic file (type pdf)
 <use bsweep.pdf>
 Package pdftex.def Info: bsweep.pdf  used on input line 236.
 (pdftex.def)             Requested size: 462.52863pt x 231.2643pt.
-<bdsweep.pdf, id=258, 578.16pt x 289.08pt>
+ [21 <./strengthofselection.pdf>] [22 <./bsweep.pdf>]
+<bdsweep.pdf, id=365, 578.16pt x 289.08pt>
 File: bdsweep.pdf Graphic file (type pdf)
 <use bdsweep.pdf>
 Package pdftex.def Info: bdsweep.pdf  used on input line 244.
 (pdftex.def)             Requested size: 462.52863pt x 231.2643pt.
- [20 <./strengthofselection.pdf>] [21 <./bsweep.pdf> <./bdsweep.pdf
-
-pdfTeX warning: pdflatex (file ./bdsweep.pdf): PDF inclusion: multiple pdfs wit
-h page group included in a single page
->] [22] [23] (manuscript.bbl [24] [25] [26] [27] [28]) [29] [30] [31] [32]
-[33] [34]
+ [23 <./bdsweep.pdf>] [24] [25]
+(manuscript.bbl [26] [27] [28] [29] [30]) [31] [32] [33] [34] [35]
 Underfull \hbox (badness 1668) in paragraph at lines 360--361
 []\OT1/cmr/m/n/12 We first con-sider the means and stan-dard de-vi-a-tions in E
 q. []. We have
  []
 
-[35] [36]
-<approx_details.pdf, id=481, 361.35pt x 578.16pt>
+[36] [37]
+<approx_details.pdf, id=486, 361.35pt x 578.16pt>
 File: approx_details.pdf Graphic file (type pdf)
 <use approx_details.pdf>
 Package pdftex.def Info: approx_details.pdf  used on input line 396.
 (pdftex.def)             Requested size: 289.0804pt x 462.52863pt.
- [37] [38 <./approx_details.pdf>] [39] [40] (manuscript.aux) ) 
+ [38] [39 <./approx_details.pdf>] [40] [41] (manuscript.aux) ) 
 Here is how much of TeX's memory you used:
  2911 strings out of 492973
  42160 string characters out of 3126692
- 108517 words of memory out of 3000000
+ 109517 words of memory out of 3000000
  6742 multiletter control sequences out of 15000+200000
  13433 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,32p,1728b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,32p,1728b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/jason/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Users/jason/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
@@ -345,9 +341,9 @@ sy6.pfb><C:/Users/jason/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb><C:/Users/jason/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/jason/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on manuscript.pdf (40 pages, 2250155 bytes).
+Output written on manuscript.pdf (41 pages, 2251009 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
+ 612 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
