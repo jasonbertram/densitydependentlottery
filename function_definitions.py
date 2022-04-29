@@ -16,17 +16,37 @@ def deltnplussim(m,c,U):
 #            cell=int(int(U)*np.random.rand());
 #            scatter[cell,i]=scatter[cell,i]+1;
 
-    l=m/float(U)        
+    #vector of type densities
+    l=m/float(U)
+    #scatter each type's propagules over the U available territories
     scatter=np.random.poisson(lam=l,size=[U,len(m)])
     
-    winsnocomp=np.zeros(len(m)); wins1=np.zeros(len(m)); wins2=np.zeros(len(m));
+    #for each type, number of territories won without competition
+    winsnocomp=np.zeros(len(m));
+    
+    #for each type, number of territories won as a singleton
+    wins1=np.zeros(len(m)); 
+    
+    #for each type, number of territories won with >= 2 propagules preent
+    wins2=np.zeros(len(m));
+    
     comp=np.zeros(U);
     for i in range(int(U)):
+        #total number of propagules in each territory
         comp[i]=sum(scatter[i])
-        if comp[i]>0:            
+        
+        #ignore empty territories
+        if comp[i]>0:
+            
+            #assign each propagule its weight c and construct cumulative mass function (not normalized)
             lotterycmf=np.cumsum(np.array(scatter[i])*c)
+            
+            #lottery competition
+            #pick a point at random between 0 and the max of lotterycmf
+            #that propagule won - find it with bisect
             victor=bisect.bisect(lotterycmf,np.random.rand()*lotterycmf[-1])
             
+            #tally wins 
             if scatter[i][victor]==1 and comp[i]==1:
                 winsnocomp[victor]=winsnocomp[victor]+1
             elif scatter[i][victor]==1:
